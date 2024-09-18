@@ -1,0 +1,8 @@
+fpga_top: iunit__GB0, iunit__GB1, mcore_1x1x32_lite__GC0, processor_1x1x32_lite__GC0, cpu_no_fp__GC0, core_1x32_no_fp_no_mmu__GC0, teu_no_fp__GCB0, teu_no_fp__GCB2, peripherals__GB1, teu_no_fp__GCB1, peripherals__GB0, fpga_top__GC0, 
+processor_1x1x32_lite: iunit__GB0, iunit__GB1, mcore_1x1x32_lite__GC0, processor_1x1x32_lite__GC0, cpu_no_fp__GC0, core_1x32_no_fp_no_mmu__GC0, teu_no_fp__GCB0, teu_no_fp__GCB2, peripherals__GB1, teu_no_fp__GCB1, peripherals__GB0, 
+peripherals: peripherals__GB1, peripherals__GB0, 
+mcore_1x1x32_lite: mcore_1x1x32_lite__GC0, core_1x32_no_fp_no_mmu__GC0, cpu_no_fp__GC0, teu_no_fp__GCB2, teu_no_fp__GCB1, teu_no_fp__GCB0, iunit__GB1, iunit__GB0, 
+core_1x32_no_fp_no_mmu: core_1x32_no_fp_no_mmu__GC0, cpu_no_fp__GC0, teu_no_fp__GCB2, teu_no_fp__GCB1, teu_no_fp__GCB0, iunit__GB1, iunit__GB0, 
+cpu_no_fp: cpu_no_fp__GC0, teu_no_fp__GCB2, teu_no_fp__GCB1, teu_no_fp__GCB0, iunit__GB1, iunit__GB0, 
+teu_no_fp: teu_no_fp__GCB2, teu_no_fp__GCB1, teu_no_fp__GCB0, iunit__GB1, iunit__GB0, 
+iunit: iunit__GB1, iunit__GB0, 

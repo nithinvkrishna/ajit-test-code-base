@@ -1,0 +1,33 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-372,-143",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_reset_0 -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port port-id_reset_clk_0 -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
+preplace port port-id_clk_p_0 -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
+preplace port port-id_clk_n_0 -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD
+preplace portBus CPU_MODE_0 -pg 1 -lvl 3 -x 790 -y 370 -defaultsOSRD
+preplace inst fpga_top_0 -pg 1 -lvl 2 -x 610 -y 350 -defaultsOSRD
+preplace inst versal_cips_0 -pg 1 -lvl 1 -x 230 -y 170 -defaultsOSRD
+preplace netloc reset_0_1 1 0 2 NJ 380 NJ
+preplace netloc reset_clk_0_1 1 0 2 NJ 400 NJ
+preplace netloc fpga_top_0_CPU_MODE 1 2 1 N 370
+preplace netloc clk_p_0_1 1 0 2 NJ 340 NJ
+preplace netloc clk_n_0_1 1 0 2 NJ 360 NJ
+preplace netloc versal_cips_0_UART0_txd 1 1 1 450 80n
+preplace netloc fpga_top_0_DEBUG_UART_TX 1 1 2 NJ 100 770
+preplace netloc versal_cips_0_UART1_txd 1 1 1 440 140n
+preplace netloc fpga_top_0_SERIAL_UART_TX 1 1 2 NJ 160 760
+levelinfo -pg 1 0 230 610 790
+pagesize -pg 1 -db -bbox -sgen -130 0 970 470
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_board_cnt":"2",
+   "da_cips_cnt":"1",
+   "da_clkrst_cnt":"10"
+}

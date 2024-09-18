@@ -1,0 +1,48 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Wed Sep  4 15:45:52 2024
+| Host         : iitg-Precision-3660 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_methodology -file ajitVCK_wrapper_methodology_drc_routed.rpt -pb ajitVCK_wrapper_methodology_drc_routed.pb -rpx ajitVCK_wrapper_methodology_drc_routed.rpx
+| Design       : ajitVCK_wrapper
+| Device       : xcvc1902-vsva2197-2MP-e-S
+| Speed File   : -2MP
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 2
++----------+----------+---------------------------------------------------+------------+
+| Rule     | Severity | Description                                       | Violations |
++----------+----------+---------------------------------------------------+------------+
+| AVAL-344 | Warning  | Design_needs_USER_RAM_AVERAGE_ACTIVITY_set        | 1          |
+| XDCC-2   | Warning  | Scoped Non-Timing constraint/property overwritten | 1          |
++----------+----------+---------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+AVAL-344#1 Warning
+Design_needs_USER_RAM_AVERAGE_ACTIVITY_set  
+The design property USER_RAM_AVERAGE_ACTIVITY on the top-level current_design object is unset (or set to -1).  The estimated RAM_AVERAGE_ACTIVITY used for the design is 0 and assumes a worst-case switching scenario for the URAM and BRAM.  RAM activity directly impacts clock uncertainty and the RAM_AVERAGE_ACTIVITY property may not be accurate for designs that are not final.  It is recommended that the USER_RAM_AVERAGE_ACTIVITY property be specified.  Please refer to the Versal ACAP Clocking Resources Architecture Manual and the Versal ACAP Hardware, IP, and Platform Development Methodology User Guide for more information on specifying the USER_RAM_AVERAGE_ACTIVITY.
+Related violations: <none>
+
+XDCC-2#1 Warning
+Scoped Non-Timing constraint/property overwritten  
+A new XDC property IOSTANDARD on clk_p_0 overrides a previous scoped property. It is not recommended to override a scoped (typically an IP) property and could result in unexpected behaviours.
+New Source: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/constraints/constraints.xdc (Line: 7)
+Previous Source: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/vivado_synth/project_1/project_1.gen/sources_1/bd/ajitVCK/ip/ajitVCK_fpga_top_0_1/src/clk_wizard_0/clk_wizard_0_board.xdc (Line: 3)
+Related violations: <none>
+
+

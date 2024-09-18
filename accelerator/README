@@ -1,0 +1,72 @@
+
+	An accelerator
+	---------------
+
+1. Overview
+-----------
+	The accelarator will be programmed with a 128-bit (16 bytes) key, and
+	asked to encrypt a block of memory (assumed to be a multiple
+	of 16 bytes).  The encryption algorithm is trivial, just an XOR of
+	the key with the data.
+
+	After encrypting the block, the accelerator will raise an interrupt
+	and alert the processor.
+
+
+2.  Accelerator registers:  
+-----------------------------
+	There are 16 registers, some are used.
+
+
+	register 0 (command status)
+	
+	31:1  unused
+        4:    interrupt-flag
+        3:    command completed 
+        2:    start command flag 
+        1:    interrupt-enable
+	0:    accel-enable
+		
+
+	register 1 key[127:96]
+	register 2 key[95:64]
+	register 3 key[63:32]
+	register 4 key[31:0]
+
+	
+	register 5 block-start-address 
+		NOTE: this must be aligned to a 	
+			16-byte boundary.
+
+	
+	register 6 block-size in double words.
+		NOTE: this must be a multiple of two.
+
+
+3. Behaviour of the accelerator
+-------------------------------------
+
+	while(1) {
+		check if there is a command
+			(bits 2:0 of register 0 must be 1)
+		clear bit [2] of register 0
+		apply the command.
+		set interrupt if bit [1] of register 0 is set.
+		set bit [3] of register 0
+	}
+
+4. The driver
+----------------------
+	For each job, the driver loads the key into
+	the accelerator (registers 1 to 4).
+	
+	Enables the accelerator by writing 0x7 into
+	register 0.
+
+	Waits for the interrupt
+
+	Clears the interrupt
+
+	Back to the beginning.
+
+

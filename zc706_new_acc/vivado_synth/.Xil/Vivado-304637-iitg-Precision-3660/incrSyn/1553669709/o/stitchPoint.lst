@@ -1,0 +1,12 @@
+/fpga_top_GT0
+/fpga_top_GT2
+/processor_inst/peripherals_inst/peripherals__GB0
+/fpga_top_GT1__1
+/processor_inst/peripherals_inst/peripherals__GB1
+/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/teu_no_fp__GCB2
+/processor_inst/mcore_inst/core_0_inst/cpu_inst/cpu_no_fp__GC0
+/fpga_top_GT1
+/processor_inst/mcore_inst/mcore_1x1x32_lite__GC0
+/fpga_top__GC0
+/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/iunit__GB1
+/processor_inst/processor_1x1x32_lite__GC0

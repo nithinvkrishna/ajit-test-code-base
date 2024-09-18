@@ -1,0 +1,14 @@
+$system axi_acb_core $library AxiBridgeLib
+   $in 
+          $pipe  ACB_BUS_RESPONSE 65 $depth 2
+          $pipe  axi_read_address 32 $depth 2
+          $pipe  axi_write_address 32 $depth 2
+          $pipe  axi_write_data_and_byte_mask 72 $depth 2
+   $out 
+          $pipe  ACB_BUS_REQUEST 110 $depth 2
+          $pipe  axi_read_data 64 $depth 2
+          $pipe  axi_write_status 2 $depth 2
+{ 
+    $noblock      $pipe  noblock_axi_read_command 33 $depth 0
+    $noblock      $pipe  noblock_axi_write_command 105 $depth 0
+} 

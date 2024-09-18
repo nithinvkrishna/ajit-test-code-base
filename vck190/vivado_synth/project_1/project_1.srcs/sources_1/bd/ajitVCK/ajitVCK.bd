@@ -1,0 +1,205 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x71250BF54AC4C079",
+      "device": "xcvc1902-vsva2197-2MP-e-S",
+      "gen_directory": "../../../../project_1.gen/sources_1/bd/ajitVCK",
+      "name": "ajitVCK",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "fpga_top_0": "",
+      "versal_cips_0": ""
+    },
+    "ports": {
+      "reset_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_clk_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "CPU_MODE_0": {
+        "direction": "O",
+        "left": "1",
+        "right": "0"
+      },
+      "clk_p_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ajitVCK_clk_p_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "99999001"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "clk_n_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "ajitVCK_clk_n_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "99999001"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "fpga_top_0": {
+        "vlnv": "NinePath:NY:fpga_top:1.0",
+        "ip_revision": "2",
+        "xci_name": "ajitVCK_fpga_top_0_1",
+        "xci_path": "ip/ajitVCK_fpga_top_0_1/ajitVCK_fpga_top_0_1.xci",
+        "inst_hier_path": "fpga_top_0"
+      },
+      "versal_cips_0": {
+        "vlnv": "xilinx.com:ip:versal_cips:3.4",
+        "ip_revision": "0",
+        "xci_name": "ajitVCK_versal_cips_0_12",
+        "xci_path": "ip/ajitVCK_versal_cips_0_12/ajitVCK_versal_cips_0_12.xci",
+        "inst_hier_path": "versal_cips_0",
+        "parameters": {
+          "IO_CONFIG_MODE": {
+            "value": "Custom"
+          },
+          "PS_PMC_CONFIG": {
+            "value": [
+              "IO_CONFIG_MODE Custom",
+              "PMC_I2CPMC_PERIPHERAL {{ENABLE 1} {IO {PMC_MIO 2 .. 3}}}",
+              "PS_I2C0_PERIPHERAL {{ENABLE 1} {IO {PS_MIO 2 .. 3}}}",
+              "PS_I2C1_PERIPHERAL {{ENABLE 1} {IO {PS_MIO 0 .. 1}}}",
+              "PS_UART0_PERIPHERAL {{ENABLE 1} {IO EMIO}}",
+              "PS_UART1_PERIPHERAL {{ENABLE 1} {IO EMIO}}",
+              "SMON_ALARMS Set_Alarms_On",
+              "SMON_ENABLE_TEMP_AVERAGING 0",
+              "SMON_TEMP_AVERAGING_SAMPLES 0"
+            ]
+          }
+        },
+        "interface_ports": {
+          "UART0": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
+            "vlnv": "xilinx.com:interface:uart_rtl:1.0"
+          },
+          "UART1": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:uart:1.0",
+            "vlnv": "xilinx.com:interface:uart_rtl:1.0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_n_0_1": {
+        "ports": [
+          "clk_n_0",
+          "fpga_top_0/clk_n"
+        ]
+      },
+      "clk_p_0_1": {
+        "ports": [
+          "clk_p_0",
+          "fpga_top_0/clk_p"
+        ]
+      },
+      "fpga_top_0_CPU_MODE": {
+        "ports": [
+          "fpga_top_0/CPU_MODE",
+          "CPU_MODE_0"
+        ]
+      },
+      "fpga_top_0_DEBUG_UART_TX": {
+        "ports": [
+          "fpga_top_0/DEBUG_UART_TX",
+          "versal_cips_0/UART0_rxd"
+        ]
+      },
+      "fpga_top_0_SERIAL_UART_TX": {
+        "ports": [
+          "fpga_top_0/SERIAL_UART_TX",
+          "versal_cips_0/UART1_rxd"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset_0",
+          "fpga_top_0/reset"
+        ]
+      },
+      "reset_clk_0_1": {
+        "ports": [
+          "reset_clk_0",
+          "fpga_top_0/reset_clk"
+        ]
+      },
+      "versal_cips_0_UART0_txd": {
+        "ports": [
+          "versal_cips_0/UART0_txd",
+          "fpga_top_0/DEBUG_UART_RX"
+        ]
+      },
+      "versal_cips_0_UART1_txd": {
+        "ports": [
+          "versal_cips_0/UART1_txd",
+          "fpga_top_0/SERIAL_UART_RX"
+        ]
+      }
+    }
+  }
+}

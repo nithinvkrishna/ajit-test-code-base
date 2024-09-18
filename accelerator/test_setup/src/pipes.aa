@@ -1,0 +1,16 @@
+// rwbar addr wdata
+//  1     31   32
+$pipe tester_control_command: $uint<64> $depth 2
+
+// rdata
+//  32
+$pipe tester_control_response: $uint<32> $depth 2
+
+
+$pipe tester_mem_access_rwbar: $uint<8> $depth 2
+$pipe tester_mem_access_bmask: $uint<8> $depth 2
+$pipe tester_mem_access_address : $uint<32> $depth 2
+$pipe tester_mem_access_wdata   : $uint<64> $depth 2
+$pipe tester_mem_access_rdata: $uint<64> $depth 2
+
+$pipe ACCELERATOR_INTERRUPT_8 : $uint<8> $signal

@@ -1,0 +1,9 @@
+To recreate this VHDL, put the following
+in a bash shell and execute it from this
+directory.
+
+	CWD=$(pwd)
+	cd ../Aa
+	make
+	cp vhdl/work/*.vhdl $CWD
+	cd $CWD

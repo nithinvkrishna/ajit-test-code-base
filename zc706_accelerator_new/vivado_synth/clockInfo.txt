@@ -1,0 +1,10 @@
+-------------------------------------
+| Tool Version : Vivado v.2023.2
+| Date         : Mon Aug 12 11:34:39 2024
+| Host         : iitg-Precision-3660
+| Design       : design_1
+| Device       : xc7z045-ffg900-2--
+-------------------------------------
+
+For more information on clockInfo.txt clock routing debug file see https://support.xilinx.com/s/article/000035660?language=en_US
+

@@ -1,0 +1,118 @@
+$parameter MEMACCESSDELAY			12
+
+$pipe axi_read_address: $uint<32> $depth 2 $p2p
+$pipe axi_read_data: $uint<64> $depth 2 $p2p
+
+// valid addr 
+//  1     32  
+$noblock $pipe noblock_axi_read_command : $uint<33> $depth 0 $p2p
+
+$pipe axi_write_address: $uint<32> $depth 2 $p2p
+$pipe axi_write_data_and_byte_mask: $uint<72> $depth 2 $p2p
+$pipe axi_write_status: $uint<2> $depth 2 $p2p
+
+// valid addr  byte-mask data
+//  1      32    8        64
+$noblock $pipe noblock_axi_write_command: $uint<105> $depth 0 $p2p
+
+$pipe ACB_BUS_REQUEST  : $uint<110> $depth 2 
+$pipe ACB_BUS_RESPONSE : $uint<65> $depth 2
+
+
+$constant WRITEOK: $uint<2> := 0
+
+$module [axi_to_acb_read_daemon] $in () $out () $is
+{
+	$branchblock[loop] {
+		$dopipeline $depth 7 $fullrate
+		$merge $entry $loopback $endmerge
+
+		a := axi_read_address
+		$volatile na := ($concat $one<1> a)
+		noblock_axi_read_command := na
+	
+		$while 1
+	}
+}
+
+$module [axi_to_acb_write_daemon] $in () $out () $is
+{
+	$branchblock[loop] {
+		$dopipeline $depth 7 $fullrate
+		$merge $entry $loopback $endmerge
+
+		a := axi_write_address
+		dbm := axi_write_data_and_byte_mask
+
+		$volatile nadbm := ($concat $one<1> a dbm)
+		noblock_axi_write_command := nadbm
+	
+		$while 1
+	}
+}
+
+
+// AXI to ACB bridge
+$module [axi_to_acb_bridge_daemon]
+	$in () $out () $is
+{
+
+	$branchblock[loop] {
+		$dopipeline $depth 15 $buffering 2 $fullrate
+
+			$merge $entry $loopback 
+				$phi counter := $zero<8> $on $entry n_counter $on $loopback
+
+				// read command?
+				$phi axi_read_req := _b0 $on $entry $guard (get_write_command)
+								 noblock_axi_read_command $on $loopback
+
+				// write command?
+				$phi axi_write_req := _b0 $on $entry $guard (get_read_command)
+								noblock_axi_write_command $on  $loopback
+
+				$phi read_has_priority := $one<1> $on $entry n_read_has_priority $on $loopback
+
+			$endmerge
+
+			$volatile n_counter := (counter+1)
+
+			$volatile $split (axi_read_req 1 32) (read_valid read_address)
+			$volatile $split (axi_write_req 1 32 8 64) (write_valid write_address write_byte_mask write_data)
+
+			$volatile select_read  := ($mux read_valid  ((~write_valid) | read_has_priority)   $zero<1>)	
+			$volatile select_write := ($mux write_valid ((~read_valid) | (~read_has_priority)) $zero<1>)	
+
+			$volatile n_read_has_priority := ($mux select_read $zero<1> 
+								($mux select_write $one<1> $zero<1>))
+
+			$volatile acb_command :=
+					($concat $zero<1> select_read  ($mux select_read _hFF write_byte_mask)
+										$zero<4> ($mux select_read read_address write_address)
+										write_data)
+			$volatile send_acb_command := (select_read | select_write)
+
+			$volatile get_read_command := ((~read_valid) | select_read)
+			$volatile get_write_command := ((~write_valid) | select_write)
+
+			// send the command to the bus
+			$guard (send_acb_command) ACB_BUS_REQUEST := acb_command $mark REQUEST
+
+			// after some time we will receive the response
+			$guard (send_acb_command) acb_response := ACB_BUS_RESPONSE $delay (REQUEST 8)
+
+			$volatile $split (acb_response 1 64) (acb_error acb_read_data)
+		
+			// send status on write
+			$guard (select_write)
+				axi_write_status := WRITEOK
+
+			$guard (select_read)
+				axi_read_data :=  acb_read_data
+				
+		
+
+		$while 1
+	}
+}
+

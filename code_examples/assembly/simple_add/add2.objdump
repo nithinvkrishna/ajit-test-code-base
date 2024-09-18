@@ -1,0 +1,19 @@
+
+.//add2.elf:     file format elf32-sparc
+
+
+Disassembly of section .text:
+
+00000000 <_start>:
+   0:	82 10 20 01 	mov  1, %g1
+   4:	84 10 20 02 	mov  2, %g2
+   8:	86 00 40 02 	add  %g1, %g2, %g3
+   c:	91 d0 20 00 	ta  0
+
+00000010 <page_table_setup>:
+  10:	81 c3 e0 08 	retl 
+  14:	01 00 00 00 	nop 
+
+00000018 <set_context_table_pointer>:
+  18:	81 c3 e0 08 	retl 
+  1c:	01 00 00 00 	nop 

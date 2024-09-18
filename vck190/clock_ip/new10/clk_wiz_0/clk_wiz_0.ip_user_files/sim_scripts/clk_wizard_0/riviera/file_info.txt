@@ -1,0 +1,9 @@
+xpm_cdc.sv,systemverilog,xpm,../../../../../../../../../../../../VivadoFull/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,
+xpm_VCOMP.vhd,vhdl,xpm,../../../../../../../../../../../../VivadoFull/Vivado/2023.2/data/ip/xpm/xpm_VCOMP.vhd,
+clk_wizard_0_clocking_structure.v,verilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_structure.v,
+clk_wizard_0_clocking_MBUFGCE_CE_DLY.v,verilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_MBUFGCE_CE_DLY.v,
+clk_wizard_0_clocking_cmt_dpll_fd_cal.sv,systemverilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_cmt_dpll_fd_cal.sv,
+clk_wizard_0_clocking_Synchronizer3.sv,systemverilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_Synchronizer3.sv,
+clk_wizard_0_clk_wiz_top.v,verilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clk_wiz_top.v,
+clk_wizard_0.v,verilog,xil_defaultlib,../../../../clk_wiz_0.gen/sources_1/ip/clk_wizard_0/sim/clk_wizard_0.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -1,0 +1,583 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x5FA8B080D153189",
+      "device": "xcvc1902-vsva2197-2MP-e-S",
+      "gen_directory": "../../../../ajitip.gen/sources_1/bd/design_1",
+      "name": "design_1",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "versal_cips_0": "",
+      "fpga_top_0": "",
+      "mynoc": "",
+      "rst_versal_cips_0_79M": "",
+      "axi_uartlite_0": "",
+      "axi_uartlite_0_smc": "",
+      "axi_uartlite_1": "",
+      "axi_uartlite_1_smc": ""
+    },
+    "ports": {
+      "CPU_MODE_0": {
+        "direction": "O",
+        "left": "1",
+        "right": "0"
+      },
+      "reset_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "reset_clk_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "versal_cips_0": {
+        "vlnv": "xilinx.com:ip:versal_cips:3.4",
+        "ip_revision": "0",
+        "xci_name": "design_1_versal_cips_0_4",
+        "xci_path": "ip/design_1_versal_cips_0_4/design_1_versal_cips_0_4.xci",
+        "inst_hier_path": "versal_cips_0",
+        "parameters": {
+          "CLOCK_MODE": {
+            "value": "Custom"
+          },
+          "DDR_MEMORY_MODE": {
+            "value": "Custom"
+          },
+          "IO_CONFIG_MODE": {
+            "value": "Custom"
+          },
+          "PS_PMC_CONFIG": {
+            "value": [
+              "CLOCK_MODE Custom",
+              "DDR_MEMORY_MODE Custom",
+              "DESIGN_MODE 1",
+              "IO_CONFIG_MODE Custom",
+              "PMC_CRP_PL0_REF_CTRL_FREQMHZ 80",
+              "PMC_USE_PMC_NOC_AXI0 1",
+              "PS_BOARD_INTERFACE Custom",
+              "PS_UART0_PERIPHERAL {{ENABLE 1} {IO {PS_MIO 0 .. 1}}}",
+              "PS_UART1_PERIPHERAL {{ENABLE 1} {IO {PMC_MIO 4 .. 5}}}",
+              "PS_USB3_PERIPHERAL {{ENABLE 1} {IO {PMC_MIO 13 .. 25}}}",
+              "PS_USE_PMCPL_CLK0 1",
+              "SMON_ALARMS Set_Alarms_On",
+              "SMON_ENABLE_TEMP_AVERAGING 0",
+              "SMON_TEMP_AVERAGING_SAMPLES 0"
+            ]
+          }
+        },
+        "interface_ports": {
+          "PMC_NOC_AXI_0": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "address_space_ref": "PMC_NOC_AXI_0",
+            "base_address": {
+              "minimum": "0x00000000",
+              "maximum": "0x0FFFFFFFFFFF",
+              "width": "64"
+            }
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "PMC_NOC_AXI_0": {
+              "range": "16E",
+              "width": "64",
+              "local_memory_map": {
+                "name": "PMC_NOC_AXI_0",
+                "description": "Address Space Segments",
+                "address_blocks": {
+                  "PMC_NOC_AXI_0:APERTURE_0": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_0",
+                    "display_name": "APERTURE_0",
+                    "base_address": "0x00000000",
+                    "range": "2G",
+                    "width": "31",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_1": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_1",
+                    "display_name": "APERTURE_1",
+                    "base_address": "0xE0000000",
+                    "range": "256M",
+                    "width": "32",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_2": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_2",
+                    "display_name": "APERTURE_2",
+                    "base_address": "0x000100000000",
+                    "range": "128M",
+                    "width": "33",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_3": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_3",
+                    "display_name": "APERTURE_3",
+                    "base_address": "0x000600000000",
+                    "range": "40G",
+                    "width": "36",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_4": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_4",
+                    "display_name": "APERTURE_4",
+                    "base_address": "0x004000000000",
+                    "range": "1502G",
+                    "width": "41",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_5": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_5",
+                    "display_name": "APERTURE_5",
+                    "base_address": "0x020000000000",
+                    "range": "2T",
+                    "width": "42",
+                    "usage": "register"
+                  },
+                  "PMC_NOC_AXI_0:APERTURE_6": {
+                    "name": "PMC_NOC_AXI_0:APERTURE_6",
+                    "display_name": "APERTURE_6",
+                    "base_address": "0x050000000000",
+                    "range": "11T",
+                    "width": "44",
+                    "usage": "register"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "fpga_top_0": {
+        "vlnv": "NinePath:NY:fpga_top:1.0",
+        "ip_revision": "4",
+        "xci_name": "design_1_fpga_top_0_0",
+        "xci_path": "ip/design_1_fpga_top_0_0/design_1_fpga_top_0_0.xci",
+        "inst_hier_path": "fpga_top_0"
+      },
+      "mynoc": {
+        "vlnv": "xilinx.com:ip:axi_noc:1.0",
+        "ip_revision": "1",
+        "xci_name": "design_1_mynoc_0",
+        "xci_path": "ip/design_1_mynoc_0/design_1_mynoc_0.xci",
+        "inst_hier_path": "mynoc",
+        "parameters": {
+          "NUM_CLKS": {
+            "value": "2"
+          },
+          "NUM_MI": {
+            "value": "3"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "CATEGORY": {
+                "value": "ps_pmc"
+              },
+              "CONNECTIONS": {
+                "value": "M00_AXI {read_bw {1720} write_bw {1720} read_avg_burst {4} write_avg_burst {4}} M00_AXI {read_bw {5} write_bw {5}} M01_AXI {read_bw {5} write_bw {5}} M02_AXI {read_bw {5} write_bw {5}}"
+              },
+              "DEST_IDS": {
+                "value": "M00_AXI:0x80:M01_AXI:0x40:M02_AXI:0x0"
+              },
+              "REGION": {
+                "value": "0"
+              }
+            },
+            "bridges": [
+              "M00_AXI",
+              "M01_AXI",
+              "M02_AXI"
+            ]
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "APERTURES": {
+                "value": "{0x201_0000_0000 1G}"
+              },
+              "CATEGORY": {
+                "value": "pl"
+              }
+            },
+            "base_address": {
+              "minimum": "0x020100000000",
+              "maximum": "0x02013FFFFFFF",
+              "width": "64"
+            }
+          },
+          "M01_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "APERTURES": {
+                "value": "{0x201_8000_0000 1G}"
+              },
+              "CATEGORY": {
+                "value": "pl"
+              },
+              "master_id": {
+                "value": "1"
+              }
+            },
+            "base_address": {
+              "minimum": "0x020180000000",
+              "maximum": "0x0201BFFFFFFF",
+              "width": "64"
+            }
+          },
+          "M02_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "APERTURES": {
+                "value": "{0x202_0000_0000 1G}"
+              },
+              "CATEGORY": {
+                "value": "pl"
+              },
+              "master_id": {
+                "value": "2"
+              }
+            },
+            "base_address": {
+              "minimum": "0x020200000000",
+              "maximum": "0x02023FFFFFFF",
+              "width": "64"
+            }
+          }
+        }
+      },
+      "rst_versal_cips_0_79M": {
+        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
+        "ip_revision": "14",
+        "xci_name": "design_1_rst_versal_cips_0_79M_0",
+        "xci_path": "ip/design_1_rst_versal_cips_0_79M_0/design_1_rst_versal_cips_0_79M_0.xci",
+        "inst_hier_path": "rst_versal_cips_0_79M"
+      },
+      "axi_uartlite_0": {
+        "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
+        "ip_revision": "33",
+        "xci_name": "design_1_axi_uartlite_0_0",
+        "xci_path": "ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xci",
+        "inst_hier_path": "axi_uartlite_0",
+        "parameters": {
+          "UARTLITE_BOARD_INTERFACE": {
+            "value": "uart2_bank306"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "axi_uartlite_0_smc": {
+        "vlnv": "xilinx.com:ip:smartconnect:1.0",
+        "ip_revision": "21",
+        "xci_name": "design_1_axi_uartlite_0_smc_0",
+        "xci_path": "ip/design_1_axi_uartlite_0_smc_0/design_1_axi_uartlite_0_smc_0.xci",
+        "inst_hier_path": "axi_uartlite_0_smc",
+        "parameters": {
+          "NUM_MI": {
+            "value": "1"
+          },
+          "NUM_SI": {
+            "value": "1"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "NUM_READ_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "32"
+              }
+            },
+            "bridges": [
+              "M00_AXI"
+            ]
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_READ_THREADS": {
+                "value": "1"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_WRITE_THREADS": {
+                "value": "1"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
+          }
+        }
+      },
+      "axi_uartlite_1": {
+        "vlnv": "xilinx.com:ip:axi_uartlite:2.0",
+        "ip_revision": "33",
+        "xci_name": "design_1_axi_uartlite_1_0",
+        "xci_path": "ip/design_1_axi_uartlite_1_0/design_1_axi_uartlite_1_0.xci",
+        "inst_hier_path": "axi_uartlite_1",
+        "parameters": {
+          "UARTLITE_BOARD_INTERFACE": {
+            "value": "uart2_bank306"
+          },
+          "USE_BOARD_FLOW": {
+            "value": "true"
+          }
+        }
+      },
+      "axi_uartlite_1_smc": {
+        "vlnv": "xilinx.com:ip:smartconnect:1.0",
+        "ip_revision": "21",
+        "xci_name": "design_1_axi_uartlite_1_smc_0",
+        "xci_path": "ip/design_1_axi_uartlite_1_smc_0/design_1_axi_uartlite_1_smc_0.xci",
+        "inst_hier_path": "axi_uartlite_1_smc",
+        "parameters": {
+          "NUM_MI": {
+            "value": "1"
+          },
+          "NUM_SI": {
+            "value": "1"
+          }
+        },
+        "interface_ports": {
+          "S00_AXI": {
+            "mode": "Slave",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "NUM_READ_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "32"
+              }
+            },
+            "bridges": [
+              "M00_AXI"
+            ]
+          },
+          "M00_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "parameters": {
+              "MAX_BURST_LENGTH": {
+                "value": "1"
+              },
+              "NUM_READ_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_READ_THREADS": {
+                "value": "1"
+              },
+              "NUM_WRITE_OUTSTANDING": {
+                "value": "32"
+              },
+              "NUM_WRITE_THREADS": {
+                "value": "1"
+              },
+              "RUSER_BITS_PER_BYTE": {
+                "value": "0"
+              },
+              "SUPPORTS_NARROW_BURST": {
+                "value": "0"
+              },
+              "WUSER_BITS_PER_BYTE": {
+                "value": "0"
+              }
+            }
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "axi_uartlite_0_smc_M00_AXI": {
+        "interface_ports": [
+          "axi_uartlite_0/S_AXI",
+          "axi_uartlite_0_smc/M00_AXI"
+        ]
+      },
+      "axi_uartlite_1_smc_M00_AXI": {
+        "interface_ports": [
+          "axi_uartlite_1/S_AXI",
+          "axi_uartlite_1_smc/M00_AXI"
+        ]
+      },
+      "mynoc_M01_AXI": {
+        "interface_ports": [
+          "axi_uartlite_0_smc/S00_AXI",
+          "mynoc/M01_AXI"
+        ]
+      },
+      "mynoc_M02_AXI": {
+        "interface_ports": [
+          "axi_uartlite_1_smc/S00_AXI",
+          "mynoc/M02_AXI"
+        ]
+      },
+      "versal_cips_0_PMC_NOC_AXI_0": {
+        "interface_ports": [
+          "versal_cips_0/PMC_NOC_AXI_0",
+          "mynoc/S00_AXI"
+        ]
+      }
+    },
+    "nets": {
+      "axi_uartlite_0_tx": {
+        "ports": [
+          "axi_uartlite_0/tx",
+          "fpga_top_0/DEBUG_UART_RX"
+        ]
+      },
+      "axi_uartlite_1_tx": {
+        "ports": [
+          "axi_uartlite_1/tx",
+          "fpga_top_0/SERIAL_UART_RX"
+        ]
+      },
+      "fpga_top_0_CPU_MODE": {
+        "ports": [
+          "fpga_top_0/CPU_MODE",
+          "CPU_MODE_0"
+        ]
+      },
+      "fpga_top_0_DEBUG_UART_TX": {
+        "ports": [
+          "fpga_top_0/DEBUG_UART_TX",
+          "axi_uartlite_0/rx"
+        ]
+      },
+      "fpga_top_0_SERIAL_UART_TX": {
+        "ports": [
+          "fpga_top_0/SERIAL_UART_TX",
+          "axi_uartlite_1/rx"
+        ]
+      },
+      "reset_0_1": {
+        "ports": [
+          "reset_0",
+          "fpga_top_0/reset"
+        ]
+      },
+      "reset_clk_0_1": {
+        "ports": [
+          "reset_clk_0",
+          "fpga_top_0/reset_clk"
+        ]
+      },
+      "rst_versal_cips_0_79M_peripheral_aresetn": {
+        "ports": [
+          "rst_versal_cips_0_79M/peripheral_aresetn",
+          "axi_uartlite_0/s_axi_aresetn",
+          "axi_uartlite_0_smc/aresetn",
+          "axi_uartlite_1/s_axi_aresetn",
+          "axi_uartlite_1_smc/aresetn"
+        ]
+      },
+      "versal_cips_0_pl0_ref_clk": {
+        "ports": [
+          "versal_cips_0/pl0_ref_clk",
+          "fpga_top_0/clk_n",
+          "fpga_top_0/clk_p",
+          "mynoc/aclk1",
+          "rst_versal_cips_0_79M/slowest_sync_clk",
+          "axi_uartlite_0/s_axi_aclk",
+          "axi_uartlite_0_smc/aclk",
+          "axi_uartlite_1/s_axi_aclk",
+          "axi_uartlite_1_smc/aclk"
+        ]
+      },
+      "versal_cips_0_pl0_resetn": {
+        "ports": [
+          "versal_cips_0/pl0_resetn",
+          "rst_versal_cips_0_79M/ext_reset_in"
+        ]
+      },
+      "versal_cips_0_pmc_axi_noc_axi0_clk": {
+        "ports": [
+          "versal_cips_0/pmc_axi_noc_axi0_clk",
+          "mynoc/aclk0"
+        ]
+      }
+    },
+    "addressing": {
+      "/versal_cips_0": {
+        "address_spaces": {
+          "PMC_NOC_AXI_0": {
+            "segments": {
+              "SEG_axi_uartlite_0_Reg": {
+                "address_block": "/axi_uartlite_0/S_AXI/Reg",
+                "offset": "0x0000020180000000",
+                "range": "64K"
+              },
+              "SEG_axi_uartlite_1_Reg": {
+                "address_block": "/axi_uartlite_1/S_AXI/Reg",
+                "offset": "0x0000020200000000",
+                "range": "64K"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+ajit_vhdl/
+ 	AJIT lite processor RTL.
+
+vhdl_libs/
+	Support VHDL libaries for
+	the AJIT processor.
+
+accelerator/
+	An implementation of a
+	"toy" accelerator.
+
+code_examples/
+	Examples of assembly,
+	C-bare-metal and CORTOS2
+	examples.
+
+docs/
+	Presentation, references.
+
+kc705/
+	Resources needed to build the
+	KC705 FPGA prototype.
+
+VERSION/
+	AHIR and AJIT versions used to
+	build the processor.
+

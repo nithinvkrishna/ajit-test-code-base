@@ -1,0 +1,120 @@
+$parameter MEMACCESSDELAY			12
+
+$pipe axi_read_address: $uint<32> $depth 2 $p2p
+$pipe axi_read_data: $uint<32> $depth 2 $p2p
+
+$pipe axi_write_address: $uint<32> $depth 2 $p2p
+$pipe axi_write_data_and_byte_mask: $uint<36> $depth 2 $p2p
+$pipe axi_write_status: $uint<2> $depth 2 $p2p
+
+$pipe AFB_BUS_REQUEST  : $uint<74> $depth 2 
+$pipe AFB_BUS_RESPONSE : $uint<33> $depth 2
+
+
+
+$constant ZZ1 : $uint<1> := 0
+$constant NOACCESS   : $uint<2> := 0
+$constant READACCESS : $uint<2> := 1
+$constant WRITEACCESS: $uint<2> := 2
+
+$constant IDLE_STATE: $uint<2> := 0
+$constant RUN_STATE : $uint<2> := 1
+$constant WAIT_STATE: $uint<2> := 2
+
+$pipe access_completed_lock: $uint<1> $depth 1 $p2p
+
+// AFB to AXI bridge
+$module [afb_to_axi_lite_bridge_daemon]
+	$in () $out () $is
+{
+
+	$branchblock[loop] {
+		$dopipeline $depth 15 $buffering 2 $fullrate
+
+			$merge $entry $loopback 
+				$phi counter := $zero<8> $on $entry n_counter $on $loopback
+
+				// acquire the lock before proceeding..
+				$phi lock_acquired := 
+					$one<1> $on $entry $guard (release_lock)
+									access_completed_lock $on $loopback
+						$barrier
+
+				$phi afb_req := _b0 $on $entry $guard (get_afb_req)
+								AFB_BUS_REQUEST $on $loopback
+
+				$phi STATE := IDLE_STATE $on $entry nSTATE $on $loopback
+				$phi last_access_type := NOACCESS $on $entry next_last_access_type
+									$on $loopback
+				$phi get_afb_req_d := $zero<1> $on $entry get_afb_req $on $loopback
+
+			$endmerge
+			$volatile n_counter := (counter + 1)
+
+			$volatile $split (afb_req 1 1 4 36 32)
+							(afb_req_lock
+								afb_req_read 
+								afb_req_byte_mask
+								afb_req_addr afb_req_data)
+			$volatile current_access_type :=
+				($mux get_afb_req_d
+					($mux afb_req_read READACCESS WRITEACCESS) last_access_type)
+			$volatile next_last_access_type := current_access_type
+
+			$volatile nSTATE :=
+					($excmux 
+						(STATE == IDLE_STATE)  
+							// get_afb_req := 1
+							RUN_STATE
+						(STATE == RUN_STATE)
+						    // In the run state, you have a command
+						    // waiting.  Either execute it, or defer it.
+						    ($mux 
+							((last_access_type != NOACCESS) & 
+								(last_access_type != current_access_type))
+									// get_afb_req := 0
+									WAIT_STATE
+									// get_afb_req := 1
+									RUN_STATE)
+						(STATE == WAIT_STATE) 
+							($mux lock_acquired RUN_STATE WAIT_STATE))
+
+			$volatile exec_cmd       := ((STATE != IDLE_STATE) & (nSTATE != WAIT_STATE))
+			$volatile get_afb_req    := ((STATE == IDLE_STATE) | exec_cmd)
+
+			// when you go to wait state, wait for lock release (up there ..)
+			$volatile release_lock := (nSTATE == WAIT_STATE)
+
+			$volatile afb_req_addr_32 := ($slice afb_req_addr 31 0)
+			
+			$volatile do_read := (afb_req_read & exec_cmd)
+			$guard (do_read)
+				axi_read_address := afb_req_addr_32	$mark RREQ
+
+			$volatile do_write := ((~afb_req_read) & exec_cmd)
+			$guard (do_write)
+				axi_write_address := afb_req_addr_32    $mark WREQ
+
+			$volatile wdata_byte_mask := ($concat afb_req_byte_mask afb_req_data)
+			$guard (do_write)
+				axi_write_data_and_byte_mask := wdata_byte_mask
+
+			$guard (do_write)
+				wrrsp_axi := axi_write_status $mark WRESP $delay (WREQ MEMACCESSDELAY)
+
+			$guard (do_read)
+				rdata := axi_read_data $mark ACCESSDONE $delay (RREQ MEMACCESSDELAY)
+
+			$volatile afb_resp := ($mux do_read ($concat ZZ1 rdata) ($bitcast ($uint<33>) wrrsp_axi))
+			$guard (exec_cmd) 
+					AFB_BUS_RESPONSE := afb_resp  $mark AFBRESPDONE 
+
+			release_lock_delayed := release_lock $buffering MEMACCESSDELAY
+			$guard (release_lock_delayed)
+				access_completed_lock := 1	$synch ($update AFBRESPDONE)	
+
+
+		$while 1
+	}
+}
+

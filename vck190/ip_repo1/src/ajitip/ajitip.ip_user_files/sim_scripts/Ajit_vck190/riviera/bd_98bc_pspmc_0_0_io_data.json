@@ -1,0 +1,4 @@
+{
+    "refName": "bd_98bc_pspmc_0_0",
+    "pss_io": "(*PSS_IO= \"Signal Name, DiffPair Type, DiffPair Signal,Direction, Site Type, IO Standard, Drive (mA), Slew Rate, Pull Type, IBIS Model, ODT, OUTPUT_IMPEDANCE \\n\\\nUART1_TXD, , , OUT, PMC_MIO4_500, LVCMOS1.8, 8MA, SLOW, PULLUP, MIO_LVCMOS18_S_8,,  \\n\\\nUART1_RXD, , , IN, PMC_MIO5_500, LVCMOS1.8, 8MA, SLOW, PULLUP, MIO_LVCMOS18_S_8,,  \\n\\\nUART0_RXD, , , IN, LPD_MIO0_502, LVCMOS1.8, 8MA, SLOW, PULLUP, MIO_LVCMOS18_S_8,,  \\n\\\nUART0_TXD, , , OUT, LPD_MIO1_502, LVCMOS1.8, 8MA, SLOW, PULLUP, MIO_LVCMOS18_S_8,, \" *) "
+}

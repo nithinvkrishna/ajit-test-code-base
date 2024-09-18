@@ -1,0 +1,12 @@
+Scripts to generate bitfiles for kc705 prototype.
+	run.accelerator.sh
+		script to generate bitfile with sample
+		accelerator
+	run.sh
+		script to generate bitfile with processor
+		and SRAM only.
+
+
+	bitgen.accelerator.tcl
+	bitgen.tcl
+		corresponding tcl scripts for vivado.

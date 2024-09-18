@@ -1,0 +1,12 @@
+iunit__GB0 5E994080
+iunit__GB1 8AFA80E0
+teu_no_fp__GCB0 8CA18940
+teu_no_fp__GCB1 7659C520
+teu_no_fp__GCB2 5FE9A240
+cpu_no_fp__GC0 726F5F80
+core_1x32_no_fp_no_mmu__GC0 94FB5AC0
+mcore_1x1x32_lite__GC0 865A42E0
+peripherals__GB0 7208AC80
+peripherals__GB1 A33C75E0
+processor_1x1x32_lite__GC0 4B0BF7A0
+fpga_top__GC0 94684360

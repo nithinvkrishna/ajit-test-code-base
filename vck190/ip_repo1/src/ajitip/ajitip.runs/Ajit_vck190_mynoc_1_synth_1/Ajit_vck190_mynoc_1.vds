@@ -1,0 +1,386 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Sep  2 11:45:51 2024
+# Process ID: 1567987
+# Current directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1
+# Command line: vivado -log Ajit_vck190_mynoc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Ajit_vck190_mynoc_1.tcl
+# Log file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/Ajit_vck190_mynoc_1.vds
+# Journal file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/vivado.jou
+# Running On: iitg-Precision-3660, OS: Linux, CPU Frequency: 800.357 MHz, CPU Physical cores: 16, Host memory: 33317 MB
+#-----------------------------------------------------------
+source Ajit_vck190_mynoc_1.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/iitg/VivadoFull/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: Ajit_vck190_mynoc_1
+Command: synth_design -top Ajit_vck190_mynoc_1 -part xcvc1902-vsva2197-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Device 21-403] Loading part xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1568321
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2614.926 ; gain = 405.777 ; free physical = 9847 ; free virtual = 12248
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-9694] invalid size of integer constant literal [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:549]
+WARNING: [Synth 8-9694] invalid size of integer constant literal [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:563]
+INFO: [Synth 8-11241] undeclared symbol 'IF_NOC_AXI_TDEST', assumed default net type 'wire' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0.sv:300]
+INFO: [Synth 8-6157] synthesizing module 'Ajit_vck190_mynoc_1' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/synth/Ajit_vck190_mynoc_1.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:10]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334_M00_AXI_nsu_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0.sv:54]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334_M00_AXI_nsu_0_top' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0_top.sv:69]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NSU512' [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:92530]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NSU512' (0#1) [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:92530]
+WARNING: [Synth 8-689] width (10) of port connection 'IF_NOC_AXI_ARUSER' does not match port width (16) of module 'NOC_NSU512' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0_top.sv:228]
+WARNING: [Synth 8-689] width (10) of port connection 'IF_NOC_AXI_AWUSER' does not match port width (16) of module 'NOC_NSU512' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0_top.sv:240]
+WARNING: [Synth 8-689] width (4) of port connection 'IF_NOC_AXI_WSTRB' does not match port width (64) of module 'NOC_NSU512' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0_top.sv:247]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334_M00_AXI_nsu_0_top' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0_top.sv:69]
+WARNING: [Synth 8-689] width (1) of port connection 'IF_NOC_AXI_TDEST' does not match port width (10) of module 'bd_f334_M00_AXI_nsu_0_top' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0.sv:300]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334_M00_AXI_nsu_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/hdl/bfm/bd_f334_M00_AXI_nsu_0.sv:54]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_f334_M00_AXI_nsu_0' is unconnected for instance 'M00_AXI_nsu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+WARNING: [Synth 8-7023] instance 'M00_AXI_nsu' of module 'bd_f334_M00_AXI_nsu_0' has 51 connections declared, but only 43 given [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:364]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334_S00_AXI_nmu_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334_S00_AXI_nmu_0_top' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:70]
+INFO: [Synth 8-6157] synthesizing module 'NOC_NMU128' [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:88929]
+INFO: [Synth 8-6155] done synthesizing module 'NOC_NMU128' (0#1) [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:88929]
+WARNING: [Synth 8-689] width (96) of port connection 'IF_NOC_AXI_ARADDR' does not match port width (64) of module 'NOC_NMU128' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:549]
+WARNING: [Synth 8-689] width (96) of port connection 'IF_NOC_AXI_AWADDR' does not match port width (64) of module 'NOC_NMU128' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:563]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID_EN' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:528]
+WARNING: [Synth 8-7071] port 'IF_NOC_AXI_TDEST' of module 'NOC_NMU128' is unconnected for instance 'NOC_NMU128_INST' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:528]
+WARNING: [Synth 8-7023] instance 'NOC_NMU128_INST' of module 'NOC_NMU128' has 74 connections declared, but only 72 given [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:528]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334_S00_AXI_nmu_0_top' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0_top.sv:70]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334_S00_AXI_nmu_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/hdl/bfm/bd_f334_S00_AXI_nmu_0.sv:55]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RETURN' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RDY' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_FLIT' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_VALID' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_CREDIT_RDY' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_FLIT' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_IN_NOC_VALID' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'IF_NOC_NPP_OUT_NOC_CREDIT_RETURN' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7071] port 'NMU' of module 'bd_f334_S00_AXI_nmu_0' is unconnected for instance 'S00_AXI_nmu' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+WARNING: [Synth 8-7023] instance 'S00_AXI_nmu' of module 'bd_f334_S00_AXI_nmu_0' has 59 connections declared, but only 50 given [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:409]
+INFO: [Synth 8-6157] synthesizing module 'bd_f334_const_0_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_1/synth/bd_f334_const_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334_const_0_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_1/synth/bd_f334_const_0_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_f334' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/synth/bd_f334.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'Ajit_vck190_mynoc_1' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/synth/Ajit_vck190_mynoc_1.v:53]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2699.895 ; gain = 490.746 ; free physical = 8959 ; free virtual = 11414
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2708.801 ; gain = 499.652 ; free physical = 8873 ; free virtual = 11385
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2708.801 ; gain = 499.652 ; free physical = 8873 ; free virtual = 11385
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2719.770 ; gain = 0.000 ; free physical = 8598 ; free virtual = 11115
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1_ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/xdc/bd_f334_S00_AXI_nmu_0.xdc] for cell 'inst/S00_AXI_nmu/bd_f334_S00_AXI_nmu_0_top_INST'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_0/xdc/bd_f334_S00_AXI_nmu_0.xdc] for cell 'inst/S00_AXI_nmu/bd_f334_S00_AXI_nmu_0_top_INST'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/xdc/bd_f334_M00_AXI_nsu_0.xdc] for cell 'inst/M00_AXI_nsu/bd_f334_M00_AXI_nsu_0_top_INST'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/bd_0/ip/ip_2/xdc/bd_f334_M00_AXI_nsu_0.xdc] for cell 'inst/M00_AXI_nsu/bd_f334_M00_AXI_nsu_0_top_INST'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1_board.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1_board.xdc] for cell 'inst'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_mynoc_1/Ajit_vck190_mynoc_1.xdc] for cell 'inst'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Ajit_vck190_mynoc_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/Ajit_vck190_mynoc_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2824.832 ; gain = 0.000 ; free physical = 8106 ; free virtual = 10650
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2824.867 ; gain = 0.000 ; free physical = 8070 ; free virtual = 10618
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2824.867 ; gain = 615.719 ; free physical = 7797 ; free virtual = 10374
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2824.867 ; gain = 615.719 ; free physical = 7797 ; free virtual = 10374
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst/S00_AXI_nmu/bd_f334_S00_AXI_nmu_0_top_INST. (constraint file  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/dont_touch.xdc, line 20).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/M00_AXI_nsu/bd_f334_M00_AXI_nsu_0_top_INST. (constraint file  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/dont_touch.xdc, line 23).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/S00_AXI_nmu. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/const_0. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/M00_AXI_nsu. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2824.867 ; gain = 615.719 ; free physical = 7795 ; free virtual = 10371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2824.867 ; gain = 615.719 ; free physical = 7780 ; free virtual = 10358
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1968 (col length:164)
+BRAMs: 1934 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2824.867 ; gain = 615.719 ; free physical = 7647 ; free virtual = 10231
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3598.641 ; gain = 1389.492 ; free physical = 2570 ; free virtual = 5674
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3598.641 ; gain = 1389.492 ; free physical = 2567 ; free virtual = 5671
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11322] No global retiming is needed without any clock constraint
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 3609.656 ; gain = 1400.508 ; free physical = 2527 ; free virtual = 5630
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_CREDIT_RDY to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[181] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[180] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[179] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[178] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[177] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[176] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[175] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[174] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[173] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[172] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[171] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[170] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[169] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[168] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[167] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[166] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[165] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[164] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[163] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[162] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[161] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[160] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[159] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[158] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[157] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[156] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[155] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[154] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[153] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[152] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[151] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[150] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[149] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[148] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[147] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[146] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[145] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[144] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[143] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[142] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[141] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[140] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[139] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[138] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[137] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[136] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[135] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[134] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[133] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[132] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[131] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[130] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[129] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[128] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[127] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[126] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[125] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[124] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[123] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[122] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[121] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[120] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[119] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[118] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[117] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[116] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[115] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[114] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[113] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[112] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[111] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[110] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[109] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[108] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[107] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[106] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[105] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[104] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[103] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[102] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[101] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[100] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[99] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[98] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[97] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[96] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[95] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[94] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[93] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[92] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[91] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[90] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[89] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[88] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[87] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[86] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[85] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[84] to constant 0
+INFO: [Synth 8-3295] tying undriven pin M00_AXI_nsu:IF_NOC_NPP_IN_NOC_FLIT[83] to constant 0
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1703 ; free virtual = 4818
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1701 ; free virtual = 4815
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1697 ; free virtual = 4812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1697 ; free virtual = 4812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1697 ; free virtual = 4812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1696 ; free virtual = 4811
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |NOC_NMU128 |     1|
+|2     |NOC_NSU512 |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.531 ; gain = 1414.383 ; free physical = 1696 ; free virtual = 4811
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 3623.531 ; gain = 1298.316 ; free physical = 1690 ; free virtual = 4804
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 3623.539 ; gain = 1414.383 ; free physical = 1689 ; free virtual = 4804
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3623.539 ; gain = 0.000 ; free physical = 1927 ; free virtual = 5042
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3670.250 ; gain = 0.000 ; free physical = 1781 ; free virtual = 4906
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: c8faa3f1
+INFO: [Common 17-83] Releasing license: Synthesis
+147 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:02:54 . Memory (MB): peak = 3670.285 ; gain = 2244.094 ; free physical = 1725 ; free virtual = 4850
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2699.120; main = 2699.120; forked = 316.682
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4112.625; main = 3670.254; forked = 989.203
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/Ajit_vck190_mynoc_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Ajit_vck190_mynoc_1, cache-ID = 131805915840aaa8
+INFO: [Coretcl 2-1174] Renamed 6 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_mynoc_1_synth_1/Ajit_vck190_mynoc_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Ajit_vck190_mynoc_1_utilization_synth.rpt -pb Ajit_vck190_mynoc_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  2 11:48:52 2024...

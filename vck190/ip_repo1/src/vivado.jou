@@ -1,0 +1,139 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Aug 30 12:12:30 2024
+# Process ID: 1126431
+# Current directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src
+# Command line: vivado
+# Log file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/vivado.log
+# Journal file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/vivado.jou
+# Running On: iitg-Precision-3660, OS: Linux, CPU Frequency: 800.185 MHz, CPU Physical cores: 16, Host memory: 33317 MB
+#-----------------------------------------------------------
+start_gui
+create_project ajitip /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip -part xcvc1902-vsva2197-2MP-e-S
+set_property board_part xilinx.com:vck190:part0:3.2 [current_project]
+set_property target_language VHDL [current_project]
+ipx::infer_core -vendor NinePath -library NY -taxonomy /UserIP /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src
+ipx::edit_ip_in_project -upgrade true -name ajit-ip -directory /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.tmp /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/component.xml
+ipx::current_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/component.xml
+update_compile_order -fileset sources_1
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::check_integrity -quiet -xrt [ipx::current_core]
+ipx::archive_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/NinePath_NY_afb_flash_rw_controller_1.0.zip [ipx::current_core]
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project
+set_property  ip_repo_paths  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src [current_project]
+update_ip_catalog
+ipx::infer_core -vendor NinePath -library NY -taxonomy /UserIP /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo2/src
+ipx::edit_ip_in_project -upgrade true -name Ajit_ip_project -directory /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.tmp /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo2/src/component.xml
+ipx::current_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo2/src/component.xml
+update_compile_order -fileset sources_1
+close_project
+read_vhdl ../toplevel/fpga_top_with_accelerator.vhdl
+pwd
+cd ../../
+pwd
+cd vivado_synth
+read_vhdl ../toplevel/fpga_top_with_accelerator.vhdl
+update_compile_order -fileset sources_1
+read_verilog -library work ../../accelerator/verilog/acceleratorNew1.v
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_top1.sv
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_sp_add.sv
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_sp_sub.sv
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_sp_mul.sv
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_sp_div.sv
+read_verilog -library work ../../accelerator/verilog/FPU_Verified/fpu_sp_comp.sv
+read_vhdl -library work ../../accelerator/vhdl/accelerator_global_package.vhdl
+update_compile_order -fileset sources_1
+read_vhdl -library performance_counters_lib ../../ajit_vhdl/afb_performance_counters_controller_1x1.vhdl
+read_vhdl -library performance_counters_lib ../../ajit_vhdl/afb_performance_counters_base.vhdl
+read_vhdl -library performance_counters_lib ../../ajit_vhdl/afb_performance_counters_1x1.vhdl
+read_vhdl -library peripherals_lite_lib ../../ajit_vhdl/peripherals.vhdl
+read_vhdl -library iunit_exec ../../ajit_vhdl/iu_exec.vhdl
+read_vhdl -library iunit_writeback_in_mux ../../ajit_vhdl/iu_writeback_in_mux.vhdl
+read_vhdl -library iunit_registers ../../ajit_vhdl/iu_registers.vhdl
+read_vhdl -library teu_iunit ../../ajit_vhdl/iunit.vhdl
+read_vhdl -library teu_idecode_idispatch ../../ajit_vhdl/idecode_idispatch.vhdl
+read_vhdl -library teu_loadstore ../../ajit_vhdl/loadstore.vhdl
+read_vhdl -library teu_iretire ../../ajit_vhdl/iretire.vhdl
+read_vhdl -library teu_stream_corrector ../../ajit_vhdl/stream_corrector.vhdl
+read_vhdl -library teu_dummy_fpunit ../../ajit_vhdl/dummy_fpunit.vhdl
+read_vhdl -library teu_ifetch ../../ajit_vhdl/ifetch.vhdl
+read_vhdl -library cpu_teu_no_fp ../../ajit_vhdl/teu_no_fp.vhdl
+read_vhdl -library cpu_debug_interface ../../ajit_vhdl/debug_interface.vhdl
+read_vhdl -library cpu_ccu ../../ajit_vhdl/ccu.vhdl
+read_vhdl -library core_units ../../ajit_vhdl/cpu_no_fp.vhdl
+read_vhdl -library munit_mmu_mux ../../ajit_vhdl/mmu_mux.vhdl
+read_vhdl -library munit_dummy_mmu ../../ajit_vhdl/dummy_mmu.vhdl
+read_vhdl -library munit_icache ../../ajit_vhdl/icache.vhdl
+read_vhdl -library munit_dcache ../../ajit_vhdl/dcache.vhdl
+read_vhdl -library munit_lib ../../ajit_vhdl/munit_no_mmu.vhdl
+read_vhdl -library ajit_core_lib ../../ajit_vhdl/core_1x32_no_fp_no_mmu.vhdl
+read_vhdl -library ajit_mcore_lib ../../ajit_vhdl/mcore_1x1x32_lite.vhdl
+read_vhdl -library ajit_processor_lib ../../ajit_vhdl/processor_1x1x32_lite.vhdl
+read_vhdl -library ahir_ieee_proposed ../../vhdl_libs/aHiR_ieee_proposed.vhdl
+read_vhdl -library ahir ../../vhdl_libs/ahir.vhdl
+read_vhdl -library myUartLib ../../vhdl_libs/myUartLib.vhdl
+read_vhdl -library simpleUartLib ../../vhdl_libs/simpleUartLib.vhdl
+read_vhdl -library simpleI2CLib ../../vhdl_libs/simpleI2CLib.vhdl
+read_vhdl -library SpiMasterLib ../../vhdl_libs/SpiMasterLib.vhdl
+read_vhdl -library AhbApbLib ../../vhdl_libs/AhbApbLib.vhdl
+read_vhdl -library AjitCustom ../../vhdl_libs/AjitCustom.vhdl
+read_vhdl -library GenericCoreAddOnLib ../../vhdl_libs/GenericCoreAddOnLib.vhdl
+read_vhdl -library GenericGlueStuff ../../vhdl_libs/GenericGlueStuff.vhdl
+read_vhdl -library GlueModules ../../vhdl_libs/GlueModules.vhdl
+ipx::package_project -root_dir /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip -vendor NinePath -library NY -taxonomy /UserIP -import_files -set_current false
+ipx::unload_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/component.xml
+ipx::edit_ip_in_project -upgrade true -name tmp_edit_project -directory /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/component.xml
+update_compile_order -fileset sources_1
+set_property core_revision 2 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::check_integrity -quiet -xrt [ipx::current_core]
+ipx::archive_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/NinePath_NY_fpga_top_1.0.zip [ipx::current_core]
+current_project ajitip
+set_property core_revision 3 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::check_integrity -quiet -xrt [ipx::current_core]
+ipx::archive_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/NinePath_NY_fpga_top_1.0.zip [ipx::current_core]
+set_property core_revision 4 [ipx::current_core]
+ipx::update_source_project_archive -component [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+ipx::check_integrity -quiet -xrt [ipx::current_core]
+ipx::archive_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/NinePath_NY_fpga_top_1.0.zip [ipx::current_core]
+current_project tmp_edit_project
+ipx::move_temp_component_back -component [ipx::current_core]
+close_project
+set_property  ip_repo_paths  {/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src} [current_project]
+update_ip_catalog
+create_bd_design "design_1"
+startgroup
+create_bd_cell -type ip -vlnv NinePath:NY:fpga_top:1.0 fpga_top_0
+endgroup
+update_compile_order -fileset sources_1
+startgroup
+make_bd_pins_external  [get_bd_pins fpga_top_0/CPU_MODE]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New/Reuse Simulation Clock And Reset Generator} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins fpga_top_0/clk_n]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {New/Reuse Simulation Clock And Reset Generator} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins fpga_top_0/clk_p]
+endgroup
+regenerate_bd_layout
+close_bd_design [get_bd_designs design_1]

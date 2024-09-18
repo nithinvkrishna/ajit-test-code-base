@@ -1,0 +1,16 @@
+verilog xil_defaultlib  \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_structure.v" \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_MBUFGCE_CE_DLY.v" \
+
+sv xil_defaultlib  \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_cmt_dpll_fd_cal.sv" \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clocking_Synchronizer3.sv" \
+
+verilog xil_defaultlib  \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/clk_wizard_0_clk_wiz_top.v" \
+"../../../../../../../tmp_edit_project.gen/sources_1/ip/clk_wizard_0/sim/clk_wizard_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

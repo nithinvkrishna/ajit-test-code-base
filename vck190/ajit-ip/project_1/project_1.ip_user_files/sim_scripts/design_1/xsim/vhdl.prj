@@ -1,0 +1,11 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ip/design_1_fpga_top_0_0/sim/design_1_fpga_top_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_uartlite_0_0/sim/design_1_axi_uartlite_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_uartlite_1_0/sim/design_1_axi_uartlite_1_0.vhd" \
+"../../../bd/design_1/ip/design_1_rst_versal_cips_0_99M_1/sim/design_1_rst_versal_cips_0_99M_1.vhd" \
+"../../../bd/design_1/ip/design_1_axi_uartlite_0_smc_1/bd_0/ip/ip_1/sim/bd_c482_psr_aclk_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/sim/bd_05d2_psr_aclk_0.vhd" \
+"../../../bd/design_1/sim/design_1.vhd" \
+
+# Do not sort compile order
+nosort

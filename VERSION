@@ -1,0 +1,17 @@
+AHIR commit 3fd5250446aa32e1a941e3a69353c5640c785f46
+Author: Madhav Pandurang Desai <madhav@ee.iitb.ac.in>
+Date:   Thu Mar 14 13:28:50 2024 +0530
+
+    An optimization to reduce wastage of flip-flops in the
+    control path.  After this fix, the average number of
+    FF's per join is about 2.5.
+
+
+AJIT commit (branch Stable)
+commit c90395340f61e2f6610b8a23ccc160edf549431f
+Merge: 7fd598f 0007c08
+Author: madhav <madhav@localhost.localdomain>
+Date:   Sun Mar 24 16:10:02 2024 +0530
+
+    Merge branch 'Stable' of ssh://10.107.90.212/home/ajitrepo/AjitProjectRepo into Stable
+

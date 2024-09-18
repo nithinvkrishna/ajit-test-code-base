@@ -1,0 +1,1366 @@
+/*
+
+AMD Vivado v2023.2 (64-bit) [Major: 2023, Minor: 2]
+SW Build: 4029153 on Fri Oct 13 20:13:54 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+IP Build: 4028589 on Sat Oct 14 00:45:43 MDT 2023
+
+Process ID (PID): 468529
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Sep 11 16:13:28 IST 2024
+Time zone: 	India Standard Time (Asia/Kolkata)
+
+OS: Ubuntu
+OS Version: 6.5.0-1027-oem
+OS Architecture: amd64
+Available processors (cores): 24
+LSB Release Description: Ubuntu 22.04.4 LTS
+
+Display: 0
+Screen size: 1920x1080
+Local screen bounds: x = 0, y = 27, width = 1920, height = 1001
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+OS font scaling: 100%
+Anti-Alias Enabled: false
+
+Java version: 	17.0.7 64-bit
+JavaFX version: 17.0.1
+Java home: 	/home/iitg/VivadoFull/Vivado/2023.2/tps/lnx64/jre17.0.7_7
+Java executable: 	/home/iitg/VivadoFull/Vivado/2023.2/tps/lnx64/jre17.0.7_7/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, -XX:+UseStringDeduplication, -XX:MaxGCPauseMillis=200, -XX:+ParallelRefProcEnabled, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=80m, -XX:MaxNewSize=80m, -Xms512m, -Xmx4072m, -Xss10m, -Xrs]
+Java initial memory (-Xms): 	512 MB
+Java maximum memory (-Xmx):	 3 GB
+
+User name: 	iitg
+User home directory: /home/iitg
+User working directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/vivado_synth
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/iitg/VivadoFull/Vivado
+HDI_APPROOT: /home/iitg/VivadoFull/Vivado/2023.2
+RDI_DATADIR: /home/iitg/VivadoFull/SharedData/2023.2/data:/home/iitg/VivadoFull/Vivado/2023.2/data
+RDI_BINDIR: /home/iitg/VivadoFull/Vivado/2023.2/bin
+
+Vivado preferences file: /home/iitg/.Xilinx/Vivado/2023.2/vivado.xml
+Vivado preferences directory: /home/iitg/.Xilinx/Vivado/2023.2/
+Vivado layouts directory: /home/iitg/.Xilinx/Vivado/2023.2/data/layouts
+PlanAhead jar file: 	/home/iitg/VivadoFull/Vivado/2023.2/lib/classes/planAhead.jar
+Vivado log file: 	/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/vivado_synth/vivado.log
+Vivado journal file: 	/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/vivado_synth/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-468529-iitg-Precision-3660
+Non-Default Parameters:	[]
+
+Xilinx & AMD Environment Variables
+--------------------------------------------------------------------------------------------
+GNOME_SHELL_SESSION_MODE: ubuntu
+RDI_APPROOT: /home/iitg/VivadoFull/Vivado/2023.2
+RDI_BASEROOT: /home/iitg/VivadoFull/Vivado
+RDI_BINROOT: /home/iitg/VivadoFull/Vivado/2023.2/bin
+RDI_BUILD: yes
+RDI_DATADIR: /home/iitg/VivadoFull/SharedData/2023.2/data:/home/iitg/VivadoFull/Vivado/2023.2/data
+RDI_INSTALLROOT: /home/iitg/VivadoFull
+RDI_INSTALLVER: 2023.2
+RDI_JAVA_PLATFORM: 
+RDI_JAVA_VERSION: 17.0.7_7
+RDI_LIBDIR: /home/iitg/VivadoFull/Vivado/2023.2/lib/lnx64.o/Ubuntu/22:/home/iitg/VivadoFull/Vivado/2023.2/lib/lnx64.o/Ubuntu:/home/iitg/VivadoFull/Vivado/2023.2/lib/lnx64.o
+RDI_OPT_EXT: .o
+RDI_PATCHROOT: 
+RDI_PLATFORM: lnx64
+RDI_PREPEND_PATH: /home/iitg/VivadoFull/Vitis/2023.2/bin:/home/iitg/VivadoFull/Vivado/2023.2/ids_lite/ISE/bin/lin64
+RDI_PROG: /home/iitg/VivadoFull/Vivado/2023.2/bin/unwrapped/lnx64.o/vivado
+RDI_SESSION_INFO: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/vivado_synth:iitg-Precision-3660_1726051400_468489
+RDI_SHARED_DATA: /home/iitg/VivadoFull/SharedData/2023.2/data
+RDI_TPS_ROOT: /home/iitg/VivadoFull/Vivado/2023.2/tps/lnx64
+RDI_USE_JDK17: True
+SHELL: /bin/bash
+XILINX: /home/iitg/VivadoFull/Vivado/2023.2/ids_lite/ISE
+XILINX_DSP: /home/iitg/VivadoFull/Vivado/2023.2/ids_lite/ISE
+XILINX_HLS: /home/iitg/VivadoFull/Vitis_HLS/2023.2
+XILINX_PLANAHEAD: /home/iitg/VivadoFull/Vivado/2023.2
+XILINX_SDK: /home/iitg/VivadoFull/Vitis/2023.2
+XILINX_VITIS: /home/iitg/VivadoFull/Vitis/2023.2
+XILINX_VIVADO: /home/iitg/VivadoFull/Vivado/2023.2
+XILINX_VIVADO_HLS: /home/iitg/VivadoFull/Vivado/2023.2
+
+
+GUI allocated memory:	512 MB
+GUI max memory:		4,072 MB
+Engine allocated memory: 1,685 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/home/iitg/fpga_top_ajit/fpga_top_ajit.xpr", 0); // b.c (PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS)
+// [GUI Memory]: 132 MB (+135694kb) [00:00:03]
+// [Engine Memory]: 1,537 MB (+1459747kb) [00:00:03]
+// Opening Vivado Project: /home/iitg/fpga_top_ajit/fpga_top_ajit.xpr. Version: Vivado v2023.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project /home/iitg/fpga_top_ajit/fpga_top_ajit.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,842 MB (+240125kb) [00:00:06]
+// Tcl Message: open_project /home/iitg/fpga_top_ajit/fpga_top_ajit.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory '/home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/iitg/VivadoFull/Vivado/2023.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,976 MB. GUI used memory: 75 MB. Current time: 9/11/24, 4:13:29 PM IST
+// Project name: fpga_top_ajit; location: /home/iitg/fpga_top_ajit; part: xc7z045ffg900-2
+dismissDialog("Open Project"); // bq (Open Project Progress)
+// [Engine Memory]: 1,977 MB (+44238kb) [00:00:08]
+// [Engine Memory]: 2,413 MB (+354119kb) [00:00:10]
+// Elapsed Time for: 'L.f': 22s
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 152 MB (+14190kb) [00:00:30]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,558 MB. GUI used memory: 73 MB. Current time: 9/11/24, 4:13:54 PM IST
+// Elapsed time: 29 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top(structure) (fpga_top_with_accelerator.vhdl)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Elapsed time: 34 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top(structure) (fpga_top_with_accelerator.vhdl)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top(structure) (fpga_top_with_accelerator.vhdl)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ao (PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, ip_packager_wizard_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+dismissDialog("Analyze source files for top modules"); // bq (Analyze source files for top modules Progress)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 15 seconds
+dismissDialog("Create and Package New IP"); // x (dialog0)
+// TclEventType: LOAD_FEATURE
+// Tcl Message: ipx::package_project -root_dir /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/ip_repo -vendor NinePath -library NY -taxonomy /UserIP -import_files 
+// TclEventType: PACKAGER_OBJECT_ADD
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// Tcl Message: INFO: [IP_Flow 19-5107] Inferred bus interface 'reset' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-5107] Inferred bus interface 'reset_clk' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-5107] Inferred bus interface 'clk_n' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository). INFO: [IP_Flow 19-5107] Inferred bus interface 'clk_p' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository). 
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::package_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 8399.602 ; gain = 200.672 ; free physical = 14415 ; free virtual = 26519 
+// Elapsed time: 11 seconds
+dismissDialog("IP Packager"); // bq (IP Packager Progress)
+// Elapsed Time for: 'L.f': 01m:42s
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// [GUI Memory]: 182 MB (+23685kb) [00:02:05]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - fpga_top", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+// Elapsed Time for: 'L.f': 02m:02s
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // S (PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST)
+selectButton(PAResourceQtoS.ReviewContentPanel_PACKAGE_IP, "Package IP"); // a (PAResourceQtoS.ReviewContentPanel_PACKAGE_IP)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::check_integrity [ipx::current_core] 
+// Tcl Message: INFO: [IP_Flow 19-2181] Payment Required is not set for this core. INFO: [IP_Flow 19-2187] The Product Guide file is missing. INFO: [Ipptcl 7-1486] check_integrity: Integrity check passed. 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: PROJECT_CHANGE
+// Tcl Message: set_property  ip_repo_paths  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/ip_repo [current_project] 
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: update_ip_catalog 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/ip_repo'. 
+// Tcl Message: ipx::check_integrity -quiet -xrt [ipx::current_core] 
+// Tcl Message: ipx::archive_core /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/zc706/ip_repo/NinePath_NY_fpga_top_1.0.zip [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LOAD_FEATURE
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Create Block Design]", 6, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_CREATE_NEW_DIAGRAM
+setText(PAResourceAtoD.CreateNewDiagramDialog_DESIGN_NAME, "ajit", true); // Q (PAResourceAtoD.CreateNewDiagramDialog_DESIGN_NAME)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// 'O' command handler elapsed time: 5 seconds
+dismissDialog("Create Block Design"); // ax (ajit)
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: create_bd_design "ajit" 
+// Tcl Message: Wrote  : </home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd>  
+// TclEventType: RSB_OPEN_DIAGRAM
+dismissDialog("Create Block Design"); // bq (Create Block Design Progress)
+// Elapsed Time for: 'L.f': 02m:22s
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "UserIP ;  ;  ;  ; ", 1); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "fpga_top_v1_0 ;  ; Production ; Included ; NinePath:NY:fpga_top:1.0", 2, "fpga_top_v1_0", 0, false); // z (PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE)
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_REMOVE_ADDRNETWORK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: startgroup 
+// Tcl Message: create_bd_cell -type ip -vlnv NinePath:NY:fpga_top:1.0 fpga_top_0 
+// Tcl Message: endgroup 
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// [GUI Memory]: 196 MB (+5001kb) [00:02:34]
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset_clk]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset_clk]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/CPU_MODE]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/CPU_MODE]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset_clk]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_TX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/CPU_MODE]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_n]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/reset_clk]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/clk_p]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_TX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/SERIAL_UART_RX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_pins /fpga_top_0/DEBUG_UART_TX]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// Run Command: PAResourceCommand.PACommandNames_AUTO_CONNECT_PORTS
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: startgroup 
+// Tcl Message: make_bd_pins_external  [get_bd_pins fpga_top_0/DEBUG_UART_RX] [get_bd_pins fpga_top_0/reset] [get_bd_pins fpga_top_0/CPU_MODE] [get_bd_pins fpga_top_0/clk_n] [get_bd_pins fpga_top_0/reset_clk] [get_bd_pins fpga_top_0/clk_p] [get_bd_pins fpga_top_0/SERIAL_UART_TX] [get_bd_pins fpga_top_0/SERIAL_UART_RX] [get_bd_pins fpga_top_0/DEBUG_UART_TX] 
+// Tcl Message: endgroup 
+// [Engine Memory]: 2,544 MB (+10308kb) [00:02:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,596 MB. GUI used memory: 108 MB. Current time: 9/11/24, 4:16:04 PM IST
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 02m:36s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 80, 289, 875, 516, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // al (PAResourceQtoS.SystemBuilderView_PINNING, Pinning)
+selectMenuItem(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "Regenerate Layout"); // ao (PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, regenerate_rsb_layout_menu)
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+// Elapsed Time for: 'L.f': 02m:40s
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 144, 328, 875, 516, false, false, false, true, false); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // al (PAResourceQtoS.SystemBuilderView_PINNING, Pinning)
+selectMenuItem(PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, "Validate Design"); // ao (PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN, validate_bd_design_rsb_menu)
+// Run Command: PAResourceCommand.PACommandNames_VALIDATE_RSB_DESIGN
+// Tcl Command: 'validate_bd_design'
+// TclEventType: RSB_VALIDATE_DIAGRAM
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: RSB_PARAM_PROP
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PARAM_PROP
+// Tcl Message: validate_bd_design 
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: save_bd_design 
+// Tcl Message: Wrote  : </home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd>  Wrote  : </home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ui/bd_d549dfd4.ui>  
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aa
+// [Engine Memory]: 2,683 MB (+12234kb) [00:03:01]
+// Elapsed Time for: 'L.f': 02m:54s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,742 MB. GUI used memory: 88 MB. Current time: 9/11/24, 4:16:24 PM IST
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit (ajit.bd)]", 2, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // al (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenuItem(PAResourceCommand.PACommandNames_CREATE_TOP_HDL, "Create HDL Wrapper..."); // ao (PAResourceCommand.PACommandNames_CREATE_TOP_HDL, create_top_hdl_menu)
+// Run Command: PAResourceCommand.PACommandNames_CREATE_TOP_HDL
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Create HDL Wrapper"); // a (dialog1)
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: make_wrapper -files [get_files /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] -top 
+// Tcl Message: INFO: [BD 41-1662] The design 'ajit.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// [Engine Memory]: 2,821 MB (+4092kb) [00:03:09]
+// Tcl Message: VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/synth/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/sim/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hdl/ajit_wrapper.vhd 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hdl/ajit_wrapper.vhd 
+dismissDialog("Create HDL Wrapper"); // bq (Create HDL Wrapper Progress)
+// Elapsed Time for: 'L.f': 03m:04s
+// HMemoryUtils.trashcanNow. Engine heap size: 2,926 MB. GUI used memory: 90 MB. Current time: 9/11/24, 4:16:44 PM IST
+// Elapsed time: 22 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 3,023 MB (+64282kb) [00:03:33]
+// Elapsed Time for: 'L.f': 03m:26s
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // ao (PAResourceCommand.PACommandNames_ADD_SOURCES, add_sources_menu)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// Elapsed Time for: 'L.f': 03m:32s
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectButton(PAResourceAtoD.ConstraintsChooserPanel_CREATE_FILE, "Create File"); // a (PAResourceAtoD.ConstraintsChooserPanel_CREATE_FILE)
+// Tcl Command: 'file mkdir /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1'
+// Tcl Message: file mkdir /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1 
+setText(PAResourceAtoD.CreateConstraintsFilePanel_FILE_NAME, "constraints", true); // Q (PAResourceAtoD.CreateConstraintsFilePanel_FILE_NAME)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Create Constraints File"); // u (dialog3)
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'f' command handler elapsed time: 11 seconds
+// Tcl Command: 'file mkdir /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new'
+dismissDialog("Add Sources"); // c (dialog2)
+// Tcl Message: file mkdir /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new 
+// Tcl Message: close [ open /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc w ] 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -fileset constrs_1 /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1]", 2, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, constraints.xdc]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints, constrs_1, constraints.xdc]", 3, false, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 3,111 MB. GUI used memory: 91 MB. Current time: 9/11/24, 4:17:19 PM IST
+// [Engine Memory]: 3,175 MB (+645kb) [00:04:01]
+// Elapsed Time for: 'L.f': 03m:54s
+// Elapsed time: 20 seconds
+typeControlKey((HResource) null, "constraints.xdc", 'v'); // ad (constraints.xdc)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - fpga_top", 2); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Address Editor", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System", 0); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 2, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // al (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al (PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, Hierarchy Update)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al (PAResourceQtoS.SrcMenu_IP_HIERARCHY, IP Hierarchy)
+selectMenuItem(PAResourceCommand.PACommandNames_SET_AS_TOP, "Set as Top"); // ao (PAResourceCommand.PACommandNames_SET_AS_TOP, set_as_top_menu)
+// Run Command: PAResourceCommand.PACommandNames_SET_AS_TOP
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: set_property top ajit_wrapper [current_fileset] 
+// TclEventType: DG_GRAPH_STALE
+// Elapsed Time for: 'L.f': 04m:26s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 04m:40s
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed Time for: 'L.f': 04m:42s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,229 MB. GUI used memory: 91 MB. Current time: 9/11/24, 4:18:14 PM IST
+// Elapsed Time for: 'L.f': 04m:56s
+// Elapsed time: 34 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // al (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectTab((HResource) null, (HResource) null, "Design", 1); // aa
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aa
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, IP Integrator, Generate Block Design]", 8, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_RSB_DESIGN
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY)
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: generate_target all [get_files  /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] 
+// Tcl Message: INFO: [BD 41-1662] The design 'ajit.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// Tcl Message: VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/synth/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/sim/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hdl/ajit_wrapper.vhd 
+// Tcl Message: INFO: [Device 21-403] Loading part xc7z045ffg900-2 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [Engine Memory]: 3,480 MB (+152988kb) [00:05:25]
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block fpga_top_0 . 
+// Tcl Message: Exporting to file /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hw_handoff/ajit.hwh Generated Hardware Definition File /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/synth/ajit.hwdef 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all ajit_fpga_top_0_0] } 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ajit_fpga_top_0_0 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,561 MB. GUI used memory: 92 MB. Current time: 9/11/24, 4:18:49 PM IST
+// Tcl Message: launch_runs ajit_fpga_top_0_0_synth_1 -jobs 12 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ajit_fpga_top_0_0 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// HMemoryUtils.trashcanNow. Engine heap size: 3,630 MB. GUI used memory: 92 MB. Current time: 9/11/24, 4:19:09 PM IST
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 11 16:19:09 2024] Launched ajit_fpga_top_0_0_synth_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 9672.289 ; gain = 114.023 ; free physical = 13193 ; free virtual = 25372 
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,659 MB. GUI used memory: 94 MB. Current time: 9/11/24, 4:19:15 PM IST
+// [Engine Memory]: 3,659 MB (+5975kb) [00:05:55]
+// Elapsed Time for: 'Y.b': 44s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// 'bv' command handler elapsed time: 50 seconds
+// Elapsed time: 48 seconds
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,744 MB. GUI used memory: 92 MB. Current time: 9/11/24, 4:19:34 PM IST
+// Elapsed Time for: 'L.f': 06m:06s
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // f (dialog5)
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,871 MB. GUI used memory: 107 MB. Current time: 9/11/24, 4:19:49 PM IST
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: ajit_fpga_top_0_0 
+// TclEventType: RUN_RESET
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// [Engine Memory]: 3,897 MB (+57632kb) [00:06:29]
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Wed Sep 11 16:19:51 2024] Launched ajit_fpga_top_0_0_synth_1, synth_1... Run output will be captured here: ajit_fpga_top_0_0_synth_1: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/runme.log synth_1: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/synth_1/runme.log [Wed Sep 11 16:19:52 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9941.188 ; gain = 158.926 ; free physical = 12889 ; free virtual = 25074 
+// TclEventType: RUN_STATUS_CHANGE
+// [GUI Memory]: 208 MB (+1796kb) [00:06:31]
+// Elapsed Time for: 'L.f': 06m:24s
+// Elapsed time: 15 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (PAResourceAtoD.CmdMsgDialog_OK)
+// 'a' command handler elapsed time: 19 seconds
+dismissDialog("Launch Run Critical Messages"); // aX (dialog6)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed Time for: 'L.f': 12m:28s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed Time for: 'L.f': 12m:44s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,019 MB. GUI used memory: 113 MB. Current time: 9/11/24, 4:26:14 PM IST
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 1412 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (PAResourceCommand.PACommandNames_REPORTS_WINDOW)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Implementation Completed"); // Q.a (dialog7)
+selectTab((HResource) null, (HResource) null, "Messages", 1); // aa
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): FALSE
+selectCheckBox(PAResourceItoN.MsgView_INFORMATION_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_INFORMATION_MESSAGES): FALSE
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, ajit, General Messages]", 1); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, ajit, General Messages]", 1); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, ajit, General Messages, [Common 17-1649] The Vivado message database '/home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/vivado.pb' contains 86481 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 86482' and re-open the project.. , [Common 17-1649] The Vivado message database '/home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/vivado.pb' contains 128432 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 128433' and re-open the project.. ]", 3, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, ajit, General Messages, [Common 17-1649] The Vivado message database '/home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/vivado.pb' contains 86481 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 86482' and re-open the project.. , [Common 17-1649] The Vivado message database '/home/iitg/fpga_top_ajit/fpga_top_ajit.runs/ajit_fpga_top_0_0_synth_1/vivado.pb' contains 128432 messages. Restoring all messages from this message database will impact Vivado performance, so only WARNING, CRITICAL WARNING, and ERROR messages will be restored. To restore all messages from this file use the tcl command 'set_param messaging.loadPbLimit 128433' and re-open the project.. ]", 3, false, false, false, false, true, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Popup Trigger
+selectMenu(PAResourceItoN.MsgTreePanel_MESSAGE_SEVERITY, "Message Severity"); // al (PAResourceItoN.MsgTreePanel_MESSAGE_SEVERITY, Message Severity)
+selectMenuItem(PAResourceItoN.MsgTreePanel_DISCARD_USER_CREATED_MESSAGES, "Discard User Created Messages"); // ao (PAResourceItoN.MsgTreePanel_DISCARD_USER_CREATED_MESSAGES, Discard User Created Messages)
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, true); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): TRUE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): FALSE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, true); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): TRUE
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): FALSE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// 'cu' command handler elapsed time: 5 seconds
+dismissDialog("Launch Runs"); // cx (dialog8)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 12 
+// Tcl Message: [Wed Sep 11 16:44:09 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 36 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (PAResourceOtoP.PAViews_BASE_WORKSPACE, PlanAheadTabBaseWorkspace)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog9)
+unmaximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (PAResourceOtoP.PAViews_BASE_WORKSPACE, PlanAheadTabBaseWorkspace)
+maximizeView(PAResourceOtoP.PAViews_BASE_WORKSPACE, "BaseWorkspace"); // O (PAResourceOtoP.PAViews_BASE_WORKSPACE, PlanAheadTabBaseWorkspace)
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "367 warnings"); // g (PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc:10]. ]", 6); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc:10]. , [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc:15]. ]", 7, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc;-;;-;16;-;line;-;15;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Synthesis, synth_1, [Vivado 12-4702] SLEW is not a supported property on input port(s). Setting is ignored. [/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc:10]. ]", 6, true); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE) - Node
+messagesViewCrossProbe(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "src;-;/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/constrs_1/new/constraints.xdc;-;;-;16;-;line;-;10;-;;-;16;-;"); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 29 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Elapsed time: 53 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // al (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE, "Launch Vitis IDE"); // ao (PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE, launch_vitis_ide_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE
+dismissDialog("Launch Vitis IDE"); // bq (Launch Vitis IDE Progress)
+// Elapsed time: 51 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // ag (PAResourceItoN.MainMenuMgr_FLOW, Flow)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // ag (PAResourceItoN.MainMenuMgr_EDIT, Edit)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectRadioButton(PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM, "Include bitstream. This platform includes the complete hardware implementation and bitstream, in addition to the hardware specification for software tools."); // b (PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM)
+selectButton("BACK", "< Back"); // JButton (BACK)
+selectButton("CANCEL", "Cancel"); // JButton (CANCEL)
+// 'n' command handler elapsed time: 10 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog10)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, "Export Bitstream File..."); // ao (PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES, export_bitstream_file_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BITSTREAM_FILES
+// Elapsed time: 15 seconds
+dismissFileChooser();
+// 'a' command handler elapsed time: 15 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectRadioButton(PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM, "Include bitstream. This platform includes the complete hardware implementation and bitstream, in addition to the hardware specification for software tools."); // b (PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Elapsed time: 17 seconds
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 24 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog12)
+// Tcl Message: write_hw_platform -fixed -include_bit -force -file /home/iitg/fpga_top_ajit/ajit_wrapper.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper.xsa ... 
+// Tcl Message: INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper.xsa INFO: [Hsi 55-2053] elapsed time for repository (/home/iitg/VivadoFull/Vivado/2023.2/data/embeddedsw) loading 1 seconds 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,085 MB. GUI used memory: 118 MB. Current time: 9/11/24, 4:48:54 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,085 MB. GUI used memory: 118 MB. Current time: 9/11/24, 5:18:54 PM IST
+// Elapsed time: 3215 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectRadioButton(PAResourceEtoH.ExportFixedPlatformWizard_PRE_SYNTHESIS, "Pre-synthesis. This platform includes a hardware specification for downstream software tools."); // b (PAResourceEtoH.ExportFixedPlatformWizard_PRE_SYNTHESIS)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+setText(PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME, "ajit_wrapper1"); // Q (PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 18 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog13)
+// Tcl Message: write_hw_platform -fixed -force -file /home/iitg/fpga_top_ajit/ajit_wrapper1.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper1.xsa ... INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper1.xsa 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,086 MB. GUI used memory: 99 MB. Current time: 9/11/24, 5:48:54 PM IST
+// Elapsed time: 546 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 203, 63); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+selectButton(PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, "Messages_cleanUpMessages"); // B (PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, Messages_cleanUpMessages)
+// Elapsed time: 15 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, PS7, Zynq requires PS7 block, PS7, [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.. ]", 41, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 21 seconds
+selectButton(PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, "Messages_cleanUpMessages"); // B (PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, Messages_cleanUpMessages)
+selectButton(PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES, "367 warnings"); // g (PAResourceQtoS.RunGadget_SHOW_WARNING_AND_ERROR_MESSAGES_IN_MESSAGES)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+collapseTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC]", 24); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Route Design, [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.. Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.. ]", 22, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+expandTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC]", 24); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 292 seconds
+collapseTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[ajit, fpga_top_0]", 3); // a (PAResourceQtoS.SystemTreeView_SYSTEM_TREE)
+// Elapsed time: 20 seconds
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, PS7, Zynq requires PS7 block, PS7, [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.. ]", 41, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+selectTree(PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE, "[, Implementation, Write Bitstream, DRC, PS7, Zynq requires PS7 block, PS7, [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.. ]", 41, false); // u.d (PAResourceItoN.MsgTreePanel_MESSAGE_VIEW_TREE)
+// Elapsed time: 13 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BD_TCL, "Export Block Design..."); // ao (PAResourceCommand.PACommandNames_EXPORT_BD_TCL, export_rsb_tcl_script_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BD_TCL
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// 'aC' command handler elapsed time: 10 seconds
+// Tcl Command: 'write_bd_tcl -force /home/iitg/fpga_top_ajit/ajit.tcl'
+dismissDialog("Export Block Design"); // by (dialog14)
+// Tcl Message: write_bd_tcl -force /home/iitg/fpga_top_ajit/ajit.tcl 
+// Tcl Message: INFO: [BD 5-148] Tcl file written out </home/iitg/fpga_top_ajit/ajit.tcl>.  
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectRadioButton(PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM, "Include bitstream. This platform includes the complete hardware implementation and bitstream, in addition to the hardware specification for software tools."); // b (PAResourceEtoH.ExportFixedPlatformWizard_INCLUDE_BITSTREAM)
+// Elapsed time: 12 seconds
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+setText(PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME, "ajit_wrapper2"); // Q (PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 37 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog15)
+// Tcl Message: write_hw_platform -fixed -include_bit -force -file /home/iitg/fpga_top_ajit/ajit_wrapper2.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper2.xsa ... 
+// Tcl Message: INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper2.xsa 
+// Elapsed time: 339 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false, false, false, false, true, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_OPEN_FILE_WITH, "Open With"); // al (PAResourceCommand.PACommandNames_OPEN_FILE_WITH, Open With)
+selectMenuItem(PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, "Generate Output Products..."); // ao (PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE, generate_composite_file_menu)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_COMPOSITE_FILE
+selectRadioButton(PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_DESIGN_GLOBALLY, "Global"); // a (PAResourceQtoS.SimpleOutputProductDialog_SYNTHESIZE_DESIGN_GLOBALLY)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_DELETE
+// Tcl Message: delete_ip_run [get_files -of_objects [get_fileset sources_1] /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: set_property synth_checkpoint_mode None [get_files  /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] 
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// [Engine Memory]: 4,192 MB (+104704kb) [01:52:11]
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: generate_target all [get_files  /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] 
+// Tcl Message: INFO: [BD 41-1662] The design 'ajit.bd' is already validated. Therefore parameter propagation will not be re-run. 
+// Tcl Message: VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/synth/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/sim/ajit.vhd VHDL Output written to : /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hdl/ajit_wrapper.vhd 
+// Tcl Message: INFO: [BD 41-1029] Generation completed for the IP Integrator block fpga_top_0 . 
+// Tcl Message: Exporting to file /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/hw_handoff/ajit.hwh Generated Hardware Definition File /home/iitg/fpga_top_ajit/fpga_top_ajit.gen/sources_1/bd/ajit/synth/ajit.hwdef 
+// Tcl Message: export_ip_user_files -of_objects [get_files /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd] -no_script -sync -force -quiet 
+// TclEventType: PROJECT_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,169 MB. GUI used memory: 94 MB. Current time: 9/11/24, 6:05:34 PM IST
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// Elapsed Time for: 'Y.b': 29s
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: FILE_SET_CHANGE
+// 'bv' command handler elapsed time: 37 seconds
+// Elapsed time: 32 seconds
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// Elapsed Time for: 'L.f': 01h:52m:36s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog17)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// Tcl Message: INFO: [Project 1-1160] Copying file /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/synth_1/ajit_wrapper.dcp to /home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/utils_1/imports/synth_1 and adding it to utils fileset 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // f (dialog18)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: [Wed Sep 11 18:06:37 2024] Launched synth_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/synth_1/runme.log [Wed Sep 11 18:06:37 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 13 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectRadioButton(PAResourceEtoH.ExportFixedPlatformWizard_PRE_SYNTHESIS, "Pre-synthesis. This platform includes a hardware specification for downstream software tools."); // b (PAResourceEtoH.ExportFixedPlatformWizard_PRE_SYNTHESIS)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+setText(PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME, "ajit_wrapper31"); // Q (PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 16 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog19)
+// Tcl Message: write_hw_platform -fixed -force -file /home/iitg/fpga_top_ajit/ajit_wrapper31.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper31.xsa ... INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/iitg/fpga_top_ajit/ajit_wrapper31.xsa 
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 344 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_BD_TCL, "Export Block Design..."); // ao (PAResourceCommand.PACommandNames_EXPORT_BD_TCL, export_rsb_tcl_script_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_BD_TCL
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (RDIResource.BaseDialog_CANCEL)
+dismissDialog("Export Block Design"); // by (dialog20)
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_HARDWARE, "Export Hardware..."); // ao (PAResourceCommand.PACommandNames_EXPORT_HARDWARE, export_hardware_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_HARDWARE
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// TclEventType: RUN_STEP_COMPLETED
+selectMoreButton(PAResourceEtoH.ExportFixedPlatformWizard_EXPORT_DIRECTORY, (String) null); // r (PAResourceEtoH.ExportFixedPlatformWizard_EXPORT_DIRECTORY)
+setFolderChooser("/home/iitg/fpga_top_ajit/ajit_boot2");
+setText(PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME, "ajit_wrapper4"); // Q (PAResourceEtoH.ExportFixedPlatformWizard_XSA_FILE_NAME)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+selectButton("BACK", "< Back"); // JButton (BACK)
+selectButton("NEXT", "Next >"); // JButton (NEXT)
+// Tcl (Dont Echo) Command: 'get_property pfm_name [get_files -all {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd}]'
+// Elapsed time: 19 seconds
+selectButton("FINISH", "Finish"); // JButton (FINISH)
+// 'n' command handler elapsed time: 47 seconds
+dismissDialog("Export Hardware Platform"); // e (dialog21)
+// Tcl Message: write_hw_platform -fixed -force -file /home/iitg/fpga_top_ajit/ajit_boot2/ajit_wrapper4.xsa 
+// Tcl Message: INFO: [Project 1-1918] Creating Hardware Platform: /home/iitg/fpga_top_ajit/ajit_boot2/ajit_wrapper4.xsa ... INFO: [Project 1-1943] The Hardware Platform can be used for Hardware INFO: [Project 1-1941] Successfully created Hardware Platform: /home/iitg/fpga_top_ajit/ajit_boot2/ajit_wrapper4.xsa 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_CHECKPOINT, "Checkpoint"); // al (PAResourceItoN.MainMenuMgr_CHECKPOINT, Checkpoint)
+selectMenu(PAResourceItoN.MainMenuMgr_IP, "IP"); // al (PAResourceItoN.MainMenuMgr_IP, IP)
+selectMenu(PAResourceItoN.MainMenuMgr_TEXT_EDITOR, "Text Editor"); // al (PAResourceItoN.MainMenuMgr_TEXT_EDITOR, Text Editor)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // al (PAResourceItoN.MainMenuMgr_EXPORT, Export)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,212 MB. GUI used memory: 107 MB. Current time: 9/11/24, 6:13:54 PM IST
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 206 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Implementation Completed"); // Q.a (dialog23)
+selectCheckBox(PAResourceItoN.MsgView_WARNING_MESSAGES, (String) null, false); // f (PAResourceItoN.MsgView_WARNING_MESSAGES): FALSE
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // cx (dialog24)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 12 
+// Tcl Message: [Wed Sep 11 18:17:42 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 40 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog25)
+// Elapsed time: 111 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // ag (PAResourceItoN.MainMenuMgr_REPORTS, Reports)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // al (RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, Custom Commands)
+selectMenuItem(PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE, "Launch Vitis IDE"); // ao (PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE, launch_vitis_ide_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // ag (PAResourceItoN.MainMenuMgr_TOOLS, Tools)
+// Run Command: PAResourceCommand.PACommandNames_LAUNCH_VITIS_IDE
+dismissDialog("Launch Vitis IDE"); // bq (Launch Vitis IDE Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,213 MB. GUI used memory: 109 MB. Current time: 9/11/24, 6:43:54 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/11/24, 7:13:54 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/11/24, 7:43:54 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/11/24, 8:13:54 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/11/24, 8:43:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/11/24, 9:13:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/11/24, 9:43:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/11/24, 10:13:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/11/24, 10:43:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/11/24, 11:13:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/11/24, 11:43:55 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 12:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 12:43:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 1:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 1:43:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 2:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 2:43:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 3:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 3:43:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 4:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 4:43:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 5:13:55 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 5:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 6:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/12/24, 6:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 7:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/12/24, 7:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 8:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/12/24, 8:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 9:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 9:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 10:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 10:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 11:13:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 11:43:56 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 12:13:56 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 12:43:56 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 1:13:56 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 1:43:56 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 2:13:56 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 2:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 3:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 3:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 4:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 4:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 5:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 5:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 6:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 6:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 7:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 7:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 8:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 8:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 9:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 9:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 10:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/12/24, 10:43:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/12/24, 11:13:57 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/12/24, 11:43:58 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 12:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 12:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/13/24, 1:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 1:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 2:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 2:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/13/24, 3:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 3:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 108 MB. Current time: 9/13/24, 4:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 4:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/13/24, 5:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 5:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 6:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 6:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/13/24, 7:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 7:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 8:13:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 106 MB. Current time: 9/13/24, 8:43:58 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 9:13:59 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 4,214 MB. GUI used memory: 107 MB. Current time: 9/13/24, 9:43:59 AM IST
+// Elapsed time: 142086 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top(structure) (fpga_top_with_accelerator.vhdl)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller(coherent_memory_controller_arch) (GlueModules.vhdl)]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, afb_multicore_interrupt_controller(afb_multicore_interrupt_controller_arch) (GlueModules.vhdl)]", 5, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_four_core(coherent_memory_controller_four_core_arch) (GlueModules.vhdl)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debug_aggregator_four_core(debug_aggregator_four_core_arch) (GlueModules.vhdl)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_two_core(coherent_memory_controller_two_core_arch) (GlueModules.vhdl)]", 8, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_four_core_v2(coherent_memory_controller_four_core_v2_arch) (GlueModules.vhdl)]", 9, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, afb_flash_rw_controller(afb_flash_rw_controller_arch) (GlueModules.vhdl)]", 10, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_single_core(coherent_memory_controller_single_core_arch) (GlueModules.vhdl)]", 11, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tcm_64KB(tcm_64KB_arch) (GlueModules.vhdl)]", 12, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_two_core_v2(coherent_memory_controller_two_core_v2_arch) (GlueModules.vhdl)]", 13, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debug_aggregator_two_core(debug_aggregator_two_core_arch) (GlueModules.vhdl)]", 14, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_two_core_v2(coherent_memory_controller_two_core_v2_arch) (GlueModules.vhdl)]", 13, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, tcm_64KB(tcm_64KB_arch) (GlueModules.vhdl)]", 12, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_single_core(coherent_memory_controller_single_core_arch) (GlueModules.vhdl)]", 11, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, afb_flash_rw_controller(afb_flash_rw_controller_arch) (GlueModules.vhdl)]", 10, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_four_core_v2(coherent_memory_controller_four_core_v2_arch) (GlueModules.vhdl)]", 9, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_two_core(coherent_memory_controller_two_core_arch) (GlueModules.vhdl)]", 8, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, debug_aggregator_four_core(debug_aggregator_four_core_arch) (GlueModules.vhdl)]", 7, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller_four_core(coherent_memory_controller_four_core_arch) (GlueModules.vhdl)]", 6, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, afb_multicore_interrupt_controller(afb_multicore_interrupt_controller_arch) (GlueModules.vhdl)]", 5, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, coherent_memory_controller(coherent_memory_controller_arch) (GlueModules.vhdl)]", 4, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, fpga_top(structure) (fpga_top_with_accelerator.vhdl)]", 3, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// Elapsed time: 239 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al (PAResourceItoN.MainMenuMgr_PROJECT, Project)
+selectMenuItem(PAResourceCommand.PACommandNames_OPEN_PROJECT, "Open..."); // ao (PAResourceCommand.PACommandNames_OPEN_PROJECT, open_project_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag (PAResourceItoN.MainMenuMgr_FILE, File)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// Elapsed time: 13 seconds
+setFileChooser("/home/iitg/vck190/vck190.xpr");
+// Opening Vivado Project: /home/iitg/vck190/vck190.xpr. Version: Vivado v2023.2 
+selectButton("OptionPane.button", "No"); // JButton (OptionPane.button)
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: MSGMGR_REFRESH_MSG
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// Tcl Message: open_project /home/iitg/vck190/vck190.xpr 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: HW_HANDOFF_TARGET_STALE_EVENT
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: HW_HANDOFF_TARGET_STALE_EVENT
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: PROJECT_NEW
+// Project name: vck190; location: /home/iitg/vck190; part: xc7z045ffg900-2
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/IP_Repositery'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/iitg/VivadoFull/Vivado/2023.2/data/ip'. 
+dismissDialog("Open Project"); // bq (Open Project Progress)
+// Tcl Message: current_project fpga_top_ajit 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,353 MB. GUI used memory: 122 MB. Current time: 9/13/24, 9:52:59 AM IST
+// [Engine Memory]: 4,418 MB (+17210kb) [41:39:58]
+// Elapsed Time for: 'L.f': 24s
+// Elapsed Time for: 'L.f': 26s
+// HMemoryUtils.trashcanNow. Engine heap size: 4,470 MB. GUI used memory: 122 MB. Current time: 9/13/24, 9:53:24 AM IST
+// Elapsed time: 315 seconds
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 3); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vckajit_wrapper (vckajit_wrapper.v)]", 1); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vckajit_wrapper (vckajit_wrapper.v), vckajit_i : vckajit (vckajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+// Tcl Message: current_project vck190 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, vckajit_wrapper (vckajit_wrapper.v), vckajit_i : vckajit (vckajit.bd)]", 2, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: open_bd_design {/home/iitg/vck190/vck190.srcs/sources_1/bd/vckajit/vckajit.bd} 
+// Tcl Message: Reading block design file </home/iitg/vck190/vck190.srcs/sources_1/bd/vckajit/vckajit.bd>... Adding component instance block -- NinePath:NY:fpga_top:1.0 - fpga_top_0 Adding component instance block -- xilinx.com:ip:versal_cips:3.4 - versal_cips_0 Successfully read diagram <vckajit> from block design file </home/iitg/vck190/vck190.srcs/sources_1/bd/vckajit/vckajit.bd> 
+// TclEventType: RSB_OPEN_DIAGRAM
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,525 MB. GUI used memory: 127 MB. Current time: 9/13/24, 9:58:19 AM IST
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "unselect_objects"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// Elapsed time: 840 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog27)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // f (dialog28)
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: vckajit_fpga_top_0_0 
+// [Engine Memory]: 4,728 MB (+92932kb) [41:59:02]
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Sep 13 10:12:25 2024] Launched synth_1... Run output will be captured here: /home/iitg/vck190/vck190.runs/synth_1/runme.log [Fri Sep 13 10:12:25 2024] Launched impl_1... Run output will be captured here: /home/iitg/vck190/vck190.runs/impl_1/runme.log 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// Tcl Message: current_project fpga_top_ajit 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 4,848 MB. GUI used memory: 128 MB. Current time: 9/13/24, 10:12:29 AM IST
+// Elapsed time: 18 seconds
+selectCheckBox(PAResourceItoN.MsgView_CRITICAL_WARNINGS, (String) null, true); // f (PAResourceItoN.MsgView_CRITICAL_WARNINGS): TRUE
+selectButton(PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, "Messages_cleanUpMessages"); // B (PAResourceItoN.MsgView_CLEAR_MESSAGES_RESULTING_FROM_USER_EXECUTED, Messages_cleanUpMessages)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_MESSAGE_WINDOW
+dismissDialog("Implementation Failed"); // Q.a (dialog29)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 1); // o (PlanAheadTabBaseWorkspace_JideTabbedPane)
+selectButton(RDIResourceCommand.RDICommands_SETTINGS, "Zynq 7000 ZC706 Evaluation Board (xc7z045ffg900-2)"); // g (RDIResourceCommand.RDICommands_SETTINGS)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl (Dont Echo) Command: 'rdi::info_commands {device::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {debug::*}'
+// Tcl (Dont Echo) Command: 'rdi::info_commands {*}'
+// Tcl Message: current_project vck190 
+selectMoreButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // r (PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT)
+// [GUI Memory]: 239 MB (+21709kb) [41:59:51]
+// [GUI Memory]: 556 MB (+320234kb) [41:59:51]
+// [Engine Memory]: 5,056 MB (+96543kb) [41:59:51]
+// HMemoryUtils.trashcanNow. Engine heap size: 5,321 MB. GUI used memory: 161 MB. Current time: 9/13/24, 10:13:14 AM IST
+setText("PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD", "vck"); // OverlayTextField (PAResourceAtoD.BoardChooser_BOARD_TABLE_SEARCH_FIELD)
+selectTreeTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Versal VCK190 Evaluation Platform ; Versal VCK190 Evaluation Platform ; xilinx.com ; 3.2 ; Versal VCK190 Evaluation Platform ; 2197 ; Rev B02 ; 692 ; 899840 ; 1799680 ; 967 ; 463 ; 1968 ; 18067 ; 44 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 44 ; 0 ; 4 ; 12 ;  ;  ;  ; 4 ; 0 ; 400 ;  ; 0 ; 100 ; 100 ; E ; 0.775 ; 0.800 ; 0.825", 0, "Versal VCK190 Evaluation Platform", 0, false); // l (PAResourceAtoD.BoardChooser_BOARD_TABLE)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Select Device"); // c (dialog31)
+selectButton(RDIResource.BaseDialog_APPLY, "Apply"); // a (RDIResource.BaseDialog_APPLY)
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Create New Run"); // u (dialog32)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Tcl Command: 'copy_run -name synth_1_copy_2 [get_runs synth_1] '
+// TclEventType: RUN_ADD
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_OPTIONS_MODIFIED
+// TclEventType: RUN_MODIFY
+// TclEventType: REPORT_CREATED
+// TclEventType: REPORT_MODIFY
+// Tcl Message: copy_run -name synth_1_copy_2 [get_runs synth_1]  
+// Tcl Message: synth_1_copy_2 
+dismissDialog("Copy Run"); // bq (Copy Run Progress)
+// TclEventType: RUN_MODIFY
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: set_property board_part xilinx.com:vck190:part0:3.2 [current_project] 
+// Tcl Message: INFO: [Device 21-403] Loading part xcvc1902-vsva2197-2MP-e-S 
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: PART_MODIFIED
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_BITABEN_BOARDDATA_REFRESH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: RSB_BITABEN_BOARDDATA_REFRESH
+// TclEventType: COMPOSITE_FILE_CHANGE
+// TclEventType: BOARD_MODIFIED
+// Tcl Message: INFO: [Project 1-152] Project part set to versal (xcvc1902-vsva2197-2mp-e-s) 
+dismissDialog("Change Settings"); // bq (Change Settings Progress)
+// Elapsed Time for: 'L.f': 41h:59m:57s
+// Elapsed Time for: 'L.f': 20m:30s
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Settings"); // d (dialog30)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (RDIResource.BaseDialog_YES)
+dismissDialog("Synthesis is Out-of-date"); // u (dialog34)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // f (dialog35)
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// [Engine Memory]: 5,370 MB (+63945kb) [42:00:17]
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Fri Sep 13 10:13:39 2024] Launched synth_1... Run output will be captured here: /home/iitg/vck190/vck190.runs/synth_1/runme.log [Fri Sep 13 10:13:39 2024] Launched impl_1... Run output will be captured here: /home/iitg/vck190/vck190.runs/impl_1/runme.log 
+// Tcl Message: launch_runs: Time (s): cpu = 00:00:31 ; elapsed = 00:00:08 . Memory (MB): peak = 11306.531 ; gain = 245.922 ; free physical = 8911 ; free virtual = 22105 
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// Elapsed Time for: 'L.f': 42h:00m:11s
+// Elapsed Time for: 'L.f': 20m:44s
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,408 MB. GUI used memory: 160 MB. Current time: 9/13/24, 10:13:44 AM IST
+// Elapsed time: 18 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 21, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// 'cu' command handler elapsed time: 4 seconds
+dismissDialog("Launch Runs"); // cx (dialog36)
+// Tcl Message: current_project fpga_top_ajit 
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 -prev_step  
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 12 
+// Tcl Message: [Fri Sep 13 10:14:02 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// Elapsed time: 48 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_REPORTS_WINDOW, "View Reports"); // a (PAResourceCommand.PACommandNames_REPORTS_WINDOW)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_REPORTS_WINDOW
+dismissDialog("Bitstream Generation Completed"); // Q.a (dialog37)
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd)]", 1, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Node
+selectMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ag (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+selectMenuItem(PAResourceCommand.PACommandNames_PROJECT_SUMMARY, "Project Summary"); // ao (PAResourceCommand.PACommandNames_PROJECT_SUMMARY, project_summary_menu)
+dismissMenu(PAResourceItoN.MainMenuMgr_WINDOW, "Window"); // ag (PAResourceItoN.MainMenuMgr_WINDOW, Window)
+// Run Command: PAResourceCommand.PACommandNames_PROJECT_SUMMARY
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, false); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ajit_wrapper(STRUCTURE) (ajit_wrapper.vhd), ajit_i : ajit (ajit.bd)]", 2, true, false, false, false, false, true); // E (PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE) - Double Click - Node
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: open_bd_design {/home/iitg/fpga_top_ajit/fpga_top_ajit.srcs/sources_1/bd/ajit/ajit.bd} 
+dismissDialog("Open Block Design"); // bq (Open Block Design Progress)
+runTclCommand (PAResourceOtoP.PAViews_SYSTEM, "select_objects [get_bd_cells /fpga_top_0]"); // fS (PAResourceOtoP.PAViews_SYSTEM, PlanAheadTabSystem)
+// Elapsed time: 30 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Implementation, Run Implementation]", 18, false); // f (PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, Flow Navigator Tree)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+selectButton("OptionPane.button", "OK"); // JButton (OptionPane.button)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run impl_1 
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // f (dialog38)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs impl_1 -jobs 12 
+// Tcl Message: [Fri Sep 13 10:16:18 2024] Launched impl_1... Run output will be captured here: /home/iitg/fpga_top_ajit/fpga_top_ajit.runs/impl_1/runme.log 
+// 'a' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bq (Starting Design Runs Progress)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 30 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aa
+// Elapsed time: 15 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 212, 69); // cD (RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR)
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 221 seconds
+selectRadioButton(PAResourceCommand.PACommandNames_GENERATE_DEVICE_IMAGE, "Generate Device Image"); // a (PAResourceCommand.PACommandNames_GENERATE_DEVICE_IMAGE)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+// Run Command: PAResourceCommand.PACommandNames_GENERATE_DEVICE_IMAGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (RDIResource.BaseDialog_OK)
+dismissDialog("Launch Runs"); // cx (dialog40)
+// Tcl Message: current_project vck190 
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs impl_1 -to_step write_device_image -jobs 12 
+// Tcl Message: [Fri Sep 13 10:20:49 2024] Launched impl_1... Run output will be captured here: /home/iitg/vck190/vck190.runs/impl_1/runme.log 
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 5,390 MB. GUI used memory: 165 MB. Current time: 9/13/24, 10:43:44 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,390 MB. GUI used memory: 164 MB. Current time: 9/13/24, 11:13:44 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,390 MB. GUI used memory: 158 MB. Current time: 9/13/24, 11:43:44 AM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,377 MB. GUI used memory: 158 MB. Current time: 9/13/24, 12:13:44 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,363 MB. GUI used memory: 157 MB. Current time: 9/13/24, 12:43:44 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,363 MB. GUI used memory: 158 MB. Current time: 9/13/24, 1:13:44 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,363 MB. GUI used memory: 158 MB. Current time: 9/13/24, 1:43:44 PM IST
+// HMemoryUtils.trashcanNow. Engine heap size: 5,363 MB. GUI used memory: 158 MB. Current time: 9/13/24, 2:13:44 PM IST

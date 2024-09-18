@@ -1,0 +1,91 @@
+{
+  "SystemProperties": {
+    "Frequency": 1000
+  },
+  "LogicalInstances": [
+    {
+      "Name": "mynoc/inst/M00_AXI_nsu",
+      "IsMaster": false,
+      "CompType": "PL_NSU",
+      "Protocol": "AXI_MM",
+      "AxiDataWidth": 32,
+      "SysAddresses": [
+        {
+          "Base": "0x20140000000",
+          "Size": "0x10000"
+        }
+      ],
+      "SimMetaData": {
+        "IPName": "bd_33f5_M00_AXI_nsu_0"
+      }
+    },
+    {
+      "Name": "mynoc/inst/S00_AXI_nmu",
+      "IsMaster": true,
+      "CompType": "PS_NCI_NMU",
+      "Protocol": "AXI_MM",
+      "ReadTC": "BE",
+      "WriteTC": "BE",
+      "SysAddresses": [],
+      "SimMetaData": {
+        "IPName": "bd_33f5_S00_AXI_nmu_0"
+      }
+    },
+    {
+      "Name": "mynoc1/inst/M00_AXI_nsu",
+      "IsMaster": false,
+      "CompType": "PL_NSU",
+      "Protocol": "AXI_MM",
+      "AxiDataWidth": 32,
+      "SysAddresses": [
+        {
+          "Base": "0x20100000000",
+          "Size": "0x10000"
+        }
+      ],
+      "SimMetaData": {
+        "IPName": "bd_f334_M00_AXI_nsu_0"
+      }
+    },
+    {
+      "Name": "mynoc1/inst/S00_AXI_nmu",
+      "IsMaster": true,
+      "CompType": "PMC_NMU",
+      "Protocol": "AXI_MM",
+      "ReadTC": "BE",
+      "WriteTC": "BE",
+      "SysAddresses": [],
+      "SimMetaData": {
+        "IPName": "bd_f334_S00_AXI_nmu_0"
+      }
+    }
+  ],
+  "Paths": [
+    {
+      "Phase": 0,
+      "From": "mynoc/inst/S00_AXI_nmu",
+      "To": "mynoc/inst/M00_AXI_nsu",
+      "Port": "PORT0",
+      "CommType": "MM_ReadWrite",
+      "ReadBW": 5,
+      "ReadLatency": 300,
+      "ReadAvgBurst": 4,
+      "WriteBW": 5,
+      "WriteLatency": 300,
+      "WriteAvgBurst": 4
+    },
+    {
+      "Phase": 0,
+      "From": "mynoc1/inst/S00_AXI_nmu",
+      "To": "mynoc1/inst/M00_AXI_nsu",
+      "Port": "PORT0",
+      "CommType": "MM_ReadWrite",
+      "ReadBW": 5,
+      "ReadLatency": 300,
+      "ReadAvgBurst": 4,
+      "WriteBW": 5,
+      "WriteLatency": 300,
+      "WriteAvgBurst": 4
+    }
+  ]
+}

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xcvc1902-vsva2197-2MP-e-S" LaunchTime="1725274796">
+  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="design_1_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wizard_0/clk_wizard_0.xci">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../clk_wizard_0.xci"/>
+        <Attr Name="ImportTime" Val="1724998186"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/acceleratorNew1.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../acceleratorNew1.v"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_sp_add.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_sp_add.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_sp_comp.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_sp_comp.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_sp_div.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_sp_div.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_sp_mul.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_sp_mul.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_sp_sub.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_sp_sub.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpu_top1.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpu_top1.sv"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/aHiR_ieee_proposed.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../aHiR_ieee_proposed.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/ahir.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ahir.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/simpleUartLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../simpleUartLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/icache.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../icache.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/dcache.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../dcache.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/AjitCustom.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AjitCustom.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/SpiMasterLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../SpiMasterLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/GenericCoreAddOnLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../GenericCoreAddOnLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/AhbApbLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../AhbApbLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/GenericGlueStuff.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../GenericGlueStuff.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/GlueModules.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../GlueModules.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/afb_performance_counters_base.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../afb_performance_counters_base.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/afb_performance_counters_controller_1x1.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../afb_performance_counters_controller_1x1.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/afb_performance_counters_1x1.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../afb_performance_counters_1x1.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/ccu.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ccu.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/debug_interface.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../debug_interface.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/idecode_idispatch.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../idecode_idispatch.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/ifetch.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../ifetch.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/dummy_fpunit.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../dummy_fpunit.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/iu_exec.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../iu_exec.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/iu_writeback_in_mux.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../iu_writeback_in_mux.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/iu_registers.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../iu_registers.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/iunit.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../iunit.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/loadstore.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../loadstore.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/iretire.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../iretire.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/stream_corrector.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../stream_corrector.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/teu_no_fp.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../teu_no_fp.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/cpu_no_fp.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../cpu_no_fp.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/dummy_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../dummy_mmu.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/mmu_mux.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mmu_mux.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/munit_no_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../munit_no_mmu.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/core_1x32_no_fp_no_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../core_1x32_no_fp_no_mmu.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/simpleI2CLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../simpleI2CLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/myUartLib.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../myUartLib.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/mcore_1x1x32_lite.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../mcore_1x1x32_lite.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/peripherals.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../peripherals.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/processor_1x1x32_lite.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../processor_1x1x32_lite.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/fpga_top_with_accelerator.vhdl">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../fpga_top_with_accelerator.vhdl"/>
+        <Attr Name="ImportTime" Val="1724998169"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ajit-ip/project_1/project_1.ip_user_files/bd/design_1/sim/design_1.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PIPUSERFILESDIR/bd/design_1/sim/design_1.vhd"/>
+        <Attr Name="ImportTime" Val="1725273837"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/common/nsln/nocattrs.dat">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="design_1_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design">
+      <Option Id="FlattenHierarchy">1</Option>
+    </Step>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_uartlite_1_smc_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_noc_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_noc_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_versal_cips_0_99M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_uartlite_0_smc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_uartlite_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_uartlite_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_fpga_top_0_0"/>
+</GenRun>

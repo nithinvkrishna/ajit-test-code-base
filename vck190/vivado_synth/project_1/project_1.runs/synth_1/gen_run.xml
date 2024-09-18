@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xcvc1902-vsva2197-2MP-e-S" LaunchTime="1725444589">
+  <File Type="VDS-TIMING-PB" Name="ajitVCK_wrapper_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ajitVCK_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="ajitVCK_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="ajitVCK_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ajitVCK_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="ajitVCK_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ajitVCK_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="ajitVCK_wrapper_reports.tcl"/>
+  <File Type="PA-TCL" Name="ajitVCK_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/bd/ajitVCK/ajitVCK.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PGENDIR/sources_1/bd/ajitVCK/hdl/ajitVCK_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../clock_ip/new10/clk_wiz_0/clk_wiz_0.srcs/sources_1/ip/clk_wizard_0/clk_wizard_0.xci">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/aHiR_ieee_proposed.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="ahir_ieee_proposed"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/ahir.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="ahir"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/AhbApbLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="AhbApbLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/simpleUartLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="simpleUartLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/AjitCustom.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="AjitCustom"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/SpiMasterLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="SpiMasterLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/GenericCoreAddOnLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="GenericCoreAddOnLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/GenericGlueStuff.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="GenericGlueStuff"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/GlueModules.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="GlueModules"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../accelerator/vhdl/accelerator_global_package.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../accelerator/vhdl/accelerator.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="work"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/afb_performance_counters_base.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="performance_counters_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/afb_performance_counters_controller_1x1.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="performance_counters_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/afb_performance_counters_1x1.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="performance_counters_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/ccu.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="cpu_ccu"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/debug_interface.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="cpu_debug_interface"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/idecode_idispatch.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_idecode_idispatch"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/ifetch.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_ifetch"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/dummy_fpunit.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_dummy_fpunit"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/iu_exec.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="iunit_exec"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/iu_writeback_in_mux.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="iunit_writeback_in_mux"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/iu_registers.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="iunit_registers"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/iunit.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_iunit"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/loadstore.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_loadstore"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/iretire.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_iretire"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/stream_corrector.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="teu_stream_corrector"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/teu_no_fp.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="cpu_teu_no_fp"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/cpu_no_fp.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="core_units"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/dcache.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="munit_dcache"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/icache.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="munit_icache"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/dummy_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="munit_dummy_mmu"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/mmu_mux.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="munit_mmu_mux"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/munit_no_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="munit_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/core_1x32_no_fp_no_mmu.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="ajit_core_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/simpleI2CLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="simpleI2CLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../vhdl_libs/myUartLib.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="myUartLib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/mcore_1x1x32_lite.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="ajit_mcore_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/peripherals.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="peripherals_lite_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../../ajit_vhdl/processor_1x1x32_lite.vhdl">
+      <FileInfo>
+        <Attr Name="Library" Val="ajit_processor_lib"/>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../toplevel/fpga_top_with_accelerator.vhdl">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PHWDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <File Path="$PGENDIR/sources_1/common/nsln/nocattrs.dat">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ajitVCK_wrapper"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../../constraints/constraints.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2023"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

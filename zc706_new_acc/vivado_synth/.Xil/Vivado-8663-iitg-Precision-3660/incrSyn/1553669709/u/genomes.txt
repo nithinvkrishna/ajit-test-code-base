@@ -1,0 +1,12 @@
+iunit__GB0
+iunit__GB1
+teu_no_fp__GCB0
+teu_no_fp__GCB1
+teu_no_fp__GCB2
+cpu_no_fp__GC0
+core_1x32_no_fp_no_mmu__GC0
+mcore_1x1x32_lite__GC0
+peripherals__GB0
+peripherals__GB1
+processor_1x1x32_lite__GC0
+fpga_top__GC0

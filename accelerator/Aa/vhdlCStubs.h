@@ -1,0 +1,11 @@
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+#include <Pipes.h>
+#include <SocketLib.h>
+void accelerator_control_daemon();
+void accelerator_interrupt_daemon();
+void accelerator_worker_daemon();
+void execute_job();
+void global_storage_initializer_();

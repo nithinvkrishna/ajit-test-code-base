@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Aug 30 12:07:14 2024
+# Process ID: 1125526
+# Current directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1
+# Command line: vivado
+# Log file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/vivado.log
+# Journal file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/vivado.jou
+# Running On: iitg-Precision-3660, OS: Linux, CPU Frequency: 2534.971 MHz, CPU Physical cores: 16, Host memory: 33317 MB
+#-----------------------------------------------------------
+start_gui
+create_project project_1 /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/project_1 -part xcvc1902-vsva2197-2MP-e-S
+set_property board_part xilinx.com:vck190:part0:3.2 [current_project]
+set_property target_language VHDL [current_project]
+create_bd_design "design_1"
+update_compile_order -fileset sources_1

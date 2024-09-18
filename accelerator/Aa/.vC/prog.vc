@@ -1,0 +1,3472 @@
+// Virtual circuit produced from Aa description by Aa2VC 
+// $pipe  ACB_ACCELERATOR_MEM_REQUEST : $uint<110>  $depth 2 
+// can point into 
+// in scope  top-level
+$pipe [ACB_ACCELERATOR_MEM_REQUEST] 110 $depth 2 
+// $pipe  ACB_ACCELERATOR_MEM_RESPONSE : $uint<65>  $depth 2 
+// can point into 
+// in scope  top-level
+$pipe [ACB_ACCELERATOR_MEM_RESPONSE] 65 $depth 2 
+// $pipe  ACCELERATOR_INTERRUPT : $uint<1>  $depth 1  $signal 
+// can point into 
+// in scope  top-level
+$pipe [ACCELERATOR_INTERRUPT] 1 $depth 1 $signal 
+// $pipe  AFB_ACCELERATOR_REQUEST : $uint<74>  $depth 2  $p2p 
+// can point into 
+// in scope  top-level
+$pipe [AFB_ACCELERATOR_REQUEST] 74 $depth 2  $p2p 
+// $pipe  AFB_ACCELERATOR_RESPONSE : $uint<33>  $depth 2 
+// can point into 
+// in scope  top-level
+$pipe [AFB_ACCELERATOR_RESPONSE] 33 $depth 2 
+// $pipe  start_worker : $uint<1>  $depth 1 
+// can point into 
+// in scope  top-level
+$pipe [start_worker] 1 $depth 1 
+// load store constants for object registers
+$constant $W[registers_base_address] : $int<4> := _b0000
+// Declared gated clocks.
+$memoryspace [memory_space_0] 
+{
+  $capacity 16
+  $datawidth 32
+  $addrwidth 4
+  $maxaccesswidth 32
+  // $storage  registers : $array[16] $of $uint<32> // memory space index = 0  base address = 0  word size = 32
+  // can point into 
+  // in scope  top-level
+  $object [registers] : $array[16] $of $int<32>
+}
+$module [accelerator_control_daemon] 
+{
+  // pipe-declarations for block %accelerator_control_daemon
+  //  file .Aa/prog.linked.opt.aa, line 15
+  // pipe-declarations for block %accelerator_control_daemon%init_loop
+  //  file .Aa/prog.linked.opt.aa, line 20
+  // pipe-declarations for block %accelerator_control_daemon%init_loop%
+  //  file .Aa/prog.linked.opt.aa, line 22
+  // pipe-declarations for block %accelerator_control_daemon%run_loop
+  //  file .Aa/prog.linked.opt.aa, line 33
+  // pipe-declarations for block %accelerator_control_daemon%run_loop%
+  //  file .Aa/prog.linked.opt.aa, line 35
+  // memory-space 0 is written into.
+  // memory-space 0 is read from.
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+    <>[branch_block_stmt_15] // Branch Block  file .Aa/prog.linked.opt.aa, line 20
+    {
+      $P [branch_block_stmt_15__entry__]
+      branch_block_stmt_15__entry__ <-| ($entry)
+      $P [branch_block_stmt_15__exit__]
+      branch_block_stmt_15__exit__ |-> ($exit)
+      $P [merge_stmt_16__entry__] 
+      $P [merge_stmt_16__exit__] 
+      $P [assign_stmt_28_to_assign_stmt_32__entry__] 
+      $P [assign_stmt_28_to_assign_stmt_32__exit__] 
+      $P [if_stmt_33__entry__] 
+      $P [if_stmt_33__exit__] 
+      ::[assign_stmt_28_to_assign_stmt_32] 
+      {
+        // start: WAR dependencies for nI
+        // ignored out-of-scope w_root 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+        // type of target is $uint<5>
+        // done: WAR dependencies for nI
+        // start:  		$volatile nI := (I + 1 ) $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 26
+        // volatile! 
+        // Source expression
+        // (I + 1 )
+        // I
+        // Target expression
+        // (as target) nI
+        // start: WAR dependencies for nI
+        // ignored out-of-scope w_root 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+        // type of target is $uint<5>
+        // done: WAR dependencies for nI
+        // end:  		$volatile nI := (I + 1 ) $buffering 1
+        // start:  		registers[I] := 0  $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 27
+        // Target expression
+        // registers[I]
+        $T[array_obj_ref_30_sample_start_] 
+        $T[array_obj_ref_30_sample_completed_] 
+        $T[array_obj_ref_30_update_start_] 
+        $T[array_obj_ref_30_update_completed_] 
+        $T[array_obj_ref_30_word_address_calculated] 
+        $T[array_obj_ref_30_root_address_calculated] 
+        $T[array_obj_ref_30_offset_calculated] 
+        $T[array_obj_ref_30_index_resized_0] 
+        $T[array_obj_ref_30_index_scaled_0] 
+        $T[array_obj_ref_30_index_computed_0] 
+        // I
+        // start: Forward dependencies from I to transition array_obj_ref_30_index_computed_0
+        // done: Forward dependencies from I to transition array_obj_ref_30_index_computed_0
+        ;;[array_obj_ref_30_index_resize_0] 
+        {
+          $T [index_resize_req] $T [index_resize_ack] // resize index to address-width
+        }
+        array_obj_ref_30_index_computed_0 &-> (array_obj_ref_30_index_resize_0)
+        array_obj_ref_30_index_resized_0 <-& (array_obj_ref_30_index_resize_0)
+        ;;[array_obj_ref_30_index_scale_0] 
+        {
+          $T [scale_rename_req] $T [scale_rename_ack] // rename 
+        }
+        array_obj_ref_30_index_resized_0 &-> (array_obj_ref_30_index_scale_0)
+        array_obj_ref_30_index_scaled_0 <-& (array_obj_ref_30_index_scale_0)
+        ;;[array_obj_ref_30_final_index_sum_regn] 
+        {
+          $T [req] $T [ack] // rename
+        }
+        array_obj_ref_30_index_scaled_0 &-> (array_obj_ref_30_final_index_sum_regn)
+        array_obj_ref_30_offset_calculated <-& (array_obj_ref_30_final_index_sum_regn)
+        ;;[array_obj_ref_30_base_plus_offset] 
+        {
+          $T [sum_rename_req] $T [sum_rename_ack] // one gets through 
+        }
+        array_obj_ref_30_offset_calculated &-> (array_obj_ref_30_base_plus_offset)
+        array_obj_ref_30_root_address_calculated <-& (array_obj_ref_30_base_plus_offset)
+        ;;[array_obj_ref_30_word_addrgen] 
+        {
+          $T [root_register_req] $T [root_register_ack]
+        }
+        array_obj_ref_30_root_address_calculated &-> (array_obj_ref_30_word_addrgen)
+        array_obj_ref_30_word_address_calculated <-& (array_obj_ref_30_word_addrgen)
+        ;;[array_obj_ref_30_Sample] 
+        {
+          ;;[array_obj_ref_30_Split] 
+          {
+            $T [split_req] $T [split_ack]
+          }
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_30_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+        }
+        array_obj_ref_30_sample_start_ <-& (array_obj_ref_30_word_address_calculated)
+        array_obj_ref_30_sample_start_ &-> (array_obj_ref_30_Sample)
+        array_obj_ref_30_sample_completed_ <-& (array_obj_ref_30_Sample)
+        array_obj_ref_30_sample_completed_ &-> ($null)
+        array_obj_ref_30_update_start_ &-> (array_obj_ref_30_Update)
+        array_obj_ref_30_update_completed_ <-& (array_obj_ref_30_Update)
+        // end:  		registers[I] := 0  $buffering 1// bits of buffering = 32. 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_30 store
+      }
+      assign_stmt_28_to_assign_stmt_32__entry__ |-> (assign_stmt_28_to_assign_stmt_32)
+      assign_stmt_28_to_assign_stmt_32__exit__ <-| (assign_stmt_28_to_assign_stmt_32)
+      // if-statement  
+      //  file .Aa/prog.linked.opt.aa, line 0
+      ;;[if_stmt_33_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      if_stmt_33__entry__ |-> (if_stmt_33_dead_link)
+      if_stmt_33__exit__ <-| (if_stmt_33_dead_link)
+      ;;[if_stmt_33_eval_test] 
+      {
+        // test expression evaluate and trigger branch 
+        // (I < 15 )
+        ;;[ULT_u5_u1_36] 
+        {
+          // binary expression 
+          ||[ULT_u5_u1_36_inputs] 
+          {
+          }
+          // flow-through
+          ;;[SplitProtocol] 
+          {
+            ;;[Sample] 
+            {
+              $T [rr] $T [ra]
+            }
+            ;;[Update] 
+            {
+              $T [cr] $T [ca]
+            }
+          }
+        }
+        $T [branch_req] 
+      }
+      if_stmt_33__entry__ |-> (if_stmt_33_eval_test)
+      $P [ULT_u5_u1_36_place]
+      ULT_u5_u1_36_place <-| (if_stmt_33_eval_test)
+      ;;[if_stmt_33_if_link] 
+      {
+        $T [if_choice_transition] 
+      }
+      ;;[if_stmt_33_else_link] 
+      {
+        $T [else_choice_transition] 
+      }
+      ULT_u5_u1_36_place |-> (if_stmt_33_if_link if_stmt_33_else_link)
+      $P [loopback]
+      loopback <-| (if_stmt_33_if_link)
+      if_stmt_33__exit__ <-| (if_stmt_33_else_link)
+      // control-path for merge  
+      //  file .Aa/prog.linked.opt.aa, line 22
+      ;;[merge_stmt_16_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      merge_stmt_16__entry__ |-> (merge_stmt_16_dead_link)
+      merge_stmt_16__exit__ <-| (merge_stmt_16_dead_link)
+      //---------------------   merge statement  file .Aa/prog.linked.opt.aa, line 22  --------------------------
+      ||[merge_stmt_16__entry___PhiReq] 
+      {
+        ;;[phi_stmt_17] 
+        {
+          ||[phi_stmt_17_sources] 
+          {
+            // sources for 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+            // type of target is $uint<5>
+            // constant source .... delay transition 
+            $T [type_cast_21_konst_delay_trans] $delay
+          }
+          $T [phi_stmt_17_req] 
+        }
+      }
+      merge_stmt_16__entry__ |-> (merge_stmt_16__entry___PhiReq)
+      ||[loopback_PhiReq] 
+      {
+        ;;[phi_stmt_17] 
+        {
+          ||[phi_stmt_17_sources] 
+          {
+            // sources for 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+            // type of target is $uint<5>
+            // trivial non-constant source .... interlock-buffer introduced 
+            || [Interlock] 
+            {
+              ;;[Sample] 
+              {
+                $T [req] $T [ack]
+              }
+              ;;[Update] 
+              {
+                $T [req] $T [ack]
+              }
+            }
+          }
+          $T [phi_stmt_17_req] 
+        }
+      }
+      loopback |-> (loopback_PhiReq)
+      $P [merge_stmt_16_PhiReqMerge] 
+      merge_stmt_16_PhiReqMerge <-| ( merge_stmt_16__entry___PhiReq  loopback_PhiReq )
+      ||[merge_stmt_16_PhiAck] 
+      {
+        $T [phi_stmt_17_ack] 
+      }
+      merge_stmt_16_PhiReqMerge |-> (merge_stmt_16_PhiAck)
+      merge_stmt_16__exit__  <-| (merge_stmt_16_PhiAck)
+      //---------------------  end of merge statement  file .Aa/prog.linked.opt.aa, line 22  --------------------------
+      merge_stmt_16__entry__ <-| (branch_block_stmt_15__entry__)
+      assign_stmt_28_to_assign_stmt_32__entry__ <-| (merge_stmt_16__exit__)
+      if_stmt_33__entry__ <-| (assign_stmt_28_to_assign_stmt_32__exit__)
+      if_stmt_33__exit__ |-> (branch_block_stmt_15__exit__)
+    }
+    ::[assign_stmt_42] 
+    {
+      // start:  	start_worker := 1  $buffering 1// bits of buffering = 1. 
+      //  file .Aa/prog.linked.opt.aa, line 32
+      // Target expression
+      // (as target) start_worker
+      $T[WPIPE_start_worker_40_sample_start_] 
+      $T[WPIPE_start_worker_40_sample_completed_] 
+      $T[WPIPE_start_worker_40_update_start_] 
+      $T[WPIPE_start_worker_40_update_completed_] 
+      ;;[WPIPE_start_worker_40_Sample] 
+      {
+        // pipe write sample-start start_worker
+        $T [req] $T [ack] 
+      }
+      ;;[WPIPE_start_worker_40_Update] 
+      {
+        // pipe write update (complete) start_worker
+        $T [req] $T [ack] 
+      }
+      WPIPE_start_worker_40_sample_start_ &-> (WPIPE_start_worker_40_Sample)
+      WPIPE_start_worker_40_sample_completed_ <-& (WPIPE_start_worker_40_Sample)
+      WPIPE_start_worker_40_update_start_ <-& (WPIPE_start_worker_40_sample_completed_)
+      WPIPE_start_worker_40_update_start_ &-> (WPIPE_start_worker_40_Update)
+      WPIPE_start_worker_40_update_completed_ <-& (WPIPE_start_worker_40_Update)
+      // end:  	start_worker := 1  $buffering 1// bits of buffering = 1. 
+      // load-store dependencies..
+      // pipe read/write dependencies for pipe start_worker
+      // read-dependencies for pipe start_worker
+      // write-dependencies for pipe start_worker
+      // signal write dependencies for start_worker
+    }
+    <>[branch_block_stmt_43] // Branch Block  file .Aa/prog.linked.opt.aa, line 33
+    {
+      $P [branch_block_stmt_43__entry__]
+      branch_block_stmt_43__entry__ <-| ($entry)
+      $P [branch_block_stmt_43__exit__]
+      branch_block_stmt_43__exit__ |-> ($exit)
+      $P [merge_stmt_44__entry__] 
+      $P [merge_stmt_44__exit__] 
+      $P [assign_stmt_47_to_assign_stmt_87__entry__] 
+      $P [assign_stmt_47_to_assign_stmt_87__exit__] 
+      $P [loopback]
+      ::[assign_stmt_47_to_assign_stmt_87] 
+      {
+        // start:  		cmd := AFB_ACCELERATOR_REQUEST $buffering 1// bits of buffering = 74. 
+        //  file .Aa/prog.linked.opt.aa, line 37
+        // Source expression
+        // AFB_ACCELERATOR_REQUEST
+        $T[RPIPE_AFB_ACCELERATOR_REQUEST_46_sample_start_] 
+        $T[RPIPE_AFB_ACCELERATOR_REQUEST_46_sample_completed_] 
+        $T[RPIPE_AFB_ACCELERATOR_REQUEST_46_update_start_] 
+        $T[RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_] 
+        ;;[RPIPE_AFB_ACCELERATOR_REQUEST_46_Sample] 
+        {
+          // pipe read sample
+          $T [rr] $T [ra] 
+        }
+        ;;[RPIPE_AFB_ACCELERATOR_REQUEST_46_Update] 
+        {
+          // pipe read update
+          $T [cr] $T [ca] 
+        }
+        RPIPE_AFB_ACCELERATOR_REQUEST_46_sample_start_ &-> (RPIPE_AFB_ACCELERATOR_REQUEST_46_Sample)
+        RPIPE_AFB_ACCELERATOR_REQUEST_46_sample_completed_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_Sample)
+        RPIPE_AFB_ACCELERATOR_REQUEST_46_update_start_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_sample_completed_)
+        RPIPE_AFB_ACCELERATOR_REQUEST_46_update_start_ &-> (RPIPE_AFB_ACCELERATOR_REQUEST_46_Update)
+        RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_Update)
+        // Target expression
+        // (as target) cmd
+        // start: WAR dependencies for cmd
+        // done: WAR dependencies for cmd
+        // end:  		cmd := AFB_ACCELERATOR_REQUEST $buffering 1// bits of buffering = 74. 
+        // start: WAR dependencies for rwbar
+        // done: WAR dependencies for rwbar
+        // start:  		$volatile rwbar := ( $slice cmd 72 72 )  $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 38
+        // volatile! 
+        // Source expression
+        // ( $slice cmd 72 72 ) 
+        // cmd
+        // Target expression
+        // (as target) rwbar
+        // start: WAR dependencies for rwbar
+        // done: WAR dependencies for rwbar
+        // end:  		$volatile rwbar := ( $slice cmd 72 72 )  $buffering 1
+        // start: WAR dependencies for addr
+        // done: WAR dependencies for addr
+        // start:  		$volatile addr := ( $slice cmd 67 32 )  $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 39
+        // volatile! 
+        // Source expression
+        // ( $slice cmd 67 32 ) 
+        // cmd
+        // Target expression
+        // (as target) addr
+        // start: WAR dependencies for addr
+        // done: WAR dependencies for addr
+        // end:  		$volatile addr := ( $slice cmd 67 32 )  $buffering 1
+        // start: WAR dependencies for wdata
+        // done: WAR dependencies for wdata
+        // start:  		$volatile wdata := ( $slice cmd 31 0 )  $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 40
+        // volatile! 
+        // Source expression
+        // ( $slice cmd 31 0 ) 
+        // cmd
+        // Target expression
+        // (as target) wdata
+        // start: WAR dependencies for wdata
+        // done: WAR dependencies for wdata
+        // end:  		$volatile wdata := ( $slice cmd 31 0 )  $buffering 1
+        // start: WAR dependencies for reg_index
+        // done: WAR dependencies for reg_index
+        // start:  		$volatile reg_index := ( $slice addr 5 2 )  $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 41
+        // volatile! 
+        // Source expression
+        // ( $slice addr 5 2 ) 
+        // addr
+        // Target expression
+        // (as target) reg_index
+        // start: WAR dependencies for reg_index
+        // done: WAR dependencies for reg_index
+        // end:  		$volatile reg_index := ( $slice addr 5 2 )  $buffering 1
+        // start:  		$guard (rwbar) rdata := registers[reg_index] $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 42
+        // Guard expression 
+        // rwbar
+        // Source expression
+        // registers[reg_index]
+        $T[array_obj_ref_69_sample_start_] 
+        $T[array_obj_ref_69_sample_completed_] 
+        $T[array_obj_ref_69_update_start_] 
+        $T[array_obj_ref_69_update_completed_] 
+        $T[array_obj_ref_69_word_address_calculated] 
+        $T[array_obj_ref_69_root_address_calculated] 
+        $T[array_obj_ref_69_offset_calculated] 
+        $T[array_obj_ref_69_index_resized_0] 
+        $T[array_obj_ref_69_index_scaled_0] 
+        $T[array_obj_ref_69_index_computed_0] 
+        // reg_index
+        // start: Forward dependencies from reg_index to transition array_obj_ref_69_index_computed_0
+        array_obj_ref_69_index_computed_0 <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        // done: Forward dependencies from reg_index to transition array_obj_ref_69_index_computed_0
+        ;;[array_obj_ref_69_index_resize_0] 
+        {
+          $T [index_resize_req] $T [index_resize_ack] // resize index to address-width
+        }
+        array_obj_ref_69_index_computed_0 &-> (array_obj_ref_69_index_resize_0)
+        array_obj_ref_69_index_resized_0 <-& (array_obj_ref_69_index_resize_0)
+        ;;[array_obj_ref_69_index_scale_0] 
+        {
+          $T [scale_rename_req] $T [scale_rename_ack] // rename 
+        }
+        array_obj_ref_69_index_resized_0 &-> (array_obj_ref_69_index_scale_0)
+        array_obj_ref_69_index_scaled_0 <-& (array_obj_ref_69_index_scale_0)
+        ;;[array_obj_ref_69_final_index_sum_regn] 
+        {
+          $T [req] $T [ack] // rename
+        }
+        array_obj_ref_69_index_scaled_0 &-> (array_obj_ref_69_final_index_sum_regn)
+        array_obj_ref_69_offset_calculated <-& (array_obj_ref_69_final_index_sum_regn)
+        ;;[array_obj_ref_69_base_plus_offset] 
+        {
+          $T [sum_rename_req] $T [sum_rename_ack] // one gets through 
+        }
+        array_obj_ref_69_offset_calculated &-> (array_obj_ref_69_base_plus_offset)
+        array_obj_ref_69_root_address_calculated <-& (array_obj_ref_69_base_plus_offset)
+        ;;[array_obj_ref_69_word_addrgen] 
+        {
+          $T [root_register_req] $T [root_register_ack]
+        }
+        array_obj_ref_69_root_address_calculated &-> (array_obj_ref_69_word_addrgen)
+        array_obj_ref_69_word_address_calculated <-& (array_obj_ref_69_word_addrgen)
+        ;;[array_obj_ref_69_Sample] 
+        {
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_69_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+          ;;[array_obj_ref_69_Merge] 
+          {
+            $T [merge_req] $T [merge_ack]
+          }
+        }
+        array_obj_ref_69_sample_start_ <-& (array_obj_ref_69_word_address_calculated)
+        array_obj_ref_69_sample_start_ &-> (array_obj_ref_69_Sample)
+        array_obj_ref_69_sample_completed_ <-& (array_obj_ref_69_Sample)
+        array_obj_ref_69_sample_completed_ &-> ($null)
+        array_obj_ref_69_update_start_ &-> (array_obj_ref_69_Update)
+        array_obj_ref_69_update_completed_ <-& (array_obj_ref_69_Update)
+        // Guard dependency for expression array_obj_ref_69 with guard R_rwbar_66
+        array_obj_ref_69_sample_start_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        // Target expression
+        // (as target) rdata
+        // start: WAR dependencies for rdata
+        // done: WAR dependencies for rdata
+        // end:  		$guard (rwbar) rdata := registers[reg_index] $buffering 1// bits of buffering = 32. 
+        // start:  		$guard (~rwbar) registers[reg_index] := wdata $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 43
+        // Guard expression 
+        // rwbar
+        // Source expression
+        // wdata
+        // Target expression
+        // registers[reg_index]
+        $T[array_obj_ref_73_sample_start_] 
+        $T[array_obj_ref_73_sample_completed_] 
+        $T[array_obj_ref_73_update_start_] 
+        $T[array_obj_ref_73_update_completed_] 
+        $T[array_obj_ref_73_word_address_calculated] 
+        $T[array_obj_ref_73_root_address_calculated] 
+        $T[array_obj_ref_73_offset_calculated] 
+        $T[array_obj_ref_73_index_resized_0] 
+        $T[array_obj_ref_73_index_scaled_0] 
+        $T[array_obj_ref_73_index_computed_0] 
+        // reg_index
+        // start: Forward dependencies from reg_index to transition array_obj_ref_73_index_computed_0
+        array_obj_ref_73_index_computed_0 <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        // done: Forward dependencies from reg_index to transition array_obj_ref_73_index_computed_0
+        ;;[array_obj_ref_73_index_resize_0] 
+        {
+          $T [index_resize_req] $T [index_resize_ack] // resize index to address-width
+        }
+        array_obj_ref_73_index_computed_0 &-> (array_obj_ref_73_index_resize_0)
+        array_obj_ref_73_index_resized_0 <-& (array_obj_ref_73_index_resize_0)
+        ;;[array_obj_ref_73_index_scale_0] 
+        {
+          $T [scale_rename_req] $T [scale_rename_ack] // rename 
+        }
+        array_obj_ref_73_index_resized_0 &-> (array_obj_ref_73_index_scale_0)
+        array_obj_ref_73_index_scaled_0 <-& (array_obj_ref_73_index_scale_0)
+        ;;[array_obj_ref_73_final_index_sum_regn] 
+        {
+          $T [req] $T [ack] // rename
+        }
+        array_obj_ref_73_index_scaled_0 &-> (array_obj_ref_73_final_index_sum_regn)
+        array_obj_ref_73_offset_calculated <-& (array_obj_ref_73_final_index_sum_regn)
+        ;;[array_obj_ref_73_base_plus_offset] 
+        {
+          $T [sum_rename_req] $T [sum_rename_ack] // one gets through 
+        }
+        array_obj_ref_73_offset_calculated &-> (array_obj_ref_73_base_plus_offset)
+        array_obj_ref_73_root_address_calculated <-& (array_obj_ref_73_base_plus_offset)
+        ;;[array_obj_ref_73_word_addrgen] 
+        {
+          $T [root_register_req] $T [root_register_ack]
+        }
+        array_obj_ref_73_root_address_calculated &-> (array_obj_ref_73_word_addrgen)
+        array_obj_ref_73_word_address_calculated <-& (array_obj_ref_73_word_addrgen)
+        ;;[array_obj_ref_73_Sample] 
+        {
+          ;;[array_obj_ref_73_Split] 
+          {
+            $T [split_req] $T [split_ack]
+          }
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_73_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+        }
+        array_obj_ref_73_sample_start_ <-& (array_obj_ref_73_word_address_calculated)
+        array_obj_ref_73_sample_start_ &-> (array_obj_ref_73_Sample)
+        array_obj_ref_73_sample_completed_ <-& (array_obj_ref_73_Sample)
+        array_obj_ref_73_sample_completed_ &-> ($null)
+        array_obj_ref_73_update_start_ &-> (array_obj_ref_73_Update)
+        array_obj_ref_73_update_completed_ <-& (array_obj_ref_73_Update)
+        // Guard dependency for expression array_obj_ref_73 with guard R_rwbar_71
+        array_obj_ref_73_sample_start_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        // start: Forward dependencies from wdata to transition array_obj_ref_73_sample_start_
+        array_obj_ref_73_sample_start_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        // done: Forward dependencies from wdata to transition array_obj_ref_73_sample_start_
+        // end:  		$guard (~rwbar) registers[reg_index] := wdata $buffering 1// bits of buffering = 32. 
+        // start: WAR dependencies for resp
+        // done: WAR dependencies for resp
+        // start:  		$volatile resp := (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) ) $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 44
+        // volatile! 
+        // Source expression
+        // (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) )
+        // ( $mux rwbar rdata  0  ) 
+        // rwbar
+        // rdata
+        // Target expression
+        // (as target) resp
+        // start: WAR dependencies for resp
+        // done: WAR dependencies for resp
+        // end:  		$volatile resp := (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) ) $buffering 1
+        // start:  		AFB_ACCELERATOR_RESPONSE := resp $buffering 1// bits of buffering = 33. 
+        //  file .Aa/prog.linked.opt.aa, line 45
+        // Source expression
+        // resp
+        // Target expression
+        // (as target) AFB_ACCELERATOR_RESPONSE
+        $T[WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_] 
+        $T[WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_completed_] 
+        $T[WPIPE_AFB_ACCELERATOR_RESPONSE_85_update_start_] 
+        $T[WPIPE_AFB_ACCELERATOR_RESPONSE_85_update_completed_] 
+        ;;[WPIPE_AFB_ACCELERATOR_RESPONSE_85_Sample] 
+        {
+          // pipe write sample-start AFB_ACCELERATOR_RESPONSE
+          $T [req] $T [ack] 
+        }
+        ;;[WPIPE_AFB_ACCELERATOR_RESPONSE_85_Update] 
+        {
+          // pipe write update (complete) AFB_ACCELERATOR_RESPONSE
+          $T [req] $T [ack] 
+        }
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_ &-> (WPIPE_AFB_ACCELERATOR_RESPONSE_85_Sample)
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_completed_ <-& (WPIPE_AFB_ACCELERATOR_RESPONSE_85_Sample)
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_update_start_ <-& (WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_completed_)
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_update_start_ &-> (WPIPE_AFB_ACCELERATOR_RESPONSE_85_Update)
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_update_completed_ <-& (WPIPE_AFB_ACCELERATOR_RESPONSE_85_Update)
+        // start: Forward dependencies from resp to transition WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_ <-& (RPIPE_AFB_ACCELERATOR_REQUEST_46_update_completed_)
+        WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_ <-& (array_obj_ref_69_update_completed_)
+        // done: Forward dependencies from resp to transition WPIPE_AFB_ACCELERATOR_RESPONSE_85_sample_start_
+        // end:  		AFB_ACCELERATOR_RESPONSE := resp $buffering 1// bits of buffering = 33. 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_69 load
+        //  array_obj_ref_73 store
+        $T [array_obj_ref_69_array_obj_ref_73_delay] $delay
+        // array_obj_ref_69(load) -> array_obj_ref_73(store)
+        array_obj_ref_73_sample_start_ <-& (array_obj_ref_69_array_obj_ref_73_delay)
+        array_obj_ref_69_array_obj_ref_73_delay <-& (array_obj_ref_69_sample_completed_)
+        // pipe read/write dependencies for pipe AFB_ACCELERATOR_REQUEST
+        // read-dependencies for pipe AFB_ACCELERATOR_REQUEST
+        // write-dependencies for pipe AFB_ACCELERATOR_REQUEST
+        // signal write dependencies for AFB_ACCELERATOR_REQUEST
+        // pipe read/write dependencies for pipe AFB_ACCELERATOR_RESPONSE
+        // read-dependencies for pipe AFB_ACCELERATOR_RESPONSE
+        // write-dependencies for pipe AFB_ACCELERATOR_RESPONSE
+        // signal write dependencies for AFB_ACCELERATOR_RESPONSE
+      }
+      assign_stmt_47_to_assign_stmt_87__entry__ |-> (assign_stmt_47_to_assign_stmt_87)
+      assign_stmt_47_to_assign_stmt_87__exit__ <-| (assign_stmt_47_to_assign_stmt_87)
+      // control-path for merge  
+      //  file .Aa/prog.linked.opt.aa, line 35
+      ;;[merge_stmt_44_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      merge_stmt_44__entry__ |-> (merge_stmt_44_dead_link)
+      merge_stmt_44__exit__ <-| (merge_stmt_44_dead_link)
+      //---------------------   merge statement  file .Aa/prog.linked.opt.aa, line 35  --------------------------
+      ||[merge_stmt_44__entry___PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      merge_stmt_44__entry__ |-> (merge_stmt_44__entry___PhiReq)
+      ||[loopback_PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      loopback |-> (loopback_PhiReq)
+      $P [merge_stmt_44_PhiReqMerge] 
+      merge_stmt_44_PhiReqMerge <-| ( merge_stmt_44__entry___PhiReq  loopback_PhiReq )
+      ||[merge_stmt_44_PhiAck] 
+      {
+        $T [dummy] 
+      }
+      merge_stmt_44_PhiReqMerge |-> (merge_stmt_44_PhiAck)
+      merge_stmt_44__exit__  <-| (merge_stmt_44_PhiAck)
+      //---------------------  end of merge statement  file .Aa/prog.linked.opt.aa, line 35  --------------------------
+      merge_stmt_44__entry__ <-| (branch_block_stmt_43__entry__)
+      assign_stmt_47_to_assign_stmt_87__entry__ <-| (merge_stmt_44__exit__)
+      loopback <-| (assign_stmt_47_to_assign_stmt_87__exit__)
+    }
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %accelerator_control_daemon%init_loop%
+    //  file .Aa/prog.linked.opt.aa, line 22
+    // constant-object-declarations for block %accelerator_control_daemon%init_loop
+    //  file .Aa/prog.linked.opt.aa, line 20
+    // constant-object-declarations for block %accelerator_control_daemon%run_loop%
+    //  file .Aa/prog.linked.opt.aa, line 35
+    // constant-object-declarations for block %accelerator_control_daemon%run_loop
+    //  file .Aa/prog.linked.opt.aa, line 33
+    // constant-object-declarations for block %accelerator_control_daemon
+    //  file .Aa/prog.linked.opt.aa, line 15
+    // constant-declarations for block %accelerator_control_daemon%init_loop
+    //  file .Aa/prog.linked.opt.aa, line 20
+    // constant-declarations for block %accelerator_control_daemon%init_loop%
+    //  file .Aa/prog.linked.opt.aa, line 22
+    // constant-declarations for phi:  			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+    // type of target is $uint<5>
+    //  file .Aa/prog.linked.opt.aa, line 23
+    // ($bitcast ($uint<5>) _b0  )
+    $constant $W[type_cast_21_wire_constant] : $int<5> := _b00000// 0
+    // 1 
+    $constant $W[konst_26_wire_constant] : $int<5> := _b00001// 1
+    // 0 
+    $constant $W[konst_31_wire_constant] : $int<32> := _b00000000000000000000000000000000// 0
+    // registers[I]
+    $constant $W[array_obj_ref_30_resized_base_address] : $int<4> := _b0000// 0
+    $constant $W[array_obj_ref_30_offset_scale_factor_0] : $int<4> := _b0001// 1
+    $constant $W[array_obj_ref_30_word_offset_0] : $int<4> := _b0000// 0
+    // if-statement  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // 15 
+    $constant $W[konst_35_wire_constant] : $int<5> := _b01111// 15
+    // 1 
+    $constant $W[konst_41_wire_constant] : $int<1> := _b1// 1
+    // constant-declarations for block %accelerator_control_daemon%run_loop
+    //  file .Aa/prog.linked.opt.aa, line 33
+    // constant-declarations for block %accelerator_control_daemon%run_loop%
+    //  file .Aa/prog.linked.opt.aa, line 35
+    // registers[reg_index]
+    $constant $W[array_obj_ref_69_resized_base_address] : $int<4> := _b0000// 0
+    $constant $W[array_obj_ref_69_offset_scale_factor_0] : $int<4> := _b0001// 1
+    $constant $W[array_obj_ref_69_word_offset_0] : $int<4> := _b0000// 0
+    // registers[reg_index]
+    $constant $W[array_obj_ref_73_resized_base_address] : $int<4> := _b0000// 0
+    $constant $W[array_obj_ref_73_offset_scale_factor_0] : $int<4> := _b0001// 1
+    $constant $W[array_obj_ref_73_word_offset_0] : $int<4> := _b0000// 0
+    // ($bitcast ($uint<1>) _b0  )
+    $constant $W[type_cast_78_wire_constant] : $int<1> := _b0// 0
+    // ( $mux rwbar rdata  0  ) 
+    // 0 
+    $constant $W[konst_81_wire_constant] : $int<32> := _b00000000000000000000000000000000// 0
+    // block %accelerator_control_daemon%init_loop
+    //  file .Aa/prog.linked.opt.aa, line 20
+    // merge-statement  
+    //  file .Aa/prog.linked.opt.aa, line 22
+    // 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+    // type of target is $uint<5>
+    //  file .Aa/prog.linked.opt.aa, line 23
+    $W[nI_28_22_buffered] : $int<5>
+    // I
+    $W[I_17] : $int<5>
+    // 		$volatile nI := (I + 1 ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 26
+    // nI
+    $W[nI_28] : $int<5>
+    // 		registers[I] := 0  $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 27
+    // registers[I]
+    $intermediate $W[R_I_29_resized] : $int<4>
+    $intermediate $W[R_I_29_scaled] : $int<4>
+    $intermediate $W[array_obj_ref_30_final_offset] : $int<4>
+    $intermediate $W[array_obj_ref_30_root_address] : $int<4>
+    $W[array_obj_ref_30_word_address_0] : $pointer<memory_space_0>
+    $W[array_obj_ref_30_data_0] : $int<32>
+    // if statement  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // (I < 15 )
+    $intermediate $W[ULT_u5_u1_36_wire] : $int<1>
+    // 	start_worker := 1  $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 32
+    // start_worker
+    // block %accelerator_control_daemon%run_loop
+    //  file .Aa/prog.linked.opt.aa, line 33
+    // 		cmd := AFB_ACCELERATOR_REQUEST $buffering 1// bits of buffering = 74. 
+    //  file .Aa/prog.linked.opt.aa, line 37
+    // cmd
+    $W[cmd_47] : $int<74>
+    // 		$volatile rwbar := ( $slice cmd 72 72 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 38
+    // rwbar
+    $W[rwbar_51] : $int<1>
+    // 		$volatile addr := ( $slice cmd 67 32 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 39
+    // addr
+    $W[addr_56] : $int<36>
+    // 		$volatile wdata := ( $slice cmd 31 0 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 40
+    // wdata
+    $W[wdata_60] : $int<32>
+    // 		$volatile reg_index := ( $slice addr 5 2 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 41
+    // reg_index
+    $W[reg_index_65] : $int<4>
+    // 		$guard (rwbar) rdata := registers[reg_index] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 42
+    // registers[reg_index]
+    $intermediate $W[R_reg_index_68_resized] : $int<4>
+    $intermediate $W[R_reg_index_68_scaled] : $int<4>
+    $intermediate $W[array_obj_ref_69_final_offset] : $int<4>
+    $intermediate $W[array_obj_ref_69_root_address] : $int<4>
+    $W[array_obj_ref_69_word_address_0] : $pointer<memory_space_0>
+    $W[array_obj_ref_69_data_0] : $int<32>
+    // rdata
+    $W[rdata_70] : $int<32>
+    // 		$guard (~rwbar) registers[reg_index] := wdata $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 43
+    // registers[reg_index]
+    $intermediate $W[R_reg_index_72_resized] : $int<4>
+    $intermediate $W[R_reg_index_72_scaled] : $int<4>
+    $intermediate $W[array_obj_ref_73_final_offset] : $int<4>
+    $intermediate $W[array_obj_ref_73_root_address] : $int<4>
+    $W[array_obj_ref_73_word_address_0] : $pointer<memory_space_0>
+    $W[array_obj_ref_73_data_0] : $int<32>
+    // 		$volatile resp := (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 44
+    // ( $mux rwbar rdata  0  ) 
+    $intermediate $W[MUX_82_wire] : $int<32>
+    // resp
+    $W[resp_84] : $int<33>
+    // 		AFB_ACCELERATOR_RESPONSE := resp $buffering 1// bits of buffering = 33. 
+    //  file .Aa/prog.linked.opt.aa, line 45
+    // AFB_ACCELERATOR_RESPONSE
+    // datapath-instances for block %accelerator_control_daemon%init_loop
+    //  file .Aa/prog.linked.opt.aa, line 20
+    // data-path instances for merge  
+    //  file .Aa/prog.linked.opt.aa, line 22
+    // 			$phi I := 			  ($bitcast ($uint<5>) _b0  ) $on   $entry 			  nI $on   loopback 
+    // type of target is $uint<5>
+    //  file .Aa/prog.linked.opt.aa, line 23
+    # := [nI_28_22_buf] (nI_28) (nI_28_22_buffered)    
+    $phi [phi_stmt_17] (type_cast_21_wire_constant nI_28_22_buffered) ( I_17 ) 
+    // 		$volatile nI := (I + 1 ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 26
+    // (I + 1 )
+    +[ADD_u5_u5_27_inst] (I_17 konst_26_wire_constant) (nI_28)   $flowthrough 
+    $delay ADD_u5_u5_27_inst 0
+    // 		registers[I] := 0  $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 27
+    // registers[I]
+    &/ [array_obj_ref_30_index_0_resize] (I_17) (R_I_29_resized) 
+    $flowthrough 
+    &/ [array_obj_ref_30_index_0_rename] (R_I_29_resized) (R_I_29_scaled) 
+    $flowthrough 
+    &/ [array_obj_ref_30_index_offset] (R_I_29_scaled) (array_obj_ref_30_final_offset) 
+    $flowthrough 
+    &/ [array_obj_ref_30_root_address_inst] (array_obj_ref_30_final_offset) (array_obj_ref_30_root_address) 
+    $flowthrough 
+    &/ [array_obj_ref_30_addr_0] (array_obj_ref_30_root_address) (array_obj_ref_30_word_address_0) 
+    $flowthrough 
+    $store [array_obj_ref_30_store_0] $to memory_space_0 (array_obj_ref_30_word_address_0 array_obj_ref_30_data_0) 
+    $delay array_obj_ref_30_store_0 5
+    &/ [array_obj_ref_30_gather_scatter] (konst_31_wire_constant) (array_obj_ref_30_data_0) 
+    $flowthrough 
+    // datapath-instances for if  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // (I < 15 )
+    <[ULT_u5_u1_36_inst] (I_17 konst_35_wire_constant) (ULT_u5_u1_36_wire)   $flowthrough 
+    $delay ULT_u5_u1_36_inst 0
+    ==0? [if_stmt_33_branch] (ULT_u5_u1_36_wire)
+    // 	start_worker := 1  $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 32
+    // start_worker
+    $ioport $out [WPIPE_start_worker_40_inst]  (konst_41_wire_constant) (start_worker) 
+    // datapath-instances for block %accelerator_control_daemon%run_loop
+    //  file .Aa/prog.linked.opt.aa, line 33
+    // 		cmd := AFB_ACCELERATOR_REQUEST $buffering 1// bits of buffering = 74. 
+    //  file .Aa/prog.linked.opt.aa, line 37
+    // AFB_ACCELERATOR_REQUEST
+    $ioport $in [RPIPE_AFB_ACCELERATOR_REQUEST_46_inst] (AFB_ACCELERATOR_REQUEST) (cmd_47) 
+    $buffering $out RPIPE_AFB_ACCELERATOR_REQUEST_46_inst cmd_47 1
+    // 		$volatile rwbar := ( $slice cmd 72 72 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 38
+    // ( $slice cmd 72 72 ) 
+    [:] [slice_50_inst] (cmd_47 72 72) (rwbar_51)  $flowthrough
+    $delay slice_50_inst 0
+    // 		$volatile addr := ( $slice cmd 67 32 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 39
+    // ( $slice cmd 67 32 ) 
+    [:] [slice_55_inst] (cmd_47 67 32) (addr_56)  $flowthrough
+    $delay slice_55_inst 0
+    // 		$volatile wdata := ( $slice cmd 31 0 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 40
+    // ( $slice cmd 31 0 ) 
+    [:] [slice_59_inst] (cmd_47 31 0) (wdata_60)  $flowthrough
+    $delay slice_59_inst 0
+    // 		$volatile reg_index := ( $slice addr 5 2 )  $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 41
+    // ( $slice addr 5 2 ) 
+    [:] [slice_64_inst] (addr_56 5 2) (reg_index_65)  $flowthrough
+    $delay slice_64_inst 0
+    // 		$guard (rwbar) rdata := registers[reg_index] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 42
+    // registers[reg_index]
+    &/ [array_obj_ref_69_index_0_resize] (reg_index_65) (R_reg_index_68_resized) $guard ( rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_69_index_0_rename] (R_reg_index_68_resized) (R_reg_index_68_scaled) $guard ( rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_69_index_offset] (R_reg_index_68_scaled) (array_obj_ref_69_final_offset) $guard ( rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_69_root_address_inst] (array_obj_ref_69_final_offset) (array_obj_ref_69_root_address) $guard ( rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_69_addr_0] (array_obj_ref_69_root_address) (array_obj_ref_69_word_address_0) $guard ( rwbar_51 ) 
+    $flowthrough 
+    $load [array_obj_ref_69_load_0] $from memory_space_0 (array_obj_ref_69_word_address_0) (array_obj_ref_69_data_0) $guard ( rwbar_51 ) 
+    $delay array_obj_ref_69_load_0 5
+    &/ [array_obj_ref_69_gather_scatter] (array_obj_ref_69_data_0) (rdata_70) $guard ( rwbar_51 ) 
+    $flowthrough 
+    // 		$guard (~rwbar) registers[reg_index] := wdata $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 43
+    // registers[reg_index]
+    &/ [array_obj_ref_73_index_0_resize] (reg_index_65) (R_reg_index_72_resized) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_73_index_0_rename] (R_reg_index_72_resized) (R_reg_index_72_scaled) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_73_index_offset] (R_reg_index_72_scaled) (array_obj_ref_73_final_offset) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_73_root_address_inst] (array_obj_ref_73_final_offset) (array_obj_ref_73_root_address) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    &/ [array_obj_ref_73_addr_0] (array_obj_ref_73_root_address) (array_obj_ref_73_word_address_0) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    $store [array_obj_ref_73_store_0] $to memory_space_0 (array_obj_ref_73_word_address_0 array_obj_ref_73_data_0) $guard ( ~ rwbar_51 ) 
+    $delay array_obj_ref_73_store_0 5
+    &/ [array_obj_ref_73_gather_scatter] (wdata_60) (array_obj_ref_73_data_0) $guard ( ~ rwbar_51 ) 
+    $flowthrough 
+    // 		$volatile resp := (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 44
+    // ( $mux rwbar rdata  0  ) 
+    ? [MUX_82_inst] (rwbar_51 rdata_70 konst_81_wire_constant) (MUX_82_wire)  $flowthrough
+    // (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) )
+    &&[CONCAT_u1_u33_83_inst] (type_cast_78_wire_constant MUX_82_wire) (resp_84)   $flowthrough 
+    $delay CONCAT_u1_u33_83_inst 0
+    // 		AFB_ACCELERATOR_RESPONSE := resp $buffering 1// bits of buffering = 33. 
+    //  file .Aa/prog.linked.opt.aa, line 45
+    // AFB_ACCELERATOR_RESPONSE
+    $ioport $out [WPIPE_AFB_ACCELERATOR_RESPONSE_85_inst]  (resp_84) (AFB_ACCELERATOR_RESPONSE) 
+  }
+  // end data-path
+  // CP-DP links for merge  
+  //  file .Aa/prog.linked.opt.aa, line 22
+  nI_28_22_buf <=> (branch_block_stmt_15/loopback_PhiReq/phi_stmt_17/phi_stmt_17_sources/Interlock/Sample/req branch_block_stmt_15/loopback_PhiReq/phi_stmt_17/phi_stmt_17_sources/Interlock/Update/req) (branch_block_stmt_15/loopback_PhiReq/phi_stmt_17/phi_stmt_17_sources/Interlock/Sample/ack branch_block_stmt_15/loopback_PhiReq/phi_stmt_17/phi_stmt_17_sources/Interlock/Update/ack)
+  phi_stmt_17 <=> (branch_block_stmt_15/merge_stmt_16__entry___PhiReq/phi_stmt_17/phi_stmt_17_req branch_block_stmt_15/loopback_PhiReq/phi_stmt_17/phi_stmt_17_req) (branch_block_stmt_15/merge_stmt_16_PhiAck/phi_stmt_17_ack)
+  // 		$volatile nI := (I + 1 ) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 26
+  // (I + 1 )
+  // I
+  // 		registers[I] := 0  $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 27
+  // I
+  array_obj_ref_30_index_0_resize <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_index_resize_0/index_resize_req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_index_resize_0/index_resize_ack)
+  array_obj_ref_30_index_0_rename <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_index_scale_0/scale_rename_req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_index_scale_0/scale_rename_ack)
+  array_obj_ref_30_index_offset <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_final_index_sum_regn/req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_final_index_sum_regn/ack)
+  array_obj_ref_30_root_address_inst <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_base_plus_offset/sum_rename_req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_base_plus_offset/sum_rename_ack)
+  array_obj_ref_30_addr_0 <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_word_addrgen/root_register_req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_word_addrgen/root_register_ack)
+  array_obj_ref_30_gather_scatter <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Sample/array_obj_ref_30_Split/split_req) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Sample/array_obj_ref_30_Split/split_ack)
+  array_obj_ref_30_store_0 <=> (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Sample/word_access_start/word_0/rr branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Update/word_access_complete/word_0/cr) (branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Sample/word_access_start/word_0/ra branch_block_stmt_15/assign_stmt_28_to_assign_stmt_32/array_obj_ref_30_Update/word_access_complete/word_0/ca)
+  // CP-DP links for if  
+  //  file .Aa/prog.linked.opt.aa, line 0
+  // (I < 15 )
+  if_stmt_33_branch <=> (branch_block_stmt_15/if_stmt_33_eval_test/branch_req) (branch_block_stmt_15/if_stmt_33_else_link/else_choice_transition branch_block_stmt_15/if_stmt_33_if_link/if_choice_transition)
+  // 	start_worker := 1  $buffering 1// bits of buffering = 1. 
+  //  file .Aa/prog.linked.opt.aa, line 32
+  // start_worker
+  WPIPE_start_worker_40_inst <=> (assign_stmt_42/WPIPE_start_worker_40_Sample/req assign_stmt_42/WPIPE_start_worker_40_Update/req) (assign_stmt_42/WPIPE_start_worker_40_Sample/ack assign_stmt_42/WPIPE_start_worker_40_Update/ack)
+  // CP-DP links for merge  
+  //  file .Aa/prog.linked.opt.aa, line 35
+  // 		cmd := AFB_ACCELERATOR_REQUEST $buffering 1// bits of buffering = 74. 
+  //  file .Aa/prog.linked.opt.aa, line 37
+  // AFB_ACCELERATOR_REQUEST
+  RPIPE_AFB_ACCELERATOR_REQUEST_46_inst <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/RPIPE_AFB_ACCELERATOR_REQUEST_46_Sample/rr branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/RPIPE_AFB_ACCELERATOR_REQUEST_46_Update/cr) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/RPIPE_AFB_ACCELERATOR_REQUEST_46_Sample/ra branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/RPIPE_AFB_ACCELERATOR_REQUEST_46_Update/ca)
+  // 		$volatile rwbar := ( $slice cmd 72 72 )  $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 38
+  // cmd
+  // 		$volatile addr := ( $slice cmd 67 32 )  $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 39
+  // cmd
+  // 		$volatile wdata := ( $slice cmd 31 0 )  $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 40
+  // cmd
+  // 		$volatile reg_index := ( $slice addr 5 2 )  $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 41
+  // addr
+  // 		$guard (rwbar) rdata := registers[reg_index] $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 42
+  // registers[reg_index]
+  // reg_index
+  array_obj_ref_69_index_0_resize <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_index_resize_0/index_resize_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_index_resize_0/index_resize_ack)
+  array_obj_ref_69_index_0_rename <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_index_scale_0/scale_rename_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_index_scale_0/scale_rename_ack)
+  array_obj_ref_69_index_offset <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_final_index_sum_regn/req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_final_index_sum_regn/ack)
+  array_obj_ref_69_root_address_inst <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_base_plus_offset/sum_rename_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_base_plus_offset/sum_rename_ack)
+  array_obj_ref_69_addr_0 <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_word_addrgen/root_register_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_word_addrgen/root_register_ack)
+  array_obj_ref_69_gather_scatter <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Update/array_obj_ref_69_Merge/merge_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Update/array_obj_ref_69_Merge/merge_ack)
+  array_obj_ref_69_load_0 <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Sample/word_access_start/word_0/rr branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Update/word_access_complete/word_0/cr) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Sample/word_access_start/word_0/ra branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_69_Update/word_access_complete/word_0/ca)
+  // 		$guard (~rwbar) registers[reg_index] := wdata $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 43
+  // wdata
+  // reg_index
+  array_obj_ref_73_index_0_resize <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_index_resize_0/index_resize_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_index_resize_0/index_resize_ack)
+  array_obj_ref_73_index_0_rename <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_index_scale_0/scale_rename_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_index_scale_0/scale_rename_ack)
+  array_obj_ref_73_index_offset <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_final_index_sum_regn/req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_final_index_sum_regn/ack)
+  array_obj_ref_73_root_address_inst <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_base_plus_offset/sum_rename_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_base_plus_offset/sum_rename_ack)
+  array_obj_ref_73_addr_0 <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_word_addrgen/root_register_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_word_addrgen/root_register_ack)
+  array_obj_ref_73_gather_scatter <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Sample/array_obj_ref_73_Split/split_req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Sample/array_obj_ref_73_Split/split_ack)
+  array_obj_ref_73_store_0 <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Sample/word_access_start/word_0/rr branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Update/word_access_complete/word_0/cr) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Sample/word_access_start/word_0/ra branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/array_obj_ref_73_Update/word_access_complete/word_0/ca)
+  // 		$volatile resp := (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) ) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 44
+  // (($bitcast ($uint<1>) _b0  ) && ( $mux rwbar rdata  0  ) )
+  // rwbar
+  // rdata
+  // ( $mux rwbar rdata  0  ) 
+  // 		AFB_ACCELERATOR_RESPONSE := resp $buffering 1// bits of buffering = 33. 
+  //  file .Aa/prog.linked.opt.aa, line 45
+  // resp
+  // AFB_ACCELERATOR_RESPONSE
+  WPIPE_AFB_ACCELERATOR_RESPONSE_85_inst <=> (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/WPIPE_AFB_ACCELERATOR_RESPONSE_85_Sample/req branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/WPIPE_AFB_ACCELERATOR_RESPONSE_85_Update/req) (branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/WPIPE_AFB_ACCELERATOR_RESPONSE_85_Sample/ack branch_block_stmt_43/assign_stmt_47_to_assign_stmt_87/WPIPE_AFB_ACCELERATOR_RESPONSE_85_Update/ack)
+}
+$module [accelerator_interrupt_daemon] 
+{
+  // pipe-declarations for block %accelerator_interrupt_daemon
+  //  file .Aa/prog.linked.opt.aa, line 49
+  // pipe-declarations for block %accelerator_interrupt_daemon%loop
+  //  file .Aa/prog.linked.opt.aa, line 54
+  // pipe-declarations for block %accelerator_interrupt_daemon%loop%
+  //  file .Aa/prog.linked.opt.aa, line 56
+  // memory-space 0 is read from.
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+    <>[branch_block_stmt_92] // Branch Block  file .Aa/prog.linked.opt.aa, line 54
+    {
+      $P [branch_block_stmt_92__entry__]
+      branch_block_stmt_92__entry__ <-| ($entry)
+      $P [branch_block_stmt_92__exit__]
+      branch_block_stmt_92__exit__ |-> ($exit)
+      $P [merge_stmt_93__entry__] 
+      $P [merge_stmt_93__exit__] 
+      $P [assign_stmt_97_to_assign_stmt_102__entry__] 
+      $P [assign_stmt_97_to_assign_stmt_102__exit__] 
+      $P [loopback]
+      ::[assign_stmt_97_to_assign_stmt_102] 
+      {
+        // start:  		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 58
+        // Source expression
+        // registers[0 ]
+        $T[array_obj_ref_96_sample_start_] 
+        $T[array_obj_ref_96_sample_completed_] 
+        $T[array_obj_ref_96_update_start_] 
+        $T[array_obj_ref_96_update_completed_] 
+        $T[array_obj_ref_96_word_address_calculated] 
+        $T[array_obj_ref_96_root_address_calculated] 
+        array_obj_ref_96_word_address_calculated <-& (array_obj_ref_96_root_address_calculated)
+        ;;[array_obj_ref_96_Sample] 
+        {
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_96_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+          ;;[array_obj_ref_96_Merge] 
+          {
+            $T [merge_req] $T [merge_ack]
+          }
+        }
+        array_obj_ref_96_sample_start_ <-& (array_obj_ref_96_word_address_calculated)
+        array_obj_ref_96_sample_start_ &-> (array_obj_ref_96_Sample)
+        array_obj_ref_96_sample_completed_ <-& (array_obj_ref_96_Sample)
+        array_obj_ref_96_sample_completed_ &-> ($null)
+        array_obj_ref_96_update_start_ &-> (array_obj_ref_96_Update)
+        array_obj_ref_96_update_completed_ <-& (array_obj_ref_96_Update)
+        // Target expression
+        // (as target) r0
+        // start: WAR dependencies for r0
+        // done: WAR dependencies for r0
+        // end:  		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        // start:  		ACCELERATOR_INTERRUPT := (r0 [] 4 ) $buffering 1// bits of buffering = 1. 
+        //  file .Aa/prog.linked.opt.aa, line 59
+        // Source expression
+        // (r0 [] 4 )
+        $T[BITSEL_u32_u1_101_sample_start_] 
+        $T[BITSEL_u32_u1_101_sample_completed_] 
+        $T[BITSEL_u32_u1_101_update_start_] 
+        $T[BITSEL_u32_u1_101_update_completed_] 
+        // r0
+        // start: Forward dependencies from r0 to transition BITSEL_u32_u1_101_sample_start_
+        BITSEL_u32_u1_101_sample_start_ <-& (array_obj_ref_96_update_completed_)
+        // done: Forward dependencies from r0 to transition BITSEL_u32_u1_101_sample_start_
+        ;;[BITSEL_u32_u1_101_Sample] 
+        {
+          // binary expression 
+          $T [rr] $T [ra]  // (split) binary operation 
+        }
+        ;;[BITSEL_u32_u1_101_Update] 
+        {
+          // binary expression 
+          $T [cr] $T [ca] // (split) binary operation 
+        }
+        BITSEL_u32_u1_101_sample_start_ &-> (BITSEL_u32_u1_101_Sample)
+        BITSEL_u32_u1_101_sample_completed_ <-& (BITSEL_u32_u1_101_Sample)
+        BITSEL_u32_u1_101_sample_completed_ &-> ($null)
+        BITSEL_u32_u1_101_update_start_ &-> (BITSEL_u32_u1_101_Update)
+        BITSEL_u32_u1_101_update_completed_ <-& (BITSEL_u32_u1_101_Update)
+        // Target expression
+        // (as target) ACCELERATOR_INTERRUPT
+        $T[WPIPE_ACCELERATOR_INTERRUPT_98_sample_start_] 
+        $T[WPIPE_ACCELERATOR_INTERRUPT_98_sample_completed_] 
+        $T[WPIPE_ACCELERATOR_INTERRUPT_98_update_start_] 
+        $T[WPIPE_ACCELERATOR_INTERRUPT_98_update_completed_] 
+        ;;[WPIPE_ACCELERATOR_INTERRUPT_98_Sample] 
+        {
+          // pipe write sample-start ACCELERATOR_INTERRUPT
+          $T [req] $T [ack] 
+        }
+        ;;[WPIPE_ACCELERATOR_INTERRUPT_98_Update] 
+        {
+          // pipe write update (complete) ACCELERATOR_INTERRUPT
+          $T [req] $T [ack] 
+        }
+        WPIPE_ACCELERATOR_INTERRUPT_98_sample_start_ &-> (WPIPE_ACCELERATOR_INTERRUPT_98_Sample)
+        WPIPE_ACCELERATOR_INTERRUPT_98_sample_completed_ <-& (WPIPE_ACCELERATOR_INTERRUPT_98_Sample)
+        WPIPE_ACCELERATOR_INTERRUPT_98_update_start_ <-& (WPIPE_ACCELERATOR_INTERRUPT_98_sample_completed_)
+        WPIPE_ACCELERATOR_INTERRUPT_98_update_start_ &-> (WPIPE_ACCELERATOR_INTERRUPT_98_Update)
+        WPIPE_ACCELERATOR_INTERRUPT_98_update_completed_ <-& (WPIPE_ACCELERATOR_INTERRUPT_98_Update)
+        // start: Forward dependencies from (r0 [] 4 ) to transition WPIPE_ACCELERATOR_INTERRUPT_98_sample_start_
+        WPIPE_ACCELERATOR_INTERRUPT_98_sample_start_ <-& (BITSEL_u32_u1_101_update_completed_)
+        // done: Forward dependencies from (r0 [] 4 ) to transition WPIPE_ACCELERATOR_INTERRUPT_98_sample_start_
+        // end:  		ACCELERATOR_INTERRUPT := (r0 [] 4 ) $buffering 1// bits of buffering = 1. 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_96 load
+        // pipe read/write dependencies for pipe ACCELERATOR_INTERRUPT
+        // read-dependencies for pipe ACCELERATOR_INTERRUPT
+        // write-dependencies for pipe ACCELERATOR_INTERRUPT
+        // signal write dependencies for ACCELERATOR_INTERRUPT
+      }
+      assign_stmt_97_to_assign_stmt_102__entry__ |-> (assign_stmt_97_to_assign_stmt_102)
+      assign_stmt_97_to_assign_stmt_102__exit__ <-| (assign_stmt_97_to_assign_stmt_102)
+      // control-path for merge  
+      //  file .Aa/prog.linked.opt.aa, line 56
+      ;;[merge_stmt_93_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      merge_stmt_93__entry__ |-> (merge_stmt_93_dead_link)
+      merge_stmt_93__exit__ <-| (merge_stmt_93_dead_link)
+      //---------------------   merge statement  file .Aa/prog.linked.opt.aa, line 56  --------------------------
+      ||[merge_stmt_93__entry___PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      merge_stmt_93__entry__ |-> (merge_stmt_93__entry___PhiReq)
+      ||[loopback_PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      loopback |-> (loopback_PhiReq)
+      $P [merge_stmt_93_PhiReqMerge] 
+      merge_stmt_93_PhiReqMerge <-| ( merge_stmt_93__entry___PhiReq  loopback_PhiReq )
+      ||[merge_stmt_93_PhiAck] 
+      {
+        $T [dummy] 
+      }
+      merge_stmt_93_PhiReqMerge |-> (merge_stmt_93_PhiAck)
+      merge_stmt_93__exit__  <-| (merge_stmt_93_PhiAck)
+      //---------------------  end of merge statement  file .Aa/prog.linked.opt.aa, line 56  --------------------------
+      merge_stmt_93__entry__ <-| (branch_block_stmt_92__entry__)
+      assign_stmt_97_to_assign_stmt_102__entry__ <-| (merge_stmt_93__exit__)
+      loopback <-| (assign_stmt_97_to_assign_stmt_102__exit__)
+    }
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %accelerator_interrupt_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 56
+    // constant-object-declarations for block %accelerator_interrupt_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 54
+    // constant-object-declarations for block %accelerator_interrupt_daemon
+    //  file .Aa/prog.linked.opt.aa, line 49
+    // constant-declarations for block %accelerator_interrupt_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 54
+    // constant-declarations for block %accelerator_interrupt_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 56
+    // registers[0 ]
+    $constant $W[array_obj_ref_96_word_address_0] : $pointer<memory_space_0> := _b0000
+    // 4 
+    $constant $W[konst_100_wire_constant] : $int<32> := _b00000000000000000000000000000100// 4
+    // block %accelerator_interrupt_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 54
+    // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 58
+    // registers[0 ]
+    $W[array_obj_ref_96_data_0] : $int<32>
+    // r0
+    $W[r0_97] : $int<32>
+    // 		ACCELERATOR_INTERRUPT := (r0 [] 4 ) $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 59
+    // (r0 [] 4 )
+    $intermediate $W[BITSEL_u32_u1_101_wire] : $int<1>
+    // ACCELERATOR_INTERRUPT
+    // datapath-instances for block %accelerator_interrupt_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 54
+    // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 58
+    // registers[0 ]
+    $load [array_obj_ref_96_load_0] $from memory_space_0 (array_obj_ref_96_word_address_0) (array_obj_ref_96_data_0) 
+    $delay array_obj_ref_96_load_0 5
+    &/ [array_obj_ref_96_gather_scatter] (array_obj_ref_96_data_0) (r0_97) 
+    $flowthrough 
+    // 		ACCELERATOR_INTERRUPT := (r0 [] 4 ) $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 59
+    // (r0 [] 4 )
+    [][BITSEL_u32_u1_101_inst] (r0_97 konst_100_wire_constant) (BITSEL_u32_u1_101_wire)   
+    $buffering  $out BITSEL_u32_u1_101_inst BITSEL_u32_u1_101_wire 1
+    $delay BITSEL_u32_u1_101_inst 1
+    // ACCELERATOR_INTERRUPT
+    $ioport $out [WPIPE_ACCELERATOR_INTERRUPT_98_inst]  (BITSEL_u32_u1_101_wire) (ACCELERATOR_INTERRUPT) 
+  }
+  // end data-path
+  // CP-DP links for merge  
+  //  file .Aa/prog.linked.opt.aa, line 56
+  // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 58
+  // registers[0 ]
+  array_obj_ref_96_gather_scatter <=> (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Update/array_obj_ref_96_Merge/merge_req) (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Update/array_obj_ref_96_Merge/merge_ack)
+  array_obj_ref_96_load_0 <=> (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Sample/word_access_start/word_0/rr branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Update/word_access_complete/word_0/cr) (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Sample/word_access_start/word_0/ra branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/array_obj_ref_96_Update/word_access_complete/word_0/ca)
+  // 		ACCELERATOR_INTERRUPT := (r0 [] 4 ) $buffering 1// bits of buffering = 1. 
+  //  file .Aa/prog.linked.opt.aa, line 59
+  // (r0 [] 4 )
+  // r0
+  BITSEL_u32_u1_101_inst <=> (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/BITSEL_u32_u1_101_Sample/rr branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/BITSEL_u32_u1_101_Update/cr) (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/BITSEL_u32_u1_101_Sample/ra branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/BITSEL_u32_u1_101_Update/ca)
+  // ACCELERATOR_INTERRUPT
+  WPIPE_ACCELERATOR_INTERRUPT_98_inst <=> (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/WPIPE_ACCELERATOR_INTERRUPT_98_Sample/req branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/WPIPE_ACCELERATOR_INTERRUPT_98_Update/req) (branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/WPIPE_ACCELERATOR_INTERRUPT_98_Sample/ack branch_block_stmt_92/assign_stmt_97_to_assign_stmt_102/WPIPE_ACCELERATOR_INTERRUPT_98_Update/ack)
+}
+$pipeline $depth 7 $buffering 1 $module [access_mem_128] 
+{
+  $in write_bar:$int<1>
+  // can point into 
+  q_word_address:$int<32>
+  // can point into 
+  wline:$int<128>
+  // can point into 
+  $out rline:$int<128>
+  // can point into 
+  // pipe-declarations for block %access_mem_128
+  //  file .Aa/prog.linked.opt.aa, line 63
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+    // pipelined module
+    :|:[assign_stmt_130_to_assign_stmt_170] 
+    {
+      $T [write_bar_update_enable] 
+      $scc_arc write_bar_update_enable => $entry
+      $T [write_bar_update_enable_out] 
+      write_bar_update_enable &-> (write_bar_update_enable_out)
+      $null &-> (write_bar_update_enable)
+      $T [q_word_address_update_enable] 
+      $scc_arc q_word_address_update_enable => $entry
+      $T [q_word_address_update_enable_out] 
+      q_word_address_update_enable &-> (q_word_address_update_enable_out)
+      $null &-> (q_word_address_update_enable)
+      $T [wline_update_enable] 
+      $scc_arc wline_update_enable => $entry
+      $T [wline_update_enable_out] 
+      wline_update_enable &-> (wline_update_enable_out)
+      $null &-> (wline_update_enable)
+      $T [rline_update_enable] 
+      $T [rline_update_enable_in] 
+      $null &-> (rline_update_enable)
+      $null <-& (rline_update_enable_in) 
+      $null &-> (rline_update_enable)
+      $scc_arc $exit => rline_update_enable
+      rline_update_enable <-& (rline_update_enable_in) 
+      // start: WAR dependencies for c0
+      // done: WAR dependencies for c0
+      // start:  	$volatile c0 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )) $buffering 1
+      //  file .Aa/prog.linked.opt.aa, line 68
+      // volatile! 
+      // Source expression
+      // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) ))
+      // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+      // (($bitcast ($uint<1>) _b0  ) && write_bar)
+      // write_bar
+      // (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )
+      // ($bitcast ($uint<36>) q_word_address )
+      // q_word_address
+      // ( $slice wline 127 64 ) 
+      // wline
+      // Target expression
+      // (as target) c0
+      // start: WAR dependencies for c0
+      // done: WAR dependencies for c0
+      // end:  	$volatile c0 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )) $buffering 1
+      // start:  	ACB_ACCELERATOR_MEM_REQUEST := c0 $buffering 1 $mark FIRST_ACCESS // bits of buffering = 110. 
+      //  file .Aa/prog.linked.opt.aa, line 69
+      // Source expression
+      // c0
+      // Target expression
+      // (as target) ACB_ACCELERATOR_MEM_REQUEST
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_start_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_completed_] 
+      ;;[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Sample] 
+      {
+        // pipe write sample-start ACB_ACCELERATOR_MEM_REQUEST
+        $T [req] $T [ack] 
+      }
+      ;;[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Update] 
+      {
+        // pipe write update (complete) ACB_ACCELERATOR_MEM_REQUEST
+        $T [req] $T [ack] 
+      }
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ &-> (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Sample)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Sample)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_start_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_start_ &-> (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Update)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_completed_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Update)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_completed_ 0)
+      // start: Forward dependencies from c0 to transition WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ <-& ($entry)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ <-& ($entry)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ <-& ($entry)
+      // done: Forward dependencies from c0 to transition WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_
+      // RAW reenables for c0
+      write_bar_update_enable o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_ 0)
+      q_word_address_update_enable o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_ 0)
+      wline_update_enable o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_completed_ 0)
+      // end:  	ACB_ACCELERATOR_MEM_REQUEST := c0 $buffering 1 $mark FIRST_ACCESS // bits of buffering = 110. 
+      // start:  	r0 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (FIRST_ACCESS 4 )  // bits of buffering = 65. 
+      //  file .Aa/prog.linked.opt.aa, line 70
+      // Source expression
+      // ACB_ACCELERATOR_MEM_RESPONSE
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_start_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_completed_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_start_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_completed_] 
+      ;;[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Sample] 
+      {
+        // pipe read sample
+        $T [rr] $T [ra] 
+      }
+      ;;[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Update] 
+      {
+        // pipe read update
+        $T [cr] $T [ca] 
+      }
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_start_ &-> (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Sample)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_completed_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Sample)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_start_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_completed_)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_start_ &-> (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Update)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_completed_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Update)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_sample_start_ o<-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_completed_ 0)
+      // Target expression
+      // (as target) r0
+      // start: WAR dependencies for r0
+      // done: WAR dependencies for r0
+      // end:  	r0 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (FIRST_ACCESS 4 )  // bits of buffering = 65. 
+      // start:  	c1 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )) $buffering 1// bits of buffering = 110. 
+      //  file .Aa/prog.linked.opt.aa, line 71
+      // Source expression
+      // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) ))
+      $T[CONCAT_u10_u110_153_sample_start_] 
+      $T[CONCAT_u10_u110_153_sample_completed_] 
+      $T[CONCAT_u10_u110_153_update_start_] 
+      $T[CONCAT_u10_u110_153_update_completed_] 
+      // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+      // (($bitcast ($uint<1>) _b0  ) && write_bar)
+      // write_bar
+      // (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )
+      // ($bitcast ($uint<36>) (q_word_address + 8 ) )
+      // (q_word_address + 8 )
+      // q_word_address
+      // ( $slice wline 63 0 ) 
+      // wline
+      // start: Forward dependencies from ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) to transition CONCAT_u10_u110_153_sample_start_
+      CONCAT_u10_u110_153_sample_start_ <-& ($entry)
+      // done: Forward dependencies from ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) to transition CONCAT_u10_u110_153_sample_start_
+      // start: Forward dependencies from (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) ) to transition CONCAT_u10_u110_153_sample_start_
+      CONCAT_u10_u110_153_sample_start_ <-& ($entry)
+      CONCAT_u10_u110_153_sample_start_ <-& ($entry)
+      // done: Forward dependencies from (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) ) to transition CONCAT_u10_u110_153_sample_start_
+      ;;[CONCAT_u10_u110_153_Sample] 
+      {
+        // binary expression 
+        $T [rr] $T [ra]  // (split) binary operation 
+      }
+      ;;[CONCAT_u10_u110_153_Update] 
+      {
+        // binary expression 
+        $T [cr] $T [ca] // (split) binary operation 
+      }
+      CONCAT_u10_u110_153_sample_start_ &-> (CONCAT_u10_u110_153_Sample)
+      CONCAT_u10_u110_153_sample_completed_ <-& (CONCAT_u10_u110_153_Sample)
+      CONCAT_u10_u110_153_sample_completed_ &-> ($null)
+      CONCAT_u10_u110_153_update_start_ &-> (CONCAT_u10_u110_153_Update)
+      CONCAT_u10_u110_153_update_completed_ <-& (CONCAT_u10_u110_153_Update)
+      // RAW reenables for ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+      write_bar_update_enable o<-& (CONCAT_u10_u110_153_sample_completed_ 0)
+      // RAW reenables for (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )
+      q_word_address_update_enable o<-& (CONCAT_u10_u110_153_sample_completed_ 0)
+      wline_update_enable o<-& (CONCAT_u10_u110_153_sample_completed_ 0)
+      // self-release: 
+      CONCAT_u10_u110_153_sample_start_ o<-& (CONCAT_u10_u110_153_sample_completed_ 1)
+      $null &-> (CONCAT_u10_u110_153_update_start_)
+      CONCAT_u10_u110_153_update_start_ o<-& (CONCAT_u10_u110_153_update_completed_ 0)
+      // Target expression
+      // (as target) c1
+      // start: WAR dependencies for c1
+      // done: WAR dependencies for c1
+      // end:  	c1 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )) $buffering 1// bits of buffering = 110. 
+      // start:  	ACB_ACCELERATOR_MEM_REQUEST := c1 $buffering 1 $mark SECOND_ACCESS // bits of buffering = 110. 
+      //  file .Aa/prog.linked.opt.aa, line 72
+      // Source expression
+      // c1
+      // Target expression
+      // (as target) ACB_ACCELERATOR_MEM_REQUEST
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_completed_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_start_] 
+      $T[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_completed_] 
+      ;;[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Sample] 
+      {
+        // pipe write sample-start ACB_ACCELERATOR_MEM_REQUEST
+        $T [req] $T [ack] 
+      }
+      ;;[WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Update] 
+      {
+        // pipe write update (complete) ACB_ACCELERATOR_MEM_REQUEST
+        $T [req] $T [ack] 
+      }
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_ &-> (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Sample)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_completed_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Sample)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_start_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_completed_)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_start_ &-> (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Update)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_completed_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Update)
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_ o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_completed_ 0)
+      // start: Forward dependencies from c1 to transition WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_ <-& (CONCAT_u10_u110_153_update_completed_)
+      // done: Forward dependencies from c1 to transition WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_
+      // RAW reenables for c1
+      CONCAT_u10_u110_153_update_start_ o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_completed_ 0)
+      // end:  	ACB_ACCELERATOR_MEM_REQUEST := c1 $buffering 1 $mark SECOND_ACCESS // bits of buffering = 110. 
+      // start:  	r1 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (SECOND_ACCESS 4 )  // bits of buffering = 65. 
+      //  file .Aa/prog.linked.opt.aa, line 73
+      // Source expression
+      // ACB_ACCELERATOR_MEM_RESPONSE
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_start_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_completed_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_start_] 
+      $T[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_completed_] 
+      ;;[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Sample] 
+      {
+        // pipe read sample
+        $T [rr] $T [ra] 
+      }
+      ;;[RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Update] 
+      {
+        // pipe read update
+        $T [cr] $T [ca] 
+      }
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_start_ &-> (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Sample)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_completed_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Sample)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_start_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_completed_)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_start_ &-> (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Update)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_completed_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Update)
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_start_ o<-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_completed_ 0)
+      // Target expression
+      // (as target) r1
+      // start: WAR dependencies for r1
+      // done: WAR dependencies for r1
+      // end:  	r1 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (SECOND_ACCESS 4 )  // bits of buffering = 65. 
+      // start:  	slice_171_171_delayed_1_0 := ( $slice r0 63 0 )  $buffering 1 $cut_through // bits of buffering = 64. 
+      //  file .Aa/prog.linked.opt.aa, line 74
+      // Source expression
+      // ( $slice r0 63 0 ) 
+      $T[slice_163_sample_start_] 
+      $T[slice_163_sample_completed_] 
+      $T[slice_163_update_start_] 
+      $T[slice_163_update_completed_] 
+      // r0
+      // start: Forward dependencies from r0 to transition slice_163_sample_start_
+      slice_163_sample_start_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_completed_)
+      // done: Forward dependencies from r0 to transition slice_163_sample_start_
+      ;;[slice_163_Sample] 
+      {
+        // unary expression 
+        $T [rr] $T [ra] // (split) unary operation
+      }
+      ;;[slice_163_Update] 
+      {
+        // unary expression 
+        $T [cr] $T [ca] //(split) unary operation
+      }
+      slice_163_sample_start_ &-> (slice_163_Sample)
+      slice_163_sample_completed_ <-& (slice_163_Sample)
+      slice_163_sample_completed_ &-> ($null)
+      slice_163_update_start_ &-> (slice_163_Update)
+      slice_163_update_completed_ <-& (slice_163_Update)
+      // RAW reenables for r0
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_start_ o<-& (slice_163_sample_completed_ 0)
+      // self-release: 
+      slice_163_sample_start_ o<-& (slice_163_sample_completed_ 1)
+      $null &-> (slice_163_update_start_)
+      slice_163_update_start_ o<-& (slice_163_update_completed_ 0)
+      // Target expression
+      // (as target) slice_171_171_delayed_1_0
+      // start: WAR dependencies for slice_171_171_delayed_1_0
+      // done: WAR dependencies for slice_171_171_delayed_1_0
+      // end:  	slice_171_171_delayed_1_0 := ( $slice r0 63 0 )  $buffering 1 $cut_through // bits of buffering = 64. 
+      // start:  	rline := (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) ) $buffering 1// bits of buffering = 128. 
+      //  file .Aa/prog.linked.opt.aa, line 75
+      // Source expression
+      // (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) )
+      $T[CONCAT_u64_u128_169_sample_start_] 
+      $T[CONCAT_u64_u128_169_sample_completed_] 
+      $T[CONCAT_u64_u128_169_update_start_] 
+      $T[CONCAT_u64_u128_169_update_completed_] 
+      // slice_171_171_delayed_1_0
+      // ( $slice r1 63 0 ) 
+      // r1
+      // start: Forward dependencies from slice_171_171_delayed_1_0 to transition CONCAT_u64_u128_169_sample_start_
+      CONCAT_u64_u128_169_sample_start_ <-& (slice_163_update_completed_)
+      // done: Forward dependencies from slice_171_171_delayed_1_0 to transition CONCAT_u64_u128_169_sample_start_
+      // start: Forward dependencies from ( $slice r1 63 0 )  to transition CONCAT_u64_u128_169_sample_start_
+      CONCAT_u64_u128_169_sample_start_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_completed_)
+      // done: Forward dependencies from ( $slice r1 63 0 )  to transition CONCAT_u64_u128_169_sample_start_
+      ;;[CONCAT_u64_u128_169_Sample] 
+      {
+        // binary expression 
+        $T [rr] $T [ra]  // (split) binary operation 
+      }
+      ;;[CONCAT_u64_u128_169_Update] 
+      {
+        // binary expression 
+        $T [cr] $T [ca] // (split) binary operation 
+      }
+      CONCAT_u64_u128_169_sample_start_ &-> (CONCAT_u64_u128_169_Sample)
+      CONCAT_u64_u128_169_sample_completed_ <-& (CONCAT_u64_u128_169_Sample)
+      CONCAT_u64_u128_169_sample_completed_ &-> ($null)
+      CONCAT_u64_u128_169_update_start_ &-> (CONCAT_u64_u128_169_Update)
+      CONCAT_u64_u128_169_update_completed_ <-& (CONCAT_u64_u128_169_Update)
+      // RAW reenables for slice_171_171_delayed_1_0
+      slice_163_update_start_ o<-& (CONCAT_u64_u128_169_sample_completed_ 0)
+      // RAW reenables for ( $slice r1 63 0 ) 
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_start_ o<-& (CONCAT_u64_u128_169_sample_completed_ 0)
+      // self-release: 
+      CONCAT_u64_u128_169_sample_start_ o<-& (CONCAT_u64_u128_169_sample_completed_ 1)
+      $null &-> (CONCAT_u64_u128_169_update_start_)
+      CONCAT_u64_u128_169_update_start_ o<-& (CONCAT_u64_u128_169_update_completed_ 0)
+      // Target expression
+      // (as target) rline
+      // rline
+      // write to interface object
+      // start: WAR dependencies for rline
+      // done: WAR dependencies for rline
+      // rline
+      // write to interface object
+      CONCAT_u64_u128_169_update_start_ <-& (rline_update_enable)
+      // end:  	rline := (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) ) $buffering 1// bits of buffering = 128. 
+      // load-store dependencies..
+      // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+      // read-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+      // write-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_sample_start_ <-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_update_completed_)
+      // ring dependency in pipeline.
+      WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_sample_start_ o<-& (WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_update_completed_ 0)
+      // signal write dependencies for ACB_ACCELERATOR_MEM_REQUEST
+      // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+      // read-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_sample_start_ <-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_completed_)
+      // ring dependency in pipeline.
+      RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_update_start_ o<-& (RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_update_completed_ 0)
+      // write-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+      // signal write dependencies for ACB_ACCELERATOR_MEM_RESPONSE
+    }
+    ( rline_update_enable_in)
+    ( write_bar_update_enable_out q_word_address_update_enable_out wline_update_enable_out)
+    $P [write_bar_update_enable] 
+    $P [q_word_address_update_enable] 
+    $P [wline_update_enable] 
+    $P [rline_update_enable] 
+    $bind write_bar_update_enable <= assign_stmt_130_to_assign_stmt_170 : write_bar_update_enable_out
+    $bind q_word_address_update_enable <= assign_stmt_130_to_assign_stmt_170 : q_word_address_update_enable_out
+    $bind wline_update_enable <= assign_stmt_130_to_assign_stmt_170 : wline_update_enable_out
+    $bind rline_update_enable => assign_stmt_130_to_assign_stmt_170 : rline_update_enable_in
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %access_mem_128
+    //  file .Aa/prog.linked.opt.aa, line 63
+    // ($bitcast ($uint<1>) _b0  )
+    $constant $W[type_cast_114_wire_constant] : $int<1> := _b0// 0
+    // ( ~ ($bitcast ($uint<8>) _b0  ) )
+    $constant $W[NOT_u8_u8_120_wire_constant] : $int<8> := _b11111111// -1
+    // ($bitcast ($uint<1>) _b0  )
+    $constant $W[type_cast_139_wire_constant] : $int<1> := _b0// 0
+    // ( ~ ($bitcast ($uint<8>) _b0  ) )
+    $constant $W[NOT_u8_u8_144_wire_constant] : $int<8> := _b11111111// -1
+    // 8 
+    $constant $W[konst_147_wire_constant] : $int<32> := _b00000000000000000000000000001000// 8
+    // 	$volatile c0 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 68
+    // (($bitcast ($uint<1>) _b0  ) && write_bar)
+    $intermediate $W[CONCAT_u1_u2_116_wire] : $int<2>
+    // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+    $intermediate $W[CONCAT_u2_u10_121_wire] : $int<10>
+    // ($bitcast ($uint<36>) q_word_address )
+    $intermediate $W[type_cast_123_wire] : $int<36>
+    // ( $slice wline 127 64 ) 
+    $intermediate $W[slice_126_wire] : $int<64>
+    // (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )
+    $intermediate $W[CONCAT_u36_u100_127_wire] : $int<100>
+    // c0
+    $W[c0_130] : $int<110>
+    // 	ACB_ACCELERATOR_MEM_REQUEST := c0 $buffering 1 $mark FIRST_ACCESS // bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 69
+    // ACB_ACCELERATOR_MEM_REQUEST
+    // 	r0 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (FIRST_ACCESS 4 )  // bits of buffering = 65. 
+    //  file .Aa/prog.linked.opt.aa, line 70
+    // r0
+    $W[r0_136] : $int<65>
+    // 	c1 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )) $buffering 1// bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 71
+    // (($bitcast ($uint<1>) _b0  ) && write_bar)
+    $intermediate $W[CONCAT_u1_u2_141_wire] : $int<2>
+    // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+    $intermediate $W[CONCAT_u2_u10_145_wire] : $int<10>
+    // (q_word_address + 8 )
+    $intermediate $W[ADD_u32_u32_148_wire] : $int<32>
+    // ($bitcast ($uint<36>) (q_word_address + 8 ) )
+    $intermediate $W[type_cast_149_wire] : $int<36>
+    // ( $slice wline 63 0 ) 
+    $intermediate $W[slice_151_wire] : $int<64>
+    // (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )
+    $intermediate $W[CONCAT_u36_u100_152_wire] : $int<100>
+    // c1
+    $W[c1_154] : $int<110>
+    // 	ACB_ACCELERATOR_MEM_REQUEST := c1 $buffering 1 $mark SECOND_ACCESS // bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 72
+    // ACB_ACCELERATOR_MEM_REQUEST
+    // 	r1 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (SECOND_ACCESS 4 )  // bits of buffering = 65. 
+    //  file .Aa/prog.linked.opt.aa, line 73
+    // r1
+    $W[r1_160] : $int<65>
+    // 	slice_171_171_delayed_1_0 := ( $slice r0 63 0 )  $buffering 1 $cut_through // bits of buffering = 64. 
+    //  file .Aa/prog.linked.opt.aa, line 74
+    // slice_171_171_delayed_1_0
+    $W[slice_171_171_delayed_1_0_164] : $int<64>
+    // 	rline := (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) ) $buffering 1// bits of buffering = 128. 
+    //  file .Aa/prog.linked.opt.aa, line 75
+    // ( $slice r1 63 0 ) 
+    $intermediate $W[slice_168_wire] : $int<64>
+    // rline
+    // 	$volatile c0 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 68
+    // (($bitcast ($uint<1>) _b0  ) && write_bar)
+    &&[CONCAT_u1_u2_116_inst] (type_cast_114_wire_constant write_bar) (CONCAT_u1_u2_116_wire)   $flowthrough 
+    $delay CONCAT_u1_u2_116_inst 0
+    // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+    &&[CONCAT_u2_u10_121_inst] (CONCAT_u1_u2_116_wire NOT_u8_u8_120_wire_constant) (CONCAT_u2_u10_121_wire)   $flowthrough 
+    $delay CONCAT_u2_u10_121_inst 0
+    // ($bitcast ($uint<36>) q_word_address )
+    # := [type_cast_123_inst] (q_word_address) (type_cast_123_wire)   $flowthrough
+    $delay type_cast_123_inst 0
+    // ( $slice wline 127 64 ) 
+    [:] [slice_126_inst] (wline 127 64) (slice_126_wire)  $flowthrough
+    $delay slice_126_inst 0
+    // (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )
+    &&[CONCAT_u36_u100_127_inst] (type_cast_123_wire slice_126_wire) (CONCAT_u36_u100_127_wire)   $flowthrough 
+    $delay CONCAT_u36_u100_127_inst 0
+    // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) ))
+    &&[CONCAT_u10_u110_129_inst] (CONCAT_u2_u10_121_wire CONCAT_u36_u100_127_wire) (c0_130)   $flowthrough 
+    $delay CONCAT_u10_u110_129_inst 0
+    // 	ACB_ACCELERATOR_MEM_REQUEST := c0 $buffering 1 $mark FIRST_ACCESS // bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 69
+    // ACB_ACCELERATOR_MEM_REQUEST
+    $ioport $out [WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_inst]  (c0_130) (ACB_ACCELERATOR_MEM_REQUEST) 
+    // 	r0 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (FIRST_ACCESS 4 )  // bits of buffering = 65. 
+    //  file .Aa/prog.linked.opt.aa, line 70
+    // ACB_ACCELERATOR_MEM_RESPONSE
+    $ioport $in [RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_inst] (ACB_ACCELERATOR_MEM_RESPONSE) (r0_136) 
+    $buffering $out RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_inst r0_136 1
+    // 	c1 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )) $buffering 1// bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 71
+    // (($bitcast ($uint<1>) _b0  ) && write_bar)
+    &&[CONCAT_u1_u2_141_inst] (type_cast_139_wire_constant write_bar) (CONCAT_u1_u2_141_wire)   $flowthrough 
+    $delay CONCAT_u1_u2_141_inst 0
+    // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+    &&[CONCAT_u2_u10_145_inst] (CONCAT_u1_u2_141_wire NOT_u8_u8_144_wire_constant) (CONCAT_u2_u10_145_wire)   $flowthrough 
+    $delay CONCAT_u2_u10_145_inst 0
+    // (q_word_address + 8 )
+    +[ADD_u32_u32_148_inst] (q_word_address konst_147_wire_constant) (ADD_u32_u32_148_wire)   $flowthrough 
+    $delay ADD_u32_u32_148_inst 0
+    // ($bitcast ($uint<36>) (q_word_address + 8 ) )
+    # := [type_cast_149_inst] (ADD_u32_u32_148_wire) (type_cast_149_wire)   $flowthrough
+    $delay type_cast_149_inst 0
+    // ( $slice wline 63 0 ) 
+    [:] [slice_151_inst] (wline 63 0) (slice_151_wire)  $flowthrough
+    $delay slice_151_inst 0
+    // (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )
+    &&[CONCAT_u36_u100_152_inst] (type_cast_149_wire slice_151_wire) (CONCAT_u36_u100_152_wire)   $flowthrough 
+    $delay CONCAT_u36_u100_152_inst 0
+    // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) ))
+    &&[CONCAT_u10_u110_153_inst] (CONCAT_u2_u10_145_wire CONCAT_u36_u100_152_wire) (c1_154)   
+    $buffering  $out CONCAT_u10_u110_153_inst c1_154 1
+    $delay CONCAT_u10_u110_153_inst 1
+    // 	ACB_ACCELERATOR_MEM_REQUEST := c1 $buffering 1 $mark SECOND_ACCESS // bits of buffering = 110. 
+    //  file .Aa/prog.linked.opt.aa, line 72
+    // ACB_ACCELERATOR_MEM_REQUEST
+    $ioport $out [WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_inst]  (c1_154) (ACB_ACCELERATOR_MEM_REQUEST) 
+    // 	r1 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (SECOND_ACCESS 4 )  // bits of buffering = 65. 
+    //  file .Aa/prog.linked.opt.aa, line 73
+    // ACB_ACCELERATOR_MEM_RESPONSE
+    $ioport $in [RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_inst] (ACB_ACCELERATOR_MEM_RESPONSE) (r1_160) 
+    $buffering $out RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_inst r1_160 1
+    // 	slice_171_171_delayed_1_0 := ( $slice r0 63 0 )  $buffering 1 $cut_through // bits of buffering = 64. 
+    //  file .Aa/prog.linked.opt.aa, line 74
+    // ( $slice r0 63 0 ) 
+    [:] [slice_163_inst] (r0_136 63 0) (slice_171_171_delayed_1_0_164) 
+    $buffering  $out slice_163_inst slice_171_171_delayed_1_0_164 1
+    $delay slice_163_inst 1
+    // 	rline := (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) ) $buffering 1// bits of buffering = 128. 
+    //  file .Aa/prog.linked.opt.aa, line 75
+    // ( $slice r1 63 0 ) 
+    [:] [slice_168_inst] (r1_160 63 0) (slice_168_wire)  $flowthrough
+    $delay slice_168_inst 0
+    // (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) )
+    &&[CONCAT_u64_u128_169_inst] (slice_171_171_delayed_1_0_164 slice_168_wire) (rline)   
+    $buffering  $out CONCAT_u64_u128_169_inst rline 1
+    $delay CONCAT_u64_u128_169_inst 1
+  }
+  // end data-path
+  // 	$volatile c0 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 68
+  // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) ))
+  // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+  // (($bitcast ($uint<1>) _b0  ) && write_bar)
+  // write_bar
+  // (($bitcast ($uint<36>) q_word_address ) && ( $slice wline 127 64 ) )
+  // q_word_address
+  // wline
+  // 	ACB_ACCELERATOR_MEM_REQUEST := c0 $buffering 1 $mark FIRST_ACCESS // bits of buffering = 110. 
+  //  file .Aa/prog.linked.opt.aa, line 69
+  // c0
+  // ACB_ACCELERATOR_MEM_REQUEST
+  WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_inst <=> (assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Sample/req assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Update/req) (assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Sample/ack assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_131_Update/ack)
+  // 	r0 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (FIRST_ACCESS 4 )  // bits of buffering = 65. 
+  //  file .Aa/prog.linked.opt.aa, line 70
+  // ACB_ACCELERATOR_MEM_RESPONSE
+  RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_inst <=> (assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Sample/rr assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Update/cr) (assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Sample/ra assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_135_Update/ca)
+  // 	c1 := (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )) $buffering 1// bits of buffering = 110. 
+  //  file .Aa/prog.linked.opt.aa, line 71
+  // (((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) )) && (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) ))
+  // ((($bitcast ($uint<1>) _b0  ) && write_bar) && ( ~ ($bitcast ($uint<8>) _b0  ) ))
+  // (($bitcast ($uint<1>) _b0  ) && write_bar)
+  // write_bar
+  // (($bitcast ($uint<36>) (q_word_address + 8 ) ) && ( $slice wline 63 0 ) )
+  // (q_word_address + 8 )
+  // q_word_address
+  // wline
+  CONCAT_u10_u110_153_inst <=> (assign_stmt_130_to_assign_stmt_170/CONCAT_u10_u110_153_Sample/rr assign_stmt_130_to_assign_stmt_170/CONCAT_u10_u110_153_Update/cr) (assign_stmt_130_to_assign_stmt_170/CONCAT_u10_u110_153_Sample/ra assign_stmt_130_to_assign_stmt_170/CONCAT_u10_u110_153_Update/ca)
+  // 	ACB_ACCELERATOR_MEM_REQUEST := c1 $buffering 1 $mark SECOND_ACCESS // bits of buffering = 110. 
+  //  file .Aa/prog.linked.opt.aa, line 72
+  // c1
+  // ACB_ACCELERATOR_MEM_REQUEST
+  WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_inst <=> (assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Sample/req assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Update/req) (assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Sample/ack assign_stmt_130_to_assign_stmt_170/WPIPE_ACB_ACCELERATOR_MEM_REQUEST_155_Update/ack)
+  // 	r1 := ACB_ACCELERATOR_MEM_RESPONSE $buffering 1 $delay (SECOND_ACCESS 4 )  // bits of buffering = 65. 
+  //  file .Aa/prog.linked.opt.aa, line 73
+  // ACB_ACCELERATOR_MEM_RESPONSE
+  RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_inst <=> (assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Sample/rr assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Update/cr) (assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Sample/ra assign_stmt_130_to_assign_stmt_170/RPIPE_ACB_ACCELERATOR_MEM_RESPONSE_159_Update/ca)
+  // 	slice_171_171_delayed_1_0 := ( $slice r0 63 0 )  $buffering 1 $cut_through // bits of buffering = 64. 
+  //  file .Aa/prog.linked.opt.aa, line 74
+  // r0
+  // ( $slice r0 63 0 ) 
+  slice_163_inst <=> (assign_stmt_130_to_assign_stmt_170/slice_163_Sample/rr assign_stmt_130_to_assign_stmt_170/slice_163_Update/cr) (assign_stmt_130_to_assign_stmt_170/slice_163_Sample/ra assign_stmt_130_to_assign_stmt_170/slice_163_Update/ca)
+  // 	rline := (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) ) $buffering 1// bits of buffering = 128. 
+  //  file .Aa/prog.linked.opt.aa, line 75
+  // (slice_171_171_delayed_1_0 && ( $slice r1 63 0 ) )
+  // slice_171_171_delayed_1_0
+  // r1
+  CONCAT_u64_u128_169_inst <=> (assign_stmt_130_to_assign_stmt_170/CONCAT_u64_u128_169_Sample/rr assign_stmt_130_to_assign_stmt_170/CONCAT_u64_u128_169_Update/cr) (assign_stmt_130_to_assign_stmt_170/CONCAT_u64_u128_169_Sample/ra assign_stmt_130_to_assign_stmt_170/CONCAT_u64_u128_169_Update/ca)
+  $attribute delay => "9"
+}
+$module [execute_job] 
+{
+  // pipe-declarations for block %execute_job
+  //  file .Aa/prog.linked.opt.aa, line 78
+  // pipe-declarations for block %execute_job%loop
+  //  file .Aa/prog.linked.opt.aa, line 86
+  // memory-space 0 is read from.
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+    ::[assign_stmt_185_to_assign_stmt_193] 
+    {
+      // start:  	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+      //  file .Aa/prog.linked.opt.aa, line 83
+      // Source expression
+      // ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ]))
+      $T[CONCAT_u64_u128_184_sample_start_] 
+      $T[CONCAT_u64_u128_184_sample_completed_] 
+      $T[CONCAT_u64_u128_184_update_start_] 
+      $T[CONCAT_u64_u128_184_update_completed_] 
+      // (registers[1 ] && registers[2 ])
+      // registers[1 ]
+      $T[array_obj_ref_175_sample_start_] 
+      $T[array_obj_ref_175_sample_completed_] 
+      $T[array_obj_ref_175_update_start_] 
+      $T[array_obj_ref_175_update_completed_] 
+      $T[array_obj_ref_175_word_address_calculated] 
+      $T[array_obj_ref_175_root_address_calculated] 
+      array_obj_ref_175_word_address_calculated <-& (array_obj_ref_175_root_address_calculated)
+      ;;[array_obj_ref_175_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_175_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_175_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_175_sample_start_ <-& (array_obj_ref_175_word_address_calculated)
+      array_obj_ref_175_sample_start_ &-> (array_obj_ref_175_Sample)
+      array_obj_ref_175_sample_completed_ <-& (array_obj_ref_175_Sample)
+      array_obj_ref_175_sample_completed_ &-> ($null)
+      array_obj_ref_175_update_start_ &-> (array_obj_ref_175_Update)
+      array_obj_ref_175_update_completed_ <-& (array_obj_ref_175_Update)
+      // registers[2 ]
+      $T[array_obj_ref_177_sample_start_] 
+      $T[array_obj_ref_177_sample_completed_] 
+      $T[array_obj_ref_177_update_start_] 
+      $T[array_obj_ref_177_update_completed_] 
+      $T[array_obj_ref_177_word_address_calculated] 
+      $T[array_obj_ref_177_root_address_calculated] 
+      array_obj_ref_177_word_address_calculated <-& (array_obj_ref_177_root_address_calculated)
+      ;;[array_obj_ref_177_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_177_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_177_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_177_sample_start_ <-& (array_obj_ref_177_word_address_calculated)
+      array_obj_ref_177_sample_start_ &-> (array_obj_ref_177_Sample)
+      array_obj_ref_177_sample_completed_ <-& (array_obj_ref_177_Sample)
+      array_obj_ref_177_sample_completed_ &-> ($null)
+      array_obj_ref_177_update_start_ &-> (array_obj_ref_177_Update)
+      array_obj_ref_177_update_completed_ <-& (array_obj_ref_177_Update)
+      // (registers[3 ] && registers[4 ])
+      // registers[3 ]
+      $T[array_obj_ref_180_sample_start_] 
+      $T[array_obj_ref_180_sample_completed_] 
+      $T[array_obj_ref_180_update_start_] 
+      $T[array_obj_ref_180_update_completed_] 
+      $T[array_obj_ref_180_word_address_calculated] 
+      $T[array_obj_ref_180_root_address_calculated] 
+      array_obj_ref_180_word_address_calculated <-& (array_obj_ref_180_root_address_calculated)
+      ;;[array_obj_ref_180_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_180_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_180_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_180_sample_start_ <-& (array_obj_ref_180_word_address_calculated)
+      array_obj_ref_180_sample_start_ &-> (array_obj_ref_180_Sample)
+      array_obj_ref_180_sample_completed_ <-& (array_obj_ref_180_Sample)
+      array_obj_ref_180_sample_completed_ &-> ($null)
+      array_obj_ref_180_update_start_ &-> (array_obj_ref_180_Update)
+      array_obj_ref_180_update_completed_ <-& (array_obj_ref_180_Update)
+      // registers[4 ]
+      $T[array_obj_ref_182_sample_start_] 
+      $T[array_obj_ref_182_sample_completed_] 
+      $T[array_obj_ref_182_update_start_] 
+      $T[array_obj_ref_182_update_completed_] 
+      $T[array_obj_ref_182_word_address_calculated] 
+      $T[array_obj_ref_182_root_address_calculated] 
+      array_obj_ref_182_word_address_calculated <-& (array_obj_ref_182_root_address_calculated)
+      ;;[array_obj_ref_182_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_182_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_182_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_182_sample_start_ <-& (array_obj_ref_182_word_address_calculated)
+      array_obj_ref_182_sample_start_ &-> (array_obj_ref_182_Sample)
+      array_obj_ref_182_sample_completed_ <-& (array_obj_ref_182_Sample)
+      array_obj_ref_182_sample_completed_ &-> ($null)
+      array_obj_ref_182_update_start_ &-> (array_obj_ref_182_Update)
+      array_obj_ref_182_update_completed_ <-& (array_obj_ref_182_Update)
+      // start: Forward dependencies from (registers[1 ] && registers[2 ]) to transition CONCAT_u64_u128_184_sample_start_
+      CONCAT_u64_u128_184_sample_start_ <-& (array_obj_ref_175_update_completed_)
+      CONCAT_u64_u128_184_sample_start_ <-& (array_obj_ref_177_update_completed_)
+      // done: Forward dependencies from (registers[1 ] && registers[2 ]) to transition CONCAT_u64_u128_184_sample_start_
+      // start: Forward dependencies from (registers[3 ] && registers[4 ]) to transition CONCAT_u64_u128_184_sample_start_
+      CONCAT_u64_u128_184_sample_start_ <-& (array_obj_ref_180_update_completed_)
+      CONCAT_u64_u128_184_sample_start_ <-& (array_obj_ref_182_update_completed_)
+      // done: Forward dependencies from (registers[3 ] && registers[4 ]) to transition CONCAT_u64_u128_184_sample_start_
+      ;;[CONCAT_u64_u128_184_Sample] 
+      {
+        // binary expression 
+        $T [rr] $T [ra]  // (split) binary operation 
+      }
+      ;;[CONCAT_u64_u128_184_Update] 
+      {
+        // binary expression 
+        $T [cr] $T [ca] // (split) binary operation 
+      }
+      CONCAT_u64_u128_184_sample_start_ &-> (CONCAT_u64_u128_184_Sample)
+      CONCAT_u64_u128_184_sample_completed_ <-& (CONCAT_u64_u128_184_Sample)
+      CONCAT_u64_u128_184_sample_completed_ &-> ($null)
+      CONCAT_u64_u128_184_update_start_ &-> (CONCAT_u64_u128_184_Update)
+      CONCAT_u64_u128_184_update_completed_ <-& (CONCAT_u64_u128_184_Update)
+      // Target expression
+      // (as target) key
+      // start: WAR dependencies for key
+      // done: WAR dependencies for key
+      // end:  	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+      // start:  	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+      //  file .Aa/prog.linked.opt.aa, line 84
+      // Source expression
+      // registers[5 ]
+      $T[array_obj_ref_188_sample_start_] 
+      $T[array_obj_ref_188_sample_completed_] 
+      $T[array_obj_ref_188_update_start_] 
+      $T[array_obj_ref_188_update_completed_] 
+      $T[array_obj_ref_188_word_address_calculated] 
+      $T[array_obj_ref_188_root_address_calculated] 
+      array_obj_ref_188_word_address_calculated <-& (array_obj_ref_188_root_address_calculated)
+      ;;[array_obj_ref_188_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_188_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_188_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_188_sample_start_ <-& (array_obj_ref_188_word_address_calculated)
+      array_obj_ref_188_sample_start_ &-> (array_obj_ref_188_Sample)
+      array_obj_ref_188_sample_completed_ <-& (array_obj_ref_188_Sample)
+      array_obj_ref_188_sample_completed_ &-> ($null)
+      array_obj_ref_188_update_start_ &-> (array_obj_ref_188_Update)
+      array_obj_ref_188_update_completed_ <-& (array_obj_ref_188_Update)
+      // Target expression
+      // (as target) base_addr
+      // start: WAR dependencies for base_addr
+      // done: WAR dependencies for base_addr
+      // end:  	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+      // start:  	ndwords := registers[6 ] $buffering 1// bits of buffering = 32. 
+      //  file .Aa/prog.linked.opt.aa, line 85
+      // Source expression
+      // registers[6 ]
+      $T[array_obj_ref_192_sample_start_] 
+      $T[array_obj_ref_192_sample_completed_] 
+      $T[array_obj_ref_192_update_start_] 
+      $T[array_obj_ref_192_update_completed_] 
+      $T[array_obj_ref_192_word_address_calculated] 
+      $T[array_obj_ref_192_root_address_calculated] 
+      array_obj_ref_192_word_address_calculated <-& (array_obj_ref_192_root_address_calculated)
+      ;;[array_obj_ref_192_Sample] 
+      {
+        ||[word_access_start] 
+        {
+          ;;[word_0] 
+          {
+            $T [rr] $T [ra] 
+          }
+        }
+      }
+      ;;[array_obj_ref_192_Update] 
+      {
+        ||[word_access_complete] 
+        {
+          ;;[word_0] 
+          {
+            $T [cr] $T [ca] 
+          }
+        }
+        ;;[array_obj_ref_192_Merge] 
+        {
+          $T [merge_req] $T [merge_ack]
+        }
+      }
+      array_obj_ref_192_sample_start_ <-& (array_obj_ref_192_word_address_calculated)
+      array_obj_ref_192_sample_start_ &-> (array_obj_ref_192_Sample)
+      array_obj_ref_192_sample_completed_ <-& (array_obj_ref_192_Sample)
+      array_obj_ref_192_sample_completed_ &-> ($null)
+      array_obj_ref_192_update_start_ &-> (array_obj_ref_192_Update)
+      array_obj_ref_192_update_completed_ <-& (array_obj_ref_192_Update)
+      // Target expression
+      // (as target) ndwords
+      // start: WAR dependencies for ndwords
+      // done: WAR dependencies for ndwords
+      // end:  	ndwords := registers[6 ] $buffering 1// bits of buffering = 32. 
+      // load-store dependencies..
+      // memory-space  memory_space_0
+      //  array_obj_ref_175 load
+      //  array_obj_ref_177 load
+      //  array_obj_ref_180 load
+      //  array_obj_ref_182 load
+      //  array_obj_ref_188 load
+      //  array_obj_ref_192 load
+    }
+    <>[branch_block_stmt_194] // Branch Block  file .Aa/prog.linked.opt.aa, line 86
+    {
+      $P [branch_block_stmt_194__entry__]
+      branch_block_stmt_194__entry__ <-| ($entry)
+      $P [branch_block_stmt_194__exit__]
+      branch_block_stmt_194__exit__ |-> ($exit)
+      $P [do_while_stmt_195__entry__] 
+      $P [do_while_stmt_195__exit__] 
+      // do-while-statement  
+      //  file .Aa/prog.linked.opt.aa, line 88
+      <o> [do_while_stmt_195]  $depth 7 $buffering 1 
+      {
+        $P[do_while_stmt_195__entry__] 
+        $P[do_while_stmt_195__exit__] 
+        $P[loop_back] 
+        $P[condition_done] 
+        $P[loop_body_done] 
+        $pipeline [do_while_stmt_195_loop_body] 
+        {
+          // Pipelined!
+          $T[back_edge_to_loop_body] 
+          $T[first_time_through_loop_body] 
+          $T[loop_body_start] 
+          $T[condition_evaluated] 
+          $transitionmerge [entry_tmerge] (back_edge_to_loop_body first_time_through_loop_body) (loop_body_start)
+          $entry <-& (loop_body_start)
+          $T[aggregated_phi_sample_req] 
+          $T[aggregated_phi_sample_ack] 
+          $T[aggregated_phi_sample_ack_d] $delay
+          aggregated_phi_sample_ack_d <-& (aggregated_phi_sample_ack)
+          $T[aggregated_phi_update_req] 
+          $T[aggregated_phi_update_ack] 
+          // do not loop-back unless all phi's have used up their triggering tokens.
+          condition_evaluated <-& (aggregated_phi_sample_ack_d)
+          condition_evaluated <-& (aggregated_phi_update_ack)
+          aggregated_phi_sample_req o<-& (aggregated_phi_update_ack 0)
+          // start:  multi-source PHI statement phi_stmt_197
+          // 			$phi dword_id := 			  ($bitcast ($uint<32>) _b0  ) $on   $entry 			  n_dword_id $on   $loopback 
+          // type of target is $uint<32>
+          $T[phi_stmt_197_sample_start_] 
+          $T[phi_stmt_197_sample_completed_] 
+          $T[phi_stmt_197_update_start_] 
+          $T[phi_stmt_197_update_completed_] 
+          $T[phi_stmt_197_sample_start__ps] 
+          phi_stmt_197_sample_start__ps <-& (aggregated_phi_sample_req)
+          $T[phi_stmt_197_sample_completed__ps] 
+          phi_stmt_197_sample_completed__ps &-> (aggregated_phi_sample_ack)
+          $T[phi_stmt_197_update_start__ps] 
+          phi_stmt_197_update_start__ps <-& (aggregated_phi_update_req)
+          $T[phi_stmt_197_update_completed__ps] 
+          phi_stmt_197_update_completed_ <-& (phi_stmt_197_update_completed__ps)
+          aggregated_phi_sample_req <-& (phi_stmt_197_sample_start_)
+          aggregated_phi_sample_ack &-> (phi_stmt_197_sample_completed_)
+          aggregated_phi_update_req <-& (phi_stmt_197_update_start_)
+          $T[phi_stmt_197_loopback_trigger] 
+          phi_stmt_197_loopback_trigger <-& (back_edge_to_loop_body)
+          $T[phi_stmt_197_loopback_sample_req] 
+          $T[phi_stmt_197_loopback_sample_req_ps] 
+          phi_stmt_197_loopback_sample_req <-& (phi_stmt_197_loopback_sample_req_ps)
+          phi_stmt_197_loopback_sample_req &-> ($null)
+          $T[phi_stmt_197_entry_trigger] 
+          phi_stmt_197_entry_trigger <-& (first_time_through_loop_body)
+          $T[phi_stmt_197_entry_sample_req] 
+          $T[phi_stmt_197_entry_sample_req_ps] 
+          phi_stmt_197_entry_sample_req <-& (phi_stmt_197_entry_sample_req_ps)
+          phi_stmt_197_entry_sample_req &-> ($null)
+          phi_stmt_197_update_start_ o<-& (phi_stmt_197_update_completed_ 0)
+          phi_stmt_197_sample_start_ o<-& (phi_stmt_197_sample_completed_ 1)
+          $T[phi_stmt_197_merged_reqs] 
+          $T[phi_stmt_197_phi_mux_ack] 
+          $T[phi_stmt_197_phi_mux_ack_ps] 
+          phi_stmt_197_phi_mux_ack_ps <-& (phi_stmt_197_phi_mux_ack)
+          aggregated_phi_update_ack <-& (phi_stmt_197_update_completed_)
+          $T[type_cast_200_sample_start__ps] 
+          $T[type_cast_200_sample_completed__ps] 
+          $T[type_cast_200_update_start__ps] 
+          $T[type_cast_200_update_completed__ps] 
+          // dummies for constant expression source for phi
+          $T[type_cast_200_sample_start_] 
+          $T[type_cast_200_sample_completed_] 
+          type_cast_200_sample_completed_ <-& (type_cast_200_sample_start_)
+          $T[type_cast_200_update_start_] 
+          $T [type_cast_200_update_completed_] $delay 
+          type_cast_200_update_completed_ <-& (type_cast_200_update_start_)
+          // Phi start dependency for implicit/constant alternative.
+          type_cast_200_sample_start_ <-& (type_cast_200_sample_start__ps)
+          type_cast_200_update_start_ <-& (type_cast_200_update_start__ps)
+          // Phi complete dependency.
+          type_cast_200_sample_completed__ps <-& (type_cast_200_sample_completed_)
+          type_cast_200_update_completed__ps <-& (type_cast_200_update_completed_)
+          $T[R_n_dword_id_201_sample_start__ps] 
+          $T[R_n_dword_id_201_sample_completed__ps] 
+          $T[R_n_dword_id_201_update_start__ps] 
+          $T[R_n_dword_id_201_update_completed__ps] 
+          // interlock for implicit-variable-ref/signal-read in Phi alternative 1
+          $T[R_n_dword_id_201_sample_start_] 
+          $T[R_n_dword_id_201_sample_completed_] 
+          $T[R_n_dword_id_201_update_start_] 
+          $T[R_n_dword_id_201_update_completed_] 
+          ;;[R_n_dword_id_201_Sample] 
+          {
+            $T [req] $T [ack] // interlock-sample.
+          }
+          R_n_dword_id_201_sample_start_ &-> (R_n_dword_id_201_Sample)
+          R_n_dword_id_201_sample_completed_ <-& (R_n_dword_id_201_Sample)
+          ;;[R_n_dword_id_201_Update] 
+          {
+            $T [req] $T [ack] // interlock-update.
+          }
+          R_n_dword_id_201_update_start_ &-> (R_n_dword_id_201_Update)
+          R_n_dword_id_201_update_completed_ <-& (R_n_dword_id_201_Update)
+          // RAW reenables for n_dword_id
+          // Phi start dependency for implicit/constant alternative.
+          R_n_dword_id_201_sample_start_ <-& (R_n_dword_id_201_sample_start__ps)
+          R_n_dword_id_201_update_start_ <-& (R_n_dword_id_201_update_start__ps)
+          // Phi complete dependency.
+          R_n_dword_id_201_sample_completed__ps <-& (R_n_dword_id_201_sample_completed_)
+          R_n_dword_id_201_update_completed__ps <-& (R_n_dword_id_201_update_completed_)
+          $phisequencer [ phi_stmt_197_phi_seq] : 
+          phi_stmt_197_entry_trigger type_cast_200_sample_start__ps type_cast_200_sample_completed__ps type_cast_200_update_start__ps type_cast_200_update_completed__ps phi_stmt_197_loopback_trigger R_n_dword_id_201_sample_start__ps R_n_dword_id_201_sample_completed__ps R_n_dword_id_201_update_start__ps R_n_dword_id_201_update_completed__ps :
+          phi_stmt_197_sample_start__ps phi_stmt_197_sample_completed__ps phi_stmt_197_update_start__ps phi_stmt_197_update_completed__ps :
+          phi_stmt_197_entry_sample_req_ps phi_stmt_197_loopback_sample_req_ps : 
+          phi_stmt_197_phi_mux_ack_ps
+          // done: PHI Statement phi_stmt_197
+          // start: WAR dependencies for n_dword_id
+          // WAR dependency: Read: n_dword_id before Write: 			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+          //  WAR  PHI-PHI dependency ignored...
+          // done: WAR dependencies for n_dword_id
+          // start:  			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+          //  file .Aa/prog.linked.opt.aa, line 93
+          // volatile! 
+          // Source expression
+          // (dword_id + 2 )
+          // dword_id
+          // Target expression
+          // (as target) n_dword_id
+          // start: WAR dependencies for n_dword_id
+          // WAR dependency: Read: n_dword_id before Write: 			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+          //  WAR  PHI-PHI dependency ignored...
+          // done: WAR dependencies for n_dword_id
+          // end:  			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+          // start: WAR dependencies for address
+          // ignored out-of-scope w_root 	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+          // done: WAR dependencies for address
+          // start:  			$volatile address := (base_addr + (dword_id << 3 )) $buffering 1
+          //  file .Aa/prog.linked.opt.aa, line 94
+          // volatile! 
+          // Source expression
+          // (base_addr + (dword_id << 3 ))
+          // base_addr
+          // (dword_id << 3 )
+          // dword_id
+          // Target expression
+          // (as target) address
+          // start: WAR dependencies for address
+          // ignored out-of-scope w_root 	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+          // done: WAR dependencies for address
+          // end:  			$volatile address := (base_addr + (dword_id << 3 )) $buffering 1
+          // start: 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+          //  file .Aa/prog.linked.opt.aa, line 95
+          $T[call_stmt_221_sample_start_] 
+          $T[call_stmt_221_sample_completed_] 
+          $T[call_stmt_221_update_start_] 
+          $T[call_stmt_221_update_completed_] 
+          // Call input argument 0
+          // Call input argument 1
+          // address
+          // Call input argument 2
+          // start: Forward dependencies from address to transition call_stmt_221_sample_start_
+          call_stmt_221_sample_start_ <-& (phi_stmt_197_update_completed_)
+          // done: Forward dependencies from address to transition call_stmt_221_sample_start_
+          // RAW reenables for address
+          phi_stmt_197_update_start_ o<-& (call_stmt_221_sample_completed_ 0)
+          ;;[call_stmt_221_Sample] 
+          {
+            $T [crr] $T [cra] 
+          }
+          ;;[call_stmt_221_Update] 
+          {
+            $T [ccr] $T [cca] 
+          }
+          call_stmt_221_sample_start_ &-> (call_stmt_221_Sample)
+          call_stmt_221_sample_completed_ <-& (call_stmt_221_Sample)
+          call_stmt_221_sample_completed_ &-> ($null)
+          call_stmt_221_update_start_ &-> (call_stmt_221_Update)
+          call_stmt_221_update_completed_ <-& (call_stmt_221_Update)
+          // Call output argument 0
+          // (as target) line
+          // self-release: 
+          call_stmt_221_sample_start_ o<-& (call_stmt_221_sample_completed_ 1)
+          $null &-> (call_stmt_221_update_start_)
+          call_stmt_221_update_start_ o<-& (call_stmt_221_update_completed_ 0)
+          // start: WAR dependencies for line
+          // done: WAR dependencies for line
+          // end: 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+          // start: WAR dependencies for eline
+          // ignored out-of-scope w_root 	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+          // done: WAR dependencies for eline
+          // start:  			$volatile eline := (line ^ key) $buffering 1
+          //  file .Aa/prog.linked.opt.aa, line 96
+          // volatile! 
+          // Source expression
+          // (line ^ key)
+          // line
+          // key
+          // Target expression
+          // (as target) eline
+          // start: WAR dependencies for eline
+          // ignored out-of-scope w_root 	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+          // done: WAR dependencies for eline
+          // end:  			$volatile eline := (line ^ key) $buffering 1
+          // start:  			address_234_delayed_9_0 := address $buffering 9 $cut_through // bits of buffering = 288. 
+          //  file .Aa/prog.linked.opt.aa, line 97
+          $T[assign_stmt_229_sample_start_] 
+          $T[assign_stmt_229_sample_completed_] 
+          $T[assign_stmt_229_update_start_] 
+          $T[assign_stmt_229_update_completed_] 
+          // Source expression
+          // address
+          // Target expression
+          // (as target) address_234_delayed_9_0
+          // both source and target are implicit: use interlock 
+          // Interlock 
+          ;;[assign_stmt_229_Sample] 
+          {
+            $T [req] $T [ack] // interlock-sample.
+          }
+          ;;[assign_stmt_229_Update] 
+          {
+            $T [req] $T [ack] // interlock-update.
+          }
+          assign_stmt_229_sample_start_ &-> (assign_stmt_229_Sample)
+          assign_stmt_229_sample_completed_ <-& (assign_stmt_229_Sample)
+          assign_stmt_229_sample_completed_ &-> ($null)
+          assign_stmt_229_update_start_ &-> (assign_stmt_229_Update)
+          assign_stmt_229_update_completed_ <-& (assign_stmt_229_Update)
+          // start: Forward dependencies from address to transition assign_stmt_229_sample_start_
+          assign_stmt_229_sample_start_ <-& (phi_stmt_197_update_completed_)
+          // done: Forward dependencies from address to transition assign_stmt_229_sample_start_
+          // RAW reenables for address
+          phi_stmt_197_update_start_ o<-& (assign_stmt_229_sample_completed_ 0)
+          // self-release: 
+          assign_stmt_229_sample_start_ o<-& (assign_stmt_229_sample_completed_ 1)
+          $null &-> (assign_stmt_229_update_start_)
+          assign_stmt_229_update_start_ o<-& (assign_stmt_229_update_completed_ 0)
+          // start: WAR dependencies for address_234_delayed_9_0
+          // done: WAR dependencies for address_234_delayed_9_0
+          // end:  			address_234_delayed_9_0 := address $buffering 9 $cut_through // bits of buffering = 288. 
+          // start: 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+          //  file .Aa/prog.linked.opt.aa, line 98
+          $T[call_stmt_235_sample_start_] 
+          $T[call_stmt_235_sample_completed_] 
+          $T[call_stmt_235_update_start_] 
+          $T[call_stmt_235_update_completed_] 
+          // Call input argument 0
+          // Call input argument 1
+          // address_234_delayed_9_0
+          // Call input argument 2
+          // eline
+          // start: Forward dependencies from address_234_delayed_9_0 to transition call_stmt_235_sample_start_
+          call_stmt_235_sample_start_ <-& (assign_stmt_229_update_completed_)
+          // done: Forward dependencies from address_234_delayed_9_0 to transition call_stmt_235_sample_start_
+          // RAW reenables for address_234_delayed_9_0
+          assign_stmt_229_update_start_ o<-& (call_stmt_235_sample_completed_ 0)
+          // start: Forward dependencies from eline to transition call_stmt_235_sample_start_
+          call_stmt_235_sample_start_ <-& (call_stmt_221_update_completed_)
+          // done: Forward dependencies from eline to transition call_stmt_235_sample_start_
+          // RAW reenables for eline
+          call_stmt_221_update_start_ o<-& (call_stmt_235_sample_completed_ 0)
+          ;;[call_stmt_235_Sample] 
+          {
+            $T [crr] $T [cra] 
+          }
+          ;;[call_stmt_235_Update] 
+          {
+            $T [ccr] $T [cca] 
+          }
+          call_stmt_235_sample_start_ &-> (call_stmt_235_Sample)
+          call_stmt_235_sample_completed_ <-& (call_stmt_235_Sample)
+          call_stmt_235_sample_completed_ &-> ($null)
+          call_stmt_235_update_start_ &-> (call_stmt_235_Update)
+          call_stmt_235_update_completed_ <-& (call_stmt_235_Update)
+          // Call output argument 0
+          // (as target) ign_line
+          // self-release: 
+          call_stmt_235_sample_start_ o<-& (call_stmt_235_sample_completed_ 1)
+          $null &-> (call_stmt_235_update_start_)
+          call_stmt_235_update_start_ o<-& (call_stmt_235_update_completed_ 0)
+          // start: WAR dependencies for ign_line
+          // done: WAR dependencies for ign_line
+          // end: 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+          // (n_dword_id < ndwords)
+          // n_dword_id
+          // ndwords
+          $T [loop_body_delay_to_condition_start] $delay
+          loop_body_start &-> (loop_body_delay_to_condition_start)
+          loop_body_delay_to_condition_start &-> (condition_evaluated)
+          // start: Forward dependencies from (n_dword_id < ndwords) to transition condition_evaluated
+          condition_evaluated <-& (phi_stmt_197_update_completed_)
+          // done: Forward dependencies from (n_dword_id < ndwords) to transition condition_evaluated
+          condition_evaluated &-> ($null)
+          // load-store dependencies..
+          // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+          // read-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+          // write-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+          call_stmt_235_sample_start_ <-& (call_stmt_221_update_completed_)
+          // ring dependency in pipeline.
+          call_stmt_221_sample_start_ o<-& (call_stmt_235_update_completed_ 0)
+          // signal write dependencies for ACB_ACCELERATOR_MEM_REQUEST
+          // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+          // read-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+          call_stmt_235_sample_start_ <-& (call_stmt_221_update_completed_)
+          // ring dependency in pipeline.
+          // function call expression/statement ...
+          call_stmt_221_sample_start_ o<-& (call_stmt_235_update_completed_ 0)
+          // write-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+          // signal write dependencies for ACB_ACCELERATOR_MEM_RESPONSE
+          // SCC arc from condition_evaluated to entry
+          $scc_arc condition_evaluated => $entry
+        }
+        ( first_time_through_loop_body  back_edge_to_loop_body) 
+        ( condition_evaluated )
+        ;; [loop_exit] 
+        {
+          $T [ack] 
+        }
+        ;; [loop_taken] 
+        {
+          $T [ack] 
+        }
+        do_while_stmt_195__entry__ <-| ($entry)
+        loop_body_done <-| ( do_while_stmt_195_loop_body ) 
+        condition_done |-> (loop_exit loop_taken)
+        do_while_stmt_195__exit__ |-> ($exit)
+        $bind condition_done <= do_while_stmt_195_loop_body : condition_evaluated
+        $bind do_while_stmt_195__entry__  => do_while_stmt_195_loop_body : first_time_through_loop_body 
+        $bind loop_back  => do_while_stmt_195_loop_body : back_edge_to_loop_body 
+        $terminate (loop_exit loop_taken loop_body_done) (loop_back do_while_stmt_195__exit__)
+      }
+      do_while_stmt_195__entry__ |-> (do_while_stmt_195)
+      do_while_stmt_195__exit__ <-| (do_while_stmt_195)
+      do_while_stmt_195__entry__ <-| (branch_block_stmt_194__entry__)
+      do_while_stmt_195__exit__ |-> (branch_block_stmt_194__exit__)
+    }
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %execute_job%loop%
+    //  file .Aa/prog.linked.opt.aa, line 89
+    // constant-object-declarations for block %execute_job%loop
+    //  file .Aa/prog.linked.opt.aa, line 86
+    // constant-object-declarations for block %execute_job
+    //  file .Aa/prog.linked.opt.aa, line 78
+    // registers[1 ]
+    $constant $W[array_obj_ref_175_word_address_0] : $pointer<memory_space_0> := _b0001
+    // registers[2 ]
+    $constant $W[array_obj_ref_177_word_address_0] : $pointer<memory_space_0> := _b0010
+    // registers[3 ]
+    $constant $W[array_obj_ref_180_word_address_0] : $pointer<memory_space_0> := _b0011
+    // registers[4 ]
+    $constant $W[array_obj_ref_182_word_address_0] : $pointer<memory_space_0> := _b0100
+    // registers[5 ]
+    $constant $W[array_obj_ref_188_word_address_0] : $pointer<memory_space_0> := _b0101
+    // registers[6 ]
+    $constant $W[array_obj_ref_192_word_address_0] : $pointer<memory_space_0> := _b0110
+    // constant-declarations for block %execute_job%loop
+    //  file .Aa/prog.linked.opt.aa, line 86
+    // do-while statement  
+    //  file .Aa/prog.linked.opt.aa, line 88
+    // constant-declarations for block %execute_job%loop%
+    //  file .Aa/prog.linked.opt.aa, line 89
+    // constant-declarations for phi:  			$phi dword_id := 			  ($bitcast ($uint<32>) _b0  ) $on   $entry 			  n_dword_id $on   $loopback 
+    // type of target is $uint<32>
+    //  file .Aa/prog.linked.opt.aa, line 90
+    // ($bitcast ($uint<32>) _b0  )
+    $constant $W[type_cast_200_wire_constant] : $int<32> := _b00000000000000000000000000000000// 0
+    // 2 
+    $constant $W[konst_205_wire_constant] : $int<32> := _b00000000000000000000000000000010// 2
+    // 3 
+    $constant $W[konst_211_wire_constant] : $int<32> := _b00000000000000000000000000000011// 3
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+    //  file .Aa/prog.linked.opt.aa, line 95
+    // ($bitcast ($uint<1>) _b1  )
+    $constant $W[type_cast_216_wire_constant] : $int<1> := _b1// 1
+    // ($bitcast ($uint<128>) _b0  )
+    $constant $W[type_cast_219_wire_constant] : $int<128> := _b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000// 0
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+    //  file .Aa/prog.linked.opt.aa, line 98
+    // ($bitcast ($uint<1>) _b0  )
+    $constant $W[type_cast_231_wire_constant] : $int<1> := _b0// 0
+    // 	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+    //  file .Aa/prog.linked.opt.aa, line 83
+    // registers[1 ]
+    $W[array_obj_ref_175_data_0] : $int<32>
+    $W[array_obj_ref_175_wire] : $int<32>
+    // registers[2 ]
+    $W[array_obj_ref_177_data_0] : $int<32>
+    $W[array_obj_ref_177_wire] : $int<32>
+    // (registers[1 ] && registers[2 ])
+    $intermediate $W[CONCAT_u32_u64_178_wire] : $int<64>
+    // registers[3 ]
+    $W[array_obj_ref_180_data_0] : $int<32>
+    $W[array_obj_ref_180_wire] : $int<32>
+    // registers[4 ]
+    $W[array_obj_ref_182_data_0] : $int<32>
+    $W[array_obj_ref_182_wire] : $int<32>
+    // (registers[3 ] && registers[4 ])
+    $intermediate $W[CONCAT_u32_u64_183_wire] : $int<64>
+    // key
+    $W[key_185] : $int<128>
+    // 	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 84
+    // registers[5 ]
+    $W[array_obj_ref_188_data_0] : $int<32>
+    // base_addr
+    $W[base_addr_189] : $int<32>
+    // 	ndwords := registers[6 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 85
+    // registers[6 ]
+    $W[array_obj_ref_192_data_0] : $int<32>
+    // ndwords
+    $W[ndwords_193] : $int<32>
+    // block %execute_job%loop
+    //  file .Aa/prog.linked.opt.aa, line 86
+    // do-while statement  
+    //  file .Aa/prog.linked.opt.aa, line 88
+    // (n_dword_id < ndwords)
+    $intermediate $W[ULT_u32_u1_239_wire] : $int<1>
+    // merge-statement  
+    //  file .Aa/prog.linked.opt.aa, line 89
+    // 			$phi dword_id := 			  ($bitcast ($uint<32>) _b0  ) $on   $entry 			  n_dword_id $on   $loopback 
+    // type of target is $uint<32>
+    //  file .Aa/prog.linked.opt.aa, line 90
+    $W[n_dword_id_207_201_buffered] : $int<32>
+    // dword_id
+    $W[dword_id_197] : $int<32>
+    // 			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 93
+    // n_dword_id
+    $W[n_dword_id_207] : $int<32>
+    // 			$volatile address := (base_addr + (dword_id << 3 )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 94
+    // (dword_id << 3 )
+    $intermediate $W[SHL_u32_u32_212_wire] : $int<32>
+    // address
+    $W[address_214] : $int<32>
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+    //  file .Aa/prog.linked.opt.aa, line 95
+    // line
+    $W[line_221] : $int<128>
+    // 			$volatile eline := (line ^ key) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 96
+    // eline
+    $W[eline_226] : $int<128>
+    // 			address_234_delayed_9_0 := address $buffering 9 $cut_through // bits of buffering = 288. 
+    //  file .Aa/prog.linked.opt.aa, line 97
+    // address_234_delayed_9_0
+    $W[address_234_delayed_9_0_229] : $int<32>
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+    //  file .Aa/prog.linked.opt.aa, line 98
+    // ign_line
+    $W[ign_line_235] : $int<128>
+    // 	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+    //  file .Aa/prog.linked.opt.aa, line 83
+    // registers[1 ]
+    $load [array_obj_ref_175_load_0] $from memory_space_0 (array_obj_ref_175_word_address_0) (array_obj_ref_175_data_0) 
+    $delay array_obj_ref_175_load_0 5
+    &/ [array_obj_ref_175_gather_scatter] (array_obj_ref_175_data_0) (array_obj_ref_175_wire) 
+    $flowthrough 
+    // registers[2 ]
+    $load [array_obj_ref_177_load_0] $from memory_space_0 (array_obj_ref_177_word_address_0) (array_obj_ref_177_data_0) 
+    $delay array_obj_ref_177_load_0 5
+    &/ [array_obj_ref_177_gather_scatter] (array_obj_ref_177_data_0) (array_obj_ref_177_wire) 
+    $flowthrough 
+    // (registers[1 ] && registers[2 ])
+    &&[CONCAT_u32_u64_178_inst] (array_obj_ref_175_wire array_obj_ref_177_wire) (CONCAT_u32_u64_178_wire)   $flowthrough 
+    $delay CONCAT_u32_u64_178_inst 0
+    // registers[3 ]
+    $load [array_obj_ref_180_load_0] $from memory_space_0 (array_obj_ref_180_word_address_0) (array_obj_ref_180_data_0) 
+    $delay array_obj_ref_180_load_0 5
+    &/ [array_obj_ref_180_gather_scatter] (array_obj_ref_180_data_0) (array_obj_ref_180_wire) 
+    $flowthrough 
+    // registers[4 ]
+    $load [array_obj_ref_182_load_0] $from memory_space_0 (array_obj_ref_182_word_address_0) (array_obj_ref_182_data_0) 
+    $delay array_obj_ref_182_load_0 5
+    &/ [array_obj_ref_182_gather_scatter] (array_obj_ref_182_data_0) (array_obj_ref_182_wire) 
+    $flowthrough 
+    // (registers[3 ] && registers[4 ])
+    &&[CONCAT_u32_u64_183_inst] (array_obj_ref_180_wire array_obj_ref_182_wire) (CONCAT_u32_u64_183_wire)   $flowthrough 
+    $delay CONCAT_u32_u64_183_inst 0
+    // ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ]))
+    &&[CONCAT_u64_u128_184_inst] (CONCAT_u32_u64_178_wire CONCAT_u32_u64_183_wire) (key_185)   
+    $buffering  $out CONCAT_u64_u128_184_inst key_185 1
+    $delay CONCAT_u64_u128_184_inst 1
+    // 	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 84
+    // registers[5 ]
+    $load [array_obj_ref_188_load_0] $from memory_space_0 (array_obj_ref_188_word_address_0) (array_obj_ref_188_data_0) 
+    $delay array_obj_ref_188_load_0 5
+    &/ [array_obj_ref_188_gather_scatter] (array_obj_ref_188_data_0) (base_addr_189) 
+    $flowthrough 
+    // 	ndwords := registers[6 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 85
+    // registers[6 ]
+    $load [array_obj_ref_192_load_0] $from memory_space_0 (array_obj_ref_192_word_address_0) (array_obj_ref_192_data_0) 
+    $delay array_obj_ref_192_load_0 5
+    &/ [array_obj_ref_192_gather_scatter] (array_obj_ref_192_data_0) (ndwords_193) 
+    $flowthrough 
+    // datapath-instances for block %execute_job%loop
+    //  file .Aa/prog.linked.opt.aa, line 86
+    // datapath-instances for do-while  
+    //  file .Aa/prog.linked.opt.aa, line 88
+    // (n_dword_id < ndwords)
+    <[ULT_u32_u1_239_inst] (n_dword_id_207 ndwords_193) (ULT_u32_u1_239_wire)   $flowthrough 
+    $delay ULT_u32_u1_239_inst 0
+    ==0? [do_while_stmt_195_branch] (ULT_u32_u1_239_wire)
+    $flowthrough
+    // data-path instances for merge  
+    //  file .Aa/prog.linked.opt.aa, line 89
+    // 			$phi dword_id := 			  ($bitcast ($uint<32>) _b0  ) $on   $entry 			  n_dword_id $on   $loopback 
+    // type of target is $uint<32>
+    //  file .Aa/prog.linked.opt.aa, line 90
+    # := [n_dword_id_207_201_buf] (n_dword_id_207) (n_dword_id_207_201_buffered)    
+    $buffering $out n_dword_id_207_201_buf n_dword_id_207_201_buffered  1
+    # $phi [phi_stmt_197] (type_cast_200_wire_constant n_dword_id_207_201_buffered) ( dword_id_197 ) 
+    // $buffering  $out phi_stmt_197 dword_id_197 2
+    // 			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 93
+    // (dword_id + 2 )
+    +[ADD_u32_u32_206_inst] (dword_id_197 konst_205_wire_constant) (n_dword_id_207)   $flowthrough 
+    $delay ADD_u32_u32_206_inst 0
+    // 			$volatile address := (base_addr + (dword_id << 3 )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 94
+    // (dword_id << 3 )
+    <<[SHL_u32_u32_212_inst] (dword_id_197 konst_211_wire_constant) (SHL_u32_u32_212_wire)   $flowthrough 
+    $delay SHL_u32_u32_212_inst 0
+    // (base_addr + (dword_id << 3 ))
+    +[ADD_u32_u32_213_inst] (base_addr_189 SHL_u32_u32_212_wire) (address_214)   $flowthrough 
+    $delay ADD_u32_u32_213_inst 0
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+    //  file .Aa/prog.linked.opt.aa, line 95
+    $call [call_stmt_221_call] $module access_mem_128(type_cast_216_wire_constant address_214 type_cast_219_wire_constant) (line_221)  
+    $delay call_stmt_221_call 9
+    $buffering  $in call_stmt_221_call type_cast_216_wire_constant 1
+    $buffering  $in call_stmt_221_call address_214 1
+    $buffering  $in call_stmt_221_call type_cast_219_wire_constant 1
+    $buffering  $out call_stmt_221_call line_221 1
+    // 			$volatile eline := (line ^ key) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 96
+    // (line ^ key)
+    ^[XOR_u128_u128_225_inst] (line_221 key_185) (eline_226)   $flowthrough 
+    $delay XOR_u128_u128_225_inst 0
+    // 			address_234_delayed_9_0 := address $buffering 9 $cut_through // bits of buffering = 288. 
+    //  file .Aa/prog.linked.opt.aa, line 97
+    # := [W_address_234_delayed_9_0_227_inst] (address_214) (address_234_delayed_9_0_229)  $cut_through   
+    $buffering  $out W_address_234_delayed_9_0_227_inst address_234_delayed_9_0_229 9
+    // 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+    //  file .Aa/prog.linked.opt.aa, line 98
+    $call [call_stmt_235_call] $module access_mem_128(type_cast_231_wire_constant address_234_delayed_9_0_229 eline_226) (ign_line_235)  
+    $delay call_stmt_235_call 9
+    $buffering  $in call_stmt_235_call type_cast_231_wire_constant 1
+    $buffering  $in call_stmt_235_call address_234_delayed_9_0_229 1
+    $buffering  $in call_stmt_235_call eline_226 1
+    $buffering  $out call_stmt_235_call ign_line_235 1
+  }
+  // end data-path
+  // 	key := ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ])) $buffering 1// bits of buffering = 128. 
+  //  file .Aa/prog.linked.opt.aa, line 83
+  // ((registers[1 ] && registers[2 ]) && (registers[3 ] && registers[4 ]))
+  // (registers[1 ] && registers[2 ])
+  // registers[1 ]
+  array_obj_ref_175_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Update/array_obj_ref_175_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Update/array_obj_ref_175_Merge/merge_ack)
+  array_obj_ref_175_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_175_Update/word_access_complete/word_0/ca)
+  // registers[2 ]
+  array_obj_ref_177_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Update/array_obj_ref_177_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Update/array_obj_ref_177_Merge/merge_ack)
+  array_obj_ref_177_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_177_Update/word_access_complete/word_0/ca)
+  // (registers[3 ] && registers[4 ])
+  // registers[3 ]
+  array_obj_ref_180_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Update/array_obj_ref_180_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Update/array_obj_ref_180_Merge/merge_ack)
+  array_obj_ref_180_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_180_Update/word_access_complete/word_0/ca)
+  // registers[4 ]
+  array_obj_ref_182_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Update/array_obj_ref_182_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Update/array_obj_ref_182_Merge/merge_ack)
+  array_obj_ref_182_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_182_Update/word_access_complete/word_0/ca)
+  CONCAT_u64_u128_184_inst <=> (assign_stmt_185_to_assign_stmt_193/CONCAT_u64_u128_184_Sample/rr assign_stmt_185_to_assign_stmt_193/CONCAT_u64_u128_184_Update/cr) (assign_stmt_185_to_assign_stmt_193/CONCAT_u64_u128_184_Sample/ra assign_stmt_185_to_assign_stmt_193/CONCAT_u64_u128_184_Update/ca)
+  // 	base_addr := registers[5 ] $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 84
+  // registers[5 ]
+  array_obj_ref_188_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Update/array_obj_ref_188_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Update/array_obj_ref_188_Merge/merge_ack)
+  array_obj_ref_188_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_188_Update/word_access_complete/word_0/ca)
+  // 	ndwords := registers[6 ] $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 85
+  // registers[6 ]
+  array_obj_ref_192_gather_scatter <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Update/array_obj_ref_192_Merge/merge_req) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Update/array_obj_ref_192_Merge/merge_ack)
+  array_obj_ref_192_load_0 <=> (assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Sample/word_access_start/word_0/rr assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Update/word_access_complete/word_0/cr) (assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Sample/word_access_start/word_0/ra assign_stmt_185_to_assign_stmt_193/array_obj_ref_192_Update/word_access_complete/word_0/ca)
+  // CP-DP links for do-while  do_while_stmt_195
+  //  file .Aa/prog.linked.opt.aa, line 88
+  phi_stmt_197 <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/phi_stmt_197_entry_sample_req branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/phi_stmt_197_loopback_sample_req) (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/phi_stmt_197_phi_mux_ack)
+  n_dword_id_207_201_buf <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/R_n_dword_id_201_Sample/req branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/R_n_dword_id_201_Update/req) (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/R_n_dword_id_201_Sample/ack branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/R_n_dword_id_201_Update/ack)
+  // 			$volatile n_dword_id := (dword_id + 2 ) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 93
+  // (dword_id + 2 )
+  // dword_id
+  // 			$volatile address := (base_addr + (dword_id << 3 )) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 94
+  // (base_addr + (dword_id << 3 ))
+  // base_addr
+  // (dword_id << 3 )
+  // dword_id
+  // 			$call access_mem_128 (($bitcast ($uint<1>) _b1  ) address ($bitcast ($uint<128>) _b0  ) ) (line ) 
+  //  file .Aa/prog.linked.opt.aa, line 95
+  // address
+  call_stmt_221_call <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_221_Sample/crr branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_221_Update/ccr) (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_221_Sample/cra branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_221_Update/cca)
+  // 			$volatile eline := (line ^ key) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 96
+  // (line ^ key)
+  // line
+  // key
+  // 			address_234_delayed_9_0 := address $buffering 9 $cut_through // bits of buffering = 288. 
+  //  file .Aa/prog.linked.opt.aa, line 97
+  // address
+  W_address_234_delayed_9_0_227_inst <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/assign_stmt_229_Sample/req branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/assign_stmt_229_Update/req) (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/assign_stmt_229_Sample/ack branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/assign_stmt_229_Update/ack)
+  // 			$call access_mem_128 (($bitcast ($uint<1>) _b0  ) address_234_delayed_9_0 eline ) (ign_line ) 
+  //  file .Aa/prog.linked.opt.aa, line 98
+  // address_234_delayed_9_0
+  // eline
+  call_stmt_235_call <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_235_Sample/crr branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_235_Update/ccr) (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_235_Sample/cra branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/call_stmt_235_Update/cca)
+  // (n_dword_id < ndwords)
+  // n_dword_id
+  // ndwords
+  do_while_stmt_195_branch <=> (branch_block_stmt_194/do_while_stmt_195/do_while_stmt_195_loop_body/condition_evaluated) (branch_block_stmt_194/do_while_stmt_195/loop_exit/ack branch_block_stmt_194/do_while_stmt_195/loop_taken/ack)
+}
+$module [accelerator_worker_daemon] 
+{
+  // pipe-declarations for block %accelerator_worker_daemon
+  //  file .Aa/prog.linked.opt.aa, line 102
+  // pipe-declarations for block %accelerator_worker_daemon%loop
+  //  file .Aa/prog.linked.opt.aa, line 108
+  // pipe-declarations for block %accelerator_worker_daemon%loop%
+  //  file .Aa/prog.linked.opt.aa, line 110
+  // pipe-declarations for block %accelerator_worker_daemon%loop%
+  //  file .Aa/prog.linked.opt.aa, line 112
+  // memory-space 0 is written into.
+  // memory-space 0 is read from.
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+    ::[assign_stmt_245] 
+    {
+      // start:  	sw := start_worker $buffering 1// bits of buffering = 1. 
+      //  file .Aa/prog.linked.opt.aa, line 107
+      // Source expression
+      // start_worker
+      $T[RPIPE_start_worker_244_sample_start_] 
+      $T[RPIPE_start_worker_244_sample_completed_] 
+      $T[RPIPE_start_worker_244_update_start_] 
+      $T[RPIPE_start_worker_244_update_completed_] 
+      ;;[RPIPE_start_worker_244_Sample] 
+      {
+        // pipe read sample
+        $T [rr] $T [ra] 
+      }
+      ;;[RPIPE_start_worker_244_Update] 
+      {
+        // pipe read update
+        $T [cr] $T [ca] 
+      }
+      RPIPE_start_worker_244_sample_start_ &-> (RPIPE_start_worker_244_Sample)
+      RPIPE_start_worker_244_sample_completed_ <-& (RPIPE_start_worker_244_Sample)
+      RPIPE_start_worker_244_update_start_ <-& (RPIPE_start_worker_244_sample_completed_)
+      RPIPE_start_worker_244_update_start_ &-> (RPIPE_start_worker_244_Update)
+      RPIPE_start_worker_244_update_completed_ <-& (RPIPE_start_worker_244_Update)
+      // Target expression
+      // (as target) sw
+      // start: WAR dependencies for sw
+      // done: WAR dependencies for sw
+      // end:  	sw := start_worker $buffering 1// bits of buffering = 1. 
+      // load-store dependencies..
+      // pipe read/write dependencies for pipe start_worker
+      // read-dependencies for pipe start_worker
+      // write-dependencies for pipe start_worker
+      // signal write dependencies for start_worker
+    }
+    <>[branch_block_stmt_246] // Branch Block  file .Aa/prog.linked.opt.aa, line 108
+    {
+      $P [branch_block_stmt_246__entry__]
+      branch_block_stmt_246__entry__ <-| ($entry)
+      $P [branch_block_stmt_246__exit__]
+      branch_block_stmt_246__exit__ |-> ($exit)
+      $P [merge_stmt_247__entry__] 
+      $P [merge_stmt_247__exit__] 
+      $P [merge_stmt_248__entry__] 
+      $P [merge_stmt_248__exit__] 
+      $P [assign_stmt_252_to_assign_stmt_266__entry__] 
+      $P [assign_stmt_252_to_assign_stmt_266__exit__] 
+      $P [if_stmt_267__entry__] 
+      $P [if_stmt_267__exit__] 
+      $P [assign_stmt_278__entry__] 
+      $P [assign_stmt_278__exit__] 
+      $P [call_stmt_280__entry__] 
+      $P [call_stmt_280__exit__] 
+      $P [assign_stmt_290_to_assign_stmt_305__entry__] 
+      $P [assign_stmt_290_to_assign_stmt_305__exit__] 
+      $P [loopback]
+      ::[assign_stmt_252_to_assign_stmt_266] 
+      {
+        // start:  		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 114
+        // Source expression
+        // registers[0 ]
+        $T[array_obj_ref_251_sample_start_] 
+        $T[array_obj_ref_251_sample_completed_] 
+        $T[array_obj_ref_251_update_start_] 
+        $T[array_obj_ref_251_update_completed_] 
+        $T[array_obj_ref_251_word_address_calculated] 
+        $T[array_obj_ref_251_root_address_calculated] 
+        array_obj_ref_251_word_address_calculated <-& (array_obj_ref_251_root_address_calculated)
+        ;;[array_obj_ref_251_Sample] 
+        {
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_251_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+          ;;[array_obj_ref_251_Merge] 
+          {
+            $T [merge_req] $T [merge_ack]
+          }
+        }
+        array_obj_ref_251_sample_start_ <-& (array_obj_ref_251_word_address_calculated)
+        array_obj_ref_251_sample_start_ &-> (array_obj_ref_251_Sample)
+        array_obj_ref_251_sample_completed_ <-& (array_obj_ref_251_Sample)
+        array_obj_ref_251_sample_completed_ &-> ($null)
+        array_obj_ref_251_update_start_ &-> (array_obj_ref_251_Update)
+        array_obj_ref_251_update_completed_ <-& (array_obj_ref_251_Update)
+        // Target expression
+        // (as target) r0
+        // start: WAR dependencies for r0
+        // done: WAR dependencies for r0
+        // end:  		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        // start: WAR dependencies for cmd_flag
+        // done: WAR dependencies for cmd_flag
+        // start:  		$volatile cmd_flag := (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) )) $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 115
+        // volatile! 
+        // Source expression
+        // (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) ))
+        // ((r0 [] 0 ) & (r0 [] 2 ))
+        // (r0 [] 0 )
+        // r0
+        // (r0 [] 2 )
+        // r0
+        // ( ~ (r0 [] 3 ) )
+        // (r0 [] 3 )
+        // r0
+        // Target expression
+        // (as target) cmd_flag
+        // start: WAR dependencies for cmd_flag
+        // done: WAR dependencies for cmd_flag
+        // end:  		$volatile cmd_flag := (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) )) $buffering 1
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_251 load
+      }
+      assign_stmt_252_to_assign_stmt_266__entry__ |-> (assign_stmt_252_to_assign_stmt_266)
+      assign_stmt_252_to_assign_stmt_266__exit__ <-| (assign_stmt_252_to_assign_stmt_266)
+      // if-statement  
+      //  file .Aa/prog.linked.opt.aa, line 0
+      ;;[if_stmt_267_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      if_stmt_267__entry__ |-> (if_stmt_267_dead_link)
+      if_stmt_267__exit__ <-| (if_stmt_267_dead_link)
+      ;;[if_stmt_267_eval_test] 
+      {
+        // test expression evaluate and trigger branch 
+        // ( ~ cmd_flag )
+        ;;[NOT_u1_u1_269] 
+        {
+          // unary expression 
+          // flow-through
+          ;;[SplitProtocol] 
+          {
+            ;;[Sample] 
+            {
+              $T [rr] $T [ra]
+            }
+            ;;[Update] 
+            {
+              $T [cr] $T [ca]
+            }
+          }
+        }
+        $T [branch_req] 
+      }
+      if_stmt_267__entry__ |-> (if_stmt_267_eval_test)
+      $P [NOT_u1_u1_269_place]
+      NOT_u1_u1_269_place <-| (if_stmt_267_eval_test)
+      ;;[if_stmt_267_if_link] 
+      {
+        $T [if_choice_transition] 
+      }
+      ;;[if_stmt_267_else_link] 
+      {
+        $T [else_choice_transition] 
+      }
+      NOT_u1_u1_269_place |-> (if_stmt_267_if_link if_stmt_267_else_link)
+      $P [look_for_command]
+      look_for_command <-| (if_stmt_267_if_link)
+      if_stmt_267__exit__ <-| (if_stmt_267_else_link)
+      ::[assign_stmt_278] 
+      {
+        // start:  		registers[0 ] := (r0 & ( ~ 36  )) $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 119
+        // Source expression
+        // (r0 & ( ~ 36  ))
+        $T[AND_u32_u32_277_sample_start_] 
+        $T[AND_u32_u32_277_sample_completed_] 
+        $T[AND_u32_u32_277_update_start_] 
+        $T[AND_u32_u32_277_update_completed_] 
+        // r0
+        // start: Forward dependencies from r0 to transition AND_u32_u32_277_sample_start_
+        // done: Forward dependencies from r0 to transition AND_u32_u32_277_sample_start_
+        ;;[AND_u32_u32_277_Sample] 
+        {
+          // binary expression 
+          $T [rr] $T [ra]  // (split) binary operation 
+        }
+        ;;[AND_u32_u32_277_Update] 
+        {
+          // binary expression 
+          $T [cr] $T [ca] // (split) binary operation 
+        }
+        AND_u32_u32_277_sample_start_ &-> (AND_u32_u32_277_Sample)
+        AND_u32_u32_277_sample_completed_ <-& (AND_u32_u32_277_Sample)
+        AND_u32_u32_277_sample_completed_ &-> ($null)
+        AND_u32_u32_277_update_start_ &-> (AND_u32_u32_277_Update)
+        AND_u32_u32_277_update_completed_ <-& (AND_u32_u32_277_Update)
+        // Target expression
+        // registers[0 ]
+        $T[array_obj_ref_273_sample_start_] 
+        $T[array_obj_ref_273_sample_completed_] 
+        $T[array_obj_ref_273_update_start_] 
+        $T[array_obj_ref_273_update_completed_] 
+        $T[array_obj_ref_273_word_address_calculated] 
+        $T[array_obj_ref_273_root_address_calculated] 
+        array_obj_ref_273_word_address_calculated <-& (array_obj_ref_273_root_address_calculated)
+        ;;[array_obj_ref_273_Sample] 
+        {
+          ;;[array_obj_ref_273_Split] 
+          {
+            $T [split_req] $T [split_ack]
+          }
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_273_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+        }
+        array_obj_ref_273_sample_start_ <-& (array_obj_ref_273_word_address_calculated)
+        array_obj_ref_273_sample_start_ &-> (array_obj_ref_273_Sample)
+        array_obj_ref_273_sample_completed_ <-& (array_obj_ref_273_Sample)
+        array_obj_ref_273_sample_completed_ &-> ($null)
+        array_obj_ref_273_update_start_ &-> (array_obj_ref_273_Update)
+        array_obj_ref_273_update_completed_ <-& (array_obj_ref_273_Update)
+        // start: Forward dependencies from (r0 & ( ~ 36  )) to transition array_obj_ref_273_sample_start_
+        array_obj_ref_273_sample_start_ <-& (AND_u32_u32_277_update_completed_)
+        // done: Forward dependencies from (r0 & ( ~ 36  )) to transition array_obj_ref_273_sample_start_
+        // end:  		registers[0 ] := (r0 & ( ~ 36  )) $buffering 1// bits of buffering = 32. 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_273 store
+      }
+      assign_stmt_278__entry__ |-> (assign_stmt_278)
+      assign_stmt_278__exit__ <-| (assign_stmt_278)
+      ::[call_stmt_280] 
+      {
+        // start: 		$call execute_job () () 
+        //  file .Aa/prog.linked.opt.aa, line 121
+        $T[call_stmt_280_sample_start_] 
+        $T[call_stmt_280_sample_completed_] 
+        $T[call_stmt_280_update_start_] 
+        $T[call_stmt_280_update_completed_] 
+        ;;[call_stmt_280_Sample] 
+        {
+          $T [crr] $T [cra] 
+        }
+        ;;[call_stmt_280_Update] 
+        {
+          $T [ccr] $T [cca] 
+        }
+        call_stmt_280_sample_start_ &-> (call_stmt_280_Sample)
+        call_stmt_280_sample_completed_ <-& (call_stmt_280_Sample)
+        call_stmt_280_sample_completed_ &-> ($null)
+        call_stmt_280_update_start_ &-> (call_stmt_280_Update)
+        call_stmt_280_update_completed_ <-& (call_stmt_280_Update)
+        // end: 		$call execute_job () () 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  call_stmt_280 load
+        // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+        // read-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+        // write-dependencies for pipe ACB_ACCELERATOR_MEM_REQUEST
+        // signal write dependencies for ACB_ACCELERATOR_MEM_REQUEST
+        // pipe read/write dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+        // read-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+        // write-dependencies for pipe ACB_ACCELERATOR_MEM_RESPONSE
+        // signal write dependencies for ACB_ACCELERATOR_MEM_RESPONSE
+      }
+      call_stmt_280__entry__ |-> (call_stmt_280)
+      call_stmt_280__exit__ <-| (call_stmt_280)
+      ::[assign_stmt_290_to_assign_stmt_305] 
+      {
+        // start: WAR dependencies for set_intr
+        // ignored out-of-scope w_root 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        // done: WAR dependencies for set_intr
+        // start:  		$volatile set_intr := ((r0 [] 0 ) & (r0 [] 1 )) $buffering 1
+        //  file .Aa/prog.linked.opt.aa, line 123
+        // volatile! 
+        // Source expression
+        // ((r0 [] 0 ) & (r0 [] 1 ))
+        // (r0 [] 0 )
+        // r0
+        // (r0 [] 1 )
+        // r0
+        // Target expression
+        // (as target) set_intr
+        // start: WAR dependencies for set_intr
+        // ignored out-of-scope w_root 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+        // done: WAR dependencies for set_intr
+        // end:  		$volatile set_intr := ((r0 [] 0 ) & (r0 [] 1 )) $buffering 1
+        // start:  		registers[0 ] := ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) $buffering 1// bits of buffering = 32. 
+        //  file .Aa/prog.linked.opt.aa, line 124
+        // Source expression
+        // ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ))
+        $T[CONCAT_u28_u32_304_sample_start_] 
+        $T[CONCAT_u28_u32_304_sample_completed_] 
+        $T[CONCAT_u28_u32_304_update_start_] 
+        $T[CONCAT_u28_u32_304_update_completed_] 
+        // (( $slice r0 31 5 )  && set_intr)
+        // ( $slice r0 31 5 ) 
+        // r0
+        // set_intr
+        // (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )
+        // ( $slice r0 2 0 ) 
+        // r0
+        // start: Forward dependencies from (( $slice r0 31 5 )  && set_intr) to transition CONCAT_u28_u32_304_sample_start_
+        // done: Forward dependencies from (( $slice r0 31 5 )  && set_intr) to transition CONCAT_u28_u32_304_sample_start_
+        // start: Forward dependencies from (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ) to transition CONCAT_u28_u32_304_sample_start_
+        // done: Forward dependencies from (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ) to transition CONCAT_u28_u32_304_sample_start_
+        ;;[CONCAT_u28_u32_304_Sample] 
+        {
+          // binary expression 
+          $T [rr] $T [ra]  // (split) binary operation 
+        }
+        ;;[CONCAT_u28_u32_304_Update] 
+        {
+          // binary expression 
+          $T [cr] $T [ca] // (split) binary operation 
+        }
+        CONCAT_u28_u32_304_sample_start_ &-> (CONCAT_u28_u32_304_Sample)
+        CONCAT_u28_u32_304_sample_completed_ <-& (CONCAT_u28_u32_304_Sample)
+        CONCAT_u28_u32_304_sample_completed_ &-> ($null)
+        CONCAT_u28_u32_304_update_start_ &-> (CONCAT_u28_u32_304_Update)
+        CONCAT_u28_u32_304_update_completed_ <-& (CONCAT_u28_u32_304_Update)
+        // Target expression
+        // registers[0 ]
+        $T[array_obj_ref_292_sample_start_] 
+        $T[array_obj_ref_292_sample_completed_] 
+        $T[array_obj_ref_292_update_start_] 
+        $T[array_obj_ref_292_update_completed_] 
+        $T[array_obj_ref_292_word_address_calculated] 
+        $T[array_obj_ref_292_root_address_calculated] 
+        array_obj_ref_292_word_address_calculated <-& (array_obj_ref_292_root_address_calculated)
+        ;;[array_obj_ref_292_Sample] 
+        {
+          ;;[array_obj_ref_292_Split] 
+          {
+            $T [split_req] $T [split_ack]
+          }
+          ||[word_access_start] 
+          {
+            ;;[word_0] 
+            {
+              $T [rr] $T [ra] 
+            }
+          }
+        }
+        ;;[array_obj_ref_292_Update] 
+        {
+          ||[word_access_complete] 
+          {
+            ;;[word_0] 
+            {
+              $T [cr] $T [ca] 
+            }
+          }
+        }
+        array_obj_ref_292_sample_start_ <-& (array_obj_ref_292_word_address_calculated)
+        array_obj_ref_292_sample_start_ &-> (array_obj_ref_292_Sample)
+        array_obj_ref_292_sample_completed_ <-& (array_obj_ref_292_Sample)
+        array_obj_ref_292_sample_completed_ &-> ($null)
+        array_obj_ref_292_update_start_ &-> (array_obj_ref_292_Update)
+        array_obj_ref_292_update_completed_ <-& (array_obj_ref_292_Update)
+        // start: Forward dependencies from ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) to transition array_obj_ref_292_sample_start_
+        array_obj_ref_292_sample_start_ <-& (CONCAT_u28_u32_304_update_completed_)
+        // done: Forward dependencies from ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) to transition array_obj_ref_292_sample_start_
+        // end:  		registers[0 ] := ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) $buffering 1// bits of buffering = 32. 
+        // load-store dependencies..
+        // memory-space  memory_space_0
+        //  array_obj_ref_292 store
+      }
+      assign_stmt_290_to_assign_stmt_305__entry__ |-> (assign_stmt_290_to_assign_stmt_305)
+      assign_stmt_290_to_assign_stmt_305__exit__ <-| (assign_stmt_290_to_assign_stmt_305)
+      // control-path for merge  
+      //  file .Aa/prog.linked.opt.aa, line 110
+      ;;[merge_stmt_247_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      merge_stmt_247__entry__ |-> (merge_stmt_247_dead_link)
+      merge_stmt_247__exit__ <-| (merge_stmt_247_dead_link)
+      //---------------------   merge statement  file .Aa/prog.linked.opt.aa, line 110  --------------------------
+      ||[merge_stmt_247__entry___PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      merge_stmt_247__entry__ |-> (merge_stmt_247__entry___PhiReq)
+      ||[loopback_PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      loopback |-> (loopback_PhiReq)
+      $P [merge_stmt_247_PhiReqMerge] 
+      merge_stmt_247_PhiReqMerge <-| ( merge_stmt_247__entry___PhiReq  loopback_PhiReq )
+      ||[merge_stmt_247_PhiAck] 
+      {
+        $T [dummy] 
+      }
+      merge_stmt_247_PhiReqMerge |-> (merge_stmt_247_PhiAck)
+      merge_stmt_247__exit__  <-| (merge_stmt_247_PhiAck)
+      //---------------------  end of merge statement  file .Aa/prog.linked.opt.aa, line 110  --------------------------
+      // control-path for merge  
+      //  file .Aa/prog.linked.opt.aa, line 112
+      ;;[merge_stmt_248_dead_link] 
+      {
+        $T [dead_transition] $dead 
+      }
+      merge_stmt_248__entry__ |-> (merge_stmt_248_dead_link)
+      merge_stmt_248__exit__ <-| (merge_stmt_248_dead_link)
+      //---------------------   merge statement  file .Aa/prog.linked.opt.aa, line 112  --------------------------
+      ||[merge_stmt_248__entry___PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      merge_stmt_248__entry__ |-> (merge_stmt_248__entry___PhiReq)
+      ||[look_for_command_PhiReq] 
+      {
+        // no phi statements in merge..
+      }
+      look_for_command |-> (look_for_command_PhiReq)
+      $P [merge_stmt_248_PhiReqMerge] 
+      merge_stmt_248_PhiReqMerge <-| ( merge_stmt_248__entry___PhiReq  look_for_command_PhiReq )
+      ||[merge_stmt_248_PhiAck] 
+      {
+        $T [dummy] 
+      }
+      merge_stmt_248_PhiReqMerge |-> (merge_stmt_248_PhiAck)
+      merge_stmt_248__exit__  <-| (merge_stmt_248_PhiAck)
+      //---------------------  end of merge statement  file .Aa/prog.linked.opt.aa, line 112  --------------------------
+      merge_stmt_247__entry__ <-| (branch_block_stmt_246__entry__)
+      merge_stmt_248__entry__ <-| (merge_stmt_247__exit__)
+      assign_stmt_252_to_assign_stmt_266__entry__ <-| (merge_stmt_248__exit__)
+      if_stmt_267__entry__ <-| (assign_stmt_252_to_assign_stmt_266__exit__)
+      assign_stmt_278__entry__ <-| (if_stmt_267__exit__)
+      call_stmt_280__entry__ <-| (assign_stmt_278__exit__)
+      assign_stmt_290_to_assign_stmt_305__entry__ <-| (call_stmt_280__exit__)
+      loopback <-| (assign_stmt_290_to_assign_stmt_305__exit__)
+    }
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %accelerator_worker_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 110
+    // constant-object-declarations for block %accelerator_worker_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 112
+    // constant-object-declarations for block %accelerator_worker_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 108
+    // constant-object-declarations for block %accelerator_worker_daemon
+    //  file .Aa/prog.linked.opt.aa, line 102
+    // constant-declarations for block %accelerator_worker_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 108
+    // constant-declarations for block %accelerator_worker_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 110
+    // constant-declarations for block %accelerator_worker_daemon%loop%
+    //  file .Aa/prog.linked.opt.aa, line 112
+    // registers[0 ]
+    $constant $W[array_obj_ref_251_word_address_0] : $pointer<memory_space_0> := _b0000
+    // 0 
+    $constant $W[konst_255_wire_constant] : $int<32> := _b00000000000000000000000000000000// 0
+    // 2 
+    $constant $W[konst_258_wire_constant] : $int<32> := _b00000000000000000000000000000010// 2
+    // 3 
+    $constant $W[konst_262_wire_constant] : $int<32> := _b00000000000000000000000000000011// 3
+    // if-statement  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // ( ~ 36  )
+    $constant $W[NOT_u32_u32_276_wire_constant] : $int<32> := _b11111111111111111111111111011011// -37
+    // registers[0 ]
+    $constant $W[array_obj_ref_273_word_address_0] : $pointer<memory_space_0> := _b0000
+    // 		$call execute_job () () 
+    //  file .Aa/prog.linked.opt.aa, line 121
+    // 0 
+    $constant $W[konst_284_wire_constant] : $int<32> := _b00000000000000000000000000000000// 0
+    // 1 
+    $constant $W[konst_287_wire_constant] : $int<32> := _b00000000000000000000000000000001// 1
+    // ($bitcast ($uint<1>) _b1  )
+    $constant $W[type_cast_299_wire_constant] : $int<1> := _b1// 1
+    // registers[0 ]
+    $constant $W[array_obj_ref_292_word_address_0] : $pointer<memory_space_0> := _b0000
+    // 	sw := start_worker $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 107
+    // sw
+    $W[sw_245] : $int<1>
+    // block %accelerator_worker_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 108
+    // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 114
+    // registers[0 ]
+    $W[array_obj_ref_251_data_0] : $int<32>
+    // r0
+    $W[r0_252] : $int<32>
+    // 		$volatile cmd_flag := (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 115
+    // (r0 [] 0 )
+    $intermediate $W[BITSEL_u32_u1_256_wire] : $int<1>
+    // (r0 [] 2 )
+    $intermediate $W[BITSEL_u32_u1_259_wire] : $int<1>
+    // ((r0 [] 0 ) & (r0 [] 2 ))
+    $intermediate $W[AND_u1_u1_260_wire] : $int<1>
+    // (r0 [] 3 )
+    $intermediate $W[BITSEL_u32_u1_263_wire] : $int<1>
+    // ( ~ (r0 [] 3 ) )
+    $intermediate $W[NOT_u1_u1_264_wire] : $int<1>
+    // cmd_flag
+    $W[cmd_flag_266] : $int<1>
+    // if statement  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // ( ~ cmd_flag )
+    $intermediate $W[NOT_u1_u1_269_wire] : $int<1>
+    // 		registers[0 ] := (r0 & ( ~ 36  )) $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 119
+    // (r0 & ( ~ 36  ))
+    $intermediate $W[AND_u32_u32_277_wire] : $int<32>
+    // registers[0 ]
+    $W[array_obj_ref_273_data_0] : $int<32>
+    // 		$call execute_job () () 
+    //  file .Aa/prog.linked.opt.aa, line 121
+    // 		$volatile set_intr := ((r0 [] 0 ) & (r0 [] 1 )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 123
+    // (r0 [] 0 )
+    $intermediate $W[BITSEL_u32_u1_285_wire] : $int<1>
+    // (r0 [] 1 )
+    $intermediate $W[BITSEL_u32_u1_288_wire] : $int<1>
+    // set_intr
+    $W[set_intr_290] : $int<1>
+    // 		registers[0 ] := ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 124
+    // ( $slice r0 31 5 ) 
+    $intermediate $W[slice_295_wire] : $int<27>
+    // (( $slice r0 31 5 )  && set_intr)
+    $intermediate $W[CONCAT_u27_u28_297_wire] : $int<28>
+    // ( $slice r0 2 0 ) 
+    $intermediate $W[slice_302_wire] : $int<3>
+    // (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )
+    $intermediate $W[CONCAT_u1_u4_303_wire] : $int<4>
+    // ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ))
+    $intermediate $W[CONCAT_u28_u32_304_wire] : $int<32>
+    // registers[0 ]
+    $W[array_obj_ref_292_data_0] : $int<32>
+    // 	sw := start_worker $buffering 1// bits of buffering = 1. 
+    //  file .Aa/prog.linked.opt.aa, line 107
+    // start_worker
+    $ioport $in [RPIPE_start_worker_244_inst] (start_worker) (sw_245) 
+    $buffering $out RPIPE_start_worker_244_inst sw_245 1
+    // datapath-instances for block %accelerator_worker_daemon%loop
+    //  file .Aa/prog.linked.opt.aa, line 108
+    // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 114
+    // registers[0 ]
+    $load [array_obj_ref_251_load_0] $from memory_space_0 (array_obj_ref_251_word_address_0) (array_obj_ref_251_data_0) 
+    $delay array_obj_ref_251_load_0 5
+    &/ [array_obj_ref_251_gather_scatter] (array_obj_ref_251_data_0) (r0_252) 
+    $flowthrough 
+    // 		$volatile cmd_flag := (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 115
+    // (r0 [] 0 )
+    [][BITSEL_u32_u1_256_inst] (r0_252 konst_255_wire_constant) (BITSEL_u32_u1_256_wire)   $flowthrough 
+    $delay BITSEL_u32_u1_256_inst 0
+    // (r0 [] 2 )
+    [][BITSEL_u32_u1_259_inst] (r0_252 konst_258_wire_constant) (BITSEL_u32_u1_259_wire)   $flowthrough 
+    $delay BITSEL_u32_u1_259_inst 0
+    // ((r0 [] 0 ) & (r0 [] 2 ))
+    &[AND_u1_u1_260_inst] (BITSEL_u32_u1_256_wire BITSEL_u32_u1_259_wire) (AND_u1_u1_260_wire)   $flowthrough 
+    $delay AND_u1_u1_260_inst 0
+    // (r0 [] 3 )
+    [][BITSEL_u32_u1_263_inst] (r0_252 konst_262_wire_constant) (BITSEL_u32_u1_263_wire)   $flowthrough 
+    $delay BITSEL_u32_u1_263_inst 0
+    // ( ~ (r0 [] 3 ) )
+    ~ [NOT_u1_u1_264_inst] (BITSEL_u32_u1_263_wire) (NOT_u1_u1_264_wire)   $flowthrough
+    $delay NOT_u1_u1_264_inst 0
+    // (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) ))
+    &[AND_u1_u1_265_inst] (AND_u1_u1_260_wire NOT_u1_u1_264_wire) (cmd_flag_266)   $flowthrough 
+    $delay AND_u1_u1_265_inst 0
+    // datapath-instances for if  
+    //  file .Aa/prog.linked.opt.aa, line 0
+    // ( ~ cmd_flag )
+    ~ [NOT_u1_u1_269_inst] (cmd_flag_266) (NOT_u1_u1_269_wire)   $flowthrough
+    $delay NOT_u1_u1_269_inst 0
+    ==0? [if_stmt_267_branch] (NOT_u1_u1_269_wire)
+    // 		registers[0 ] := (r0 & ( ~ 36  )) $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 119
+    // (r0 & ( ~ 36  ))
+    &[AND_u32_u32_277_inst] (r0_252 NOT_u32_u32_276_wire_constant) (AND_u32_u32_277_wire)   
+    $buffering  $out AND_u32_u32_277_inst AND_u32_u32_277_wire 1
+    $delay AND_u32_u32_277_inst 1
+    // registers[0 ]
+    $store [array_obj_ref_273_store_0] $to memory_space_0 (array_obj_ref_273_word_address_0 array_obj_ref_273_data_0) 
+    $delay array_obj_ref_273_store_0 5
+    &/ [array_obj_ref_273_gather_scatter] (AND_u32_u32_277_wire) (array_obj_ref_273_data_0) 
+    $flowthrough 
+    // 		$call execute_job () () 
+    //  file .Aa/prog.linked.opt.aa, line 121
+    $call [call_stmt_280_call] $module execute_job() ()  
+    $delay call_stmt_280_call 4
+    // 		$volatile set_intr := ((r0 [] 0 ) & (r0 [] 1 )) $buffering 1
+    //  file .Aa/prog.linked.opt.aa, line 123
+    // (r0 [] 0 )
+    [][BITSEL_u32_u1_285_inst] (r0_252 konst_284_wire_constant) (BITSEL_u32_u1_285_wire)   $flowthrough 
+    $delay BITSEL_u32_u1_285_inst 0
+    // (r0 [] 1 )
+    [][BITSEL_u32_u1_288_inst] (r0_252 konst_287_wire_constant) (BITSEL_u32_u1_288_wire)   $flowthrough 
+    $delay BITSEL_u32_u1_288_inst 0
+    // ((r0 [] 0 ) & (r0 [] 1 ))
+    &[AND_u1_u1_289_inst] (BITSEL_u32_u1_285_wire BITSEL_u32_u1_288_wire) (set_intr_290)   $flowthrough 
+    $delay AND_u1_u1_289_inst 0
+    // 		registers[0 ] := ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) $buffering 1// bits of buffering = 32. 
+    //  file .Aa/prog.linked.opt.aa, line 124
+    // ( $slice r0 31 5 ) 
+    [:] [slice_295_inst] (r0_252 31 5) (slice_295_wire)  $flowthrough
+    $delay slice_295_inst 0
+    // (( $slice r0 31 5 )  && set_intr)
+    &&[CONCAT_u27_u28_297_inst] (slice_295_wire set_intr_290) (CONCAT_u27_u28_297_wire)   $flowthrough 
+    $delay CONCAT_u27_u28_297_inst 0
+    // ( $slice r0 2 0 ) 
+    [:] [slice_302_inst] (r0_252 2 0) (slice_302_wire)  $flowthrough
+    $delay slice_302_inst 0
+    // (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )
+    &&[CONCAT_u1_u4_303_inst] (type_cast_299_wire_constant slice_302_wire) (CONCAT_u1_u4_303_wire)   $flowthrough 
+    $delay CONCAT_u1_u4_303_inst 0
+    // ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ))
+    &&[CONCAT_u28_u32_304_inst] (CONCAT_u27_u28_297_wire CONCAT_u1_u4_303_wire) (CONCAT_u28_u32_304_wire)   
+    $buffering  $out CONCAT_u28_u32_304_inst CONCAT_u28_u32_304_wire 1
+    $delay CONCAT_u28_u32_304_inst 1
+    // registers[0 ]
+    $store [array_obj_ref_292_store_0] $to memory_space_0 (array_obj_ref_292_word_address_0 array_obj_ref_292_data_0) 
+    $delay array_obj_ref_292_store_0 5
+    &/ [array_obj_ref_292_gather_scatter] (CONCAT_u28_u32_304_wire) (array_obj_ref_292_data_0) 
+    $flowthrough 
+  }
+  // end data-path
+  // 	sw := start_worker $buffering 1// bits of buffering = 1. 
+  //  file .Aa/prog.linked.opt.aa, line 107
+  // start_worker
+  RPIPE_start_worker_244_inst <=> (assign_stmt_245/RPIPE_start_worker_244_Sample/rr assign_stmt_245/RPIPE_start_worker_244_Update/cr) (assign_stmt_245/RPIPE_start_worker_244_Sample/ra assign_stmt_245/RPIPE_start_worker_244_Update/ca)
+  // CP-DP links for merge  
+  //  file .Aa/prog.linked.opt.aa, line 110
+  // CP-DP links for merge  
+  //  file .Aa/prog.linked.opt.aa, line 112
+  // 		r0 := registers[0 ] $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 114
+  // registers[0 ]
+  array_obj_ref_251_gather_scatter <=> (branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Update/array_obj_ref_251_Merge/merge_req) (branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Update/array_obj_ref_251_Merge/merge_ack)
+  array_obj_ref_251_load_0 <=> (branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Sample/word_access_start/word_0/rr branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Update/word_access_complete/word_0/cr) (branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Sample/word_access_start/word_0/ra branch_block_stmt_246/assign_stmt_252_to_assign_stmt_266/array_obj_ref_251_Update/word_access_complete/word_0/ca)
+  // 		$volatile cmd_flag := (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) )) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 115
+  // (((r0 [] 0 ) & (r0 [] 2 )) & ( ~ (r0 [] 3 ) ))
+  // ((r0 [] 0 ) & (r0 [] 2 ))
+  // (r0 [] 0 )
+  // r0
+  // (r0 [] 2 )
+  // r0
+  // (r0 [] 3 )
+  // r0
+  // CP-DP links for if  
+  //  file .Aa/prog.linked.opt.aa, line 0
+  // ( ~ cmd_flag )
+  if_stmt_267_branch <=> (branch_block_stmt_246/if_stmt_267_eval_test/branch_req) (branch_block_stmt_246/if_stmt_267_else_link/else_choice_transition branch_block_stmt_246/if_stmt_267_if_link/if_choice_transition)
+  // 		registers[0 ] := (r0 & ( ~ 36  )) $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 119
+  // (r0 & ( ~ 36  ))
+  // r0
+  AND_u32_u32_277_inst <=> (branch_block_stmt_246/assign_stmt_278/AND_u32_u32_277_Sample/rr branch_block_stmt_246/assign_stmt_278/AND_u32_u32_277_Update/cr) (branch_block_stmt_246/assign_stmt_278/AND_u32_u32_277_Sample/ra branch_block_stmt_246/assign_stmt_278/AND_u32_u32_277_Update/ca)
+  array_obj_ref_273_gather_scatter <=> (branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Sample/array_obj_ref_273_Split/split_req) (branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Sample/array_obj_ref_273_Split/split_ack)
+  array_obj_ref_273_store_0 <=> (branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Sample/word_access_start/word_0/rr branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Update/word_access_complete/word_0/cr) (branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Sample/word_access_start/word_0/ra branch_block_stmt_246/assign_stmt_278/array_obj_ref_273_Update/word_access_complete/word_0/ca)
+  // 		$call execute_job () () 
+  //  file .Aa/prog.linked.opt.aa, line 121
+  call_stmt_280_call <=> (branch_block_stmt_246/call_stmt_280/call_stmt_280_Sample/crr branch_block_stmt_246/call_stmt_280/call_stmt_280_Update/ccr) (branch_block_stmt_246/call_stmt_280/call_stmt_280_Sample/cra branch_block_stmt_246/call_stmt_280/call_stmt_280_Update/cca)
+  // 		$volatile set_intr := ((r0 [] 0 ) & (r0 [] 1 )) $buffering 1
+  //  file .Aa/prog.linked.opt.aa, line 123
+  // ((r0 [] 0 ) & (r0 [] 1 ))
+  // (r0 [] 0 )
+  // r0
+  // (r0 [] 1 )
+  // r0
+  // 		registers[0 ] := ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )) $buffering 1// bits of buffering = 32. 
+  //  file .Aa/prog.linked.opt.aa, line 124
+  // ((( $slice r0 31 5 )  && set_intr) && (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) ))
+  // (( $slice r0 31 5 )  && set_intr)
+  // r0
+  // set_intr
+  // (($bitcast ($uint<1>) _b1  ) && ( $slice r0 2 0 ) )
+  // r0
+  CONCAT_u28_u32_304_inst <=> (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/CONCAT_u28_u32_304_Sample/rr branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/CONCAT_u28_u32_304_Update/cr) (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/CONCAT_u28_u32_304_Sample/ra branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/CONCAT_u28_u32_304_Update/ca)
+  array_obj_ref_292_gather_scatter <=> (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Sample/array_obj_ref_292_Split/split_req) (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Sample/array_obj_ref_292_Split/split_ack)
+  array_obj_ref_292_store_0 <=> (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Sample/word_access_start/word_0/rr branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Update/word_access_complete/word_0/cr) (branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Sample/word_access_start/word_0/ra branch_block_stmt_246/assign_stmt_290_to_assign_stmt_305/array_obj_ref_292_Update/word_access_complete/word_0/ca)
+}
+$module [global_storage_initializer_] 
+{
+  // pipe-declarations for block %global_storage_initializer_
+  //  file .Aa/prog.linked.opt.aa, line 128
+  // there are no memory spaces local to this module.
+  $CP 
+  {
+    // begin control-path 
+  }
+  // end control-path
+  $DP 
+  {
+    // begin data-path 
+    // constant-object-declarations for block %global_storage_initializer_
+    //  file .Aa/prog.linked.opt.aa, line 128
+  }
+  // end data-path
+}

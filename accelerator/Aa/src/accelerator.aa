@@ -1,0 +1,134 @@
+$storage registers: $array[16] $of $uint<32>
+
+$pipe start_worker: $uint<1>
+$module [accelerator_control_daemon]
+	$in () $out () $is
+{
+	// initialize
+	$branchblock[init_loop] {
+		$merge $entry loopback 
+			$phi I := $zero<5> $on $entry nI $on loopback
+		$endmerge
+		$volatile nI := (I + 1)
+		registers[I] := 0
+
+		$if (I < 15) $then $place[loopback] $endif
+	}
+
+	start_worker := 1
+
+	$branchblock[run_loop] {
+		$merge $entry loopback $endmerge 
+
+		cmd := AFB_ACCELERATOR_REQUEST
+		$volatile $split (cmd 1 1 4 36 32)
+				(lock rwbar bmask addr wdata)
+
+		$volatile reg_index := ($slice addr 5 2)
+
+		// we assume bmask is always 0xf
+		$guard (rwbar)    rdata := registers[reg_index]
+		$guard (~rwbar)   registers[reg_index] := wdata
+
+		$volatile resp := ($concat $zero<1> ($mux rwbar rdata 0))
+		AFB_ACCELERATOR_RESPONSE := resp
+
+		$place [loopback]
+	}
+}
+
+$module [accelerator_worker_daemon] $in () $out () $is
+{
+	sw := start_worker // wait on initialization
+
+	$branchblock[loop] {
+		$merge $entry loopback $endmerge	
+		
+
+		// spin, wait for command...
+		$merge $entry look_for_command $endmerge
+			r0 := registers[0]
+			$volatile cmd_flag := ($reduce & (r0 [] 0) (r0 [] 2) (~(r0 [] 3)))
+		$if (~cmd_flag) $then $place [look_for_command] $endif
+	
+		//clear bits 2, 4 of register 0
+		registers[0] := (r0 & (~ 36))
+
+		$barrier
+
+		$call execute_job () ()
+		
+		$barrier
+
+		// set interrupt flag in r0.
+		$volatile set_intr := ((r0 [] 0) & (r0 [] 1))
+		registers[0] := ($concat ($slice r0 31 5) set_intr $one<1> ($slice r0 2 0))
+
+
+		$place [loopback]
+	}
+}
+
+$module [execute_job] $in () $out () $is
+{
+	key := ($concat registers[1]  registers[2] registers[3] registers[4])
+	base_addr  := registers[5]
+	ndwords    := registers[6]
+
+	$branchblock [loop] {
+		$dopipeline $depth 7 
+		$merge $entry $loopback 
+			$phi dword_id := $zero<32> $on $entry n_dword_id $on $loopback
+		$endmerge
+
+		// read two words
+		$volatile n_dword_id := (dword_id + 2)
+
+		// aligned to 16 bytes (two dwords)
+		$volatile address    := (base_addr + (dword_id << 3))
+
+		// read line of 128 bits.
+		$call access_mem_128 ($one<1> address $zero<128>) (line)
+
+		// XOR
+		//   you could put AES here.
+		$volatile eline := (line ^ key)
+
+		// Update line
+		$call access_mem_128 ($zero<1> address eline) (ign_line)
+
+
+		$while (n_dword_id < ndwords) 
+	}
+}
+
+// note that word_addr is a multiple of 4.
+$pipeline $depth 7 $module [access_mem_128]
+	$in (write_bar: $uint<1> q_word_address: $uint<32> wline: $uint<128>)
+	$out (rline: $uint<128>) $is
+{
+	$volatile c0 := ($concat $zero<1> write_bar (~$zero<8>) ($bitcast ($uint<36>) q_word_address) ($slice wline 127 64))
+	ACB_ACCELERATOR_MEM_REQUEST := c0 $mark FIRST_ACCESS
+	r0 := ACB_ACCELERATOR_MEM_RESPONSE $delay (FIRST_ACCESS 4)
+
+	c1 := ($concat $zero<1> write_bar (~$zero<8>) ($bitcast ($uint<36>) (q_word_address + 8)) ($slice wline 63 0))
+	ACB_ACCELERATOR_MEM_REQUEST := c1 $mark SECOND_ACCESS
+	r1 := ACB_ACCELERATOR_MEM_RESPONSE $delay (SECOND_ACCESS 4)
+
+	rline := ($concat ($slice r0 63 0) ($slice r1 63 0))
+}
+
+$module [accelerator_interrupt_daemon]
+	$in () $out () $is
+{
+	$branchblock[loop] {
+		$merge $entry loopback $endmerge
+
+		r0 := registers[0]
+		ACCELERATOR_INTERRUPT := (r0 [] 4)
+
+
+	 	$place[loopback]
+	}
+}
+

@@ -1,0 +1,1101 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Wed Sep  4 15:45:45 2024
+| Host         : iitg-Precision-3660 running 64-bit Ubuntu 22.04.4 LTS
+| Command      : report_drc -file ajitVCK_wrapper_drc_routed.rpt -pb ajitVCK_wrapper_drc_routed.pb -rpx ajitVCK_wrapper_drc_routed.rpx
+| Design       : ajitVCK_wrapper
+| Device       : xcvc1902-vsva2197-2MP-e-S
+| Speed File   : -2MP
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 208
++------------+----------+------------------------------------------------+------------+
+| Rule       | Severity | Description                                    | Violations |
++------------+----------+------------------------------------------------+------------+
+| AVALXA-62  | Warning  | RULE_CASC_F_M_L_NUM_URAM_MATRIX                | 32         |
+| AVALXA-268 | Warning  | CLK_DOM_COM_WF                                 | 1          |
+| AVALXA-272 | Warning  | CLK_DOM_COM_WF                                 | 3          |
+| DPBU-4     | Warning  | CLK pin needs to be connected to active signal | 4          |
+| DPIP-3     | Warning  | Input pipelining                               | 8          |
+| DPOP-5     | Warning  | PREG Output pipelining                         | 4          |
+| DPOP-6     | Warning  | MREG Output pipelining                         | 4          |
+| REQPXA-79  | Warning  | WR_WIDTH_B_9_DINB_BWE_CONN                     | 8          |
+| REQPXA-244 | Warning  | RULE_SELF_MASK_B_5_ADDR_B_17                   | 8          |
+| REQPXA-246 | Warning  | RULE_SELF_MASK_B_6_ADDR_B_18                   | 8          |
+| REQPXA-247 | Warning  | RULE_SELF_MASK_A_7_ADDR_A_19                   | 8          |
+| REQPXA-249 | Warning  | RULE_SELF_MASK_A_9_ADDR_A_21                   | 8          |
+| REQPXA-250 | Warning  | RULE_SELF_MASK_A_10_ADDR_A_22                  | 8          |
+| REQPXA-251 | Warning  | RULE_SELF_MASK_A_4_ADDR_A_16                   | 8          |
+| REQPXA-252 | Warning  | RULE_SELF_MASK_A_5_ADDR_A_17                   | 8          |
+| REQPXA-253 | Warning  | RULE_SELF_MASK_B_9_ADDR_B_21                   | 8          |
+| REQPXA-254 | Warning  | RULE_SELF_MASK_A_3_ADDR_A_15                   | 8          |
+| REQPXA-255 | Warning  | RULE_SELF_MASK_B_10_ADDR_B_22                  | 8          |
+| REQPXA-256 | Warning  | RULE_SELF_MASK_B_2_ADDR_B_14                   | 8          |
+| REQPXA-257 | Warning  | RULE_SELF_MASK_B_3_ADDR_B_15                   | 8          |
+| REQPXA-259 | Warning  | RULE_SELF_MASK_B_4_ADDR_B_16                   | 8          |
+| REQPXA-261 | Warning  | RULE_SELF_MASK_A_2_ADDR_A_14                   | 8          |
+| REQPXA-262 | Warning  | RULE_SELF_MASK_A_6_ADDR_A_18                   | 8          |
+| REQPXA-263 | Warning  | RULE_SELF_MASK_A_8_ADDR_A_20                   | 8          |
+| REQPXA-264 | Warning  | RULE_SELF_MASK_B_8_ADDR_B_20                   | 8          |
+| REQPXA-265 | Warning  | RULE_SELF_MASK_B_7_ADDR_B_19                   | 8          |
++------------+----------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+AVALXA-62#1 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#2 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#3 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#4 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#5 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#6 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#7 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#8 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#9 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#10 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#11 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#12 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#13 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#14 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#15 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#16 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#17 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#18 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#19 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#20 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#21 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#22 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#23 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#24 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#25 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#26 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#27 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#28 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#29 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#30 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_1: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#31 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_2: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-62#32 Warning
+RULE_CASC_F_M_L_NUM_URAM_MATRIX  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_3: When CASCADE_ORDER_CTRL_A or CASCADE_ORDER_CTRL_B = FIRST, or MIDDLE, or LAST, the NUM_URAM_MATRIX attribute should not be greater than 1 for accurate power calculation from report_power.
+Related violations: <none>
+
+AVALXA-268#1 Warning
+CLK_DOM_COM_WF  
+Cell ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/fetch_inst/bpbV3_daemon_instance/data_path.operator_bpbV3_dual_port_mem_2922_block.call_bpbV3_dual_port_mem_expr_1837_inst/dpram/ifVivado.vivadobb/mem_array_reg_bram_1: When cell attribute CLOCK_DOMAINS=COMMON, if cell attribute WRITE_MODE_A and WRITE_MODE_B are not READ_FIRST, there may be address collision if the same address appears on both read and write ports resulting in unknown or corrupted data. It is suggested to confirm via unisim simulation with SIM_COLLISION_CHECK != NONE that an address collision never occurs and if so try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. If address collision can be avoided, it is strongly suggested to change this mode to NO_CHANGE for better power characteristics. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+AVALXA-272#1 Warning
+CLK_DOM_COM_WF  
+Cell ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/fetch_inst/bpbV3_daemon_instance/data_path.operator_bpbV3_dual_port_mem_2922_block.call_bpbV3_dual_port_mem_expr_1837_inst/dpram/ifVivado.vivadobb/mem_array_reg_bram_0: When cell attribute CLOCK_DOMAINS=COMMON, if cell attribute WRITE_MODE_A and WRITE_MODE_B are not READ_FIRST, there may be address collision if the same address appears on both read and write ports resulting in unknown or corrupted data. It is suggested to confirm via unisim simulation with SIM_COLLISION_CHECK != NONE that an address collision never occurs and if so try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. If address collision can be avoided, it is strongly suggested to change this mode to NO_CHANGE for better power characteristics. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+AVALXA-272#2 Warning
+CLK_DOM_COM_WF  
+Cell ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/munit_inst/icache_inst/IcacheFrontendDaemon_instance/coreInst/TagsArraysBlock.setAssociativeGen.tagsArraysInst/arrayInst/SetBankGen[0].ignoreByteMask.setBank/mem_array_reg: When cell attribute CLOCK_DOMAINS=COMMON, if cell attribute WRITE_MODE_A and WRITE_MODE_B are not READ_FIRST, there may be address collision if the same address appears on both read and write ports resulting in unknown or corrupted data. It is suggested to confirm via unisim simulation with SIM_COLLISION_CHECK != NONE that an address collision never occurs and if so try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. If address collision can be avoided, it is strongly suggested to change this mode to NO_CHANGE for better power characteristics. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+AVALXA-272#3 Warning
+CLK_DOM_COM_WF  
+Cell ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/munit_inst/icache_inst/IcacheFrontendDaemon_instance/coreInst/TagsArraysBlock.setAssociativeGen.tagsArraysInst/arrayInst/SetBankGen[1].ignoreByteMask.setBank/mem_array_reg: When cell attribute CLOCK_DOMAINS=COMMON, if cell attribute WRITE_MODE_A and WRITE_MODE_B are not READ_FIRST, there may be address collision if the same address appears on both read and write ports resulting in unknown or corrupted data. It is suggested to confirm via unisim simulation with SIM_COLLISION_CHECK != NONE that an address collision never occurs and if so try and avoid this situation. If address collisions cannot be avoided, the write-mode may be set to READ_FIRST which guarantees that the read data is the prior contents of the memory at the cost of additional power in the design. If address collision can be avoided, it is strongly suggested to change this mode to NO_CHANGE for better power characteristics. See the FPGA Memory Resources User Guide for additional information.
+Related violations: <none>
+
+DPBU-4#1 Warning
+CLK pin needs to be connected to active signal  
+Invalid connection used for DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT, CLK pin ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT/CLK should be connected to active signal.
+Related violations: <none>
+
+DPBU-4#2 Warning
+CLK pin needs to be connected to active signal  
+Invalid connection used for DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0, CLK pin ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0/CLK should be connected to active signal.
+Related violations: <none>
+
+DPBU-4#3 Warning
+CLK pin needs to be connected to active signal  
+Invalid connection used for DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1, CLK pin ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1/CLK should be connected to active signal.
+Related violations: <none>
+
+DPBU-4#4 Warning
+CLK pin needs to be connected to active signal  
+Invalid connection used for DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2, CLK pin ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2/CLK should be connected to active signal.
+Related violations: <none>
+
+DPIP-3#1 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT/A[33:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#2 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT/B[23:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#3 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0/A[33:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#4 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0/B[23:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#5 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1/A[33:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#6 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1/B[23:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#7 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2/A[33:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-3#8 Warning
+Input pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2 input ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2/B[23:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-5#1 Warning
+PREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT output ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT/P[57:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-5#2 Warning
+PREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0 output ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0/P[57:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-5#3 Warning
+PREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1 output ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1/P[57:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-5#4 Warning
+PREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2 output ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2/P[57:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+DPOP-6#1 Warning
+MREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT multiplier stage ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT/P[57:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-6#2 Warning
+MREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0 multiplier stage ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__0/P[57:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-6#3 Warning
+MREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1 multiplier stage ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__1/P[57:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+DPOP-6#4 Warning
+MREG Output pipelining  
+DSP ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2 multiplier stage ajitVCK_i/fpga_top_0/U0/processor_inst/mcore_inst/core_0_inst/cpu_inst/teu_inst/iu_inst/exe_inst/iu_exec_daemon_instance/data_path.volatile_operator_iu_umul32_8927/uRESULT__2/P[57:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+Related violations: <none>
+
+REQPXA-79#1 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#2 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#3 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#4 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#5 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#6 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#7 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-79#8 Warning
+WR_WIDTH_B_9_DINB_BWE_CONN  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: When WRITE_WIDTH_B=9, the DIN_B[71:9] and BWE_B[8:1] pins should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#1 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#2 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#3 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#4 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#5 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#6 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#7 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-244#8 Warning
+RULE_SELF_MASK_B_5_ADDR_B_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[5] attribute set to 1, the corresponding bit ADDR_B[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#1 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#2 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#3 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#4 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#5 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#6 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#7 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-246#8 Warning
+RULE_SELF_MASK_B_6_ADDR_B_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[6] attribute set to 1, the corresponding bit ADDR_B[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#1 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#2 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#3 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#4 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#5 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#6 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#7 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-247#8 Warning
+RULE_SELF_MASK_A_7_ADDR_A_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[7] attribute set to 1, the corresponding bit ADDR_A[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#1 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#2 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#3 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#4 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#5 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#6 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#7 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-249#8 Warning
+RULE_SELF_MASK_A_9_ADDR_A_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[9] attribute set to 1, the corresponding bit ADDR_A[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#1 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#2 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#3 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#4 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#5 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#6 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#7 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-250#8 Warning
+RULE_SELF_MASK_A_10_ADDR_A_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[10] attribute set to 1, the corresponding bit ADDR_A[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#1 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#2 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#3 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#4 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#5 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#6 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#7 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-251#8 Warning
+RULE_SELF_MASK_A_4_ADDR_A_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[4] attribute set to 1, the corresponding bit ADDR_A[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#1 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#2 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#3 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#4 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#5 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#6 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#7 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-252#8 Warning
+RULE_SELF_MASK_A_5_ADDR_A_17  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[5] attribute set to 1, the corresponding bit ADDR_A[17] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#1 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#2 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#3 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#4 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#5 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#6 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#7 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-253#8 Warning
+RULE_SELF_MASK_B_9_ADDR_B_21  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[9] attribute set to 1, the corresponding bit ADDR_B[21] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#1 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#2 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#3 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#4 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#5 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#6 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#7 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-254#8 Warning
+RULE_SELF_MASK_A_3_ADDR_A_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[3] attribute set to 1, the corresponding bit ADDR_A[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#1 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#2 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#3 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#4 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#5 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#6 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#7 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-255#8 Warning
+RULE_SELF_MASK_B_10_ADDR_B_22  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[10] attribute set to 1, the corresponding bit ADDR_B[22] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#1 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#2 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#3 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#4 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#5 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#6 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#7 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-256#8 Warning
+RULE_SELF_MASK_B_2_ADDR_B_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[2] attribute set to 1, the corresponding bit ADDR_B[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#1 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#2 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#3 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#4 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#5 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#6 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#7 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-257#8 Warning
+RULE_SELF_MASK_B_3_ADDR_B_15  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[3] attribute set to 1, the corresponding bit ADDR_B[15] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#1 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#2 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#3 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#4 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#5 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#6 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#7 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-259#8 Warning
+RULE_SELF_MASK_B_4_ADDR_B_16  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[4] attribute set to 1, the corresponding bit ADDR_B[16] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#1 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#2 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#3 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#4 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#5 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#6 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#7 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-261#8 Warning
+RULE_SELF_MASK_A_2_ADDR_A_14  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[2] attribute set to 1, the corresponding bit ADDR_A[14] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#1 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#2 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#3 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#4 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#5 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#6 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#7 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-262#8 Warning
+RULE_SELF_MASK_A_6_ADDR_A_18  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[6] attribute set to 1, the corresponding bit ADDR_A[18] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#1 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#2 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#3 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#4 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#5 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#6 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#7 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-263#8 Warning
+RULE_SELF_MASK_A_8_ADDR_A_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_A[8] attribute set to 1, the corresponding bit ADDR_A[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#1 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#2 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#3 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#4 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#5 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#6 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#7 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-264#8 Warning
+RULE_SELF_MASK_B_8_ADDR_B_20  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[8] attribute set to 1, the corresponding bit ADDR_B[20] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#1 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[0].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#2 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[1].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#3 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[2].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#4 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[3].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#5 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[4].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#6 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[5].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#7 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[6].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+REQPXA-265#8 Warning
+RULE_SELF_MASK_B_7_ADDR_B_19  
+Cell ajitVCK_i/fpga_top_0/U0/sram_inst/bbGen[7].bb/mem_array_reg_uram_0: For the bit in SELF_MASK_B[7] attribute set to 1, the corresponding bit ADDR_B[19] pin should be tied to logic 1.
+Related violations: <none>
+
+

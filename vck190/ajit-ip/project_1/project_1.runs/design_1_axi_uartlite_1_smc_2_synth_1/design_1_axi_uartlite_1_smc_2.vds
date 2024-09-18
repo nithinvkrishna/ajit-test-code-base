@@ -1,0 +1,850 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Sep  2 16:28:21 2024
+# Process ID: 1600392
+# Current directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1
+# Command line: vivado -log design_1_axi_uartlite_1_smc_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_uartlite_1_smc_2.tcl
+# Log file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/design_1_axi_uartlite_1_smc_2.vds
+# Journal file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/vivado.jou
+# Running On: iitg-Precision-3660, OS: Linux, CPU Frequency: 5100.000 MHz, CPU Physical cores: 16, Host memory: 33317 MB
+#-----------------------------------------------------------
+source design_1_axi_uartlite_1_smc_2.tcl -notrace
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_axi_uartlite_1_smc_2
+Command: synth_design -top design_1_axi_uartlite_1_smc_2 -part xcvc1902-vsva2197-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Device 21-403] Loading part xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1600787
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2620.812 ; gain = 405.777 ; free physical = 653 ; free virtual = 6532
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_uartlite_1_smc_2' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/synth/design_1_axi_uartlite_1_smc_2.v:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:10]
+INFO: [Synth 8-6157] synthesizing module 'clk_map_imp_DGDSHV' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:724]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_one_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_0/synth/bd_05d2_one_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_8_xlconstant' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_8_xlconstant' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/d390/hdl/xlconstant_v1_1_vl_rfs.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_one_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_0/synth/bd_05d2_one_0.v:53]
+INFO: [Synth 8-638] synthesizing module 'bd_05d2_psr_aclk_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/synth/bd_05d2_psr_aclk_0.vhd:74]
+	Parameter C_FAMILY bound to: versal - type: string 
+	Parameter C_EXT_RST_WIDTH bound to: 4 - type: integer 
+	Parameter C_AUX_RST_WIDTH bound to: 1 - type: integer 
+	Parameter C_EXT_RESET_HIGH bound to: 1'b0 
+	Parameter C_AUX_RESET_HIGH bound to: 1'b0 
+	Parameter C_NUM_BUS_RST bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_RST bound to: 1 - type: integer 
+	Parameter C_NUM_INTERCONNECT_ARESETN bound to: 1 - type: integer 
+	Parameter C_NUM_PERP_ARESETN bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'proc_sys_reset' declared at '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1271' bound to instance 'U0' of component 'proc_sys_reset' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/synth/bd_05d2_psr_aclk_0.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'proc_sys_reset' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_inst' to cell 'FDRE' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1399]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR' to cell 'FDRE' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1415]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_BSR_N' to cell 'FDRE' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1441]
+	Parameter INIT bound to: 1'b1 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER' to cell 'FDRE' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1464]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'FDRE_PER_N' to cell 'FDRE' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1488]
+INFO: [Synth 8-638] synthesizing module 'lpf' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-3491] module 'SRL16' declared at '/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:133721' bound to instance 'POR_SRL_I' of component 'SRL16' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:873]
+INFO: [Synth 8-6157] synthesizing module 'SRL16' [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:133721]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16' (0#1) [/home/iitg/VivadoFull/Vivado/2023.2/scripts/rt/data/unisim_comp.v:133721]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-256] done synthesizing module 'lpf' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:821]
+INFO: [Synth 8-638] synthesizing module 'sequence_psr' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-638] synthesizing module 'upcnt_n' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'upcnt_n' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'sequence_psr' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:304]
+INFO: [Synth 8-256] done synthesizing module 'proc_sys_reset' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ipshared/408c/hdl/proc_sys_reset_v5_0_vh_rfs.vhd:1330]
+INFO: [Synth 8-256] done synthesizing module 'bd_05d2_psr_aclk_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/synth/bd_05d2_psr_aclk_0.vhd:74]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'bd_05d2_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:759]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'bd_05d2_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:759]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'bd_05d2_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:759]
+WARNING: [Synth 8-7071] port 'peripheral_aresetn' of module 'bd_05d2_psr_aclk_0' is unconnected for instance 'psr_aclk' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:759]
+WARNING: [Synth 8-7023] instance 'psr_aclk' of module 'bd_05d2_psr_aclk_0' has 10 connections declared, but only 6 given [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:759]
+INFO: [Synth 8-6155] done synthesizing module 'clk_map_imp_DGDSHV' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:724]
+INFO: [Synth 8-6157] synthesizing module 'm00_exit_pipeline_imp_1JPWJ88' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:768]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_m00e_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_12/synth/bd_05d2_m00e_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'xpm_cdc_async_rst' [/home/iitg/VivadoFull/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_cdc_async_rst' (0#1) [/home/iitg/VivadoFull/Vivado/2023.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv:1175]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_m00e_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_12/synth/bd_05d2_m00e_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'm00_exit_pipeline_imp_1JPWJ88' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:768]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_m00s2a_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_11/synth/bd_05d2_m00s2a_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_m00s2a_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_11/synth/bd_05d2_m00s2a_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_s00a2s_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_5/synth/bd_05d2_s00a2s_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_s00a2s_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_5/synth/bd_05d2_s00a2s_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 's00_entry_pipeline_imp_L2VASB' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:1069]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_s00mmu_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_2/synth/bd_05d2_s00mmu_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_s00mmu_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_2/synth/bd_05d2_s00mmu_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_s00sic_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_4/synth/bd_05d2_s00sic_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_s00sic_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_4/synth/bd_05d2_s00sic_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_s00tr_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_3/synth/bd_05d2_s00tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_s00tr_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_3/synth/bd_05d2_s00tr_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's00_entry_pipeline_imp_L2VASB' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:1069]
+INFO: [Synth 8-6157] synthesizing module 's00_nodes_imp_Q5I4AP' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:1728]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_sarn_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_6/synth/bd_05d2_sarn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_sarn_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_6/synth/bd_05d2_sarn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_sawn_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_8/synth/bd_05d2_sawn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_sawn_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_8/synth/bd_05d2_sawn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_sbn_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_10/synth/bd_05d2_sbn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_sbn_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_10/synth/bd_05d2_sbn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_srn_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_7/synth/bd_05d2_srn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_srn_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_7/synth/bd_05d2_srn_0.sv:53]
+INFO: [Synth 8-6157] synthesizing module 'bd_05d2_swn_0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_9/synth/bd_05d2_swn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2_swn_0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_9/synth/bd_05d2_swn_0.sv:53]
+INFO: [Synth 8-6155] done synthesizing module 's00_nodes_imp_Q5I4AP' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:1728]
+INFO: [Synth 8-6155] done synthesizing module 'bd_05d2' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_uartlite_1_smc_2' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/synth/design_1_axi_uartlite_1_smc_2.v:53]
+WARNING: [Synth 8-3848] Net aresetn_out in module/entity clk_map_imp_DGDSHV does not have driver. [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/synth/bd_05d2.v:740]
+WARNING: [Synth 8-7129] Port din[0] in module sc_util_v1_0_4_onehot_to_binary is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port slow_clk in module sc_util_v1_0_4_sample_cycle_ratio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port fast_clk in module sc_util_v1_0_4_sample_cycle_ratio is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized9 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_node_v1_0_15_reg_slice3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_node_v1_0_15_reg_slice3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_node_v1_0_15_reg_slice3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized8 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_req[0] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_info[0] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tvalid in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[15] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[14] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[13] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[12] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[11] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[10] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[9] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[8] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[7] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[6] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[5] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[4] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[3] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[2] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[1] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[0] in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axis_arb_tready in module sc_node_v1_0_15_si_handler__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_axic_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_axic_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_axic_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_sc_aclken in module sc_node_v1_0_15_top__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_req[0] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_info[0] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tvalid in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[15] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[14] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[13] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[12] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[11] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[10] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[9] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[8] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[7] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[6] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[5] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[4] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[3] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[2] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[1] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[0] in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axis_arb_tready in module sc_node_v1_0_15_si_handler__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_sc_aclken in module sc_node_v1_0_15_top__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_util_v1_0_4_pipeline__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_util_v1_0_4_pipeline__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_util_v1_0_4_pipeline__parameterized4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclken in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port areset in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_req[0] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_sc_info[0] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tvalid in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[15] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[14] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[13] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[12] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[11] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[10] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[9] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[8] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[7] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[6] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[5] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[4] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[3] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[2] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[1] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axis_arb_tdata[0] in module sc_node_v1_0_15_si_handler__parameterized1 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2774.750 ; gain = 559.715 ; free physical = 339 ; free virtual = 6096
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2789.594 ; gain = 574.559 ; free physical = 335 ; free virtual = 6092
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2789.594 ; gain = 574.559 ; free physical = 335 ; free virtual = 6092
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.28 . Memory (MB): peak = 2800.562 ; gain = 0.000 ; free physical = 2088 ; free virtual = 7847
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/ooc.xdc] for cell 'inst'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/bd_05d2_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/bd_05d2_psr_aclk_0_board.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/bd_05d2_psr_aclk_0.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/bd_05d2_psr_aclk_0.xdc] for cell 'inst/clk_map/psr_aclk/U0'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_1/bd_05d2_psr_aclk_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_6/bd_05d2_sarn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_ar_node/inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_6/bd_05d2_sarn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_ar_node/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_6/bd_05d2_sarn_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_7/bd_05d2_srn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_r_node/inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_7/bd_05d2_srn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_r_node/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_7/bd_05d2_srn_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_8/bd_05d2_sawn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_aw_node/inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_8/bd_05d2_sawn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_aw_node/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_8/bd_05d2_sawn_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_9/bd_05d2_swn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_w_node/inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_9/bd_05d2_swn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_w_node/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_9/bd_05d2_swn_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_10/bd_05d2_sbn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_b_node/inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_10/bd_05d2_sbn_0_clocks.xdc] for cell 'inst/s00_nodes/s00_b_node/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/bd_0/ip/ip_10/bd_05d2_sbn_0_clocks.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/smartconnect.xdc] for cell 'inst'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/smartconnect.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.gen/sources_1/bd/design_1/ip/design_1_axi_uartlite_1_smc_2/smartconnect.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_axi_uartlite_1_smc_2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/dont_touch.xdc]
+INFO: [Project 1-1714] 14 XPM XDC files have been applied to the design.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3103.523 ; gain = 0.000 ; free physical = 1306 ; free virtual = 7076
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 13 instances were transformed.
+  FDR => FDRE: 12 instances
+  SRL16 => SRL16E: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.05 . Memory (MB): peak = 3109.461 ; gain = 5.902 ; free physical = 1284 ; free virtual = 7054
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3109.461 ; gain = 894.426 ; free physical = 811 ; free virtual = 6584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3109.461 ; gain = 894.426 ; free physical = 811 ; free virtual = 6584
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/dont_touch.xdc, line 86).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_ar_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_aw_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_b_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_r_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_w_node/inst/m_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_ar_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_aw_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_b_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_r_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_nodes/s00_w_node/inst/s_sc_xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/m00_exit_pipeline/m00_exit/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_mmu/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_si_converter/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for inst/s00_entry_pipeline/s00_transaction_regulator/inst/xpm_cdc_async_rst_inst. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 3109.461 ; gain = 894.426 ; free physical = 791 ; free virtual = 6564
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'gen_axi.gen_write.write_cs_reg' in module 'sc_mmu_v1_0_12_decerr_slave'
+INFO: [Synth 8-802] inferred FSM for state register 'w_state_reg' in module 'sc_si_converter_v1_0_12_axilite_conv'
+INFO: [Synth 8-802] inferred FSM for state register 'r_state_reg' in module 'sc_si_converter_v1_0_12_axilite_conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            P_WRITE_IDLE |                              001 |                               00
+            P_WRITE_DATA |                              010 |                               01
+            P_WRITE_RESP |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.gen_write.write_cs_reg' using encoding 'one-hot' in module 'sc_mmu_v1_0_12_decerr_slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  W_IDLE |                              000 | 00000000000000000000000000000000
+                    W_RX |                              001 | 00000000000000000000000000000001
+                    W_TX |                              010 | 00000000000000000000000000000010
+              W_COMPLETE |                              011 | 00000000000000000000000000000100
+               W_RECOVER |                              100 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'w_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_12_axilite_conv'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  R_IDLE |                               00 | 00000000000000000000000000000000
+               R_PENDING |                               01 | 00000000000000000000000000000001
+                    R_RX |                               10 | 00000000000000000000000000000010
+                    R_TX |                               11 | 00000000000000000000000000000011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'r_state_reg' using encoding 'sequential' in module 'sc_si_converter_v1_0_12_axilite_conv'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 3109.461 ; gain = 894.426 ; free physical = 554 ; free virtual = 6330
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   12 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 5     
+	   3 Input    1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 30    
++---Registers : 
+	             2178 Bit    Registers := 4     
+	              512 Bit    Registers := 1     
+	              205 Bit    Registers := 2     
+	               70 Bit    Registers := 1     
+	               69 Bit    Registers := 1     
+	               64 Bit    Registers := 5     
+	               47 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 3     
+	               23 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 4     
+	                4 Bit    Registers := 6     
+	                3 Bit    Registers := 21    
+	                2 Bit    Registers := 12    
+	                1 Bit    Registers := 126   
++---Muxes : 
+	   2 Input 2178 Bit        Muxes := 2     
+	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input   12 Bit        Muxes := 6     
+	   5 Input   12 Bit        Muxes := 1     
+	   5 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 3     
+	   4 Input    8 Bit        Muxes := 1     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 8     
+	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 9     
+	   4 Input    3 Bit        Muxes := 2     
+	   5 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 19    
+	   5 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 100   
+	   3 Input    1 Bit        Muxes := 9     
+	   6 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 25    
+	  10 Input    1 Bit        Muxes := 6     
+	   7 Input    1 Bit        Muxes := 4     
+	   5 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1968 (col length:164)
+BRAMs: 1934 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_EXT.ACT_LO_EXT/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/EXT_LPF/ACTIVE_LOW_AUX.ACT_LO_AUX/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/FDRE_inst) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/BSR_OUT_DFF[0].FDRE_BSR) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/PR_OUT_DFF[0].FDRE_PER) is unused and will be removed from module bd_05d2.
+WARNING: [Synth 8-3332] Sequential element (clk_map/psr_aclk/U0/ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N) is unused and will be removed from module bd_05d2.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 3109.461 ; gain = 894.426 ; free physical = 364 ; free virtual = 4887
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 3594.449 ; gain = 1379.414 ; free physical = 13316 ; free virtual = 17066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 3630.496 ; gain = 1415.461 ; free physical = 13280 ; free virtual = 17031
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_14_top`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_exit_v1_0_14_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_9_top`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_sc2axi_v1_0_9_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_9_top`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_axi2sc_v1_0_9_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__2' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_mmu_v1_0_12_top`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_mmu_v1_0_12_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__3`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7822
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__3' done
+
+
+INFO: [Synth 8-5816] Retiming module `sc_si_converter_v1_0_12_top`
+   Worst Slack before retiming is 7822 and worst slack after retiming is 7935
+   Numbers of local forward move = 7, and local backward move = 0
+
+	Retimed registers names:
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[0]_fret
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[0]_fret__0
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[0]_fret__1
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[0]_fret__2
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[0]_fret__3
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[5]_fret
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[5]_fret__0
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[7]_fret
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/b_cnt_reg[7]_fret__0
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/r_beats_reg[0]_fret
+		inst/s00_entry_pipeline/s00_si_converter/inst/gen_axilite_conv.axilite_conv_inst/w_cnt_reg[6]_fret
+ 
+
+INFO: [Synth 8-5816] Retiming module `sc_si_converter_v1_0_12_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__4`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__4' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_transaction_regulator_v1_0_10_top`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_transaction_regulator_v1_0_10_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__5`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__5' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__6`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__6' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__7`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__7' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__8`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__8' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized0`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized0' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__9`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__9' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__10`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__10' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized1`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized1' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__11`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__11' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__12`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__12' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized2`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized2' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__13`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst__13' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `xpm_cdc_async_rst' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized3`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7935
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `sc_node_v1_0_15_top__parameterized3' done
+
+
+INFO: [Synth 8-5816] Retiming module `bd_05d2`
+   Worst Slack before retiming is 7935 and worst slack after retiming is 7943
+   Numbers of local forward move = 0, and local backward move = 1
+
+	Retimed registers names:
+		inst/clk_map/psr_aclk/U0/EXT_LPF/lpf_int_reg_bret
+		inst/clk_map/psr_aclk/U0/EXT_LPF/lpf_int_reg_bret__0
+ 
+
+INFO: [Synth 8-5816] Retiming module `bd_05d2' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `design_1_axi_uartlite_1_smc_2`
+   Worst Slack before retiming is 7943 and worst slack after retiming is 7943
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `design_1_axi_uartlite_1_smc_2' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13271 ; free virtual = 17021
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Retiming Report:
++--------------------+----+
+|Retiming summary:   |    | 
++--------------------+----+
+|Forward Retiming    | 7  | 
+|Backward Retiming   | 1  | 
+|New registers added | 13 | 
+|Registers deleted   | 1  | 
++--------------------+----+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |LUT1  |    53|
+|2     |LUT2  |    94|
+|3     |LUT3  |   107|
+|4     |LUT4  |    73|
+|5     |LUT5  |    59|
+|6     |LUT6  |   113|
+|8     |SRL16 |     1|
+|9     |FDCE  |    42|
+|10    |FDR   |     4|
+|11    |FDRE  |   422|
+|12    |FDSE  |    14|
++------+------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.504 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 14995 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 3638.504 ; gain = 1103.602 ; free physical = 13555 ; free virtual = 17305
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 3638.512 ; gain = 1423.469 ; free physical = 13555 ; free virtual = 17305
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 3638.512 ; gain = 0.000 ; free physical = 13843 ; free virtual = 17593
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3716.176 ; gain = 0.000 ; free physical = 13786 ; free virtual = 17538
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  FDR => FDRE: 4 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 1 instance 
+  SRL16 => SRL16E: 1 instance 
+
+Synth Design complete | Checksum: 1cc427b8
+INFO: [Common 17-83] Releasing license: Synthesis
+184 Infos, 119 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:35 . Memory (MB): peak = 3716.211 ; gain = 2292.039 ; free physical = 13790 ; free virtual = 17542
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2864.987; main = 2864.987; forked = 309.759
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4076.945; main = 3716.180; forked = 992.230
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3740.188 ; gain = 0.000 ; free physical = 13789 ; free virtual = 17542
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/design_1_axi_uartlite_1_smc_2.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_axi_uartlite_1_smc_2, cache-ID = 7dcc0b3c0e8637b6
+INFO: [Coretcl 2-1174] Renamed 74 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3740.188 ; gain = 0.000 ; free physical = 13766 ; free virtual = 17528
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip/project_1/project_1.runs/design_1_axi_uartlite_1_smc_2_synth_1/design_1_axi_uartlite_1_smc_2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_axi_uartlite_1_smc_2_utilization_synth.rpt -pb design_1_axi_uartlite_1_smc_2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  2 16:29:04 2024...

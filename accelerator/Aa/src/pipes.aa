@@ -1,0 +1,18 @@
+// lock rwbar bmask addr wdata
+//  1    1     4    36    32
+$pipe AFB_ACCELERATOR_REQUEST: $uint<74>  $depth 2 $p2p
+// error rdata
+//   1    32
+$pipe AFB_ACCELERATOR_RESPONSE: $uint<33> $depth 2 
+
+
+// lock rwbar bmask addr wdata
+//  1    1     8    36    64
+$pipe ACB_ACCELERATOR_MEM_REQUEST: $uint<110>  $depth 2 
+// error rdata
+//   1    64
+$pipe ACB_ACCELERATOR_MEM_RESPONSE: $uint<65> $depth 2 
+
+
+// interrupt
+$pipe ACCELERATOR_INTERRUPT: $uint<1> $signal

@@ -1,0 +1,459 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Sep  2 11:45:50 2024
+# Process ID: 1567984
+# Current directory: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1
+# Command line: vivado -log Ajit_vck190_axi_uartlite_1_2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Ajit_vck190_axi_uartlite_1_2.tcl
+# Log file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/Ajit_vck190_axi_uartlite_1_2.vds
+# Journal file: /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/vivado.jou
+# Running On: iitg-Precision-3660, OS: Linux, CPU Frequency: 800.812 MHz, CPU Physical cores: 16, Host memory: 33317 MB
+#-----------------------------------------------------------
+source Ajit_vck190_axi_uartlite_1_2.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ajit-ip'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src'.
+WARNING: [IP_Flow 19-3656] If you move the project, the path for repository '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src' may become invalid. A better location for the repository would be in a path adjacent to the project. (Current project location is '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1'.)
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/iitg/VivadoFull/Vivado/2023.2/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: Ajit_vck190_axi_uartlite_1_2
+Command: synth_design -top Ajit_vck190_axi_uartlite_1_2 -part xcvc1902-vsva2197-2MP-e-S -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvc1902'
+INFO: [Device 21-403] Loading part xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1568303
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2606.793 ; gain = 404.691 ; free physical = 9521 ; free virtual = 11967
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Ajit_vck190_axi_uartlite_1_2' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/synth/Ajit_vck190_axi_uartlite_1_2.vhd:86]
+	Parameter C_FAMILY bound to: versal - type: string 
+	Parameter C_S_AXI_ACLK_FREQ_HZ bound to: 79999199 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_BAUDRATE bound to: 115200 - type: integer 
+	Parameter C_DATA_BITS bound to: 8 - type: integer 
+	Parameter C_USE_PARITY bound to: 0 - type: integer 
+	Parameter C_ODD_PARITY bound to: 0 - type: integer 
+INFO: [Synth 8-3491] module 'axi_uartlite' declared at '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2089' bound to instance 'U0' of component 'axi_uartlite' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/synth/Ajit_vck190_axi_uartlite_1_2.vhd:162]
+INFO: [Synth 8-638] synthesizing module 'axi_uartlite' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2151]
+INFO: [Synth 8-638] synthesizing module 'uartlite_core' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1617]
+INFO: [Synth 8-638] synthesizing module 'baudrate' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1426]
+INFO: [Synth 8-256] done synthesizing module 'baudrate' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1426]
+INFO: [Synth 8-638] synthesizing module 'uartlite_rx' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:906]
+INFO: [Synth 8-638] synthesizing module 'cdc_sync' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:514]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:545]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:554]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:564]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:574]
+	Parameter INIT bound to: 1'b0 
+INFO: [Synth 8-113] binding component instance 'CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6' to cell 'FDR' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:584]
+INFO: [Synth 8-256] done synthesizing module 'cdc_sync' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/ef1e/hdl/lib_cdc_v1_0_rfs.vhd:106]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_f' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:777]
+INFO: [Synth 8-638] synthesizing module 'srl_fifo_rbu_f' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:538]
+INFO: [Synth 8-638] synthesizing module 'cntr_incr_decr_addn_f' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:134]
+INFO: [Synth 8-256] done synthesizing module 'cntr_incr_decr_addn_f' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:134]
+INFO: [Synth 8-638] synthesizing module 'dynshreg_f' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:329]
+INFO: [Synth 8-256] done synthesizing module 'dynshreg_f' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:329]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_rbu_f' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:538]
+INFO: [Synth 8-256] done synthesizing module 'srl_fifo_f' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/02c4/hdl/lib_srl_fifo_v1_0_rfs.vhd:777]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_rx' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:906]
+INFO: [Synth 8-638] synthesizing module 'uartlite_tx' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:393]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_tx' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:393]
+INFO: [Synth 8-256] done synthesizing module 'uartlite_core' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:1617]
+INFO: [Synth 8-638] synthesizing module 'axi_lite_ipif' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-638] synthesizing module 'slave_attachment' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-638] synthesizing module 'address_decoder' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-638] synthesizing module 'pselect_f' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized0' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized0' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized1' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized1' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-638] synthesizing module 'pselect_f__parameterized2' [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'pselect_f__parameterized2' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1534]
+INFO: [Synth 8-256] done synthesizing module 'address_decoder' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:1775]
+INFO: [Synth 8-226] default block is never used [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2550]
+INFO: [Synth 8-256] done synthesizing module 'slave_attachment' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2341]
+INFO: [Synth 8-256] done synthesizing module 'axi_lite_ipif' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2948]
+INFO: [Synth 8-256] done synthesizing module 'axi_uartlite' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/df48/hdl/axi_uartlite_v2_0_vh_rfs.vhd:2151]
+INFO: [Synth 8-256] done synthesizing module 'Ajit_vck190_axi_uartlite_1_2' (0#1) [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/synth/Ajit_vck190_axi_uartlite_1_2.vhd:86]
+WARNING: [Synth 8-6014] Unused sequential element is_read_reg was removed.  [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2447]
+WARNING: [Synth 8-6014] Unused sequential element is_write_reg was removed.  [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ipshared/66ea/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd:2448]
+WARNING: [Synth 8-7129] Port Address_In_Erly[2] in module address_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Address_In_Erly[3] in module address_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Bus_RNW in module address_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WSTRB[3] in module slave_attachment is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WSTRB[2] in module slave_attachment is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WSTRB[1] in module slave_attachment is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WSTRB[0] in module slave_attachment is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_aclk in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_resetn in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[31] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[30] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[29] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[28] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[27] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[26] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[25] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[24] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[23] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[22] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[21] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[20] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[19] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[18] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[17] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[16] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[15] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[14] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[13] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[12] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[11] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[10] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[9] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[8] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[7] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[6] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[5] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[4] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[3] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[2] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[1] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port prmry_vect_in[0] in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port scndry_resetn in module cdc_sync is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bus2ip_cs in module uartlite_core is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2695.730 ; gain = 493.629 ; free physical = 8753 ; free virtual = 11267
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2707.605 ; gain = 505.504 ; free physical = 8715 ; free virtual = 11229
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2707.605 ; gain = 505.504 ; free physical = 8715 ; free virtual = 11229
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2718.574 ; gain = 0.000 ; free physical = 8548 ; free virtual = 11073
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2_board.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2_board.xdc] for cell 'U0'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.gen/sources_1/bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/Ajit_vck190_axi_uartlite_1_2.xdc] for cell 'U0'
+Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2911.293 ; gain = 0.000 ; free physical = 7747 ; free virtual = 10325
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 6 instances were transformed.
+  FDR => FDRE: 6 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2911.328 ; gain = 0.000 ; free physical = 7728 ; free virtual = 10312
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2911.328 ; gain = 709.227 ; free physical = 7338 ; free virtual = 9922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcvc1902-vsva2197-2MP-e-S
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2911.328 ; gain = 709.227 ; free physical = 7338 ; free virtual = 9922
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  /home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2911.328 ; gain = 709.227 ; free physical = 7337 ; free virtual = 9921
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'slave_attachment'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 sm_idle |                             0010 |                               00
+                 sm_read |                             1000 |                               01
+                sm_write |                             0100 |                               10
+                 sm_resp |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'slave_attachment'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 2911.328 ; gain = 709.227 ; free physical = 7266 ; free virtual = 9853
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    6 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 2     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 46    
++---Muxes : 
+	   2 Input    8 Bit        Muxes := 2     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 6     
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 71    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1968 (col length:164)
+BRAMs: 1934 (col length: RAMB18 168 RAMB36 84)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port s_axi_wdata[31] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[30] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[29] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[28] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[27] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[26] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[25] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[24] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[23] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[22] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[21] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[20] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[19] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[18] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[17] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[16] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[15] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[14] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[13] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[12] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[11] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[10] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[9] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wdata[8] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[3] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[2] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[1] in module axi_uartlite is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wstrb[0] in module axi_uartlite is either unconnected or has no load
+INFO: [Synth 8-3332] Sequential element (UARTLITE_CORE_I/UARTLITE_RX_I/INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d5) is unused and will be removed from module axi_uartlite.
+INFO: [Synth 8-3332] Sequential element (UARTLITE_CORE_I/UARTLITE_RX_I/INPUT_DOUBLE_REGS3/GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d6) is unused and will be removed from module axi_uartlite.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2935.309 ; gain = 733.207 ; free physical = 6654 ; free virtual = 9319
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 3558.000 ; gain = 1355.898 ; free physical = 603 ; free virtual = 3742
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 369 ; free virtual = 3508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5816] Retiming module `axi_uartlite`
+   Worst Slack before retiming is 11103 and worst slack after retiming is 11163
+   Numbers of local forward move = 3, and local backward move = 0
+
+	Retimed registers names:
+		U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_reg_fret
+		U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_reg_fret__0
+		U0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_reg_fret__0__0
+		U0/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read_reg_fret
+ 
+
+INFO: [Synth 8-5816] Retiming module `axi_uartlite' done
+
+
+INFO: [Synth 8-11328] No retiming is needed, due to no register satisfying retiming conditions
+INFO: [Synth 8-5816] Retiming module `Ajit_vck190_axi_uartlite_1_2`
+   Worst Slack before retiming is 11163 and worst slack after retiming is 11163
+   Numbers of local forward move = 0, and local backward move = 0
+
+
+INFO: [Synth 8-5816] Retiming module `Ajit_vck190_axi_uartlite_1_2' done
+
+
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 236 ; free virtual = 3373
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8065 ; free virtual = 10707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8065 ; free virtual = 10707
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8061 ; free virtual = 10703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8064 ; free virtual = 10706
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8059 ; free virtual = 10701
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8060 ; free virtual = 10702
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++-------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name  | RTL Name                                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++-------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|axi_uartlite | UARTLITE_CORE_I/UARTLITE_RX_I/data_shift_reg[15] | 16     | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|axi_uartlite | UARTLITE_CORE_I/UARTLITE_TX_I/data_shift_reg[15] | 15     | 1     | YES          | NO                 | YES               | 1      | 0       | 
++-------------+--------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                  | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | INFERRED_GEN.data_reg[15] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
++------------+---------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+
+Retiming Report:
++--------------------+---+
+|Retiming summary:   |   | 
++--------------------+---+
+|Forward Retiming    | 3 | 
+|Backward Retiming   | 0 | 
+|New registers added | 4 | 
+|Registers deleted   | 0 | 
++--------------------+---+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |LUT1   |     2|
+|2     |LUT2   |    10|
+|3     |LUT3   |    22|
+|4     |LUT4   |    38|
+|5     |LUT5   |    13|
+|6     |LUT6   |    20|
+|7     |SRL16E |    18|
+|8     |FDR    |     4|
+|9     |FDRE   |    93|
+|10    |FDSE   |    17|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.047 ; gain = 1387.945 ; free physical = 8058 ; free virtual = 10700
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 3590.047 ; gain = 1184.223 ; free physical = 8030 ; free virtual = 10672
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 3590.055 ; gain = 1387.945 ; free physical = 8029 ; free virtual = 10671
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3590.055 ; gain = 0.000 ; free physical = 8028 ; free virtual = 10670
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Constraints 18-6359] No Clock Expansion Window constraints config file entry for device xcvc1902.  GCLK Deskew mode will be Off and cannot be enabled via GCLK_DESKEW override.
+INFO: [Constraints 18-5720] The default GCLK Deskew mode is Off.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3657.750 ; gain = 0.000 ; free physical = 7910 ; free virtual = 10553
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  FDR => FDRE: 4 instances
+
+Synth Design complete | Checksum: 18b81241
+INFO: [Common 17-83] Releasing license: Synthesis
+80 Infos, 75 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:03:01 . Memory (MB): peak = 3657.785 ; gain = 2236.359 ; free physical = 7843 ; free virtual = 10487
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2769.359; main = 2590.237; forked = 319.521
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4389.363; main = 3657.754; forked = 993.172
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3681.762 ; gain = 0.000 ; free physical = 7816 ; free virtual = 10460
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/Ajit_vck190_axi_uartlite_1_2.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Ajit_vck190_axi_uartlite_1_2, cache-ID = 36ac32abe822c04f
+INFO: [Coretcl 2-1174] Renamed 19 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3681.762 ; gain = 0.000 ; free physical = 7566 ; free virtual = 10220
+INFO: [Common 17-1381] The checkpoint '/home/iitg/Desktop/AjitIITG/AjitIITG/1x1x32.iitg/vck190/ip_repo1/src/ajitip/ajitip.runs/Ajit_vck190_axi_uartlite_1_2_synth_1/Ajit_vck190_axi_uartlite_1_2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Ajit_vck190_axi_uartlite_1_2_utilization_synth.rpt -pb Ajit_vck190_axi_uartlite_1_2_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Sep  2 11:48:59 2024...

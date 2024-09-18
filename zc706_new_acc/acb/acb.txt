@@ -1,0 +1,142 @@
+  
+  
+  
+  module simple_mult(reset,a,b,result,done);
+input [31:0]a,b;
+input reset;
+output reg [63:0]result;
+output reg done;
+always @ (*)
+begin
+    if (reset)
+        result = 0;
+    else
+        result = a*b;
+end
+always@* begin
+    if (reset)
+    done = 0;
+    else begin
+        if (result!=64'd0)
+        done = 1'b1;
+        else
+        done = 1'b0;
+    end
+end
+endmodule
+  
+  
+   /*output reg [109:0]ACB_ACCELERATOR_MEM_REQUEST_pipe_read_data,//mem_access_request_data
+    input ACB_ACCELERATOR_MEM_REQUEST_pipe_read_req,//memory ready to be read (ready)
+    output reg ACB_ACCELERATOR_MEM_REQUEST_pipe_read_ack,//Accelerator_MEM_REQUEST_pipe_write_req() accelerator valid
+    
+    input [64:0]ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_data,//reveive_data_from_memory
+    input ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_req,
+    output reg ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_ack,//Accelerator_MEM_REQUEST_pipe_read_req
+    output ACCELERATOR_INTERRUPT*/
+    
+    
+     /*parameter ACB_IDLE = 3'b000;
+    parameter ACB_READ = 3'b001;
+    parameter WORK     = 3'b010;
+    parameter ACB_WRITE = 3'b011;
+    
+    reg [1:0]ACB_state,ACB_Nextstate;*/
+    
+     //reg [63:0]operand_register;
+    //reg [31:0]operand_a,operand_b;
+    
+    //reg access_complete, start_worker,write_result_complete;
+   // wire job_done;
+   // wire [63:0]acc_result;
+    
+    //simple_mult worker_instance (reset,operand_a, operand_b, acc_result,job_done);
+    //assign ACCELERATOR_INTERRUPT = 1'b0;
+    //-------------------------------------------------------------------------------
+    // AFB_READ_WRITE_STATE_MACHINE
+    //-------------------------------------------------------------------------------
+  //---------------------------------------------------------------------------------------------------
+    //MAIN ACCELERATOR WORKER
+    //---------------------------------------------------------------------------------------------------
+    //1. generate start_worker once the configuration is complete
+    //2. get the operand address stored in the configuration register (registers[5'd1])
+    //3. initiate memory read through ACB
+    //4. store the received data to operand_register;
+    //5. apply input to the worker logic
+    //6. get the result
+    //7. initiate memory write (result) through ACB
+    //----------------------------------------------------------------------------------------------------
+    reg [3:0]access_count;
+    
+    always@(posedge access_complete or posedge reset) 
+    begin
+    	if(reset) begin
+    		access_count = 4'd0;
+    		start_worker = 1'b0;
+    	end
+    	else begin 
+    	access_count = access_count+1;
+    	if (access_count==4'd3)
+    		start_worker = 1'b1; 
+    	end   
+    end
+   //------------------------------------------------------------------------------------------------------
+    //ACB_READ, apply operands, ACB_write machine
+   //------------------------------------------------------------------------------------------------------ 
+    always@(posedge clk) begin
+    	if (reset)
+    		ACB_state = ACB_IDLE;
+    	else
+    		ACB_state = ACB_Nextstate;
+    end
+    
+    always @(*)
+    begin
+    if (reset)
+    	ACB_ACCELERATOR_MEM_REQUEST_pipe_read_ack =1'b0;
+    else begin
+    	case(ACB_state)
+    	ACB_IDLE: begin
+    		if (start_worker) begin
+    			ACB_Nextstate = ACB_READ;
+    			//start_worker = 1'b0;
+    		end
+    		else
+    			ACB_Nextstate = ACB_IDLE;
+    	end
+    	ACB_READ: begin
+    		ACB_ACCELERATOR_MEM_REQUEST_pipe_read_data = {{2'b01},{8'hff},{registers[5'd2]},{64'd0}};
+    		ACB_ACCELERATOR_MEM_REQUEST_pipe_read_ack =1'b1;
+    		if (ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_req && !ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_data[64])
+    		begin
+    			operand_register = ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_data[63:0];
+    			ACB_Nextstate = WORK;	
+    		end
+    		else
+    			ACB_Nextstate = ACB_READ;
+    		
+    	end
+    	WORK: begin
+    	      ACB_ACCELERATOR_MEM_REQUEST_pipe_read_ack =1'b0;
+    	      operand_a = operand_register[31:0];
+    	      operand_b = operand_register[63:0];
+    	      if (job_done)
+    	      	ACB_Nextstate = ACB_WRITE;
+    	      else
+    	      	ACB_Nextstate = WORK;		
+    	end
+    	ACB_WRITE: begin
+    		ACB_ACCELERATOR_MEM_REQUEST_pipe_read_data = {{2'b00},{8'hff},{registers[5'd3]},acc_result};
+    		ACB_ACCELERATOR_MEM_REQUEST_pipe_read_ack = 1'b1;
+    		if (ACB_ACCELERATOR_MEM_REQUEST_pipe_read_req && !ACB_ACCELERATOR_MEM_RESPONSE_pipe_write_data[64])
+    		begin
+    			ACB_Nextstate = ACB_IDLE;
+    			write_result_complete=1'b1;	
+    		end
+    		else
+    			ACB_Nextstate = ACB_WRITE;
+    	end
+    	default: ACB_Nextstate = ACB_IDLE;
+    	endcase
+    end//end else begin
+    end//end always@*

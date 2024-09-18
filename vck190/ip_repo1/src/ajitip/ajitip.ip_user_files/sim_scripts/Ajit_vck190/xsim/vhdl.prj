@@ -1,0 +1,119 @@
+vhdl ahir_ieee_proposed  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/ahir_ieee_proposed/aHiR_ieee_proposed.vhdl" \
+
+vhdl ahir  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/ahir/ahir.vhdl" \
+
+vhdl AhbApbLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/AhbApbLib/AhbApbLib.vhdl" \
+
+vhdl simpleUartLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/simpleUartLib/simpleUartLib.vhdl" \
+
+vhdl AjitCustom  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/AjitCustom/AjitCustom.vhdl" \
+
+vhdl SpiMasterLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/SpiMasterLib/SpiMasterLib.vhdl" \
+
+vhdl GenericCoreAddOnLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/GenericCoreAddOnLib/GenericCoreAddOnLib.vhdl" \
+
+vhdl GenericGlueStuff  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/GenericGlueStuff/GenericGlueStuff.vhdl" \
+
+vhdl GlueModules  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/GlueModules/GlueModules.vhdl" \
+
+vhdl performance_counters_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/performance_counters_lib/afb_performance_counters_base.vhdl" \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/performance_counters_lib/afb_performance_counters_controller_1x1.vhdl" \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/performance_counters_lib/afb_performance_counters_1x1.vhdl" \
+
+vhdl cpu_ccu  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/cpu_ccu/ccu.vhdl" \
+
+vhdl cpu_debug_interface  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/cpu_debug_interface/debug_interface.vhdl" \
+
+vhdl teu_idecode_idispatch  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_idecode_idispatch/idecode_idispatch.vhdl" \
+
+vhdl teu_ifetch  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_ifetch/ifetch.vhdl" \
+
+vhdl teu_dummy_fpunit  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_dummy_fpunit/dummy_fpunit.vhdl" \
+
+vhdl iunit_exec  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/iunit_exec/iu_exec.vhdl" \
+
+vhdl iunit_writeback_in_mux  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/iunit_writeback_in_mux/iu_writeback_in_mux.vhdl" \
+
+vhdl iunit_registers  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/iunit_registers/iu_registers.vhdl" \
+
+vhdl teu_iunit  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_iunit/iunit.vhdl" \
+
+vhdl teu_loadstore  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_loadstore/loadstore.vhdl" \
+
+vhdl teu_iretire  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_iretire/iretire.vhdl" \
+
+vhdl teu_stream_corrector  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/teu_stream_corrector/stream_corrector.vhdl" \
+
+vhdl cpu_teu_no_fp  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/cpu_teu_no_fp/teu_no_fp.vhdl" \
+
+vhdl core_units  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/core_units/cpu_no_fp.vhdl" \
+
+vhdl munit_dcache  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/munit_dcache/dcache.vhdl" \
+
+vhdl munit_icache  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/munit_icache/icache.vhdl" \
+
+vhdl munit_dummy_mmu  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/munit_dummy_mmu/dummy_mmu.vhdl" \
+
+vhdl munit_mmu_mux  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/munit_mmu_mux/mmu_mux.vhdl" \
+
+vhdl munit_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/munit_lib/munit_no_mmu.vhdl" \
+
+vhdl ajit_core_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/ajit_core_lib/core_1x32_no_fp_no_mmu.vhdl" \
+
+vhdl simpleI2CLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/simpleI2CLib/simpleI2CLib.vhdl" \
+
+vhdl myUartLib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/myUartLib/myUartLib.vhdl" \
+
+vhdl ajit_mcore_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/ajit_mcore_lib/mcore_1x1x32_lite.vhdl" \
+
+vhdl peripherals_lite_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/peripherals_lite_lib/peripherals.vhdl" \
+
+vhdl ajit_processor_lib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/ajit_processor_lib/processor_1x1x32_lite.vhdl" \
+
+vhdl xil_defaultlib  \
+"../../../bd/Ajit_vck190/ipshared/bb17/src/fpga_top_with_accelerator.vhdl" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_fpga_top_0_1/sim/Ajit_vck190_fpga_top_0_1.vhd" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_0_2/sim/Ajit_vck190_axi_uartlite_0_2.vhd" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_2/sim/Ajit_vck190_axi_uartlite_1_2.vhd" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_rst_versal_cips_0_79M_3/sim/Ajit_vck190_rst_versal_cips_0_79M_3.vhd" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_0_smc_0/bd_0/ip/ip_11/sim/bd_9f7e_psr_aclk_0.vhd" \
+"../../../bd/Ajit_vck190/ip/Ajit_vck190_axi_uartlite_1_smc_0/bd_0/ip/ip_11/sim/bd_5f6e_psr_aclk_0.vhd" \
+"../../../bd/Ajit_vck190/sim/Ajit_vck190.vhd" \
+
+# Do not sort compile order
+nosort
