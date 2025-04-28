@@ -168,9 +168,6 @@ main:
 	save	%sp, -96, %sp
 	call	configure_serial_device, 0
 	 mov	0, %i0
-	sethi	%hi(.LC0), %o0
-	call	cortos_printf, 0
-	 or	%o0, %lo(.LC0), %o0
 	sethi	%hi(.LC6), %o0
 	call	cortos_printf, 0
 	 or	%o0, %lo(.LC6), %o0

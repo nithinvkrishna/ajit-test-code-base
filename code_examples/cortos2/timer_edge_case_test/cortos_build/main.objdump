@@ -6343,7 +6343,7 @@ Disassembly of section .text:
     5cf4:	9d e3 bf 98 	save  %sp, -104, %sp
     5cf8:	f0 3f bf f8 	std  %i0, [ %fp + -8 ]
     5cfc:	2f 00 00 21 	sethi  %hi(0x8400), %l7
-    5d00:	40 00 0c d0 	call  9040 <__sparc_get_pc_thunk.l7>
+    5d00:	40 00 0c cd 	call  9034 <__sparc_get_pc_thunk.l7>
     5d04:	ae 05 e3 10 	add  %l7, 0x310, %l7	! 8710 <HW_trap_0x71>
     5d08:	d1 1f bf f8 	ldd  [ %fp + -8 ], %f8
     5d0c:	03 00 00 00 	sethi  %hi(0), %g1
@@ -6369,7 +6369,7 @@ Disassembly of section .text:
 00005d58 <__fixunsdfdi>:
     5d58:	9d e3 bf 90 	save  %sp, -112, %sp
     5d5c:	2f 00 00 21 	sethi  %hi(0x8400), %l7
-    5d60:	40 00 0c b8 	call  9040 <__sparc_get_pc_thunk.l7>
+    5d60:	40 00 0c b5 	call  9034 <__sparc_get_pc_thunk.l7>
     5d64:	ae 05 e2 b0 	add  %l7, 0x2b0, %l7	! 86b0 <HW_trap_0x6b>
     5d68:	f0 3f bf f8 	std  %i0, [ %fp + -8 ]
     5d6c:	03 00 00 00 	sethi  %hi(0), %g1
@@ -6443,7 +6443,7 @@ Disassembly of section .text:
     5e74:	d1 07 bf fc 	ld  [ %fp + -4 ], %f8
     5e78:	f2 27 bf fc 	st  %i1, [ %fp + -4 ]
     5e7c:	2f 00 00 21 	sethi  %hi(0x8400), %l7
-    5e80:	40 00 0c 70 	call  9040 <__sparc_get_pc_thunk.l7>
+    5e80:	40 00 0c 6d 	call  9034 <__sparc_get_pc_thunk.l7>
     5e84:	ae 05 e1 90 	add  %l7, 0x190, %l7	! 8590 <HW_trap_0x59>
     5e88:	81 a0 19 08 	fitod  %f8, %f0
     5e8c:	03 00 00 00 	sethi  %hi(0), %g1
@@ -6463,7 +6463,7 @@ Disassembly of section .text:
 00005ec0 <__divdi3>:
     5ec0:	9d e3 bf a0 	save  %sp, -96, %sp
     5ec4:	2f 00 00 21 	sethi  %hi(0x8400), %l7
-    5ec8:	40 00 0c 5e 	call  9040 <__sparc_get_pc_thunk.l7>
+    5ec8:	40 00 0c 5b 	call  9034 <__sparc_get_pc_thunk.l7>
     5ecc:	ae 05 e1 48 	add  %l7, 0x148, %l7	! 8548 <HW_trap_0x54+0x8>
     5ed0:	ba 10 00 18 	mov  %i0, %i5
     5ed4:	b8 10 00 19 	mov  %i1, %i4
@@ -6698,7 +6698,7 @@ Disassembly of section .text:
 00006264 <__moddi3>:
     6264:	9d e3 bf a0 	save  %sp, -96, %sp
     6268:	2f 00 00 20 	sethi  %hi(0x8000), %l7
-    626c:	40 00 0b 75 	call  9040 <__sparc_get_pc_thunk.l7>
+    626c:	40 00 0b 72 	call  9034 <__sparc_get_pc_thunk.l7>
     6270:	ae 05 e1 a4 	add  %l7, 0x1a4, %l7	! 81a4 <HW_trap_0x1a+0x4>
     6274:	ba 10 00 18 	mov  %i0, %i5
     6278:	b8 10 00 19 	mov  %i1, %i4
@@ -6940,7 +6940,7 @@ Disassembly of section .text:
 00006624 <__udivdi3>:
     6624:	9d e3 bf a0 	save  %sp, -96, %sp
     6628:	2f 00 00 1f 	sethi  %hi(0x7c00), %l7
-    662c:	40 00 0a 85 	call  9040 <__sparc_get_pc_thunk.l7>
+    662c:	40 00 0a 82 	call  9034 <__sparc_get_pc_thunk.l7>
     6630:	ae 05 e1 e4 	add  %l7, 0x1e4, %l7	! 7de4 <window_underflow_trap_handler+0x928>
     6634:	80 a6 a0 00 	cmp  %i2, 0
     6638:	12 80 00 50 	bne  6778 <__udivdi3+0x154>
@@ -7147,7 +7147,7 @@ Disassembly of section .text:
 00006958 <__umoddi3>:
     6958:	9d e3 bf a0 	save  %sp, -96, %sp
     695c:	2f 00 00 1e 	sethi  %hi(0x7800), %l7
-    6960:	40 00 09 b8 	call  9040 <__sparc_get_pc_thunk.l7>
+    6960:	40 00 09 b5 	call  9034 <__sparc_get_pc_thunk.l7>
     6964:	ae 05 e2 b0 	add  %l7, 0x2b0, %l7	! 7ab0 <window_underflow_trap_handler+0x5f4>
     6968:	b8 10 00 1b 	mov  %i3, %i4
     696c:	84 10 00 19 	mov  %i1, %g2
@@ -9602,18 +9602,15 @@ Disassembly of section .text:
     9008:	b0 10 20 00 	clr  %i0
     900c:	11 00 00 38 	sethi  %hi(0xe000), %o0
     9010:	7f ff dd 06 	call  428 <cortos_printf>
-    9014:	90 12 21 90 	or  %o0, 0x190, %o0	! e190 <__clz_tab+0x100>
-    9018:	11 00 00 38 	sethi  %hi(0xe000), %o0
-    901c:	7f ff dd 03 	call  428 <cortos_printf>
-    9020:	90 12 22 60 	or  %o0, 0x260, %o0	! e260 <__clz_tab+0x1d0>
-    9024:	7f ff de 19 	call  888 <run_all_timer_edge_case_tests>
-    9028:	01 00 00 00 	nop 
-    902c:	11 00 00 38 	sethi  %hi(0xe000), %o0
-    9030:	7f ff dc fe 	call  428 <cortos_printf>
-    9034:	90 12 22 90 	or  %o0, 0x290, %o0	! e290 <__clz_tab+0x200>
-    9038:	81 c7 e0 08 	ret 
-    903c:	81 e8 00 00 	restore 
+    9014:	90 12 22 60 	or  %o0, 0x260, %o0	! e260 <__clz_tab+0x1d0>
+    9018:	7f ff de 1c 	call  888 <run_all_timer_edge_case_tests>
+    901c:	01 00 00 00 	nop 
+    9020:	11 00 00 38 	sethi  %hi(0xe000), %o0
+    9024:	7f ff dd 01 	call  428 <cortos_printf>
+    9028:	90 12 22 90 	or  %o0, 0x290, %o0	! e290 <__clz_tab+0x200>
+    902c:	81 c7 e0 08 	ret 
+    9030:	81 e8 00 00 	restore 
 
-00009040 <__sparc_get_pc_thunk.l7>:
-    9040:	81 c3 e0 08 	retl 
-    9044:	ae 03 c0 17 	add  %o7, %l7, %l7
+00009034 <__sparc_get_pc_thunk.l7>:
+    9034:	81 c3 e0 08 	retl 
+    9038:	ae 03 c0 17 	add  %o7, %l7, %l7
