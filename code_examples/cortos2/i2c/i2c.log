@@ -1,0 +1,395 @@
+////////////////////////////////////////
+///// INITIATING C PROGRAM START! //////
+////////////////////////////////////////
+
+enabled serial.
+
+
+**************************************************
+************ STARTING REGISTER TESTS *************
+**************************************************
+[ADDR_INTERRUPT_CONTROLLER_MIN] Initiating Reset... 
+[ADDR_INTERRUPT_CONTROLLER_MIN] Reset Done! 
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] Initiating Reset... 
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] Reset Done! 
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] Initiating Reset... 
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] Reset Done! 
+
+--------------------------------------------------
+Starting ADDR_IO register tests...
+--------------------------------------------------
+
+[ADDR_IO_MIN] is a READ_ONLY register
+[ADDR_IO_MIN] Skipping write and scoreboarding...
+
+--------------------------------------------------
+Completed ADDR_IO register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting ADDR_INTERRUPT_CONTROLLER register tests...
+--------------------------------------------------
+
+[ADDR_INTERRUPT_CONTROLLER_MIN] read before write, value 0x00000000
+[ADDR_INTERRUPT_CONTROLLER_MIN] writing value 0x0000C12A
+[ADDR_INTERRUPT_CONTROLLER_MIN] read after write, value 0x0000C12A
+[ADDR_INTERRUPT_CONTROLLER_MIN] is a PARTIAL_WRITE register
+[ADDR_INTERRUPT_CONTROLLER_MIN] Test Status - PASS: (Address: 0xffff3000) - Written: 0x0000C12A, Read: 0x0000C12A
+
+
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] read before write, value 0x0000C12A
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] writing value 0x0000C12A
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] read after write, value 0x0000C12A
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] is a PARTIAL_WRITE register
+[ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff3000) - Written: 0x0000C12A, Read: 0x0000C12A
+
+
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] read before write, value 0x00000000
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] writing value 0xFF45C12A
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] read after write, value 0xFF45C12A
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] is a FULL_WRITE register
+[ADDR_INTERRUPT_CONTROLLER_IPI_BASE] Test Status - PASS: (Address: 0xffff3080) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+--------------------------------------------------
+Completed ADDR_INTERRUPT_CONTROLLER register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting ADDR_SCRATCH_PAD_MEMORY register tests...
+--------------------------------------------------
+
+[ADDR_SCRATCH_PAD_MEMORY_MIN] read before write, value 0x00000001
+[ADDR_SCRATCH_PAD_MEMORY_MIN] writing value 0xFF45C12A
+[ADDR_SCRATCH_PAD_MEMORY_MIN] read after write, value 0xFF45C12A
+[ADDR_SCRATCH_PAD_MEMORY_MIN] is a FULL_WRITE register
+[ADDR_SCRATCH_PAD_MEMORY_MIN] Test Status - PASS: (Address: 0xffff2c00) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SCRATCH_PAD_MEMORY_MAX] read before write, value 0x00000000
+[ADDR_SCRATCH_PAD_MEMORY_MAX] writing value 0xFF45C12A
+[ADDR_SCRATCH_PAD_MEMORY_MAX] read after write, value 0xFF45C12A
+[ADDR_SCRATCH_PAD_MEMORY_MAX] is a FULL_WRITE register
+[ADDR_SCRATCH_PAD_MEMORY_MAX] Test Status - PASS: (Address: 0xffff2ffc) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+--------------------------------------------------
+Completed ADDR_SCRATCH_PAD_MEMORY register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting I2C register tests...
+--------------------------------------------------
+
+[ADDR_I2C_MASTER_MIN] read before write, value 0x00000100
+[ADDR_I2C_MASTER_MIN] writing value 0xFF45C12A
+[ADDR_I2C_MASTER_MIN] read after write, value 0xFF45C12A
+[ADDR_I2C_MASTER_MIN] is a FULL_WRITE register
+[ADDR_I2C_MASTER_MIN] Test Status - PASS: (Address: 0xffff3600) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_I2C_MASTER_CONFIG_REGISTER] read before write, value 0xFF45C12A
+[ADDR_I2C_MASTER_CONFIG_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_I2C_MASTER_CONFIG_REGISTER] writing value 0x12345678
+[ADDR_I2C_MASTER_CONFIG_REGISTER] read after write, value 0x12345678
+[ADDR_I2C_MASTER_CONFIG_REGISTER] is a FULL_WRITE register
+[ADDR_I2C_MASTER_CONFIG_REGISTER] Test Status - PASS: (Address: 0xffff3600) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_I2C_MASTER_COMMAND_REGISTER] read before write, value 0x00000000
+[ADDR_I2C_MASTER_COMMAND_REGISTER] writing value 0xFF45C12A
+[ADDR_I2C_MASTER_COMMAND_REGISTER] read after write, value 0xFF45C12A
+[ADDR_I2C_MASTER_COMMAND_REGISTER] is a FULL_WRITE register
+[ADDR_I2C_MASTER_COMMAND_REGISTER] Test Status - PASS: (Address: 0xffff3604) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_I2C_MASTER_STATUS_REGISTER] read before write, value 0x00000400
+[ADDR_I2C_MASTER_STATUS_REGISTER] writing value 0xFF45C12A
+[ADDR_I2C_MASTER_STATUS_REGISTER] read after write, value 0xFF45C12A
+[ADDR_I2C_MASTER_STATUS_REGISTER] is a FULL_WRITE register
+[ADDR_I2C_MASTER_STATUS_REGISTER] Test Status - PASS: (Address: 0xffff3608) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_I2C_MASTER_MAX] read before write, value 0xFF45C12A
+[ADDR_I2C_MASTER_MAX] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_I2C_MASTER_MAX] writing value 0x12345678
+[ADDR_I2C_MASTER_MAX] read after write, value 0x12345678
+[ADDR_I2C_MASTER_MAX] is a FULL_WRITE register
+[ADDR_I2C_MASTER_MAX] Test Status - PASS: (Address: 0xffff3608) - Written: 0x12345678, Read: 0x12345678
+
+--------------------------------------------------
+Completed I2C register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting GPIO register tests...
+--------------------------------------------------
+
+[ADDR_GPIO_MIN] read before write, value 0x00000000
+[ADDR_GPIO_MIN] writing value 0xFF45C12A
+[ADDR_GPIO_MIN] read after write, value 0xFF45C12A
+[ADDR_GPIO_MIN] is a FULL_WRITE register
+[ADDR_GPIO_MIN] Test Status - PASS: (Address: 0xffff3400) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_GPIO_DOUT_REGISTER] read before write, value 0xFF45C12A
+[ADDR_GPIO_DOUT_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_GPIO_DOUT_REGISTER] writing value 0x12345678
+[ADDR_GPIO_DOUT_REGISTER] read after write, value 0x12345678
+[ADDR_GPIO_DOUT_REGISTER] is a FULL_WRITE register
+[ADDR_GPIO_DOUT_REGISTER] Test Status - PASS: (Address: 0xffff3400) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_GPIO_DIN_REGISTER] read before write, value 0x00000000
+[ADDR_GPIO_DIN_REGISTER] writing value 0xFF45C12A
+[ADDR_GPIO_DIN_REGISTER] read after write, value 0xFF45C12A
+[ADDR_GPIO_DIN_REGISTER] is a FULL_WRITE register
+[ADDR_GPIO_DIN_REGISTER] Test Status - PASS: (Address: 0xffff3404) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER] read before write, value 0x00000000
+[ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER] writing value 0xFF45C12A
+[ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER] read after write, value 0xFF45C12A
+[ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER] is a FULL_WRITE register
+[ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff3408) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_GPIO_MAX] read before write, value 0x00000000
+[ADDR_GPIO_MAX] writing value 0xFF45C12A
+[ADDR_GPIO_MAX] read after write, value 0xFF45C12A
+[ADDR_GPIO_MAX] is a FULL_WRITE register
+[ADDR_GPIO_MAX] Test Status - PASS: (Address: 0xffff340c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+--------------------------------------------------
+Completed GPIO register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting SPI register tests...
+--------------------------------------------------
+
+[ADDR_SPI_MIN] read before write, value 0x00000000
+[ADDR_SPI_MIN] writing value 0xFF45C12A
+[ADDR_SPI_MIN] read after write, value 0xFF45C12A
+[ADDR_SPI_MIN] is a FULL_WRITE register
+[ADDR_SPI_MIN] Test Status - PASS: (Address: 0xffff3300) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SPI_DATA_REGISTER_LOW] read before write, value 0xFF45C12A
+[ADDR_SPI_DATA_REGISTER_LOW] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SPI_DATA_REGISTER_LOW] writing value 0x12345678
+[ADDR_SPI_DATA_REGISTER_LOW] read after write, value 0x12345678
+[ADDR_SPI_DATA_REGISTER_LOW] is a FULL_WRITE register
+[ADDR_SPI_DATA_REGISTER_LOW] Test Status - PASS: (Address: 0xffff3300) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_SPI_DATA_REGISTER_HIGH] read before write, value 0x00000000
+[ADDR_SPI_DATA_REGISTER_HIGH] writing value 0xFF45C12A
+[ADDR_SPI_DATA_REGISTER_HIGH] read after write, value 0xFF45C12A
+[ADDR_SPI_DATA_REGISTER_HIGH] is a FULL_WRITE register
+[ADDR_SPI_DATA_REGISTER_HIGH] Test Status - PASS: (Address: 0xffff3304) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SPI_COMMAND_STATUS_REGISTER] read before write, value 0x00000000
+[ADDR_SPI_COMMAND_STATUS_REGISTER] writing value 0xFF45C12A
+[ADDR_SPI_COMMAND_STATUS_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SPI_COMMAND_STATUS_REGISTER] is a FULL_WRITE register
+[ADDR_SPI_COMMAND_STATUS_REGISTER] Test Status - PASS: (Address: 0xffff3308) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SPI_CONFIG_REGISTER] read before write, value 0x00000000
+[ADDR_SPI_CONFIG_REGISTER] writing value 0xFF45C12A
+[ADDR_SPI_CONFIG_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SPI_CONFIG_REGISTER] is a FULL_WRITE register
+[ADDR_SPI_CONFIG_REGISTER] Test Status - PASS: (Address: 0xffff330c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SPI_MAX] read before write, value 0xFF45C12A
+[ADDR_SPI_MAX] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SPI_MAX] writing value 0x12345678
+[ADDR_SPI_MAX] read after write, value 0x12345678
+[ADDR_SPI_MAX] is a FULL_WRITE register
+[ADDR_SPI_MAX] Test Status - PASS: (Address: 0xffff330c) - Written: 0x12345678, Read: 0x12345678
+
+--------------------------------------------------
+Completed SPI register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting TIMER register tests...
+--------------------------------------------------
+
+[ADDR_TIMER_MIN] read before write, value 0x00000000
+[ADDR_TIMER_MIN] writing value 0xFF45C12A
+[ADDR_TIMER_MIN] read after write, value 0xFF45C12A
+[ADDR_TIMER_MIN] is a FULL_WRITE register
+[ADDR_TIMER_MIN] Test Status - PASS: (Address: 0xffff3100) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TIMER_CONTROL_REGISTER] read before write, value 0xFF45C12A
+[ADDR_TIMER_CONTROL_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_TIMER_CONTROL_REGISTER] writing value 0x12345678
+[ADDR_TIMER_CONTROL_REGISTER] read after write, value 0x12345678
+[ADDR_TIMER_CONTROL_REGISTER] is a FULL_WRITE register
+[ADDR_TIMER_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff3100) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_TIMER_MAX] read before write, value 0x00000000
+[ADDR_TIMER_MAX] writing value 0xFF45C12A
+[ADDR_TIMER_MAX] read after write, value 0xFF45C12A
+[ADDR_TIMER_MAX] is a FULL_WRITE register
+[ADDR_TIMER_MAX] Test Status - PASS: (Address: 0xffff311c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+--------------------------------------------------
+Completed TIMER register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting ADDR_TRACE_LOGGER register tests...
+--------------------------------------------------
+
+[ADDR_TRACE_LOGGER_MIN] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_MIN] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MIN] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MIN] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_MIN] Test Status - PASS: (Address: 0xffff3500) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] read before write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] writing value 0x12345678
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] read after write, value 0x12345678
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff3500) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER] Test Status - PASS: (Address: 0xffff3504) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER] Test Status - PASS: (Address: 0xffff3508) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TRACE_LOGGER_TRIGGER_REGISTER] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_TRIGGER_REGISTER] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_TRIGGER_REGISTER] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_TRIGGER_REGISTER] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_TRIGGER_REGISTER] Test Status - PASS: (Address: 0xffff350c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER] Test Status - PASS: (Address: 0xffff3510) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_TRACE_LOGGER_MAX] read before write, value 0x00000000
+[ADDR_TRACE_LOGGER_MAX] writing value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MAX] read after write, value 0xFF45C12A
+[ADDR_TRACE_LOGGER_MAX] is a FULL_WRITE register
+[ADDR_TRACE_LOGGER_MAX] Test Status - PASS: (Address: 0xffff351c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+--------------------------------------------------
+Completed ADDR_TRACE_LOGGER register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting ADDR_PERF_COUNTERS register tests...
+--------------------------------------------------
+
+[ADDR_PERF_COUNTERS_MIN] is a READ_ONLY register
+[ADDR_PERF_COUNTERS_MIN] Skipping write and scoreboarding...
+
+--------------------------------------------------
+Completed ADDR_PERF_COUNTERS register tests!
+--------------------------------------------------
+
+--------------------------------------------------
+Starting SERIAL register tests...
+--------------------------------------------------
+
+[ADDR_SERIAL_TX_REGISTER] read before write, value 0x0A000000
+�[ADDR_SERIAL_TX_REGISTER] writing value 0xFF45C12A
+[ADDR_SERIAL_TX_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SERIAL_TX_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_TX_REGISTER] Test Status - PASS: (Address: 0xffff3204) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SERIAL_RX_REGISTER] read before write, value 0x00000000
+[ADDR_SERIAL_RX_REGISTER] writing value 0xFF45C12A
+[ADDR_SERIAL_RX_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SERIAL_RX_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_RX_REGISTER] Test Status - PASS: (Address: 0xffff3208) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SERIAL_1_MIN] read before write, value 0xFF45C12A
+[ADDR_SERIAL_1_MIN] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SERIAL_1_MIN] writing value 0x12345678
+[ADDR_SERIAL_1_MIN] read after write, value 0x12345678
+[ADDR_SERIAL_1_MIN] is a FULL_WRITE register
+[ADDR_SERIAL_1_MIN] Test Status - PASS: (Address: 0xffff3240) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_SERIAL_1_CONTROL_REGISTER] read before write, value 0x12345678
+[ADDR_SERIAL_1_CONTROL_REGISTER] writing value 0xFF45C12A
+[ADDR_SERIAL_1_CONTROL_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SERIAL_1_CONTROL_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff3240) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SERIAL_1_TX_REGISTER] read before write, value 0xFF45C12A
+[ADDR_SERIAL_1_TX_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SERIAL_1_TX_REGISTER] writing value 0x12345678
+[ADDR_SERIAL_1_TX_REGISTER] read after write, value 0x12345678
+[ADDR_SERIAL_1_TX_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_TX_REGISTER] Test Status - PASS: (Address: 0xffff3244) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_SERIAL_1_RX_REGISTER] read before write, value 0xFF45C12A
+[ADDR_SERIAL_1_RX_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SERIAL_1_RX_REGISTER] writing value 0x12345678
+[ADDR_SERIAL_1_RX_REGISTER] read after write, value 0x12345678
+[ADDR_SERIAL_1_RX_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_RX_REGISTER] Test Status - PASS: (Address: 0xffff3248) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] read before write, value 0xFF45C12A
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] writing value 0x12345678
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] read after write, value 0x12345678
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_BAUD_CONTROL_REGISTER] Test Status - PASS: (Address: 0xffff324c) - Written: 0x12345678, Read: 0x12345678
+
+
+[ADDR_SERIAL_1_BAUD_LIMIT_REGISTER] read before write, value 0x12345678
+[ADDR_SERIAL_1_BAUD_LIMIT_REGISTER] writing value 0xFF45C12A
+[ADDR_SERIAL_1_BAUD_LIMIT_REGISTER] read after write, value 0xFF45C12A
+[ADDR_SERIAL_1_BAUD_LIMIT_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_BAUD_LIMIT_REGISTER] Test Status - PASS: (Address: 0xffff324c) - Written: 0xFF45C12A, Read: 0xFF45C12A
+
+
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] read before write, value 0xFF45C12A
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] Reg data first read out matches data going to be written. So, creating new write data = 0x12345678
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] writing value 0x12345678
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] read after write, value 0x12345678
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] is a FULL_WRITE register
+[ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER] Test Status - PASS: (Address: 0xffff3250) - Written: 0x12345678, Read: 0x12345678
+
+--------------------------------------------------
+Completed SERIAL register tests!
+--------------------------------------------------
+
+**************************************************
+************ FINISHED REGISTER TESTS! ************
+**************************************************
+
+////////////////////////////////////////
+        END OF PROGRAM EXECUTION
+////////////////////////////////////////
+

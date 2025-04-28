@@ -1,0 +1,59 @@
+    1  source set_ajit_home 
+    2  source ajit_env 
+    3  ls
+    4  cd AjitIITG/AjitIITG/1x1x32.iitg/code_examples/
+    5  ls
+    6  cd c_bare_metal/
+    7  ls
+    8  vi hello_world/
+    9  cd hello_world/
+   10  ls
+   11  vi main.c 
+   12  cd ../
+   13  cd ../
+   14  cd cortos2/
+   15  ls
+   16  cd serial/
+   17  ls
+   18  vi config.yaml 
+   19  ls
+   20  vi build.sh 
+   21  cd cortos_build/
+   22  ls
+   23  vi build.sh 
+   24  cd ../
+   25  ./build.sh 
+   26  cd ../../
+   27  cd assembly/
+   28  ls
+   29  cd gcd/
+   30  ls
+   31  ./clean.sh 
+   32  ls
+   33  ./compile_for_ajit_uclibc.sh 
+   34  cd ../
+   35  cd ../
+   36  cd cortos2/accelerator/
+   37  ls
+   38  ./build.sh 
+   39  calibrateUart /dev/ttyUSB1
+   40  ajit_debug_monitor_mt -u /dev/ttyUSB1
+   41  calibrateUart /dev/ttyUSB1
+   42  ajit_debug_monitor_mt -u /dev/ttyUSB1
+   43  calibrateUart /dev/ttyUSB1
+   44  ajit_debug_monitor_mt -u /dev/ttyUSB1
+   45  ./build.sh 
+   46  ls
+   47  ./build.sh 
+   48  ./build.sh 
+   49  ./build.sh 
+   50  ./build.sh 
+   51  ./build.sh 
+   52  ./build.sh 
+   53  calibrateUart /dev/ttyUSB1
+   54  ajit_debug_monitor_mt -u /dev/ttyUSB1
+   55  history
+   56  ls ../
+   57  ls ../../
+   58  ls ../../../
+   59  history > cmds.txt

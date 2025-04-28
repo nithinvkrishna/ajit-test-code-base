@@ -1,0 +1,121 @@
+// Program to test timer control reg read/write
+#include <stdint.h>
+#include <stdio.h>
+#include <ajit_access_routines.h>
+#include <ajit_mt_irc.h>
+#include <cortos.h>
+
+#define TIMERCOUNT 100000
+#define COUNT TIMERCOUNT
+#define TIMERINITVAL ((COUNT << 1) | 1)
+#define TIME_SCALE_FACTOR (1.0/CLK_FREQUENCY)
+#define NSAMPLES  1024
+
+volatile int volatile timer_interrupt_counter = 0;
+volatile int volatile exit_flag  = 0;
+volatile uint64_t volatile last_time_64 = 0;
+
+volatile uint64_t volatile min_interval  = 10000000;
+volatile uint64_t volatile max_interval  = 0;
+
+void test_timer_register_rw() {
+    uint32_t test_val = 0x0000AAAA; // Test pattern
+
+    // Write to timer register
+    __ajit_write_timer_control_register_via_vmap__(test_val);
+
+    // Read back the value
+    uint32_t read_val = __ajit_read_timer_control_register_via_vmap__();
+
+     // Mask out bit 0 (Enable bit) since it may change. We are interested only in the value
+    uint32_t masked_written_val = test_val & 0xFFFFFFFE;
+    uint32_t masked_read_val    = read_val & 0xFFFFFFFE;    
+   
+    // Check if the read value matches what we wrote (excluding bit 0). Compare expected vs actual
+    int is_test_passed = (masked_read_val == masked_written_val);
+
+    if (is_test_passed) {
+        cortos_printf("Timer Register Read/Write Test PASSED\n");
+    } else {
+        cortos_printf("Timer Register Read/Write Test FAILED: Wrote 0x%08X, Read 0x%08X\n",
+               test_val, read_val);
+    }
+}
+void my_timer_interrupt_handler()
+{
+	// clear timer control register.
+	__ajit_write_timer_control_register_via_vmap__ (0x0);
+
+	// reenable the timer, right away..
+	__ajit_write_timer_control_register_via_vmap__ (TIMERINITVAL);	
+
+	
+	if(timer_interrupt_counter <= NSAMPLES) {
+
+		uint64_t curr_time_64 = __ajit_get_clock_time();
+		if(timer_interrupt_counter > 0)
+		{
+			uint64_t interval =  (curr_time_64 - last_time_64);
+			if(interval < min_interval)
+			{
+				min_interval = interval;
+			}
+
+			if(interval > max_interval)
+				max_interval = interval;
+		}
+		last_time_64 = curr_time_64;
+		timer_interrupt_counter++;
+	}
+
+	if(timer_interrupt_counter >= NSAMPLES)
+		exit_flag = 1;
+
+}
+
+void test_timer_countdown() {
+    uint32_t countdown_val = 0x00000010; // Small countdown value
+    __ajit_write_timer_control_register_via_vmap__(countdown_val | 1); // Enable timer
+
+    // Read and check if it decrements
+    int i;
+    cortos_printf("Timer Countdown Test:\n");
+    //for ( i = 0; i < 5; i++) {
+        uint32_t read_val = __ajit_read_timer_control_register_via_vmap__();
+        cortos_printf("    Timer Value: 0x%08X\n", read_val);
+    //}
+
+    // Check if it stops at 0
+    //while (__ajit_read_timer_control_register_via_vmap__() != 0) {} // Wait for timer to expire
+
+    // Read final value
+    uint32_t final_val = __ajit_read_timer_control_register_via_vmap__();
+    if (final_val == 0) {
+        cortos_printf("Timer Countdown Test PASSED\n");
+    } else {
+        cortos_printf("Timer Countdown Test FAILED: Expected 0, Got 0x%08X\n", final_val);
+    }
+}
+
+int main() {
+    // enable serial 0 device..  enable_tx, enable_rx, enable_interrupts    
+    __ajit_serial_configure_via_vmap__ (1, 1, 1);
+
+    // set baud rate.
+    __ajit_serial_set_baudrate_via_vmap__ (115200, CLK_FREQUENCY);
+
+    // bring uart out of reset.
+    __ajit_serial_set_uart_reset_via_vmap__ (0);
+
+    // enable interrupt controller for the current thread.
+	enableInterruptControllerAndAllInterrupts(0,0);
+	
+    // enable interrupt controller for the current thread.
+    cortos_printf("Starting Timer Basic Tests...\n");
+
+    test_timer_register_rw(); // Simple Read/Write Test
+    test_timer_countdown();   // Basic Countdown Test
+
+    cortos_printf("Timer Tests Completed.\n");
+    return(0);
+}

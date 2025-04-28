@@ -1,59 +1,77 @@
-// Program for finding jitter using timer interrupts
-#include <stdarg.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <ajit_access_routines.h>
 #include <ajit_mt_irc.h>
 #include <cortos.h>
 
-#define TIMERCOUNT 10000000
-#define COUNT TIMERCOUNT
-#define TIMERINITVAL ((COUNT << 1) | 1)
+#define TEST_STRING "hello123"
+#define TEST_LEN 8  // length of string (excluding null)
+#define CLK_FREQUENCY 100000000  // define if not defined elsewhere
 
-volatile int volatile serial_interrupt_counter = 0;
-volatile int volatile exit_flag  = 0;
+char tx_data[] = TEST_STRING;
+char rx_data[TEST_LEN + 1];  // +1 for null termination
+                             //
+// Needed for CoRTOS linker. We're not using interrupts, so it's empty.
+void my_serial_interrupt_handler() {}
 
-char buffer[1024];
-
-void my_serial_interrupt_handler()
+// Needed if your startup calls it.
+void setup()
 {
-	uint8_t c = __ajit_read_serial_rx_register__();
-
-	buffer[serial_interrupt_counter] = c;
-	buffer[serial_interrupt_counter+1]= 0;
-
-	serial_interrupt_counter++;
-
-
-	if((c == 'q') || (serial_interrupt_counter == 1022))
-		exit_flag = 1;
-}
-
-void setup ()
-{
-	// enable serial 0 device..  enable_tx, enable_rx, enable_interrupts	
-	__ajit_serial_configure__ (1, 1, 1);
-	// set baud rate.
+	__ajit_serial_configure__ (1, 1, 0);
 	__ajit_serial_set_baudrate__ (115200, CLK_FREQUENCY);
-	// bring uart out of reset.
 	__ajit_serial_set_uart_reset__ (0);
-
-	cortos_printf ("enabled serial\n");
-
-	// enable interrupt controller for the current thread.
-	enableInterruptControllerAndAllInterrupts(0,0);
 }
 
-int main () 
+int main()
 {
-	cortos_printf("Starting\n");
+	int i = 0;
+	setup();
+	cortos_printf("Starting serial loopback test...\n");
+	cortos_printf("Test string: %s\n", tx_data);
 
-	// infinite loop
-	while(!exit_flag)
+	// Send the test string
+	i = 0;
+	while (i < TEST_LEN)
 	{
+		while (!__ajit_serial_putchar__(tx_data[i])) {
+			// wait until TX is ready
+		}
+		i++;
 	}
 
-	cortos_printf("you typed:\n%s\nDone.\n", buffer);
-	return(0);
+	// Receive the echoed string
+	i = 0;
+	while (i < TEST_LEN)
+	{
+		char c = 0;
+		int received = 0;
+		while (!received)
+			received = __ajit_serial_getchar__(&c);
+
+		rx_data[i] = c;
+		i++;
+	}
+	rx_data[i] = 0;  // null terminate
+
+	// Print received string
+	cortos_printf("Received: %s\n", rx_data);
+
+	// Compare
+	int pass = 1;
+	for (i = 0; i < TEST_LEN; i++)
+	{
+		if (rx_data[i] != tx_data[i])
+		{
+			pass = 0;
+			break;
+		}
+	}
+
+	if (pass)
+		cortos_printf("PASS: TX == RX\n");
+	else
+		cortos_printf("FAIL: TX != RX\n");
+
+	return 0;
 }
 

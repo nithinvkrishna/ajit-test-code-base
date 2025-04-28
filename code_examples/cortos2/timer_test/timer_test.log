@@ -1,0 +1,140 @@
+------------------------------
+Starting Timer Basic Tests...
+------------------------------
+
+
+timer_reg_read_after_write_test: Entered for value 0x00000045
+
+my_timer_interrupt_handler: Entered
+my_timer_interrupt_handler: Entered. Interrupt control reg value(bypass) = 0x0400FFFE
+Printing bitwise value for Interrupt control reg
+Bit 31: 0
+Bit 30: 0
+Bit 29: 0
+Bit 28: 0
+Bit 27: 0
+Bit 26: 1
+Bit 25: 0
+Bit 24: 0
+Bit 23: 0
+Bit 22: 0
+Bit 21: 0
+Bit 20: 0
+Bit 19: 0
+Bit 18: 0
+Bit 17: 0
+Bit 16: 0
+Bit 15: 1
+Bit 14: 1
+Bit 13: 1
+Bit 12: 1
+Bit 11: 1
+Bit 10: 1
+Bit  9: 1
+Bit  8: 1
+Bit  7: 1
+Bit  6: 1
+Bit  5: 1
+Bit  4: 1
+Bit  3: 1
+Bit  2: 1
+Bit  1: 1
+Bit  0: 0
+
+
+verify_timer_reg_value: Entered for ref value 0x00000000
+ERROR: Timer Register value verification failed! Expected = 0x00000000, Actual = 0x00000045
+ERROR: Timer reg is not 0 when interrupt_handler is invoked! 
+my_timer_interrupt_handler: Loop number: 0
+my_timer_interrupt_handler: NSAMPLES = 100, exit_flag = 0
+
+Before disabling, Timer Register = 0x00000045
+ICR cleared. ICR value = 0x04000000
+disable_timer_val = 0x00000000, enable_timer_val = 0xF0000001
+my_timer_interrupt_handler: timer control reg written manually with entry 0x00000000
+my_timer_interrupt_handler: Timer control reg disabled! Interrupt control reg value (bypass) = 0x00000000
+Printing bitwise value for Interrupt control reg
+Bit 31: 0
+Bit 30: 0
+Bit 29: 0
+Bit 28: 0
+Bit 27: 0
+Bit 26: 0
+Bit 25: 0
+Bit 24: 0
+Bit 23: 0
+Bit 22: 0
+Bit 21: 0
+Bit 20: 0
+Bit 19: 0
+Bit 18: 0
+Bit 17: 0
+Bit 16: 0
+Bit 15: 0
+Bit 14: 0
+Bit 13: 0
+Bit 12: 0
+Bit 11: 0
+Bit 10: 0
+Bit  9: 0
+Bit  8: 0
+Bit  7: 0
+Bit  6: 0
+Bit  5: 0
+Bit  4: 0
+Bit  3: 0
+Bit  2: 0
+Bit  1: 0
+Bit  0: 0
+
+my_timer_interrupt_handler: timer control reg written manually with entry 0xF0000001
+my_timer_interrupt_handler: Timer control reg enabled! Interrupt control reg value (bypass) = 0x00000000
+Printing bitwise value for Interrupt control reg
+Bit 31: 0
+Bit 30: 0
+Bit 29: 0
+Bit 28: 0
+Bit 27: 0
+Bit 26: 0
+Bit 25: 0
+Bit 24: 0
+Bit 23: 0
+Bit 22: 0
+Bit 21: 0
+Bit 20: 0
+Bit 19: 0
+Bit 18: 0
+Bit 17: 0
+Bit 16: 0
+Bit 15: 0
+Bit 14: 0
+Bit 13: 0
+Bit 12: 0
+Bit 11: 0
+Bit 10: 0
+Bit  9: 0
+Bit  8: 0
+Bit  7: 0
+Bit  6: 0
+Bit  5: 0
+Bit  4: 0
+Bit  3: 0
+Bit  2: 0
+Bit  1: 0
+Bit  0: 0
+
+
+verify_timer_reg_value: Entered for ref value 0x00000045
+ERROR: Timer Register value verification failed! Expected = 0x00000045, Actual = 0xF0000001
+timer_reg_read_after_write_test(0x00000045): ERROR: FAILED!
+
+timer_reg_read_after_write_test: Entered for value 0x00000095
+
+verify_timer_reg_value: Entered for ref value 0x00000095
+Timer Register value = 0x00000095, is verified
+timer_reg_read_after_write_test(0x00000095): PASSED!
+------------------------------
+Timer Tests Completed.
+------------------------------
+
+

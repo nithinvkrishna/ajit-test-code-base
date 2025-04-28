@@ -133,7 +133,7 @@ __ajit_set_ipi_value_register__:
 	.proc	016
 __ajit_get_ipi_value_register__:
 	jmp	%o7+8
-	 ld	[%g0+4], %o0
+	 ld	[%o0+4], %o0
 	.size	__ajit_get_ipi_value_register__, .-__ajit_get_ipi_value_register__
 	.align 4
 	.global __ajit_read_ipi_info__

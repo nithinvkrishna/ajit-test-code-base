@@ -38,8 +38,9 @@ ajit_set_interrupt_handler:
 	.proc	016
 readInterruptControlRegister:
 	add	%o0, %o0, %o0
-	sethi	%hi(-53248), %g1
+	sethi	%hi(-2147483648), %g1
 	add	%o0, %o1, %o1
+	or	%g1, 512, %g1
 	sll	%o1, 2, %o0
 	add	%o0, %g1, %o0
 	or	%o7, %g0, %g1
@@ -52,11 +53,12 @@ readInterruptControlRegister:
 	.proc	020
 writeInterruptControlRegister:
 	add	%o0, %o0, %o0
-	sethi	%hi(-53248), %g1
 	add	%o0, %o1, %o1
 	mov	%o2, %o0
-	sll	%o1, 2, %o1
-	add	%o1, %g1, %o1
+	sll	%o1, 2, %g1
+	sethi	%hi(-2147483648), %o1
+	or	%o1, 512, %o1
+	add	%g1, %o1, %o1
 	or	%o7, %g0, %g1
 	call	__ajit_store_word_mmu_bypass__, 0
 	 or	%g1, %g0, %o7

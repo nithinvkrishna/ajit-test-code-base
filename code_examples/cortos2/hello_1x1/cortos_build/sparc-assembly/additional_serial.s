@@ -5,8 +5,8 @@
 	.type	__ajit_write_serial_1_control_register_via_bypass__, #function
 	.proc	020
 __ajit_write_serial_1_control_register_via_bypass__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 576, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 256, %g1
 #APP
 ! 8 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	sta %o0, [%g1] 32
@@ -21,8 +21,8 @@ __ajit_write_serial_1_control_register_via_bypass__:
 	.type	__ajit_read_serial_1_control_register_via_bypass__, #function
 	.proc	016
 __ajit_read_serial_1_control_register_via_bypass__:
-	sethi	%hi(-53248), %o0
-	or	%o0, 576, %o0
+	sethi	%hi(-2147481600), %o0
+	or	%o0, 256, %o0
 #APP
 ! 14 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	lda [%o0] 32, %o0
@@ -37,8 +37,8 @@ __ajit_read_serial_1_control_register_via_bypass__:
 	.type	__ajit_write_serial_1_tx_register_via_bypass__, #function
 	.proc	020
 __ajit_write_serial_1_tx_register_via_bypass__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 580, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 260, %g1
 #APP
 ! 20 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	stuba %o0, [%g1] 32
@@ -53,8 +53,8 @@ __ajit_write_serial_1_tx_register_via_bypass__:
 	.type	__ajit_read_serial_1_tx_register_via_bypass__, #function
 	.proc	014
 __ajit_read_serial_1_tx_register_via_bypass__:
-	sethi	%hi(-53248), %o0
-	or	%o0, 580, %o0
+	sethi	%hi(-2147481600), %o0
+	or	%o0, 260, %o0
 #APP
 ! 25 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	lduba [%o0] 32, %o0
@@ -69,8 +69,8 @@ __ajit_read_serial_1_tx_register_via_bypass__:
 	.type	__ajit_read_serial_1_rx_register_via_bypass__, #function
 	.proc	014
 __ajit_read_serial_1_rx_register_via_bypass__:
-	sethi	%hi(-53248), %o0
-	or	%o0, 584, %o0
+	sethi	%hi(-2147481600), %o0
+	or	%o0, 264, %o0
 #APP
 ! 31 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	lduba [%o0] 32, %o0
@@ -152,8 +152,8 @@ __ajit_serial_1_configure_via_bypass__:
 	.type	__ajit_read_serial_1_baud_limit_register_via_bypass__, #function
 	.proc	016
 __ajit_read_serial_1_baud_limit_register_via_bypass__:
-	sethi	%hi(-53248), %o0
-	or	%o0, 588, %o0
+	sethi	%hi(-2147481600), %o0
+	or	%o0, 268, %o0
 #APP
 ! 67 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	lda [%o0] 32, %o0
@@ -168,8 +168,8 @@ __ajit_read_serial_1_baud_limit_register_via_bypass__:
 	.type	__ajit_write_serial_1_baud_limit_register_via_bypass__, #function
 	.proc	020
 __ajit_write_serial_1_baud_limit_register_via_bypass__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 588, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 268, %g1
 #APP
 ! 73 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	sta %o0, [%g1] 32
@@ -184,8 +184,8 @@ __ajit_write_serial_1_baud_limit_register_via_bypass__:
 	.type	__ajit_read_serial_1_baud_frequency_register_via_bypass__, #function
 	.proc	016
 __ajit_read_serial_1_baud_frequency_register_via_bypass__:
-	sethi	%hi(-53248), %o0
-	or	%o0, 592, %o0
+	sethi	%hi(-2147481600), %o0
+	or	%o0, 272, %o0
 #APP
 ! 79 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	lda [%o0] 32, %o0
@@ -200,8 +200,8 @@ __ajit_read_serial_1_baud_frequency_register_via_bypass__:
 	.type	__ajit_write_serial_1_baud_frequency_register_via_bypass__, #function
 	.proc	020
 __ajit_write_serial_1_baud_frequency_register_via_bypass__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 592, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 272, %g1
 #APP
 ! 85 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/additional_serial.c" 1
 	sta %o0, [%g1] 32
@@ -241,8 +241,8 @@ __ajit_serial_1_set_uart_reset_via_bypass__:
 	.type	__ajit_write_serial_1_control_register_via_vmap__, #function
 	.proc	020
 __ajit_write_serial_1_control_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 576, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 256, %g1
 	jmp	%o7+8
 	 st	%o0, [%g1]
 	.size	__ajit_write_serial_1_control_register_via_vmap__, .-__ajit_write_serial_1_control_register_via_vmap__
@@ -251,8 +251,8 @@ __ajit_write_serial_1_control_register_via_vmap__:
 	.type	__ajit_read_serial_1_control_register_via_vmap__, #function
 	.proc	016
 __ajit_read_serial_1_control_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 576, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 256, %g1
 	jmp	%o7+8
 	 ldub	[%g1], %o0
 	.size	__ajit_read_serial_1_control_register_via_vmap__, .-__ajit_read_serial_1_control_register_via_vmap__
@@ -261,8 +261,8 @@ __ajit_read_serial_1_control_register_via_vmap__:
 	.type	__ajit_write_serial_1_tx_register_via_vmap__, #function
 	.proc	020
 __ajit_write_serial_1_tx_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 580, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 260, %g1
 	jmp	%o7+8
 	 stb	%o0, [%g1]
 	.size	__ajit_write_serial_1_tx_register_via_vmap__, .-__ajit_write_serial_1_tx_register_via_vmap__
@@ -271,8 +271,8 @@ __ajit_write_serial_1_tx_register_via_vmap__:
 	.type	__ajit_read_serial_1_tx_register_via_vmap__, #function
 	.proc	014
 __ajit_read_serial_1_tx_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 580, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 260, %g1
 	jmp	%o7+8
 	 ldub	[%g1], %o0
 	.size	__ajit_read_serial_1_tx_register_via_vmap__, .-__ajit_read_serial_1_tx_register_via_vmap__
@@ -281,8 +281,8 @@ __ajit_read_serial_1_tx_register_via_vmap__:
 	.type	__ajit_read_serial_1_rx_register_via_vmap__, #function
 	.proc	014
 __ajit_read_serial_1_rx_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 584, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 264, %g1
 	jmp	%o7+8
 	 ldub	[%g1], %o0
 	.size	__ajit_read_serial_1_rx_register_via_vmap__, .-__ajit_read_serial_1_rx_register_via_vmap__
@@ -358,8 +358,8 @@ __ajit_serial_1_configure_via_vmap__:
 	.type	__ajit_read_serial_1_baud_limit_register_via_vmap__, #function
 	.proc	016
 __ajit_read_serial_1_baud_limit_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 588, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 268, %g1
 	jmp	%o7+8
 	 ld	[%g1], %o0
 	.size	__ajit_read_serial_1_baud_limit_register_via_vmap__, .-__ajit_read_serial_1_baud_limit_register_via_vmap__
@@ -368,8 +368,8 @@ __ajit_read_serial_1_baud_limit_register_via_vmap__:
 	.type	__ajit_write_serial_1_baud_limit_register_via_vmap__, #function
 	.proc	020
 __ajit_write_serial_1_baud_limit_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 588, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 268, %g1
 	jmp	%o7+8
 	 st	%o0, [%g1]
 	.size	__ajit_write_serial_1_baud_limit_register_via_vmap__, .-__ajit_write_serial_1_baud_limit_register_via_vmap__
@@ -378,8 +378,8 @@ __ajit_write_serial_1_baud_limit_register_via_vmap__:
 	.type	__ajit_read_serial_1_baud_frequency_register_via_vmap__, #function
 	.proc	016
 __ajit_read_serial_1_baud_frequency_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 592, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 272, %g1
 	jmp	%o7+8
 	 ld	[%g1], %o0
 	.size	__ajit_read_serial_1_baud_frequency_register_via_vmap__, .-__ajit_read_serial_1_baud_frequency_register_via_vmap__
@@ -388,8 +388,8 @@ __ajit_read_serial_1_baud_frequency_register_via_vmap__:
 	.type	__ajit_write_serial_1_baud_frequency_register_via_vmap__, #function
 	.proc	020
 __ajit_write_serial_1_baud_frequency_register_via_vmap__:
-	sethi	%hi(-53248), %g1
-	or	%g1, 592, %g1
+	sethi	%hi(-2147481600), %g1
+	or	%g1, 272, %g1
 	jmp	%o7+8
 	 st	%o0, [%g1]
 	.size	__ajit_write_serial_1_baud_frequency_register_via_vmap__, .-__ajit_write_serial_1_baud_frequency_register_via_vmap__

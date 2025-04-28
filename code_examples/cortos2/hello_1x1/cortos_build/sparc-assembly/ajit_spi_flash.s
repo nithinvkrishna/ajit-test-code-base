@@ -5,8 +5,7 @@
 	.type	ajit_spi_transfer_is_in_progress, #function
 	.proc	016
 ajit_spi_transfer_is_in_progress:
-	sethi	%hi(-53248), %o0
-	or	%o0, 776, %o0
+	add	%o0, 8, %o0
 #APP
 ! 17 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
 	lda [%o0] 32, %o0
@@ -22,28 +21,26 @@ ajit_spi_transfer_is_in_progress:
 	.proc	020
 ajit_spi_flash_send_byte:
 	save	%sp, -96, %sp
-	sethi	%hi(-53248), %i5
-	or	%i5, 768, %g1
 #APP
-! 32 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	sta %i1, [%g1] 32
+! 33 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	sta %i2, [%i0] 32
 	
 ! 0 "" 2
 #NO_APP
-	and	%i0, 7, %i0
-	and	%i2, 1, %i2
-	sll	%i0, 3, %i0
-	add	%i2, %i2, %i2
-	or	%i0, 1, %i0
-	or	%i5, 776, %i5
-	or	%i0, %i2, %i2
+	and	%i1, 7, %i1
+	and	%i3, 1, %i3
+	sll	%i1, 4, %i1
+	add	%i3, %i3, %i3
+	or	%i1, 1, %i1
+	add	%i0, 8, %i0
+	or	%i1, %i3, %i3
 #APP
-! 40 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	sta %i2, [%i5] 32
+! 41 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	sta %i3, [%i0] 32
 	
 ! 0 "" 2
 ! 17 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	lda [%i5] 32, %g1
+	lda [%i0] 32, %g1
 	
 ! 0 "" 2
 #NO_APP
@@ -55,7 +52,7 @@ ajit_spi_flash_send_byte:
 	 mov	64, %o0
 #APP
 ! 17 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	lda [%i5] 32, %g1
+	lda [%i0] 32, %g1
 	
 ! 0 "" 2
 #NO_APP
@@ -72,28 +69,26 @@ ajit_spi_flash_send_byte:
 	.proc	014
 ajit_spi_flash_receive_byte:
 	save	%sp, -96, %sp
-	sethi	%hi(-53248), %i5
 	mov	0, %g1
-	or	%i5, 768, %g2
 #APP
-! 56 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	sta %g1, [%g2] 32
+! 58 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	sta %g1, [%i0] 32
 	
 ! 0 "" 2
 #NO_APP
-	and	%i0, 7, %i0
-	and	%i1, 1, %i1
-	sll	%i0, 3, %i0
-	add	%i1, %i1, %i1
-	or	%i0, 1, %i0
-	or	%i5, 776, %i5
-	or	%i0, %i1, %i1
+	and	%i1, 7, %i1
+	and	%i2, 1, %i2
+	sll	%i1, 4, %i1
+	add	%i2, %i2, %i2
+	or	%i1, 1, %i1
+	add	%i0, 8, %i5
+	or	%i1, %i2, %i2
 #APP
-! 64 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	sta %i1, [%i5] 32
+! 66 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	sta %i2, [%i5] 32
 	
 ! 0 "" 2
-! 73 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+! 75 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
 	sta %g1, [%i5] 32
 	
 ! 0 "" 2
@@ -106,7 +101,7 @@ ajit_spi_flash_receive_byte:
 	 mov	64, %o0
 	mov	0, %g1
 #APP
-! 73 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+! 75 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
 	sta %g1, [%i5] 32
 	
 ! 0 "" 2
@@ -114,8 +109,8 @@ ajit_spi_flash_receive_byte:
 	b,a	.L12
 .L10:
 #APP
-! 86 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	lda [%g2] 32, %i0
+! 88 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	lda [%i0] 32, %i0
 	
 ! 0 "" 2
 #NO_APP
@@ -128,8 +123,8 @@ ajit_spi_flash_receive_byte:
 	.type	ajit_spi_flash_reset, #function
 	.proc	020
 ajit_spi_flash_reset:
-	mov	102, %o1
-	mov	1, %o2
+	mov	102, %o2
+	mov	1, %o3
 	or	%o7, %g0, %g1
 	call	ajit_spi_flash_send_byte, 0
 	 or	%g1, %g0, %o7
@@ -139,43 +134,44 @@ ajit_spi_flash_reset:
 	.type	ajit_spi_flash_memory_reset, #function
 	.proc	020
 ajit_spi_flash_memory_reset:
-	mov	153, %o1
-	mov	1, %o2
+	mov	153, %o2
+	mov	1, %o3
 	or	%o7, %g0, %g1
 	call	ajit_spi_flash_send_byte, 0
 	 or	%g1, %g0, %o7
 	.size	ajit_spi_flash_memory_reset, .-ajit_spi_flash_memory_reset
 	.align 4
-	.global ajit_spi_set_clock_frequency
-	.type	ajit_spi_set_clock_frequency, #function
+	.global ajit_spi_configure
+	.type	ajit_spi_configure, #function
 	.proc	020
-ajit_spi_set_clock_frequency:
-	and	%o0, 15, %o0
-	sethi	%hi(-53248), %g1
-	or	%o0, 16, %o0
-	or	%g1, 780, %g1
+ajit_spi_configure:
+	sll	%o1, 4, %o1
+	add	%o0, 12, %o0
+	or	%o2, %o1, %o2
 #APP
-! 107 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
-	sta %o0, [%g1] 32
+! 124 "/home/ajit/ajit-toolchain/AjitPublicResources/tools/ajit_access_routines_mt/src/ajit_spi_flash.c" 1
+	sta %o2, [%o0] 32
 	
 ! 0 "" 2
 #NO_APP
 	jmp	%o7+8
 	 nop
-	.size	ajit_spi_set_clock_frequency, .-ajit_spi_set_clock_frequency
+	.size	ajit_spi_configure, .-ajit_spi_configure
 	.align 4
 	.global ajit_spi_flash_is_busy
 	.type	ajit_spi_flash_is_busy, #function
 	.proc	016
 ajit_spi_flash_is_busy:
 	save	%sp, -96, %sp
-	mov	0, %o2
+	mov	0, %o3
 	mov	%i0, %o0
+	mov	%i1, %o1
 	call	ajit_spi_flash_send_byte, 0
-	 mov	5, %o1
+	 mov	5, %o2
 	mov	%i0, %o0
+	mov	%i1, %o1
 	call	ajit_spi_flash_receive_byte, 0
-	 mov	1, %o1
+	 mov	1, %o2
 	and	%o0, 1, %i0
 	jmp	%i7+8
 	 restore
@@ -186,39 +182,44 @@ ajit_spi_flash_is_busy:
 	.proc	020
 ajit_spi_flash_generic_erase:
 	save	%sp, -96, %sp
-	mov	1, %o2
+	mov	1, %o3
 	mov	%i0, %o0
-	call	ajit_spi_flash_send_byte, 0
-	 mov	6, %o1
 	mov	%i1, %o1
+	call	ajit_spi_flash_send_byte, 0
+	 mov	6, %o2
+	mov	%i2, %o2
 	mov	%i0, %o0
+	mov	%i1, %o1
 	call	ajit_spi_flash_send_byte, 0
-	 mov	0, %o2
+	 mov	0, %o3
 	mov	%i0, %o0
-	mov	0, %o2
-	srl	%i2, 16, %o1
+	mov	%i1, %o1
+	mov	0, %o3
+	srl	%i3, 16, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
-	mov	0, %o2
-	srl	%i2, 8, %o1
+	 and	%o2, 0xff, %o2
+	mov	0, %o3
+	srl	%i3, 8, %o2
 	mov	%i0, %o0
+	and	%o2, 0xff, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
-	and	%i2, 0xff, %o1
+	 mov	%i1, %o1
+	and	%i3, 0xff, %o2
 	mov	%i0, %o0
-	mov	1, %o2
+	mov	%i1, %o1
+	mov	1, %o3
 	call	ajit_spi_flash_send_byte, 0
-	 mov	4, %i1
+	 mov	4, %i2
 	call	ajit_spi_flash_send_byte, 0
-	 restore %g0, 1, %o2
+	 restore %g0, 1, %o3
 	.size	ajit_spi_flash_generic_erase, .-ajit_spi_flash_generic_erase
 	.align 4
 	.global ajit_spi_flash_subsector_erase
 	.type	ajit_spi_flash_subsector_erase, #function
 	.proc	020
 ajit_spi_flash_subsector_erase:
-	mov	%o1, %o2
-	mov	32, %o1
+	mov	%o2, %o3
+	mov	32, %o2
 	or	%o7, %g0, %g1
 	call	ajit_spi_flash_generic_erase, 0
 	 or	%g1, %g0, %o7
@@ -228,8 +229,8 @@ ajit_spi_flash_subsector_erase:
 	.type	ajit_spi_flash_sector_erase, #function
 	.proc	020
 ajit_spi_flash_sector_erase:
-	mov	%o1, %o2
-	mov	216, %o1
+	mov	%o2, %o3
+	mov	216, %o2
 	or	%o7, %g0, %g1
 	call	ajit_spi_flash_generic_erase, 0
 	 or	%g1, %g0, %o7
@@ -239,8 +240,8 @@ ajit_spi_flash_sector_erase:
 	.type	ajit_spi_flash_bulk_erase, #function
 	.proc	020
 ajit_spi_flash_bulk_erase:
-	mov	%o1, %o2
-	mov	199, %o1
+	mov	%o2, %o3
+	mov	199, %o2
 	or	%o7, %g0, %g1
 	call	ajit_spi_flash_generic_erase, 0
 	 or	%g1, %g0, %o7
@@ -251,40 +252,45 @@ ajit_spi_flash_bulk_erase:
 	.proc	020
 ajit_spi_flash_read:
 	save	%sp, -96, %sp
-	mov	3, %o1
+	mov	3, %o2
 	mov	%i0, %o0
+	mov	%i1, %o1
 	call	ajit_spi_flash_send_byte, 0
-	 mov	0, %o2
+	 mov	0, %o3
 	mov	%i0, %o0
-	mov	0, %o2
-	srl	%i1, 16, %o1
+	mov	%i1, %o1
+	mov	0, %o3
+	srl	%i2, 16, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
-	mov	0, %o2
-	srl	%i1, 8, %o1
+	 and	%o2, 0xff, %o2
+	mov	0, %o3
+	srl	%i2, 8, %o2
 	mov	%i0, %o0
+	and	%o2, 0xff, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
-	and	%i1, 0xff, %o1
+	 mov	%i1, %o1
+	and	%i2, 0xff, %o2
 	mov	%i0, %o0
+	mov	%i1, %o1
 	call	ajit_spi_flash_send_byte, 0
-	 mov	0, %o2
-	add	%i3, -1, %i1
-	mov	0, %i4
-	cmp	%i3, 0
+	 mov	0, %o3
+	add	%i4, -1, %l0
+	mov	0, %i2
+	cmp	%i4, 0
 	be	.L27
 	 mov	0, %i5
 .L25:
-	xor	%i4, %i1, %g1
+	xor	%i2, %l0, %g1
 	subcc	%g0, %g1, %g0
 	mov	%i0, %o0
+	subx	%g0, -1, %o2
 	call	ajit_spi_flash_receive_byte, 0
-	 subx	%g0, -1, %o1
-	stb	%o0, [%i2+%i4]
+	 mov	%i1, %o1
+	stb	%o0, [%i3+%i2]
 	add	%i5, 1, %i5
-	cmp	%i5, %i3
+	cmp	%i5, %i4
 	bne	.L25
-	 mov	%i5, %i4
+	 mov	%i5, %i2
 .L27:
 	jmp	%i7+8
 	 restore
@@ -295,48 +301,73 @@ ajit_spi_flash_read:
 	.proc	020
 ajit_spi_flash_write:
 	save	%sp, -96, %sp
-	mov	6, %o1
-	mov	1, %o2
-	call	ajit_spi_flash_send_byte, 0
-	 mov	%i0, %o0
+	mov	6, %o2
+	mov	1, %o3
 	mov	%i0, %o0
-	mov	2, %o1
 	call	ajit_spi_flash_send_byte, 0
-	 mov	0, %o2
+	 mov	%i1, %o1
 	mov	%i0, %o0
-	mov	0, %o2
-	srl	%i1, 16, %o1
+	mov	%i1, %o1
+	mov	2, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
-	mov	0, %o2
+	 mov	0, %o3
 	mov	%i0, %o0
-	srl	%i1, 8, %o1
+	mov	%i1, %o1
+	mov	0, %o3
+	srl	%i2, 16, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 and	%o1, 0xff, %o1
+	 and	%o2, 0xff, %o2
+	mov	0, %o3
+	srl	%i2, 8, %o2
 	mov	%i0, %o0
-	and	%i1, 0xff, %o1
+	and	%o2, 0xff, %o2
 	call	ajit_spi_flash_send_byte, 0
-	 mov	0, %o2
-	add	%i3, -1, %i4
+	 mov	%i1, %o1
+	and	%i2, 0xff, %o2
+	mov	%i0, %o0
+	mov	%i1, %o1
+	call	ajit_spi_flash_send_byte, 0
+	 mov	0, %o3
+	add	%i4, -1, %i2
 	mov	0, %g1
-	cmp	%i3, 0
+	cmp	%i4, 0
 	be	.L31
 	 mov	0, %i5
 .L32:
-	xor	%g1, %i4, %g2
+	xor	%g1, %i2, %g2
 	subcc	%g0, %g2, %g0
-	ldub	[%i2+%g1], %o1
-	subx	%g0, -1, %o2
+	ldub	[%i3+%g1], %o2
+	subx	%g0, -1, %o3
+	mov	%i0, %o0
 	call	ajit_spi_flash_send_byte, 0
-	 mov	%i0, %o0
+	 mov	%i1, %o1
 	add	%i5, 1, %i5
-	cmp	%i5, %i3
+	cmp	%i5, %i4
 	bne	.L32
 	 mov	%i5, %g1
 .L31:
-	mov	4, %i1
+	mov	4, %i2
 	call	ajit_spi_flash_send_byte, 0
-	 restore %g0, 1, %o2
+	 restore %g0, 1, %o3
 	.size	ajit_spi_flash_write, .-ajit_spi_flash_write
+	.align 4
+	.global ajit_spi_get_register
+	.type	ajit_spi_get_register, #function
+	.proc	014
+ajit_spi_get_register:
+	sll	%o1, 2, %o1
+	ld	[%o1+%o0], %o0
+	jmp	%o7+8
+	 and	%o0, 0xff, %o0
+	.size	ajit_spi_get_register, .-ajit_spi_get_register
+	.align 4
+	.global ajit_spi_set_register
+	.type	ajit_spi_set_register, #function
+	.proc	020
+ajit_spi_set_register:
+	sll	%o1, 2, %o1
+	jmp	%o7+8
+	 st	%o2, [%o1+%o0]
+	.size	ajit_spi_set_register, .-ajit_spi_set_register
 	.ident	"GCC: (Buildroot 2014.08) 4.7.4"
 	.section	.note.GNU-stack,"",@progbits

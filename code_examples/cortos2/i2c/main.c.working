@@ -1,0 +1,268 @@
+#include <stdlib.h>
+#include <stdint.h>
+#include "ajit_access_routines.h"
+#include "mp_printf.h"
+#include <cortos.h>
+
+// 16 words here.
+//#define ADDR_GPIO_CONFIG 0xffff340d
+//#define TEST_ARRAY_SIZE 16//
+
+volatile int interrupt_counter = 0;
+volatile int volatile interrupt_flag = 0;
+
+//uint64_t  test_array[TEST_ARRAY_SIZE];
+
+void setup()
+{
+	// configure uart
+	__ajit_serial_configure__(1,0,0);
+	__ajit_serial_set_baudrate__ (115200, 80000000);
+	__ajit_serial_set_uart_reset__ (0);
+
+	cortos_printf ("enabled serial.\n");
+
+	// enable interrupt controller for the current thread.
+	enableInterruptControllerAndAllInterrupts(0,0);
+	//cortos_printf ("enabled interrupt controller.\n");
+}
+
+//-------------------- CONFIG REGISTER --------------------//
+
+void write_to_i2c_config_register (uint32_t val)
+{
+	*((uint32_t*) ADDR_I2C_MASTER_CONFIG_REGISTER) = val;
+	//__ajit_store_word_mmu_bypass__(val, ADDR_GPIO_CONFIG);	
+}
+
+uint32_t read_from_i2c_config_register (){
+
+	uint32_t ret_val = *((uint32_t*) ADDR_I2C_MASTER_CONFIG_REGISTER); 
+	return(ret_val);
+	
+	//uint32_t val = __ajit_load_word_mmu_bypass__ (ADDR_GPIO_CONFIG);
+	//return(val);
+}
+
+void write_reg(volatile uint32_t* reg_addr, uint32_t val, const char* reg_name) {
+    uint32_t rd_val = *reg_addr;
+    cortos_printf("[%s] value before write = 0x%08X\r\n", reg_name, rd_val);
+    *reg_addr = val;
+    cortos_printf("[%s] writing value 0x%08X\r\n", reg_name, val);
+}
+
+uint32_t read_reg(volatile uint32_t* reg_addr, const char* reg_name) {
+    uint32_t reg_val = *reg_addr;
+    cortos_printf("[%s] read after write, value 0x%08X\r\n", reg_name, reg_val);
+    return(reg_val);
+}
+
+void check_reg_status(volatile uint32_t* reg_addr, const char* reg_name) {
+    uint32_t read_val, write_val;
+
+    write_val = 0xFF45C12A;
+    write_reg(reg_addr, write_val, reg_name); // Write register before reading
+    read_val = read_reg(reg_addr, reg_name); // Read register after writing
+
+    // Check status
+    if (write_val == read_val) {
+        cortos_printf("[%s] Test Status - PASS: (Address: %p) - Written: 0x%08X, Read: 0x%08X\r\n", reg_name, reg_addr, write_val, read_val);
+    } else {
+        cortos_printf("[%s] Test Status - FAIL: (Address: %p) - Written: 0x%08X, Read: 0x%08X\r\n", reg_name, reg_addr, write_val, read_val);
+    }
+    read_val = 0x0; // resetting after status check for increased robustness
+    //cortos_printf("\r\n");
+}
+
+void run_register_tests() {
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting ADDR_IO register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_IO_MIN, "ADDR_IO_MIN"); // Test Failed
+    //check_reg_status((volatile uint32_t*) ADDR_IO_MAX, "ADDR_IO_MAX"); // Test hanging here
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed ADDR_IO register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting ADDR_SCRATCH_PAD_MEMORY register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_SCRATCH_PAD_MEMORY_MIN, "ADDR_SCRATCH_PAD_MEMORY_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_SCRATCH_PAD_MEMORY_MAX, "ADDR_SCRATCH_PAD_MEMORY_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed ADDR_SCRATCH_PAD_MEMORY register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting ADDR_INTERRUPT_CONTROLLER register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_INTERRUPT_CONTROLLER_MIN, "ADDR_INTERRUPT_CONTROLLER_MIN"); // Test Failed
+    check_reg_status((volatile uint32_t*) ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER, "ADDR_INTERRUPT_CONTROLLER_CONTROL_REGISTER"); // Test Failed
+    check_reg_status((volatile uint32_t*) ADDR_INTERRUPT_CONTROLLER_IPI_BASE, "ADDR_INTERRUPT_CONTROLLER_IPI_BASE");
+    //check_reg_status((volatile uint32_t*) ADDR_INTERRUPT_CONTROLLER_MAX, "ADDR_INTERRUPT_CONTROLLER_MAX"); // test hanging here
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed ADDR_INTERRUPT_CONTROLLER register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting I2C register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_I2C_MASTER_MIN, "ADDR_I2C_MASTER_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_I2C_MASTER_CONFIG_REGISTER, "ADDR_I2C_MASTER_CONFIG_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_I2C_MASTER_COMMAND_REGISTER, "ADDR_I2C_MASTER_COMMAND_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_I2C_MASTER_STATUS_REGISTER, "ADDR_I2C_MASTER_STATUS_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_I2C_MASTER_MAX, "ADDR_I2C_MASTER_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed I2C register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting GPIO register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_GPIO_MIN, "ADDR_GPIO_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_GPIO_DOUT_REGISTER, "ADDR_GPIO_DOUT_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_GPIO_DIN_REGISTER, "ADDR_GPIO_DIN_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER, "ADDR_CONFIG_UART_BAUD_CONTROL_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_GPIO_MAX, "ADDR_GPIO_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed GPIO register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting SPI register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_MIN, "ADDR_SPI_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_DATA_REGISTER_LOW, "ADDR_SPI_DATA_REGISTER_LOW");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_DATA_REGISTER_HIGH, "ADDR_SPI_DATA_REGISTER_HIGH");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_COMMAND_STATUS_REGISTER, "ADDR_SPI_COMMAND_STATUS_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_CONFIG_REGISTER, "ADDR_SPI_CONFIG_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SPI_MAX, "ADDR_SPI_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed SPI register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting TIMER register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_TIMER_MIN, "ADDR_TIMER_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_TIMER_CONTROL_REGISTER, "ADDR_TIMER_CONTROL_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TIMER_MAX, "ADDR_TIMER_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed TIMER register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting ADDR_TRACE_LOGGER register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_MIN, "ADDR_TRACE_LOGGER_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_CONTROL_REGISTER, "ADDR_TRACE_LOGGER_CONTROL_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER, "ADDR_TRACE_LOGGER_MIN_ADDR_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER, "ADDR_TRACE_LOGGER_MAX_ADDR_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_TRIGGER_REGISTER, "ADDR_TRACE_LOGGER_TRIGGER_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER, "ADDR_TRACE_LOGGER_SAMPLE_COUNT_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_TRACE_LOGGER_MAX, "ADDR_TRACE_LOGGER_MAX");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed ADDR_TRACE_LOGGER register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting ADDR_PERF_COUNTERS register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    check_reg_status((volatile uint32_t*) ADDR_PERF_COUNTERS_MIN, "ADDR_PERF_COUNTERS_MIN");  // Test Failed
+    //check_reg_status((volatile uint32_t*) ADDR_PERF_COUNTERS_MAX, "ADDR_PERF_COUNTERS_MAX"); // test hanging here
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed ADDR_PERF_COUNTERS register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Starting SERIAL register tests...\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_MIN, "ADDR_SERIAL_MIN"); // Not able to write. Only reading. Stuck at write, not proceeding beyond
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_CONTROL_REGISTER, "ADDR_SERIAL_CONTROL_REGISTER"); // Not able to write. Only reading.  Stuck at write, not proceeding beyond
+    // Note: the next two are byte accesses..
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_TX_REGISTER, "ADDR_SERIAL_TX_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_RX_REGISTER, "ADDR_SERIAL_RX_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_CONTROL_REGISTER, "ADDR_SERIAL_BAUD_CONTROL_REGISTER"); // Not able to write. Only reading.  Stuck at write, not proceeding beyond
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_LIMIT_REGISTER, "ADDR_SERIAL_BAUD_LIMIT_REGISTER"); // Not able to write. Only reading.  Stuck at write, not proceeding beyond
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_FREQUENCY_REGISTER, "ADDR_SERIAL_BAUD_FREQUENCY_REGISTER"); // Not able to write. Only reading.  Stuck at write, not proceeding beyond
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_MAX, "ADDR_SERIAL_MAX"); // Not able to read also. Test hangs here itself
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_MIN, "ADDR_SERIAL_1_MIN");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_CONTROL_REGISTER, "ADDR_SERIAL_1_CONTROL_REGISTER");
+    // Note: the next two are byte accesses..
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_TX_REGISTER, "ADDR_SERIAL_1_TX_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_RX_REGISTER, "ADDR_SERIAL_1_RX_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_BAUD_CONTROL_REGISTER, "ADDR_SERIAL_1_BAUD_CONTROL_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_BAUD_LIMIT_REGISTER, "ADDR_SERIAL_1_BAUD_LIMIT_REGISTER");
+    check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER, "ADDR_SERIAL_1_BAUD_FREQUENCY_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_1_MAX, "ADDR_SERIAL_1_MAX"); // Not able to read also. Test hangs here itself
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("Completed SERIAL register tests!\r\n");
+    cortos_printf("--------------------------------------------------\r\n");
+    cortos_printf("\r\n");
+}
+
+void my_external_interrupt_handler ()
+{
+	interrupt_counter++;
+
+	// disable everything!
+	//write_to_gpio_config_register(0x0);
+
+	// make sure it is disabled, and set interrupt flag = 1.
+	//interrupt_flag = (1 - read_from_gpio_config_register ());	
+}
+
+void main () 
+{
+    cortos_printf("Initialising register tests\r\n");
+    run_register_tests();
+	//cortos_printf ("\r\nAttention!! I2C is being configured!!\r\n");
+	////cortos_printf ("Writing to GPIO configuration register \n");
+	//write_to_i2c_config_register (0xff);//11110000 1-output, 0-input (default should have all ins)
+	//	
+	//cortos_printf("I2C is configured with value = 0x%x\r\n",read_from_i2c_config_register());
+    //cortos_printf("Address: %s = %p\r\n", "ADDR_SERIAL_MIN", (uint32_t*)ADDR_SERIAL_MIN);
+
+    //volatile uint32_t temp_val = *(volatile uint32_t*)ADDR_SERIAL_MIN;
+    //cortos_printf("Dummy read from ADDR_SERIAL_MIN: 0x%08X\r\n", temp_val);
+	
+	
+    //cortos_printf("Starting testing of Serial registers\r\n");
+
+    ////uint32_t rd_val;
+    //uint32_t wr_val = 0xFF45C12A;
+    //const char* reg_name = "ADDR_I2C_MASTER_MIN";
+    //volatile uint32_t* reg_addr = (volatile uint32_t*) ADDR_I2C_MASTER_MIN;
+    //*reg_addr = wr_val;
+
+    //cortos_printf("Writing reg %s: addr = 0x%08X with value = 0x%08X\r\n", reg_name, reg_addr, wr_val);
+    //uint32_t rd_val = *reg_addr;
+    //cortos_printf("Reading reg %s: addr = 0x%08X read value = 0x%08X\r\n", reg_name, reg_addr, rd_val);
+    //if(wr_val == rd_val) {
+    //    cortos_printf("Passed!\r\n");
+    //}
+    //else {
+    //    cortos_printf("Failed!\r\n");
+    //}
+
+    //cortos_printf("Starting testing of Serial registers\r\n");
+    //write_reg((volatile uint32_t*)ADDR_SERIAL_MIN, wr_val, "ADDR_SERIAL_MIN");
+    //rd_val = read_reg((volatile uint32_t*) ADDR_SERIAL_MIN, "ADDR_SERIAL_MIN");
+    //if(wr_val == rd_val) {
+    //    cortos_printf("Passed!\r\n");
+    //}
+    //else {
+    //    cortos_printf("Failed!\r\n");
+    //}
+
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_MIN, "ADDR_SERIAL_MIN");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_CONTROL_REGISTER, "ADDR_SERIAL_CONTROL_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_TX_REGISTER, "ADDR_SERIAL_TX_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_RX_REGISTER, "ADDR_SERIAL_RX_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_CONTROL_REGISTER, "ADDR_SERIAL_BAUD_CONTROL_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_LIMIT_REGISTER, "ADDR_SERIAL_BAUD_LIMIT_REGISTER");
+	cortos_printf("END of Program Execution\r\n");
+}
+
+
+

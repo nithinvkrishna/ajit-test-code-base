@@ -1,0 +1,136 @@
+#include <stdlib.h>
+#include <stdint.h>
+#include "ajit_access_routines.h"
+#include "mp_printf.h"
+#include <cortos.h>
+
+// 16 words here.
+//#define ADDR_GPIO_CONFIG 0xffff340d
+//#define TEST_ARRAY_SIZE 16//
+
+volatile int interrupt_counter = 0;
+volatile int volatile interrupt_flag = 0;
+
+//uint64_t  test_array[TEST_ARRAY_SIZE];
+
+void setup()
+{
+	// configure uart
+	__ajit_serial_configure__(1,0,0);
+	__ajit_serial_set_baudrate__ (115200, 80000000);
+	__ajit_serial_set_uart_reset__ (0);
+
+	cortos_printf ("enabled serial.\n");
+
+	// enable interrupt controller for the current thread.
+	enableInterruptControllerAndAllInterrupts(0,0);
+	//cortos_printf ("enabled interrupt controller.\n");
+}
+
+//-------------------- CONFIG REGISTER --------------------//
+
+void write_to_i2c_config_register (uint32_t val)
+{
+	*((uint32_t*) ADDR_I2C_MASTER_CONFIG_REGISTER) = val;
+	//__ajit_store_word_mmu_bypass__(val, ADDR_GPIO_CONFIG);	
+}
+
+uint32_t read_from_i2c_config_register (){
+
+	uint32_t ret_val = *((uint32_t*) ADDR_I2C_MASTER_CONFIG_REGISTER); 
+	return(ret_val);
+	
+	//uint32_t val = __ajit_load_word_mmu_bypass__ (ADDR_GPIO_CONFIG);
+	//return(val);
+}
+
+void write_reg(volatile uint32_t* reg_addr, uint32_t val, const char* reg_name) {
+    *reg_addr = val;
+    cortos_printf("For Reg: %s writing value 0x%08X", reg_name, val);
+}
+
+uint32_t read_reg(volatile uint32_t* reg_addr, const char* reg_name) {
+    uint32_t reg_val = *reg_addr;
+    cortos_printf("For Reg: %s writing value 0x%08X", reg_name, reg_val);
+    return(reg_val);
+}
+
+void check_reg_status(volatile uint32_t* reg_addr, const char* reg_name) {
+    uint32_t read_val, write_val;
+
+    write_val = 0xFF45C12A;
+    write_reg(reg_addr, write_val, reg_name); // Write register before reading
+    read_val = read_reg(reg_addr, reg_name); // Read register after writing
+
+    // Check status
+    if (write_val == read_val) {
+        cortos_printf("PASS: %s (Address: %p) - Written: 0x%08X, Read: 0x%08X\n", reg_name, reg_addr, write_val, read_val);
+    } else {
+        cortos_printf("FAIL: %s (Address: %p) - Written: 0x%08X, Read: 0x%08X\n", reg_name, reg_addr, write_val, read_val);
+    }
+    read_val = 0x0; // resetting after status check for increased robustness
+}
+
+void my_external_interrupt_handler ()
+{
+	interrupt_counter++;
+
+	// disable everything!
+	//write_to_gpio_config_register(0x0);
+
+	// make sure it is disabled, and set interrupt flag = 1.
+	//interrupt_flag = (1 - read_from_gpio_config_register ());	
+}
+
+void main () 
+{
+	//cortos_printf ("\r\nAttention!! I2C is being configured!!\r\n");
+	////cortos_printf ("Writing to GPIO configuration register \n");
+	//write_to_i2c_config_register (0xff);//11110000 1-output, 0-input (default should have all ins)
+	//	
+	//cortos_printf("I2C is configured with value = 0x%x\r\n",read_from_i2c_config_register());
+    //cortos_printf("Address: %s = %p\r\n", "ADDR_SERIAL_MIN", (uint32_t*)ADDR_SERIAL_MIN);
+
+    //volatile uint32_t temp_val = *(volatile uint32_t*)ADDR_SERIAL_MIN;
+    //cortos_printf("Dummy read from ADDR_SERIAL_MIN: 0x%08X\r\n", temp_val);
+	
+	
+    cortos_printf("Starting testing of Serial registers\r\n");
+
+    //uint32_t rd_val;
+    uint32_t wr_val = 0xFF45C12A;
+    const char* reg_name = "ADDR_I2C_MASTER_MIN";
+    volatile uint32_t* reg_addr = (volatile uint32_t*) ADDR_I2C_MASTER_MIN;
+    *reg_addr = wr_val;
+
+    cortos_printf("Writing reg %s: addr = 0x%08X with value = 0x%08X\r\n", reg_name, reg_addr, wr_val);
+    uint32_t rd_val = *reg_addr;
+    cortos_printf("Reading reg %s: addr = 0x%08X read value = 0x%08X\r\n", reg_name, reg_addr, rd_val);
+    if(wr_val == rd_val) {
+        cortos_printf("Passed!\r\n");
+    }
+    else {
+        cortos_printf("Failed!\r\n");
+    }
+
+    //cortos_printf("Starting testing of Serial registers\r\n");
+    //write_reg((volatile uint32_t*)ADDR_SERIAL_MIN, wr_val, "ADDR_SERIAL_MIN");
+    //rd_val = read_reg((volatile uint32_t*) ADDR_SERIAL_MIN, "ADDR_SERIAL_MIN");
+    //if(wr_val == rd_val) {
+    //    cortos_printf("Passed!\r\n");
+    //}
+    //else {
+    //    cortos_printf("Failed!\r\n");
+    //}
+
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_MIN, "ADDR_SERIAL_MIN");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_CONTROL_REGISTER, "ADDR_SERIAL_CONTROL_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_TX_REGISTER, "ADDR_SERIAL_TX_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_RX_REGISTER, "ADDR_SERIAL_RX_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_CONTROL_REGISTER, "ADDR_SERIAL_BAUD_CONTROL_REGISTER");
+    //check_reg_status((volatile uint32_t*) ADDR_SERIAL_BAUD_LIMIT_REGISTER, "ADDR_SERIAL_BAUD_LIMIT_REGISTER");
+	cortos_printf("END of Program Execution\r\n");
+}
+
+
+

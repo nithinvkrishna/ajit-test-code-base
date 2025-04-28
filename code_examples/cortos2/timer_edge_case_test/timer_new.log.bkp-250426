@@ -1,0 +1,8 @@
+Serial configuration completed
+Main program starting...
+Interrupt controller enable step done
+Timer register read successfully! Read value = 0x00000000
+ICR reg read successfully. Value = 0x0000FFFF
+Timer written w
+
+

@@ -27,7 +27,6 @@ void my_timer_interrupt_handler()
 	// reenable the timer, right away..
 	__ajit_write_timer_control_register_via_vmap__ (TIMERINITVAL);	
 
-	//
 	// Code which depends on interrupt being observed.
 	// 	(for example: status of Coprocessor action, scheduling of co-processor actions etc.)
 	//
@@ -35,7 +34,7 @@ void my_timer_interrupt_handler()
 	//  (e.g. PVT calculation)
 	// this code depends on the state which may have been altered
 	// above.
-	//
+	
 	if(timer_interrupt_counter <= NSAMPLES) {
 
 		uint64_t curr_time_64 = __ajit_get_clock_time();
