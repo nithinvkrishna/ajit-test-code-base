@@ -1,0 +1,143 @@
+// Program for finding jitter using timer interrupts
+
+#include <stdint.h>
+#include <stdio.h>
+#include <ajit_access_routines.h>
+#include <ajit_mt_irc.h>
+#include <cortos.h>
+
+#define TIMERCOUNT 100000
+#define COUNT TIMERCOUNT
+#define TIMERINITVAL ((COUNT << 1) | 1)
+#define TIME_SCALE_FACTOR (1.0/CLK_FREQUENCY)
+#define MAX_TIMER_INTERRUPTS  2
+
+// === Global variables ===
+volatile int volatile timer_interrupt_counter = 0;
+volatile int volatile exit_flag  = 0;
+volatile uint64_t volatile last_time_64 = 0;
+volatile uint64_t volatile min_interval  = 10000000;
+volatile uint64_t volatile max_interval  = 0;
+volatile uint32_t volatile countdown_value = 0xFFFFFFFF;
+volatile uint32_t volatile timer_init_val = TIMERINITVAL;
+
+// === New "Log structure" to collect info inside ISR ===
+volatile uint32_t isr_written_value = 0;
+volatile uint32_t isr_read_value    = 0;
+volatile uint32_t isr_match_status  = 0;
+volatile uint32_t verify_ready      = 0; // signal for main to print
+
+/////////////////////////////
+///// Utility functions /////
+/////////////////////////////
+
+void clear_and_disable_timer() {
+    __ajit_write_timer_control_register_via_vmap__(0x0);
+}
+
+void enable_and_write_timer(uint32_t countdown_value) {
+    __ajit_write_timer_control_register_via_vmap__(countdown_value | 1);
+}
+
+uint32_t read_timer_reg() {
+    uint32_t rd_data = __ajit_read_timer_control_register_via_vmap__();
+    return rd_data;
+}
+
+uint32_t read_icr() {
+    uint32_t rd_val = __ajit_read_irc_control_register_via_bypass__();
+    return rd_val;
+}
+
+void run_timer_ISR_default_example() {
+    if(timer_interrupt_counter <= MAX_TIMER_INTERRUPTS) {
+        uint64_t curr_time_64 = __ajit_get_clock_time();
+        if(timer_interrupt_counter > 0) {
+            uint64_t interval = (curr_time_64 - last_time_64);
+            if(interval < min_interval) min_interval = interval;
+            if(interval > max_interval) max_interval = interval;
+        }
+        last_time_64 = curr_time_64;
+        timer_interrupt_counter++;
+    }
+
+    if(timer_interrupt_counter >= MAX_TIMER_INTERRUPTS)
+        exit_flag = 1;
+}
+
+/////////////////////////////
+///// Interrupt Handler /////
+/////////////////////////////
+
+void my_timer_interrupt_handler()
+{
+    clear_and_disable_timer();
+    enable_and_write_timer(countdown_value);
+    run_timer_ISR_default_example();
+
+    // collect information for main to print
+    isr_written_value = countdown_value;
+    isr_read_value = read_timer_reg();
+    isr_match_status = (isr_read_value == isr_written_value);
+    
+    verify_ready = 1;  // signal main to print this information
+}
+
+//////////////////////////////////
+///// Main program utilities /////
+//////////////////////////////////
+
+void configure_serial_device() {
+    __ajit_serial_configure_via_vmap__ (1, 1, 1);
+    __ajit_serial_set_baudrate_via_vmap__ (115200, CLK_FREQUENCY);
+    __ajit_serial_set_uart_reset_via_vmap__ (0);
+    cortos_printf("Serial configuration completed\n");
+}
+
+void print_isr_status()
+{
+    cortos_printf("Inside Timer ISR:\n");
+    cortos_printf("- Written Value  = 0x%08X\n", isr_written_value);
+    cortos_printf("- Read Value     = 0x%08X\n", isr_read_value);
+    
+    if(isr_match_status) {
+        cortos_printf("- Status         = [PASS]\n");
+    } else {
+        cortos_printf("- Status         = [FAIL]\n");
+    }
+}
+
+/////////////////////////
+///// Main Function /////
+/////////////////////////
+
+int main()
+{
+    configure_serial_device();
+    cortos_printf("Main program starting...\n");
+
+    enableInterruptControllerAndAllInterrupts(0,0);
+    cortos_printf("Interrupt controller enable step done\n");
+
+    uint32_t init_rd_val = read_timer_reg();
+    cortos_printf("[Main] Timer initial read: 0x%08X\n", init_rd_val);
+
+    uint32_t init_icr_rd_val = read_icr();
+    cortos_printf("[Main] ICR initial read: 0x%08X\n", init_icr_rd_val);
+
+    enable_and_write_timer(timer_init_val);
+    cortos_printf("[Main] Timer initialized and enabled with: 0x%08X\n", timer_init_val);
+
+    // Main polling loop
+    while (!exit_flag)
+    {
+        if (verify_ready) {
+            verify_ready = 0; // clear flag
+            print_isr_status(); // safe printing outside interrupt
+        }
+    }
+
+    cortos_printf("Main program execution completed\n");
+    return 0;
+}
+

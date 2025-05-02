@@ -1,0 +1,10 @@
+
+[MAIN] Serial configuration completed
+[MAIN] Program starting ISR Test...
+[MAIN] Interrupt controller enabled
+[MAIN] [INIT] TimerRead=0x00000000
+[MAIN] [INIT] ICRRead=0x0000FFFF
+[MAIN] [INIT] Timer initialized with: 0xFFFFFFF0
+[ISR] [PASS] Written=0xFFFFFEF0 Read=0xFFFFFEF1
+[ISR] [PASS] Written=0xFFFFFDF0 Read=0xFFFFFDF1                                                                          
+[MAIN] Program execution completed    

@@ -1,0 +1,163 @@
+// timer_isr_test.c
+// Program to verify Timer behavior using interrupts (continuous reprogramming test)
+
+#include <stdint.h>
+#include <stdio.h>
+#include <ajit_access_routines.h>
+#include <ajit_mt_irc.h>
+#include <cortos.h>
+
+// === Global Variables === //
+volatile int volatile timer_interrupt_counter = 0;
+volatile int volatile exit_flag = 0;
+volatile uint32_t volatile countdown_value = 0xFFFFFFF0;
+
+// === "ISR Log" Variables === //
+volatile uint32_t volatile isr_written_value = 0;
+volatile uint32_t volatile isr_read_value    = 0;
+volatile uint32_t volatile isr_match_status  = 0;
+volatile uint32_t volatile verify_ready      = 0;
+volatile uint32_t volatile timer_interrupt_trigger_init_val = 0;
+volatile uint32_t volatile print_timer_interrupt_trigger_val_en = 0;
+volatile uint32_t volatile timer_write_check_en = 0;
+volatile uint32_t volatile next_countdown_val = 0;
+
+
+
+#define MAX_TIMER_INTERRUPTS 3
+
+/////////////////////////////
+///// UTILITY FUNCTIONS /////
+/////////////////////////////
+
+void clear_and_disable_timer() {
+    __ajit_write_timer_control_register_via_vmap__(0x0);
+}
+
+void enable_and_write_timer(uint32_t countdown_value) {
+    __ajit_write_timer_control_register_via_vmap__(countdown_value | 1);
+}
+
+uint32_t read_timer_reg() {
+    return __ajit_read_timer_control_register_via_vmap__();
+}
+
+uint32_t read_icr() {
+    return __ajit_read_irc_control_register_via_bypass__();
+}
+
+uint32_t generate_next_countdown_value()
+{
+    // Simple variation: subtract a constant on every interrupt
+    // (must ensure it never becomes 0, or you can cycle it)
+    countdown_value -= 0x100; // Decrease by 256 each time
+    if (countdown_value < 0x1000) {
+        countdown_value = 0xFFFFFFF0;  // Reset to high value if too low
+    }
+    return countdown_value;
+}
+
+void run_timer_ISR()
+{
+    timer_interrupt_counter++;
+    if (timer_interrupt_counter >= MAX_TIMER_INTERRUPTS) {
+        exit_flag = 1;
+    }
+}
+
+/////////////////////////////
+///// PROGRAM UTILITIES /////
+/////////////////////////////
+
+void configure_serial_device() {
+    __ajit_serial_configure_via_vmap__(1, 1, 1);
+    __ajit_serial_set_baudrate_via_vmap__(115200, CLK_FREQUENCY);
+    __ajit_serial_set_uart_reset_via_vmap__(0);
+    cortos_printf("[MAIN] Serial configuration completed\n");
+}
+
+void print_status()
+{
+    if (isr_match_status) {
+        //cortos_printf("[ISR] [PASS] Written=0x%08X Read=0x%08X\n", (isr_written_value | 1), (isr_read_value | 1));
+        cortos_printf("[ISR] [PASS] Written=0x%08X Read=0x%08X\n", isr_written_value, isr_read_value);
+    }
+    else {
+        //cortos_printf("[ISR] [FAIL] Written=0x%08X Read=0x%08X\n", (isr_written_value | 1), (isr_read_value | 1));
+        cortos_printf("[ISR] [FAIL] Written=0x%08X Read=0x%08X\n", isr_written_value, isr_read_value);
+    }
+}
+
+/////////////////////////////
+///// INTERRUPT HANDLER /////
+/////////////////////////////
+
+void my_timer_interrupt_handler()
+{
+    print_timer_interrupt_trigger_val_en = 1;
+    timer_interrupt_trigger_init_val = read_timer_reg();
+    clear_and_disable_timer();
+
+    timer_write_check_en = 1;
+    next_countdown_val = (generate_next_countdown_value() | 1); // Keeps timer enabled always, when writing new value
+    enable_and_write_timer(next_countdown_val);
+
+    run_timer_ISR();
+
+    // Collect ISR log data
+    isr_written_value   = next_countdown_val;
+    isr_read_value      = read_timer_reg();
+    isr_match_status    = ((isr_read_value & 0xFFFFFFFE) == (isr_written_value & 0xFFFFFFFE)); // LSB masked
+
+    verify_ready = 1;
+}
+
+/////////////////////////////
+///// MAIN FUNCTION /////////
+/////////////////////////////
+
+int main()
+{
+    configure_serial_device();
+    cortos_printf("[MAIN] Program starting ISR Test...\n");
+
+    enableInterruptControllerAndAllInterrupts(0,0);
+    cortos_printf("[MAIN] Interrupt controller enabled\n");
+
+    uint32_t init_rd_val = read_timer_reg();
+    cortos_printf("[MAIN] [INIT] TimerRead=0x%08X\n", init_rd_val);
+
+    uint32_t init_icr_rd_val = read_icr();
+    cortos_printf("[MAIN] [INIT] ICRRead=0x%08X\n", init_icr_rd_val);
+
+    enable_and_write_timer(countdown_value); // Note: since its first time, we are not clearing and disabling timer before en and write
+    cortos_printf("[MAIN] [INIT] Timer initialized with: 0x%08X\n", countdown_value);
+
+    while (!exit_flag)
+    {
+        if (verify_ready) {
+            print_status();     // Safe print after ISR
+            verify_ready = 0;   // Clear the flag
+        }
+
+        if(print_timer_interrupt_trigger_val_en) {
+            cortos_printf("[MAIN] Timer value when interrupt was triggerd and handler func called = 0x%08X\n", timer_interrupt_trigger_init_val);
+            if(timer_interrupt_trigger_init_val != 0) {
+                cortos_printf("[MAIN] [INTERRUPT HANDLER PRINT] [ERROR] Timer reg not 0 at the beginning of my_timer_interrupt_handler()\n", timer_interrupt_trigger_init_val);
+            }
+            else {
+                cortos_printf("[MAIN] [PASS] Timer reg 0 at beginning of my_timer_interrupt_handler()\n", timer_interrupt_trigger_init_val);
+            }
+            print_timer_interrupt_trigger_val_en = 0;
+        }
+
+        if(timer_write_check_en) {
+            cortos_printf("[MAIN] [INTERRUPT HANDLER PRINT] Timer register is written with new value = 0x%08X\n", next_countdown_val);
+            timer_write_check_en = 0;
+        }
+    }
+
+    cortos_printf("[MAIN] Program execution completed\n");
+    return 0;
+}
+

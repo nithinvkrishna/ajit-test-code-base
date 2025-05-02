@@ -1,0 +1,50 @@
+[MAIN] Serial configuration completed
+[MAIN] Program starting ISR Test...
+[MAIN] Interrupt controller enabled
+
+Program is running. Max iteration = 3. Current loop number: 1
+Program is running. Max iteration = 3. Current loop number: 2
+Program is running. Max iteration = 3. Current loop number: 3
+
+Max Timer iteration reached.
+
+------------------------------
+STARTING LOG ANALYSIS...
+------------------------------
+
+[INITIAL CONFIG DATA LOG] init_icr_rd_val   = 0x0000FFFF
+[INITIAL CONFIG DATA LOG] init_val          = 0x00000000
+[INITIAL CONFIG DATA LOG] init_wr_val       = 0xFFFFFFF0
+[INITIAL CONFIG DATA LOG] init_raw_val      = 0xFFFFFFF1
+[INITIAL CONFIG DATA] [PASS] Read after write test successful for this iteration
+
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] timer_val_after_entry = 0xFFFFFFF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] timer_val_after_clear = 0x00000000
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] new_countdown_val     = 0xFFFFFEF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] timer_raw_val         = 0xFFFFFEF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] raw_match_status      = 1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 0] icr_value             = 0x00000000
+[READ AFTER WRITE TEST] [PASS] Read after write test successful for this iteration
+
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] timer_val_after_entry = 0xFFFFFEF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] timer_val_after_clear = 0x00000000
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] new_countdown_val     = 0xFFFFFDF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] timer_raw_val         = 0xFFFFFDF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] raw_match_status      = 1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 1] icr_value             = 0x00000000
+[READ AFTER WRITE TEST] [PASS] Read after write test successful for this iteration
+
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] timer_val_after_entry = 0xFFFFFDF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] timer_val_after_clear = 0x00000000
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] new_countdown_val     = 0xFFFFFCF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] timer_raw_val         = 0xFFFFFCF1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] raw_match_status      = 1
+[INTERRUPT HANDLER DATA LOG] [INDEX: 2] icr_value             = 0x00000000
+[READ AFTER WRITE TEST] [PASS] Read after write test successful for this iteration
+
+------------------------------
+LOG DATA ANALYSIS COMPLETED
+------------------------------
+
+[MAIN] Program execution completed
+
