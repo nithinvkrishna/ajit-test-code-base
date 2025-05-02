@@ -1,0 +1,203 @@
+
+#include <stdint.h>
+#include <stdio.h>
+#include <ajit_access_routines.h>
+#include <ajit_mt_irc.h>
+#include <cortos.h>
+
+
+
+/////////////////////////////
+///// INTERRUPT HANDLER /////
+/////////////////////////////
+
+void my_timer_interrupt_handler()
+{
+    // Do nothing. Timer interrupts are not used in this test.
+}
+
+
+///////////////////////////////////
+// REGISTER IDS
+///////////////////////////////////
+#define DATA0_REG_ID    0   // Data low register
+#define DATA1_REG_ID    1   // Data high register                           
+#define STATUS_REG_ID   2   // Status/Command register
+#define CONFIG_REG_ID   3   // Config register
+
+uint8_t config_val = (1 << 4) | 0x5; // 8-bit xfer, clk_div = 5
+                                      
+///////////////////////////////////
+// CHECK IF SPI IS BUSY (BUSY BIT AT POSITION 0)
+///////////////////////////////////
+void read_spi_busybit() {
+    cortos_printf("Checking SPI master status...\n");
+    uint8_t status;
+    do {
+        status = __ajit_read_spi_master_register_via_vmap__(STATUS_REG_ID);
+    } while (status & 0x01);  // Loop while busy bit is set
+}
+
+///////////////////////////////////
+// WRITE TO SPI CONFIG REGISTER
+///////////////////////////////////
+void spi_config_wr(uint8_t config_data) {
+    cortos_printf("Writing to CONFIG register: 0x%02X\n", config_data);
+    __ajit_write_spi_master_register_via_vmap__(CONFIG_REG_ID, config_data);
+}
+
+
+///////////////////////////////////
+// READ FROM SPI CONFIG REGISTER
+///////////////////////////////////
+uint8_t spi_config_rd() {
+    uint8_t val = __ajit_read_spi_master_register_via_vmap__(CONFIG_REG_ID);
+    cortos_printf("Read from CONFIG register: 0x%02X\n", val);
+    return val;
+}
+
+
+///////////////////////////////////
+// WRITE COMMAND TO STATUS REGISTER
+///////////////////////////////////
+void spi_status_reg_wr() {
+    cortos_printf("Writing command to STATUS register\n");
+    uint8_t cmd = (0x1 << 3) | (1 << 1) | (1 << 0); // Slave = 001, Deselect = 1, Start = 1
+    __ajit_write_spi_master_register_via_vmap__(STATUS_REG_ID, cmd);
+}
+
+////////////////////////////////////
+//  DATA REGISTER WRITE FUNCTION
+///////////////////////////////////
+
+void spi_write_data(uint8_t reg_id, uint8_t data) {
+
+    cortos_printf("SPI Write: 0x%02X\n", data);
+
+    spi_config_wr(config_val);
+
+    read_spi_busybit();
+ 
+    __ajit_write_spi_master_register_via_vmap__(reg_id, data);
+    
+    spi_status_reg_wr();
+    
+    read_spi_busybit();
+}
+
+
+////////////////////////////////////
+//  DATA REGISTER READ FUNCTION
+///////////////////////////////////
+
+uint8_t spi_read_data(uint8_t reg_id) {
+
+    cortos_printf("SPI Read:\n");
+
+    read_spi_busybit();
+    
+    spi_status_reg_wr();
+
+    read_spi_busybit();
+
+    uint8_t read_val = __ajit_read_spi_master_register_via_vmap__(reg_id);
+
+    cortos_printf("Read from DATA register: 0x%02X\n", read_val);
+    return read_val;
+}
+
+
+///////////////////////////////////
+//  READ WRITE COMPARE FUNCTIONS 
+///////////////////////////////////
+
+///////////////////////////////////
+// SPI_DATA_REGISTER_LOW
+///////////////////////////////////
+
+
+void spi_data_reg_low_compare(uint8_t data0_write_val) {
+
+    spi_write_data(DATA0_REG_ID,data0_write_val);
+
+    uint8_t data0_read_val = spi_read_data(DATA0_REG_ID);
+    
+    if (data0_write_val == data0_read_val) 
+    cortos_printf("SPI DATA R/W PASS: 0x%02X == 0x%02X\n", data0_write_val, data0_read_val);
+    else
+    cortos_printf("SPI DATA R/W FAIL: Wrote 0x%02X, Read 0x%02X\n", data0_write_val,  data0_read_val);
+}
+
+
+///////////////////////////////////
+// SPI_DATA_REGISTER_HIGH
+///////////////////////////////////
+
+
+void spi_data_reg_high_compare(uint8_t data1_write_val) {
+
+    spi_write_data(DATA1_REG_ID,data1_write_val);
+
+    uint8_t data1_read_val = spi_read_data(DATA1_REG_ID);
+    
+    if (data1_write_val == data1_read_val) 
+    cortos_printf("SPI DATA R/W PASS: 0x%02X == 0x%02X\n", data1_write_val, data1_read_val);
+    else
+    cortos_printf("SPI DATA R/W FAIL: Wrote 0x%02X, Read 0x%02X\n", data1_write_val,  data1_read_val);
+}
+
+///////////////////////////////////
+// SPI_CONFIG_REG_COMPARE
+///////////////////////////////////
+
+
+ void spi_config_compare(uint8_t config_val) {
+    spi_config_wr(config_val);
+    uint8_t read_val = spi_config_rd();
+
+
+ if (config_val == read_val)
+        cortos_printf("SPI CONFIG R/W PASS: 0x%02X == 0x%02X\n", config_val, read_val);
+    else
+        cortos_printf("SPI CONFIG R/W FAIL: Wrote 0x%02X, Read 0x%02X\n", config_val, read_val);
+}
+
+
+///////////////////////////////////////////////////
+// UART CONFIGURATION
+///////////////////////////////////////////////////
+
+void configure_serial_device() {
+    __ajit_serial_configure_via_vmap__(1, 1, 1);
+    __ajit_serial_set_baudrate_via_vmap__(115200, CLK_FREQUENCY);
+    __ajit_serial_set_uart_reset_via_vmap__(0);
+    cortos_printf("Serial configuration completed\n");
+}
+
+///////////////////////////////////////////////////
+//  MAIN FUNCTION 
+///////////////////////////////////////////////////
+
+int main() {
+    cortos_printf("Main function starts\n");
+
+    configure_serial_device();
+
+    uint8_t test_data1 = 0x23;
+    uint8_t test_data2 = 0x24;
+
+    cortos_printf("\nTesting CONFIG register:\n");
+    spi_config_compare(config_val);
+
+    cortos_printf("\nTesting DATA0 register:\n");
+    spi_data_reg_low_compare(test_data1);
+
+
+    cortos_printf("\nTesting DATA1 register:\n");
+    spi_data_reg_high_compare(test_data2);
+
+
+    
+    cortos_printf("\nTest completed\n");
+    return 0;
+}
