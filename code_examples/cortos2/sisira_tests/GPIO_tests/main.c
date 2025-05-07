@@ -50,23 +50,7 @@ uint32_t gpio_read() {
     
 }
 
-///////////////////////////////////
-// DATA_REGISTER_COMPARE
-///////////////////////////////////
 
-    void gpio_data_compare(uint32_t write_val) {
-    
-
-    gpio_write(write_val);
-    
-    uint32_t read_val = gpio_read();
-
-   if(read_val == write_val) 
-       cortos_printf("Test Pass : written_val :0x%04X = read_Val 0x%04X\n",write_val,read_val);
-   else
-       cortos_printf("Test Fail : written_val :0x%04X = read_Val 0x%04X\n",write_val,read_val);
-
-}
 
 /////////////////////////////
 ///// GPIO_Default read
@@ -84,17 +68,17 @@ void check_default_gpio_value() {
 ///////////////////////////////////
 
 
-// gpio_test gpio_compare( const char* name,uint8_t write_val) {
-//    gpio_test result = {name,write_val,0,0 };
+ gpio_test gpio_compare( const char* name,uint8_t write_val) {
+    gpio_test result = {name,write_val,0,0 };
 
-//    gpio_write(write_val);
+    gpio_write(write_val);
     
-//  result.read = gpio_read();
+  result.read = gpio_read();
 
-//    result.pass = (result.read == result.written);
+    result.pass = (result.read == result.written);
    
-//  return result;
-//}
+  return result;
+}
 
 
 /////////////////////////////////////////////////////
@@ -121,15 +105,15 @@ configure_serial_device();
      
     uint32_t data_write = 0x1234;
 
-    gpio_data_compare(data_write);
     
-    //gpio_test test_result = gpio_compare("GPIO1", data_write);
+    
+    gpio_test test_result = gpio_compare("GPIO1", data_write);
 
-    //cortos_printf("Test Name: %s\n", test_result.name);
+    cortos_printf("Test Name: %s\n", test_result.name);
     
-    //cortos_printf("Written: 0x%02X\n", test_result.written);
-    //cortos_printf("Read: 0x%02X\n", test_result.read);
-    //cortos_printf("Pass: %s\n", test_result.pass ? "Yes" : "No");  
+    cortos_printf("Written: 0x%02X\n", test_result.written);
+    cortos_printf("Read: 0x%02X\n", test_result.read);
+    cortos_printf("Pass: %s\n", test_result.pass ? "Yes" : "No");  
     cortos_printf("\nTest completed\n");
     return 0;
 }
